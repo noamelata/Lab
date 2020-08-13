@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/simulation/qsim
+vhexss
+Z1 !s110 1597326502
+!i10b 1
+!s100 n^`>m8zR]VE[Ae;QZU5`=0
+IQj464`LLbYDQWDHBbO4OD2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1597326501
+Z3 8SV1Exs.vo
+Z4 FSV1Exs.vo
+Z5 L0 32
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1597326502.000000
+Z8 !s107 SV1Exs.vo|
+Z9 !s90 -work|work|SV1Exs.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vhexss_vlg_vec_tst
+R1
+!i10b 1
+!s100 Y@5i11WJ9aZ0:d_@c=fi72
+Ie;45iHEcC>gj_RloLlaem3
+R2
+R0
+w1597326500
+8HexSS_Sim.vwf.vt
+FHexSS_Sim.vwf.vt
+Z12 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 HexSS_Sim.vwf.vt|
+!s90 -work|work|HexSS_Sim.vwf.vt|
+!i113 1
+R10
+R11
+vjmp_counter
+Z13 !s110 1597324734
+!i10b 1
+!s100 >9595TI8=0j9`YO6UP^8`3
+I;QoBXJHZ9UF0c1`=<cEjP2
+R2
+R0
+w1597324733
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z14 !s108 1597324734.000000
+R8
+R9
+!i113 1
+R10
+R11
+vjmp_counter_vlg_vec_tst
+R13
+!i10b 1
+!s100 W9aUK8H5Y@7=m^aVa59Og1
+IghQJJY;5_NH;jUIXSN7HA0
+R2
+R0
+w1597324732
+Z15 8Jump_Counter_Sim.vwf.vt
+Z16 FJump_Counter_Sim.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+R14
+Z17 !s107 Jump_Counter_Sim.vwf.vt|
+Z18 !s90 -work|work|Jump_Counter_Sim.vwf.vt|
+!i113 1
+R10
+R11
+vmux_4to1_if
+Z19 !s110 1597321960
+!i10b 1
+!s100 F5_MbmgQSDT;C61<FoBj;2
+I[dSj_nDc8_ocj=jAF8]Pl3
+R2
+R0
+w1597321958
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z20 !s108 1597321960.000000
+R8
+R9
+!i113 1
+R10
+R11
+vmux_4to1_if_vlg_vec_tst
+R19
+!i10b 1
+!s100 ZW6AhfQXVKi?726Xl:BYi3
+IHHBNOL[lijZ=fEnE=X29<0
+R2
+R0
+w1597321956
+8Mux_if.vwf.vt
+FMux_if.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+R20
+!s107 Mux_if.vwf.vt|
+!s90 -work|work|Mux_if.vwf.vt|
+!i113 1
+R10
+R11
+vsimple_up_counter
+Z21 !s110 1597324659
+!i10b 1
+!s100 dz@AR]3BZj<;kzZ3b?WK73
+Ijmc08OePITA=he>GoZ=8L1
+R2
+R0
+w1597324654
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z22 !s108 1597324659.000000
+R8
+R9
+!i113 1
+R10
+R11
+vsimple_up_counter_vlg_vec_tst
+R21
+!i10b 1
+!s100 nmG:e;5AL710ZGi1_FZl32
+IPWXJSjdR:Ta37]f;277ke3
+R2
+R0
+w1597324649
+R15
+R16
+R12
+R6
+r1
+!s85 0
+31
+R22
+R17
+R18
+!i113 1
+R10
+R11
