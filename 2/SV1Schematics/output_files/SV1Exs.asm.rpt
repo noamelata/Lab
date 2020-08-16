@@ -1,5 +1,5 @@
 Assembler report for SV1Exs
-Sun Aug 16 10:39:27 2020
+Sun Aug 16 13:01:40 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/TECHNION/gitLab/Lab/2/SV1Schematics/output_files/SV1Exs.sof
+  5. Assembler Device Options: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/output_files/SV1Exs.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Aug 16 10:39:27 2020 ;
+; Assembler Status      ; Successful - Sun Aug 16 13:01:40 2020 ;
 ; Revision Name         ; SV1Exs                                ;
-; Top-level Entity Name ; mux_2to1_if                           ;
+; Top-level Entity Name ; inflating_cnt_top                     ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CSXFC6D6F31C6                        ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------------+
-; Assembler Generated Files                                      ;
-+----------------------------------------------------------------+
-; File Name                                                      ;
-+----------------------------------------------------------------+
-; C:/TECHNION/gitLab/Lab/2/SV1Schematics/output_files/SV1Exs.sof ;
-+----------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Assembler Generated Files                                                     ;
++-------------------------------------------------------------------------------+
+; File Name                                                                     ;
++-------------------------------------------------------------------------------+
+; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/output_files/SV1Exs.sof ;
++-------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/TECHNION/gitLab/Lab/2/SV1Schematics/output_files/SV1Exs.sof ;
-+----------------+-------------------------------------------------------------------------+
-; Option         ; Setting                                                                 ;
-+----------------+-------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00AF569E                                                              ;
-; Checksum       ; 0x00AF569E                                                              ;
-+----------------+-------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/output_files/SV1Exs.sof ;
++----------------+----------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                ;
++----------------+----------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00B0E830                                                                             ;
+; Checksum       ; 0x00B0E830                                                                             ;
++----------------+----------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 16 10:39:16 2020
+    Info: Processing started: Sun Aug 16 13:01:31 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SV1Exs -c SV1Exs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Sun Aug 16 10:39:27 2020
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Sun Aug 16 13:01:41 2020
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 
 

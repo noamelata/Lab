@@ -4,19 +4,115 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "outd",
+					"name" : "duty50",
 					"strict" : false
 				},
 				{
-					"name" : "datain[1]",
+					"name" : "FastCount[3]",
 					"strict" : false
 				},
 				{
-					"name" : "select",
+					"name" : "FastCount[2]",
 					"strict" : false
 				},
 				{
-					"name" : "datain[0]",
+					"name" : "FastCount[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FastCount[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SlowCount[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SlowCount[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SlowCount[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SlowCount[0]",
+					"strict" : false
+				},
+				{
+					"name" : "darkN",
+					"strict" : false
+				},
+				{
+					"name" : "lampTest",
+					"strict" : false
+				},
+				{
+					"name" : "turbo",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "resetN",
 					"strict" : false
 				}
 			]

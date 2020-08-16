@@ -223,10 +223,120 @@ agreement for further details.
 		(rectangle (rect 16 16 144 96))
 	)
 )
-(connector
-	(text "lampTest" (rect 1136 168 1180 185)(font "Intel Clear" ))
-	(pt 1184 184)
-	(pt 1128 184)
+(symbol
+	(rect 736 240 928 352)
+	(text "inflating_counter" (rect 5 0 86 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "enable" (rect 0 0 31 12)(font "Arial" ))
+		(text "enable" (rect 21 59 52 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "FastCount[3..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "FastCount[3..0]" (rect 106 27 183 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "SlowCount[3..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "SlowCount[3..0]" (rect 106 43 183 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+)
+(symbol
+	(rect 1192 256 1368 368)
+	(text "hexss" (rect 5 0 34 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "hexin[3..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "hexin[3..0]" (rect 21 27 72 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "darkN" (rect 0 0 29 12)(font "Arial" ))
+		(text "darkN" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "LampTest" (rect 0 0 48 12)(font "Arial" ))
+		(text "LampTest" (rect 21 59 69 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 176 32)
+		(output)
+		(text "ss[6..0]" (rect 0 0 37 12)(font "Arial" ))
+		(text "ss[6..0]" (rect 124 27 161 39)(font "Arial" ))
+		(line (pt 176 32)(pt 160 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 160 96))
+	)
+)
+(symbol
+	(rect 1192 120 1368 232)
+	(text "hexss" (rect 5 0 34 12)(font "Arial" ))
+	(text "inst4" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "hexin[3..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "hexin[3..0]" (rect 21 27 72 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "darkN" (rect 0 0 29 12)(font "Arial" ))
+		(text "darkN" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "LampTest" (rect 0 0 48 12)(font "Arial" ))
+		(text "LampTest" (rect 21 59 69 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 176 32)
+		(output)
+		(text "ss[6..0]" (rect 0 0 37 12)(font "Arial" ))
+		(text "ss[6..0]" (rect 124 27 161 39)(font "Arial" ))
+		(line (pt 176 32)(pt 160 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 160 96))
+	)
 )
 (connector
 	(text "turbo" (rect 598 440 622 457)(font "Intel Clear" ))
@@ -242,11 +352,6 @@ agreement for further details.
 	(pt 1128 184)
 )
 (connector
-	(text "darkN" (rect 1136 288 1164 305)(font "Intel Clear" ))
-	(pt 1056 304)
-	(pt 1184 304)
-)
-(connector
 	(pt 1056 304)
 	(pt 1056 168)
 )
@@ -254,15 +359,6 @@ agreement for further details.
 	(text "darkN" (rect 561 152 589 169)(font "Intel Clear" ))
 	(pt 560 168)
 	(pt 1056 168)
-)
-(connector
-	(pt 1056 168)
-	(pt 1184 168)
-)
-(connector
-	(text "lampTest" (rect 1088 304 1132 321)(font "Intel Clear" ))
-	(pt 1184 320)
-	(pt 1080 320)
 )
 (connector
 	(pt 1080 320)
@@ -278,12 +374,10 @@ agreement for further details.
 	(pt 560 200)
 )
 (connector
-	(text "<<__$DEF_ALIAS40>>" (rect 640 408 746 425)(font "Intel Clear" )(invisible))
 	(pt 688 424)
 	(pt 616 424)
 )
 (connector
-	(text "<<__$DEF_ALIAS46>>" (rect 640 424 746 441)(font "Intel Clear" )(invisible))
 	(pt 688 440)
 	(pt 632 440)
 )
@@ -301,27 +395,12 @@ agreement for further details.
 	(pt 848 424)
 )
 (connector
-	(text "<<__$DEF_ALIAS278>>" (rect 680 288 792 305)(font "Intel Clear" )(invisible))
-	(pt 656 304)
-	(pt 728 304)
-)
-(connector
 	(pt 560 272)
 	(pt 616 272)
 )
 (connector
-	(text "<<__$DEF_ALIAS38>>" (rect 592 256 698 273)(font "Intel Clear" )(invisible))
-	(pt 616 272)
-	(pt 728 272)
-)
-(connector
-	(text "<<__$DEF_ALIAS42>>" (rect 549 272 655 289)(font "Intel Clear" ))
 	(pt 560 288)
 	(pt 632 288)
-)
-(connector
-	(pt 632 288)
-	(pt 728 288)
 )
 (connector
 	(pt 1368 152)
@@ -331,11 +410,6 @@ agreement for further details.
 (connector
 	(pt 1368 288)
 	(pt 1376 288)
-	(bus)
-)
-(connector
-	(pt 1032 272)
-	(pt 944 272)
 	(bus)
 )
 (connector
@@ -355,11 +429,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1032 152)
-	(pt 1184 152)
-	(bus)
-)
-(connector
 	(pt 1032 288)
 	(pt 1032 400)
 	(bus)
@@ -371,14 +440,68 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "<<__$DEF_ALIAS427>>" (rect 968 272 1080 289)(font "Intel Clear" )(invisible))
-	(pt 944 288)
-	(pt 1032 288)
-	(bus)
+	(pt 1056 168)
+	(pt 1192 168)
+)
+(connector
+	(text "lampTest" (rect 1136 168 1180 185)(font "Intel Clear" ))
+	(pt 1128 184)
+	(pt 1192 184)
+)
+(connector
+	(text "lampTest" (rect 1088 304 1132 321)(font "Intel Clear" ))
+	(pt 1080 320)
+	(pt 1192 320)
+)
+(connector
+	(text "darkN" (rect 1136 288 1164 305)(font "Intel Clear" ))
+	(pt 1056 304)
+	(pt 1192 304)
+)
+(connector
+	(pt 632 288)
+	(pt 736 288)
+)
+(connector
+	(pt 616 272)
+	(pt 736 272)
+)
+(connector
+	(text "<<__$DEF_ALIAS278>>" (rect 680 288 792 305)(font "Intel Clear" )(invisible))
+	(pt 656 304)
+	(pt 736 304)
+)
+(connector
+	(pt 920 424)
+	(pt 920 376)
+)
+(connector
+	(pt 920 376)
+	(pt 656 376)
+)
+(connector
+	(pt 656 376)
+	(pt 656 304)
 )
 (connector
 	(pt 1032 288)
-	(pt 1184 288)
+	(pt 1192 288)
+	(bus)
+)
+(connector
+	(pt 1032 152)
+	(pt 1192 152)
+	(bus)
+)
+(connector
+	(pt 928 272)
+	(pt 1032 272)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS427>>" (rect 968 272 1080 289)(font "Intel Clear" )(invisible))
+	(pt 928 288)
+	(pt 1032 288)
 	(bus)
 )
 (junction (pt 616 272))

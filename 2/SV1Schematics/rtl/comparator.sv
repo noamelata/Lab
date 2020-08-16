@@ -12,11 +12,6 @@ module comparator
 	output logic cmp
    );
 	
-   // Combinatorial logic
-      
-	 /*   $$$$$$$   remove to fill  
- 	assign // fill your code here 
-		/* */ 
-	
+   assign cmp = (vect1 == vect2);
 
 endmodule

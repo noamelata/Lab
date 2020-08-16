@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SV1Exs
-Sun Aug 16 10:38:10 2020
+Sun Aug 16 13:00:35 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -14,9 +14,12 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "inflating_counter:inst|up_counter:slowC"
+ 11. Port Connectivity Checks: "inflating_counter:inst|up_counter:fastC"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +46,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 16 10:38:10 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 16 13:00:35 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV1Exs                                      ;
-; Top-level Entity Name           ; mux_2to1_if                                 ;
+; Top-level Entity Name           ; inflating_cnt_top                           ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 4                                           ;
+; Total registers                 ; 42                                          ;
+; Total pins                      ; 28                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +72,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
-; Top-level entity name                                                           ; mux_2to1_if        ; SV1Exs             ;
+; Top-level entity name                                                           ; inflating_cnt_top  ; SV1Exs             ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -159,56 +162,69 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
-; rtl/mux_2to1_if.sv               ; yes             ; User SystemVerilog HDL File  ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; rtl/hexss.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/hexss.sv              ;         ;
+; rtl/up_counter.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv         ;         ;
+; rtl/comparator.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/comparator.sv         ;         ;
+; rtl/inflating_counter.sv         ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv  ;         ;
+; rtl/inflating_cnt_top.bdf        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_cnt_top.bdf ;         ;
+; rtl/one_sec_counter.sv           ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/one_sec_counter.sv    ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimate of Logic utilization (ALMs needed) ; 1      ;
-;                                             ;        ;
-; Combinational ALUT usage for logic          ; 1      ;
-;     -- 7 input functions                    ; 0      ;
-;     -- 6 input functions                    ; 0      ;
-;     -- 5 input functions                    ; 0      ;
-;     -- 4 input functions                    ; 0      ;
-;     -- <=3 input functions                  ; 1      ;
-;                                             ;        ;
-; Dedicated logic registers                   ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 4      ;
-;                                             ;        ;
-; Total DSP Blocks                            ; 0      ;
-;                                             ;        ;
-; Maximum fan-out node                        ; outd~0 ;
-; Maximum fan-out                             ; 1      ;
-; Total fan-out                               ; 8      ;
-; Average fan-out                             ; 0.89   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 49             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 75             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 22             ;
+;     -- 5 input functions                    ; 9              ;
+;     -- 4 input functions                    ; 6              ;
+;     -- <=3 input functions                  ; 38             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 42             ;
+;                                             ;                ;
+; I/O pins                                    ; 28             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 42             ;
+; Total fan-out                               ; 490            ;
+; Average fan-out                             ; 2.83           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |mux_2to1_if               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 4    ; 0            ; |mux_2to1_if        ; mux_2to1_if ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name       ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+-------------------+--------------+
+; |inflating_cnt_top          ; 75 (0)              ; 42 (0)                    ; 0                 ; 0          ; 28   ; 0            ; |inflating_cnt_top                                         ; inflating_cnt_top ; work         ;
+;    |hexss:inst2|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|hexss:inst2                             ; hexss             ; work         ;
+;    |hexss:inst4|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|hexss:inst4                             ; hexss             ; work         ;
+;    |inflating_counter:inst| ; 12 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|inflating_counter:inst                  ; inflating_counter ; work         ;
+;       |comparator:cmp|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|inflating_counter:inst|comparator:cmp   ; comparator        ; work         ;
+;       |up_counter:fastC|    ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|inflating_counter:inst|up_counter:fastC ; up_counter        ; work         ;
+;       |up_counter:slowC|    ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|inflating_counter:inst|up_counter:slowC ; up_counter        ; work         ;
+;    |one_sec_counter:inst3|  ; 49 (49)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |inflating_cnt_top|one_sec_counter:inst3                   ; one_sec_counter   ; work         ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -217,14 +233,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 42    ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |inflating_cnt_top|hexss:inst4|ss[6] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "inflating_counter:inst|up_counter:slowC" ;
++-------+-------+----------+------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                  ;
++-------+-------+----------+------------------------------------------+
+; loadN ; Input ; Info     ; Stuck at VCC                             ;
+; init  ; Input ; Info     ; Stuck at GND                             ;
++-------+-------+----------+------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "inflating_counter:inst|up_counter:fastC" ;
++------------+-------+----------+-------------------------------------+
+; Port       ; Type  ; Severity ; Details                             ;
++------------+-------+----------+-------------------------------------+
+; enable_cnt ; Input ; Info     ; Stuck at VCC                        ;
+; init       ; Input ; Info     ; Stuck at GND                        ;
++------------+-------+----------+-------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -232,13 +277,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
+; arriav_ff             ; 42                          ;
+;     CLR               ; 6                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA CLR           ; 4                           ;
+; arriav_lcell_comb     ; 77                          ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     normal            ; 45                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 1                           ;
-; boundary_port         ; 4                           ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 9                           ;
+;         6 data inputs ; 22                          ;
+; boundary_port         ; 28                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -247,7 +303,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -257,47 +313,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 16 10:37:57 2020
+    Info: Processing started: Sun Aug 16 13:00:16 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SV1Exs -c SV1Exs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_2to1_if.sv
-    Info (12023): Found entity 1: mux_2to1_if File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv Line: 5
+    Info (12023): Found entity 1: mux_2to1_if File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_4to1_if.sv
-    Info (12023): Found entity 1: mux_4to1_if File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_4to1_if.sv Line: 5
+    Info (12023): Found entity 1: mux_4to1_if File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_if.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_4to1_case.sv
-    Info (12023): Found entity 1: mux_4to1_case File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_4to1_case.sv Line: 6
+    Info (12023): Found entity 1: mux_4to1_case File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_case.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_16to1.sv
-    Info (12023): Found entity 1: mux_16to1 File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_16to1.sv Line: 8
+    Info (12023): Found entity 1: mux_16to1 File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_16to1.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/simple_up_counter.sv
-    Info (12023): Found entity 1: simple_up_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/simple_up_counter.sv Line: 6
+    Info (12023): Found entity 1: simple_up_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/simple_up_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/jmp_counter.sv
-    Info (12023): Found entity 1: jmp_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/jmp_counter.sv Line: 5
+    Info (12023): Found entity 1: jmp_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/jmp_counter.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/hexss.sv
-    Info (12023): Found entity 1: hexss File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/hexss.sv Line: 7
+    Info (12023): Found entity 1: hexss File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/hexss.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/up_counter.sv
-    Info (12023): Found entity 1: up_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 6
-Warning (10090): Verilog HDL syntax warning at comparator.sv(19): extra block comment delimiter characters /* within block comment File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/comparator.sv Line: 19
+    Info (12023): Found entity 1: up_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/comparator.sv
-    Info (12023): Found entity 1: comparator File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/comparator.sv Line: 7
+    Info (12023): Found entity 1: comparator File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/comparator.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/inflating_counter.sv
-    Info (12023): Found entity 1: inflating_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 6
+    Info (12023): Found entity 1: inflating_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/inflating_cnt_top.bdf
     Info (12023): Found entity 1: inflating_cnt_top
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/one_sec_counter.sv
-    Info (12023): Found entity 1: one_sec_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/one_sec_counter.sv Line: 8
-Info (12127): Elaborating entity "mux_2to1_if" for the top level hierarchy
+    Info (12023): Found entity 1: one_sec_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/one_sec_counter.sv Line: 8
+Info (12127): Elaborating entity "inflating_cnt_top" for the top level hierarchy
+Info (12128): Elaborating entity "one_sec_counter" for hierarchy "one_sec_counter:inst3"
+Info (12128): Elaborating entity "inflating_counter" for hierarchy "inflating_counter:inst"
+Info (12128): Elaborating entity "up_counter" for hierarchy "inflating_counter:inst|up_counter:fastC" File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at up_counter.sv(30): truncated value with size 32 to match size of target (4) File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 30
+Info (12128): Elaborating entity "comparator" for hierarchy "inflating_counter:inst|comparator:cmp" File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 37
+Info (12128): Elaborating entity "hexss" for hierarchy "hexss:inst4"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 1 logic cells
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 76 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Sun Aug 16 10:38:10 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Sun Aug 16 13:00:35 2020
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:45
 
 

@@ -8,14 +8,14 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/simulation/qsim
-vhexss
-Z1 !s110 1597326502
+vcomparator
+Z1 !s110 1597566488
 !i10b 1
-!s100 n^`>m8zR]VE[Ae;QZU5`=0
-IQj464`LLbYDQWDHBbO4OD2
+!s100 3>YLWPDLB8T=fXg7QPn921
+Ioeln^4ePQI5Y52zk^f<cV1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1597326501
+w1597566486
 Z3 8SV1Exs.vo
 Z4 FSV1Exs.vo
 Z5 L0 32
@@ -23,14 +23,56 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1597326502.000000
+Z7 !s108 1597566488.000000
 Z8 !s107 SV1Exs.vo|
 Z9 !s90 -work|work|SV1Exs.vo|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
-vhexss_vlg_vec_tst
+vcomparator_vlg_vec_tst
 R1
+!i10b 1
+!s100 g64@81hb`J>F0bPD7[7@L3
+Ib>SWoMCzQ@GfbZ2mH@eEl0
+R2
+R0
+w1597566485
+8ComparatorSim.vwf.vt
+FComparatorSim.vwf.vt
+Z12 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 ComparatorSim.vwf.vt|
+!s90 -work|work|ComparatorSim.vwf.vt|
+!i113 1
+R10
+R11
+vhexss
+Z13 !s110 1597326502
+!i10b 1
+!s100 n^`>m8zR]VE[Ae;QZU5`=0
+IQj464`LLbYDQWDHBbO4OD2
+R2
+R0
+w1597326501
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z14 !s108 1597326502.000000
+R8
+R9
+!i113 1
+R10
+R11
+vhexss_vlg_vec_tst
+R13
 !i10b 1
 !s100 Y@5i11WJ9aZ0:d_@c=fi72
 Ie;45iHEcC>gj_RloLlaem3
@@ -39,19 +81,103 @@ R0
 w1597326500
 8HexSS_Sim.vwf.vt
 FHexSS_Sim.vwf.vt
-Z12 L0 30
+R12
 R6
 r1
 !s85 0
 31
-R7
+R14
 !s107 HexSS_Sim.vwf.vt|
 !s90 -work|work|HexSS_Sim.vwf.vt|
 !i113 1
 R10
 R11
+vinflating_cnt_top
+Z15 !s110 1597571380
+!i10b 1
+!s100 nFIF=gh7kYR:lWg=;ABg=1
+IFbLQ=WR=7P:dz<>R@SMfK3
+R2
+R0
+w1597571378
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z16 !s108 1597571380.000000
+R8
+R9
+!i113 1
+R10
+R11
+vinflating_cnt_top_vlg_vec_tst
+R15
+!i10b 1
+!s100 cmEem;;Z2;;n4k@IKb4IY0
+IU=Tz8z_Wl]7gHmZUVScTz3
+R2
+R0
+w1597571375
+8InflatingTopSim.vwf.vt
+FInflatingTopSim.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+R16
+!s107 InflatingTopSim.vwf.vt|
+!s90 -work|work|InflatingTopSim.vwf.vt|
+!i113 1
+R10
+R11
+vinflating_counter
+Z17 !s110 1597569529
+!i10b 1
+!s100 S6FC4^NdOQd54Wo78jmQB3
+Ioki_NBOGdk2H`>C:^n9L@3
+R2
+R0
+w1597569527
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z18 !s108 1597569529.000000
+R8
+R9
+!i113 1
+R10
+R11
+vinflating_counter_vlg_vec_tst
+R17
+!i10b 1
+!s100 jKQae@B3KXaNU[Ckk0FMY3
+IBhfi;FKdS_85MA9O_iEh=1
+R2
+R0
+w1597569525
+8InflatingSim.vwf.vt
+FInflatingSim.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+R18
+!s107 InflatingSim.vwf.vt|
+!s90 -work|work|InflatingSim.vwf.vt|
+!i113 1
+R10
+R11
 vjmp_counter
-Z13 !s110 1597324734
+Z19 !s110 1597324734
 !i10b 1
 !s100 >9595TI8=0j9`YO6UP^8`3
 I;QoBXJHZ9UF0c1`=<cEjP2
@@ -65,35 +191,35 @@ R6
 r1
 !s85 0
 31
-Z14 !s108 1597324734.000000
+Z20 !s108 1597324734.000000
 R8
 R9
 !i113 1
 R10
 R11
 vjmp_counter_vlg_vec_tst
-R13
+R19
 !i10b 1
 !s100 W9aUK8H5Y@7=m^aVa59Og1
 IghQJJY;5_NH;jUIXSN7HA0
 R2
 R0
 w1597324732
-Z15 8Jump_Counter_Sim.vwf.vt
-Z16 FJump_Counter_Sim.vwf.vt
+Z21 8Jump_Counter_Sim.vwf.vt
+Z22 FJump_Counter_Sim.vwf.vt
 R12
 R6
 r1
 !s85 0
 31
-R14
-Z17 !s107 Jump_Counter_Sim.vwf.vt|
-Z18 !s90 -work|work|Jump_Counter_Sim.vwf.vt|
+R20
+Z23 !s107 Jump_Counter_Sim.vwf.vt|
+Z24 !s90 -work|work|Jump_Counter_Sim.vwf.vt|
 !i113 1
 R10
 R11
 vmux_4to1_if
-Z19 !s110 1597321960
+Z25 !s110 1597321960
 !i10b 1
 !s100 F5_MbmgQSDT;C61<FoBj;2
 I[dSj_nDc8_ocj=jAF8]Pl3
@@ -107,14 +233,14 @@ R6
 r1
 !s85 0
 31
-Z20 !s108 1597321960.000000
+Z26 !s108 1597321960.000000
 R8
 R9
 !i113 1
 R10
 R11
 vmux_4to1_if_vlg_vec_tst
-R19
+R25
 !i10b 1
 !s100 ZW6AhfQXVKi?726Xl:BYi3
 IHHBNOL[lijZ=fEnE=X29<0
@@ -128,14 +254,14 @@ R6
 r1
 !s85 0
 31
-R20
+R26
 !s107 Mux_if.vwf.vt|
 !s90 -work|work|Mux_if.vwf.vt|
 !i113 1
 R10
 R11
 vsimple_up_counter
-Z21 !s110 1597324659
+Z27 !s110 1597324659
 !i10b 1
 !s100 dz@AR]3BZj<;kzZ3b?WK73
 Ijmc08OePITA=he>GoZ=8L1
@@ -149,30 +275,72 @@ R6
 r1
 !s85 0
 31
-Z22 !s108 1597324659.000000
+Z28 !s108 1597324659.000000
 R8
 R9
 !i113 1
 R10
 R11
 vsimple_up_counter_vlg_vec_tst
-R21
+R27
 !i10b 1
 !s100 nmG:e;5AL710ZGi1_FZl32
 IPWXJSjdR:Ta37]f;277ke3
 R2
 R0
 w1597324649
-R15
-R16
+R21
+R22
 R12
 R6
 r1
 !s85 0
 31
-R22
-R17
-R18
+R28
+R23
+R24
+!i113 1
+R10
+R11
+vup_counter
+Z29 !s110 1597568308
+!i10b 1
+!s100 PQi;ggLZa`YkOakezckW31
+IkBzJ7DXO719i]7mZ`5PBI1
+R2
+R0
+w1597568306
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z30 !s108 1597568308.000000
+R8
+R9
+!i113 1
+R10
+R11
+vup_counter_vlg_vec_tst
+R29
+!i10b 1
+!s100 nCG[U[UM^oejZh5<WNknl2
+I96;0gAh@e@1R7YL7gPjb11
+R2
+R0
+w1597568303
+8UpCountSim.vwf.vt
+FUpCountSim.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+R30
+!s107 UpCountSim.vwf.vt|
+!s90 -work|work|UpCountSim.vwf.vt|
 !i113 1
 R10
 R11

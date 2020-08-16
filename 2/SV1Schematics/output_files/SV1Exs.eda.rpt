@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SV1Exs
-Sun Aug 16 10:39:39 2020
+Sun Aug 16 12:49:38 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,43 +37,42 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Aug 16 10:39:39 2020 ;
+; EDA Netlist Writer Status ; Successful - Sun Aug 16 12:49:38 2020 ;
 ; Revision Name             ; SV1Exs                                ;
-; Top-level Entity Name     ; mux_2to1_if                           ;
+; Top-level Entity Name     ; inflating_cnt_top                     ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                    ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; Option                                                                                            ; Setting            ;
-+---------------------------------------------------------------------------------------------------+--------------------+
-; Tool Name                                                                                         ; ModelSim (Verilog) ;
-; Generate functional simulation netlist                                                            ; Off                ;
-; Time scale                                                                                        ; 1 ps               ;
-; Truncate long hierarchy paths                                                                     ; Off                ;
-; Map illegal HDL characters                                                                        ; Off                ;
-; Flatten buses into individual nodes                                                               ; Off                ;
-; Maintain hierarchy                                                                                ; Off                ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                ;
-; Enable glitch filtering                                                                           ; Off                ;
-; Do not write top level VHDL entity                                                                ; Off                ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                ;
-; Architecture name in VHDL output netlist                                                          ; structure          ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                ;
-+---------------------------------------------------------------------------------------------------+--------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate functional simulation netlist                                                            ; On                        ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------+
-; Simulation Generated Files                                           ;
-+----------------------------------------------------------------------+
-; Generated Files                                                      ;
-+----------------------------------------------------------------------+
-; C:/TECHNION/gitLab/Lab/2/SV1Schematics/simulation/modelsim/SV1Exs.vo ;
-+----------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Simulation Generated Files                                                       ;
++----------------------------------------------------------------------------------+
+; Generated Files                                                                  ;
++----------------------------------------------------------------------------------+
+; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/simulation/qsim//SV1Exs.vo ;
++----------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -82,15 +81,29 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 16 10:39:36 2020
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SV1Exs -c SV1Exs
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Intel and sold by Intel or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sun Aug 16 12:49:36 2020
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/simulation/qsim/ SV1Exs -c SV1Exs
+Info (119006): Selected device 5CSXFC6D6F31C6 for design "SV1Exs"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file SV1Exs.vo in folder "C:/TECHNION/gitLab/Lab/2/SV1Schematics/simulation/modelsim/" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4732 megabytes
-    Info: Processing ended: Sun Aug 16 10:39:39 2020
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Info (204019): Generated file SV1Exs.vo in folder "C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4721 megabytes
+    Info: Processing ended: Sun Aug 16 12:49:38 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

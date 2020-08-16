@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY mux_2to1_if
+set_global_assignment -name TOP_LEVEL_ENTITY inflating_cnt_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:17:22  JULY 08, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -110,25 +110,11 @@ set_location_assignment PIN_Y24 -to AUD_I2C_SCLK
 set_location_assignment PIN_Y23 -to AUD_I2C_SDAT
 set_location_assignment PIN_AA24 -to outd
 set_location_assignment PIN_AK4 -to clk
-set_location_assignment PIN_AB23 -to count[0]
-set_location_assignment PIN_AC23 -to count[1]
-set_location_assignment PIN_AD24 -to count[2]
-set_location_assignment PIN_AG25 -to count[3]
 set_location_assignment PIN_AB30 -to select
 set_location_assignment PIN_Y27 -to turbo
 set_location_assignment PIN_AB28 -to darkN
 set_location_assignment PIN_AC30 -to lampTest
 set_location_assignment PIN_AC22 -to duty50
-set_location_assignment PIN_AF25 -to slowCo[0]
-set_location_assignment PIN_AE24 -to slowCo[1]
-set_location_assignment PIN_AF24 -to slowCo[2]
-set_location_assignment PIN_AB22 -to slowCo[3]
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mux_2to1_if.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mux_4to1_if.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mux_4to1_case.sv
@@ -146,17 +132,27 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Mux_if.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Simple_Counter_Sim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Jump_Counter_Sim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE HexSS_Sim.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to count[3]
+set_location_assignment PIN_AB23 -to FastCount[0]
+set_location_assignment PIN_AC23 -to FastCount[1]
+set_location_assignment PIN_AD24 -to FastCount[2]
+set_location_assignment PIN_AG25 -to FastCount[3]
+set_location_assignment PIN_AF25 -to SlowCount[0]
+set_location_assignment PIN_AE24 -to SlowCount[1]
+set_location_assignment PIN_AF24 -to SlowCount[2]
+set_location_assignment PIN_AB22 -to SlowCount[3]
+set_global_assignment -name VECTOR_WAVEFORM_FILE ComparatorSim.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE UpCountSim.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE InflatingSim.vwf
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/InflatingTopSim.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE InflatingTopSim.vwf
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to darkN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to duty50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FastCount[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FastCount[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FastCount[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FastCount[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
@@ -172,21 +168,12 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to lampTest
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to slowCo[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to slowCo[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to slowCo[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to slowCo[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SlowCount[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SlowCount[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SlowCount[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SlowCount[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to turbo
-set_location_assignment PIN_AB23 -to FastCount[0]
-set_location_assignment PIN_AC23 -to FastCount[1]
-set_location_assignment PIN_AD24 -to FastCount[2]
-set_location_assignment PIN_AG25 -to FastCount[3]
-set_location_assignment PIN_AF25 -to SlowCount[0]
-set_location_assignment PIN_AE24 -to SlowCount[1]
-set_location_assignment PIN_AF24 -to SlowCount[2]
-set_location_assignment PIN_AB22 -to SlowCount[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to datain[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to datain[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to outd
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sel
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
