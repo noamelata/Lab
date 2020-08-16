@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SV2Lab
-Sun Aug 16 19:05:15 2020
+Sun Aug 16 20:05:52 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 16 19:05:15 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 16 20:05:52 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV2Lab                                      ;
 ; Top-level Entity Name           ; ramzor                                      ;
@@ -189,14 +189,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 39             ;
+; Estimate of Logic utilization (ALMs needed) ; 40             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 63             ;
+; Combinational ALUT usage for logic          ; 66             ;
 ;     -- 7 input functions                    ; 0              ;
 ;     -- 6 input functions                    ; 13             ;
 ;     -- 5 input functions                    ; 4              ;
-;     -- 4 input functions                    ; 1              ;
-;     -- <=3 input functions                  ; 45             ;
+;     -- 4 input functions                    ; 5              ;
+;     -- <=3 input functions                  ; 44             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 45             ;
 ;                                             ;                ;
@@ -206,8 +206,8 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 45             ;
-; Total fan-out                               ; 369            ;
-; Average fan-out                             ; 3.02           ;
+; Total fan-out                               ; 383            ;
+; Average fan-out                             ; 3.06           ;
 +---------------------------------------------+----------------+
 
 
@@ -216,10 +216,10 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------+--------------+
-; |ramzor                                      ; 63 (0)              ; 45 (0)                    ; 0                 ; 0          ; 7    ; 0            ; |ramzor                                         ; ramzor              ; work         ;
-;    |aux_timer:aux_timer|                     ; 20 (20)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ramzor|aux_timer:aux_timer                     ; aux_timer           ; work         ;
+; |ramzor                                      ; 66 (0)              ; 45 (0)                    ; 0                 ; 0          ; 7    ; 0            ; |ramzor                                         ; ramzor              ; work         ;
+;    |aux_timer:aux_timer|                     ; 21 (21)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ramzor|aux_timer:aux_timer                     ; aux_timer           ; work         ;
 ;    |onetens_sec_counter:onetens_sec_counter| ; 39 (39)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |ramzor|onetens_sec_counter:onetens_sec_counter ; onetens_sec_counter ; work         ;
-;    |ramzor_fsm:ramzor_fsm|                   ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |ramzor|ramzor_fsm:ramzor_fsm                   ; ramzor_fsm          ; work         ;
+;    |ramzor_fsm:ramzor_fsm|                   ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |ramzor|ramzor_fsm:ramzor_fsm                   ; ramzor_fsm          ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -270,7 +270,8 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |ramzor|aux_timer:aux_timer|count[0] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |ramzor|aux_timer:aux_timer|count[4] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ramzor|aux_timer:aux_timer|count[2] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |ramzor|aux_timer:aux_timer|count[5] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
@@ -305,18 +306,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 11                          ;
 ;     CLR SCLR          ; 32                          ;
 ;     ENA CLR           ; 2                           ;
-; arriav_lcell_comb     ; 63                          ;
+; arriav_lcell_comb     ; 66                          ;
 ;     arith             ; 40                          ;
 ;         1 data inputs ; 40                          ;
-;     normal            ; 23                          ;
-;         2 data inputs ; 5                           ;
-;         4 data inputs ; 1                           ;
+;     normal            ; 26                          ;
+;         2 data inputs ; 4                           ;
+;         4 data inputs ; 5                           ;
 ;         5 data inputs ; 4                           ;
 ;         6 data inputs ; 13                          ;
 ; boundary_port         ; 7                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.91                        ;
+; Average LUT depth     ; 2.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -325,7 +326,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -335,7 +336,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 16 19:05:01 2020
+    Info: Processing started: Sun Aug 16 20:04:44 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SV2Lab -c SV2Lab
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -365,26 +366,30 @@ Info (12127): Elaborating entity "ramzor" for the top level hierarchy
 Info (12128): Elaborating entity "aux_timer" for hierarchy "aux_timer:aux_timer" File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv Line: 36
 Info (12128): Elaborating entity "onetens_sec_counter" for hierarchy "onetens_sec_counter:onetens_sec_counter" File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv Line: 46
 Info (12128): Elaborating entity "ramzor_fsm" for hierarchy "ramzor_fsm:ramzor_fsm" File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv Line: 66
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(73): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 73
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(75): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 75
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(77): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 77
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(79): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 79
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(81): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 81
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(87): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 87
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(88): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 88
-Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(89): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(74): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 74
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(76): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 76
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(80): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 80
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(82): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 82
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(86): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 86
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(88): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 88
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(92): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 92
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(94): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 94
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(97): truncated value with size 32 to match size of target (8) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(103): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 103
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(104): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 104
+Warning (10230): Verilog HDL assignment warning at ramzor_fsm.sv(105): truncated value with size 32 to match size of target (1) File: C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv Line: 105
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 73 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 66 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4831 megabytes
-    Info: Processing ended: Sun Aug 16 19:05:15 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (21061): Implemented 67 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Sun Aug 16 20:05:52 2020
+    Info: Elapsed time: 00:01:08
+    Info: Total CPU time (on all processors): 00:02:27
 
 

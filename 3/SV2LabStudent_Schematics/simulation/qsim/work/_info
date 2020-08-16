@@ -93,13 +93,13 @@ R13
 R10
 R11
 vramzor
-Z14 !s110 1597593931
+Z14 !s110 1597597979
 !i10b 1
-!s100 AJIm`Yfc<TTW95K30?]H93
-IH^cPQJn:G<d:]L_PP[kJZ2
+!s100 FUSf<K=E4k=Vf52XlfbF;3
+I5nOEOjkPQRJk1IM^mKCFA1
 R2
 Z15 dC:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim
-w1597593930
+w1597597972
 R3
 R4
 R5
@@ -107,7 +107,7 @@ R6
 r1
 !s85 0
 31
-Z16 !s108 1597593931.000000
+!s108 1597597978.000000
 R8
 R9
 !i113 1
@@ -120,7 +120,7 @@ R14
 IGYk[2N?oMB`zb<1FT[JSi1
 R2
 R15
-w1597593929
+w1597597965
 8ramzorSIM.vwf.vt
 FramzorSIM.vwf.vt
 R12
@@ -128,7 +128,7 @@ R6
 r1
 !s85 0
 31
-R16
+!s108 1597597979.000000
 !s107 ramzorSIM.vwf.vt|
 !s90 -work|work|ramzorSIM.vwf.vt|
 !i113 1
