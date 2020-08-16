@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "redLight",
+					"strict" : false
+				},
+				{
+					"name" : "yellowLight",
+					"strict" : false
+				},
+				{
+					"name" : "greenLight",
+					"strict" : false
+				},
+				{
+					"name" : "switchN",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "resetN",
+					"strict" : false
+				},
+				{
+					"name" : "turbo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

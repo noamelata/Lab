@@ -1,0 +1,140 @@
+Determining the location of the ModelSim executable...
+
+Using: c:/intelfpga_lite/17.0/modelsim_ase/win32aloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf" --testbench_file="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Intel and sold by Intel or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sun Aug 16 18:11:07 2020
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
+Info (119006): Selected device 5CSXFC6D6F31C6 for design "SV2Lab"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Intel and sold by Intel or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sun Aug 16 18:11:08 2020
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
+Info (119006): Selected device 5CSXFC6D6F31C6 for design "SV2Lab"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file SV2Lab.vo in folder "C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4720 megabytes
+    Info: Processing ended: Sun Aug 16 18:11:09 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/SV2Lab.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+c:/intelfpga_lite/17.0/modelsim_ase/win32aloem//vsim -c -do SV2Lab.do
+
+Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do SV2Lab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:11:09 on Aug 16,2020
+# vlog -work work SV2Lab.vo 
+# -- Compiling module ramzor
+
+# 
+# Top level modules:
+# 	ramzor
+# End time: 18:11:09 on Aug 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:11:09 on Aug 16,2020
+# vlog -work work ramzorSIM.vwf.vt 
+# -- Compiling module ramzor_vlg_vec_tst
+# 
+# Top level modules:
+# 	ramzor_vlg_vec_tst
+
+# End time: 18:11:09 on Aug 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ramzor_vlg_vec_tst 
+# Start time: 18:11:09 on Aug 16,2020
+# Loading work.ramzor_vlg_vec_tst
+# Loading work.ramzor
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# after#25
+# ** Note: $finish    : ramzorSIM.vwf.vt(55)
+#    Time: 1 us  Iteration: 0  Instance: /ramzor_vlg_vec_tst
+# End time: 18:11:10 on Aug 16,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf...
+
+Reading C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/SV2Lab.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: ramzor_fsm:ramzor_fsm|present_state - signal not found in VCD.
+
+Writing the resulting VWF to C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/SV2Lab_20200816181110.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

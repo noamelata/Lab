@@ -1,0 +1,7 @@
+
+State Machine - |ramzor|ramzor_fsm:ramzor_fsm|present_state
+Name present_state.yellow_st present_state.green_st present_state.red_yellow_st present_state.red_st 
+present_state.red_st 0 0 0 0 
+present_state.red_yellow_st 0 0 1 1 
+present_state.green_st 0 1 0 1 
+present_state.yellow_st 1 0 0 1 
