@@ -70,36 +70,20 @@ always_comb begin
 
 		case (present_state)
 		red_st: 
-			if (!endOftime) begin;
-				timer_val = red_yellow_timer;
-			end else begin
-				timer_val = red_timer;
-			end
+			timer_val = red_yellow_timer;
 		red_yellow_st: 
-			if (!endOftime) begin;
-				timer_val = green_timer;
-			end else begin
-				timer_val = red_yellow_timer;
-			end
+			timer_val = green_timer;
 		green_st: 
-			if (!endOftime) begin;
-				timer_val = yellow_timer;
-			end else begin
-				timer_val = green_timer;
-			end
+			timer_val = yellow_timer;
 		yellow_st: 
-			if (!endOftime) begin;
-				timer_val = red_timer;
-			end else begin
-				timer_val = yellow_timer;
-			end
+			timer_val = red_timer;
 		default: begin 
 			timer_val = red_timer;
 		end
 
 		endcase
 		end
-	assign loadN = !endOftime;
+	assign loadN = (!endOftime || !switchN);
 	assign redLight		=  (present_state == red_st || present_state == red_yellow_st) ? 1 : 0;
 	assign yellowLight	=  (present_state == yellow_st || present_state == red_yellow_st) ? 1 : 0;
 	assign greenLight	= (present_state == green_st) ? 1 : 0;

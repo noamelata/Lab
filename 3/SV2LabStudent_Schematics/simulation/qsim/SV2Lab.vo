@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "08/16/2020 18:11:08"
+// DATE "08/16/2020 19:05:30"
 
 // 
 // Device: Altera 5CSXFC6D6F31C6 Package FBGA896
@@ -60,7 +60,8 @@ wire \redLight~output_o ;
 wire \yellowLight~output_o ;
 wire \greenLight~output_o ;
 wire \CLOCK_50~input_o ;
-wire \ramzor_fsm|yellowLight~combout ;
+wire \aux_timer|Equal0~2_combout ;
+wire \switchN~input_o ;
 wire \onetens_sec_counter|Add0~125_sumout ;
 wire \resetN~input_o ;
 wire \onetens_sec_counter|Add0~126 ;
@@ -134,24 +135,25 @@ wire \onetens_sec_counter|LessThan0~4_combout ;
 wire \onetens_sec_counter|LessThan0~5_combout ;
 wire \onetens_sec_counter|LessThan0~6_combout ;
 wire \onetens_sec_counter|onetens_sec~q ;
+wire \aux_timer|count[5]~3_combout ;
 wire \aux_timer|Add0~2 ;
 wire \aux_timer|Add0~29_sumout ;
-wire \aux_timer|count[1]~7_combout ;
+wire \aux_timer|count[1]~8_combout ;
 wire \aux_timer|Add0~30 ;
 wire \aux_timer|Add0~25_sumout ;
-wire \aux_timer|count[2]~6_combout ;
+wire \aux_timer|count[2]~7_combout ;
 wire \aux_timer|Equal0~1_combout ;
 wire \aux_timer|Add0~1_sumout ;
 wire \aux_timer|count[0]~0_combout ;
 wire \aux_timer|Add0~26 ;
 wire \aux_timer|Add0~21_sumout ;
-wire \aux_timer|count[3]~5_combout ;
+wire \aux_timer|count[3]~6_combout ;
 wire \aux_timer|Add0~22 ;
 wire \aux_timer|Add0~17_sumout ;
-wire \aux_timer|count[4]~4_combout ;
+wire \aux_timer|count[4]~5_combout ;
 wire \aux_timer|Add0~18 ;
 wire \aux_timer|Add0~13_sumout ;
-wire \aux_timer|count[5]~3_combout ;
+wire \aux_timer|count[5]~4_combout ;
 wire \aux_timer|Add0~14 ;
 wire \aux_timer|Add0~9_sumout ;
 wire \aux_timer|count[6]~2_combout ;
@@ -159,15 +161,14 @@ wire \aux_timer|Add0~10 ;
 wire \aux_timer|Add0~5_sumout ;
 wire \aux_timer|count[7]~1_combout ;
 wire \aux_timer|Equal0~0_combout ;
-wire \switchN~input_o ;
 wire \ramzor_fsm|Selector1~0_combout ;
 wire \ramzor_fsm|present_state.red_yellow_st~q ;
-wire \aux_timer|Equal0~2_combout ;
 wire \ramzor_fsm|present_state.green_st~q ;
 wire \ramzor_fsm|present_state.yellow_st~q ;
 wire \ramzor_fsm|Selector0~0_combout ;
 wire \ramzor_fsm|present_state.red_st~q ;
 wire \ramzor_fsm|redLight~combout ;
+wire \ramzor_fsm|yellowLight~combout ;
 wire [31:0] \onetens_sec_counter|onetensSecCount ;
 wire [7:0] \aux_timer|count ;
 
@@ -227,12 +228,12 @@ defparam \CLOCK_50~input .bus_hold = "false";
 defparam \CLOCK_50~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_lcell_comb \ramzor_fsm|yellowLight (
+cyclonev_lcell_comb \aux_timer|Equal0~2 (
 // Equation(s):
-// \ramzor_fsm|yellowLight~combout  = (\ramzor_fsm|present_state.yellow_st~q ) # (\ramzor_fsm|present_state.red_yellow_st~q )
+// \aux_timer|Equal0~2_combout  = (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout )
 
-	.dataa(!\ramzor_fsm|present_state.red_yellow_st~q ),
-	.datab(!\ramzor_fsm|present_state.yellow_st~q ),
+	.dataa(!\aux_timer|Equal0~0_combout ),
+	.datab(!\aux_timer|Equal0~1_combout ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
@@ -240,14 +241,24 @@ cyclonev_lcell_comb \ramzor_fsm|yellowLight (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ramzor_fsm|yellowLight~combout ),
+	.combout(\aux_timer|Equal0~2_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \ramzor_fsm|yellowLight .extended_lut = "off";
-defparam \ramzor_fsm|yellowLight .lut_mask = 64'h7777777777777777;
-defparam \ramzor_fsm|yellowLight .shared_arith = "off";
+defparam \aux_timer|Equal0~2 .extended_lut = "off";
+defparam \aux_timer|Equal0~2 .lut_mask = 64'h1111111111111111;
+defparam \aux_timer|Equal0~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_io_ibuf \switchN~input (
+	.i(switchN),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\switchN~input_o ));
+// synopsys translate_off
+defparam \switchN~input .bus_hold = "false";
+defparam \switchN~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cyclonev_lcell_comb \onetens_sec_counter|Add0~125 (
@@ -1798,6 +1809,29 @@ defparam \onetens_sec_counter|onetens_sec .is_wysiwyg = "true";
 defparam \onetens_sec_counter|onetens_sec .power_up = "low";
 // synopsys translate_on
 
+cyclonev_lcell_comb \aux_timer|count[5]~3 (
+// Equation(s):
+// \aux_timer|count[5]~3_combout  = (\ramzor_fsm|present_state.red_st~q  & !\ramzor_fsm|present_state.green_st~q )
+
+	.dataa(!\ramzor_fsm|present_state.red_st~q ),
+	.datab(!\ramzor_fsm|present_state.green_st~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\aux_timer|count[5]~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \aux_timer|count[5]~3 .extended_lut = "off";
+defparam \aux_timer|count[5]~3 .lut_mask = 64'h4444444444444444;
+defparam \aux_timer|count[5]~3 .shared_arith = "off";
+// synopsys translate_on
+
 cyclonev_lcell_comb \aux_timer|Add0~1 (
 // Equation(s):
 // \aux_timer|Add0~1_sumout  = SUM(( \aux_timer|count [0] ) + ( VCC ) + ( !VCC ))
@@ -1846,35 +1880,36 @@ defparam \aux_timer|Add0~29 .lut_mask = 64'h00000000000000FF;
 defparam \aux_timer|Add0~29 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \aux_timer|count[1]~7 (
+cyclonev_lcell_comb \aux_timer|count[1]~8 (
 // Equation(s):
-// \aux_timer|count[1]~7_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~29_sumout  & ( (((!\aux_timer|Equal0~0_combout ) # (\aux_timer|count [1])) # (\aux_timer|count [2])) # (\ramzor_fsm|yellowLight~combout ) ) ) ) # ( 
-// !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~29_sumout  & ( ((\ramzor_fsm|yellowLight~combout  & (!\aux_timer|count [2] & \aux_timer|Equal0~0_combout ))) # (\aux_timer|count [1]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( 
-// !\aux_timer|Add0~29_sumout  & ( (\ramzor_fsm|yellowLight~combout  & (!\aux_timer|count [2] & (!\aux_timer|count [1] & \aux_timer|Equal0~0_combout ))) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~29_sumout  & ( 
-// ((\ramzor_fsm|yellowLight~combout  & (!\aux_timer|count [2] & \aux_timer|Equal0~0_combout ))) # (\aux_timer|count [1]) ) ) )
+// \aux_timer|count[1]~8_combout  = ( \aux_timer|count[5]~3_combout  & ( \aux_timer|Add0~29_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [1])) # (\onetens_sec_counter|onetens_sec~q  & (((!\aux_timer|Equal0~2_combout ) # 
+// (!\switchN~input_o )))) ) ) ) # ( !\aux_timer|count[5]~3_combout  & ( \aux_timer|Add0~29_sumout  & ( (((\aux_timer|Equal0~2_combout  & \switchN~input_o )) # (\onetens_sec_counter|onetens_sec~q )) # (\aux_timer|count [1]) ) ) ) # ( 
+// \aux_timer|count[5]~3_combout  & ( !\aux_timer|Add0~29_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [1])) # (\onetens_sec_counter|onetens_sec~q  & (((\aux_timer|Equal0~2_combout  & !\switchN~input_o )))) ) ) ) # ( 
+// !\aux_timer|count[5]~3_combout  & ( !\aux_timer|Add0~29_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (((\aux_timer|Equal0~2_combout  & \switchN~input_o )) # (\aux_timer|count [1]))) # (\onetens_sec_counter|onetens_sec~q  & 
+// (((\aux_timer|Equal0~2_combout )))) ) ) )
 
-	.dataa(!\ramzor_fsm|yellowLight~combout ),
-	.datab(!\aux_timer|count [2]),
-	.datac(!\aux_timer|count [1]),
-	.datad(!\aux_timer|Equal0~0_combout ),
-	.datae(!\onetens_sec_counter|onetens_sec~q ),
+	.dataa(!\aux_timer|count [1]),
+	.datab(!\aux_timer|Equal0~2_combout ),
+	.datac(!\switchN~input_o ),
+	.datad(!\onetens_sec_counter|onetens_sec~q ),
+	.datae(!\aux_timer|count[5]~3_combout ),
 	.dataf(!\aux_timer|Add0~29_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\aux_timer|count[1]~7_combout ),
+	.combout(\aux_timer|count[1]~8_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \aux_timer|count[1]~7 .extended_lut = "off";
-defparam \aux_timer|count[1]~7 .lut_mask = 64'h0F4F00400F4FFF7F;
-defparam \aux_timer|count[1]~7 .shared_arith = "off";
+defparam \aux_timer|count[1]~8 .extended_lut = "off";
+defparam \aux_timer|count[1]~8 .lut_mask = 64'h5733553057FF55FC;
+defparam \aux_timer|count[1]~8 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \aux_timer|count[1] (
 	.clk(\CLOCK_50~input_o ),
-	.d(\aux_timer|count[1]~7_combout ),
+	.d(\aux_timer|count[1]~8_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
@@ -1914,35 +1949,35 @@ defparam \aux_timer|Add0~25 .lut_mask = 64'h00000000000000FF;
 defparam \aux_timer|Add0~25 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \aux_timer|count[2]~6 (
+cyclonev_lcell_comb \aux_timer|count[2]~7 (
 // Equation(s):
-// \aux_timer|count[2]~6_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~25_sumout  & ( (((!\aux_timer|Equal0~0_combout ) # (\aux_timer|count [1])) # (\aux_timer|count [2])) # (\ramzor_fsm|present_state.green_st~q ) ) ) ) # ( 
-// !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~25_sumout  & ( ((\ramzor_fsm|present_state.green_st~q  & (!\aux_timer|count [1] & \aux_timer|Equal0~0_combout ))) # (\aux_timer|count [2]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( 
-// !\aux_timer|Add0~25_sumout  & ( (\ramzor_fsm|present_state.green_st~q  & (!\aux_timer|count [2] & (!\aux_timer|count [1] & \aux_timer|Equal0~0_combout ))) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~25_sumout  & ( 
-// ((\ramzor_fsm|present_state.green_st~q  & (!\aux_timer|count [1] & \aux_timer|Equal0~0_combout ))) # (\aux_timer|count [2]) ) ) )
+// \aux_timer|count[2]~7_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~25_sumout  & ( ((!\aux_timer|Equal0~2_combout ) # (!\switchN~input_o )) # (\ramzor_fsm|present_state.red_yellow_st~q ) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q 
+//  & ( \aux_timer|Add0~25_sumout  & ( ((\ramzor_fsm|present_state.red_yellow_st~q  & (\aux_timer|Equal0~2_combout  & \switchN~input_o ))) # (\aux_timer|count [2]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~25_sumout  & ( 
+// (\aux_timer|Equal0~2_combout  & ((!\switchN~input_o ) # (\ramzor_fsm|present_state.red_yellow_st~q ))) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~25_sumout  & ( ((\ramzor_fsm|present_state.red_yellow_st~q  & 
+// (\aux_timer|Equal0~2_combout  & \switchN~input_o ))) # (\aux_timer|count [2]) ) ) )
 
-	.dataa(!\ramzor_fsm|present_state.green_st~q ),
+	.dataa(!\ramzor_fsm|present_state.red_yellow_st~q ),
 	.datab(!\aux_timer|count [2]),
-	.datac(!\aux_timer|count [1]),
-	.datad(!\aux_timer|Equal0~0_combout ),
+	.datac(!\aux_timer|Equal0~2_combout ),
+	.datad(!\switchN~input_o ),
 	.datae(!\onetens_sec_counter|onetens_sec~q ),
 	.dataf(!\aux_timer|Add0~25_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\aux_timer|count[2]~6_combout ),
+	.combout(\aux_timer|count[2]~7_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \aux_timer|count[2]~6 .extended_lut = "off";
-defparam \aux_timer|count[2]~6 .lut_mask = 64'h337300403373FF7F;
-defparam \aux_timer|count[2]~6 .shared_arith = "off";
+defparam \aux_timer|count[2]~7 .extended_lut = "off";
+defparam \aux_timer|count[2]~7 .lut_mask = 64'h33370F053337FFF5;
+defparam \aux_timer|count[2]~7 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \aux_timer|count[2] (
 	.clk(\CLOCK_50~input_o ),
-	.d(\aux_timer|count[2]~6_combout ),
+	.d(\aux_timer|count[2]~7_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
@@ -1983,14 +2018,16 @@ defparam \aux_timer|Equal0~1 .shared_arith = "off";
 
 cyclonev_lcell_comb \aux_timer|count[0]~0 (
 // Equation(s):
-// \aux_timer|count[0]~0_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( (\aux_timer|Add0~1_sumout  & ((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout ))) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|count [0] ) )
+// \aux_timer|count[0]~0_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~1_sumout  & ( (!\aux_timer|Equal0~0_combout ) # ((!\aux_timer|Equal0~1_combout ) # (!\switchN~input_o )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( 
+// \aux_timer|Add0~1_sumout  & ( \aux_timer|count [0] ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~1_sumout  & ( (\aux_timer|Equal0~0_combout  & (\aux_timer|Equal0~1_combout  & !\switchN~input_o )) ) ) ) # ( 
+// !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~1_sumout  & ( \aux_timer|count [0] ) ) )
 
 	.dataa(!\aux_timer|count [0]),
 	.datab(!\aux_timer|Equal0~0_combout ),
 	.datac(!\aux_timer|Equal0~1_combout ),
-	.datad(!\aux_timer|Add0~1_sumout ),
+	.datad(!\switchN~input_o ),
 	.datae(!\onetens_sec_counter|onetens_sec~q ),
-	.dataf(gnd),
+	.dataf(!\aux_timer|Add0~1_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -2000,7 +2037,7 @@ cyclonev_lcell_comb \aux_timer|count[0]~0 (
 	.shareout());
 // synopsys translate_off
 defparam \aux_timer|count[0]~0 .extended_lut = "off";
-defparam \aux_timer|count[0]~0 .lut_mask = 64'h555500FC555500FC;
+defparam \aux_timer|count[0]~0 .lut_mask = 64'h555503005555FFFC;
 defparam \aux_timer|count[0]~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -2046,33 +2083,34 @@ defparam \aux_timer|Add0~21 .lut_mask = 64'h00000000000000FF;
 defparam \aux_timer|Add0~21 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \aux_timer|count[3]~5 (
+cyclonev_lcell_comb \aux_timer|count[3]~6 (
 // Equation(s):
-// \aux_timer|count[3]~5_combout  = ( \aux_timer|Add0~21_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [3])) # (\onetens_sec_counter|onetens_sec~q  & (((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout )))) ) ) # ( 
-// !\aux_timer|Add0~21_sumout  & ( (\aux_timer|count [3] & !\onetens_sec_counter|onetens_sec~q ) ) )
+// \aux_timer|count[3]~6_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~21_sumout  & ( (!\aux_timer|Equal0~0_combout ) # ((!\aux_timer|Equal0~1_combout ) # (!\switchN~input_o )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( 
+// \aux_timer|Add0~21_sumout  & ( \aux_timer|count [3] ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~21_sumout  & ( (\aux_timer|Equal0~0_combout  & (\aux_timer|Equal0~1_combout  & !\switchN~input_o )) ) ) ) # ( 
+// !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~21_sumout  & ( \aux_timer|count [3] ) ) )
 
 	.dataa(!\aux_timer|count [3]),
 	.datab(!\aux_timer|Equal0~0_combout ),
 	.datac(!\aux_timer|Equal0~1_combout ),
-	.datad(!\onetens_sec_counter|onetens_sec~q ),
-	.datae(!\aux_timer|Add0~21_sumout ),
-	.dataf(gnd),
+	.datad(!\switchN~input_o ),
+	.datae(!\onetens_sec_counter|onetens_sec~q ),
+	.dataf(!\aux_timer|Add0~21_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\aux_timer|count[3]~5_combout ),
+	.combout(\aux_timer|count[3]~6_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \aux_timer|count[3]~5 .extended_lut = "off";
-defparam \aux_timer|count[3]~5 .lut_mask = 64'h550055FC550055FC;
-defparam \aux_timer|count[3]~5 .shared_arith = "off";
+defparam \aux_timer|count[3]~6 .extended_lut = "off";
+defparam \aux_timer|count[3]~6 .lut_mask = 64'h555503005555FFFC;
+defparam \aux_timer|count[3]~6 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \aux_timer|count[3] (
 	.clk(\CLOCK_50~input_o ),
-	.d(\aux_timer|count[3]~5_combout ),
+	.d(\aux_timer|count[3]~6_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
@@ -2112,35 +2150,35 @@ defparam \aux_timer|Add0~17 .lut_mask = 64'h00000000000000FF;
 defparam \aux_timer|Add0~17 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \aux_timer|count[4]~4 (
+cyclonev_lcell_comb \aux_timer|count[4]~5 (
 // Equation(s):
-// \aux_timer|count[4]~4_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~17_sumout  & ( (!\ramzor_fsm|present_state.green_st~q ) # ((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout )) ) ) ) # ( 
-// !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~17_sumout  & ( ((!\ramzor_fsm|present_state.green_st~q  & (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout ))) # (\aux_timer|count [4]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( 
-// !\aux_timer|Add0~17_sumout  & ( (!\ramzor_fsm|present_state.green_st~q  & (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~17_sumout  & ( 
-// ((!\ramzor_fsm|present_state.green_st~q  & (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout ))) # (\aux_timer|count [4]) ) ) )
+// \aux_timer|count[4]~5_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~17_sumout  & ( (!\ramzor_fsm|present_state.red_yellow_st~q ) # ((!\aux_timer|Equal0~2_combout ) # (!\switchN~input_o )) ) ) ) # ( 
+// !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~17_sumout  & ( ((!\ramzor_fsm|present_state.red_yellow_st~q  & (\aux_timer|Equal0~2_combout  & \switchN~input_o ))) # (\aux_timer|count [4]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( 
+// !\aux_timer|Add0~17_sumout  & ( (\aux_timer|Equal0~2_combout  & ((!\ramzor_fsm|present_state.red_yellow_st~q ) # (!\switchN~input_o ))) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~17_sumout  & ( 
+// ((!\ramzor_fsm|present_state.red_yellow_st~q  & (\aux_timer|Equal0~2_combout  & \switchN~input_o ))) # (\aux_timer|count [4]) ) ) )
 
-	.dataa(!\ramzor_fsm|present_state.green_st~q ),
+	.dataa(!\ramzor_fsm|present_state.red_yellow_st~q ),
 	.datab(!\aux_timer|count [4]),
-	.datac(!\aux_timer|Equal0~0_combout ),
-	.datad(!\aux_timer|Equal0~1_combout ),
+	.datac(!\aux_timer|Equal0~2_combout ),
+	.datad(!\switchN~input_o ),
 	.datae(!\onetens_sec_counter|onetens_sec~q ),
 	.dataf(!\aux_timer|Add0~17_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\aux_timer|count[4]~4_combout ),
+	.combout(\aux_timer|count[4]~5_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \aux_timer|count[4]~4 .extended_lut = "off";
-defparam \aux_timer|count[4]~4 .lut_mask = 64'h333B000A333BFFFA;
-defparam \aux_timer|count[4]~4 .shared_arith = "off";
+defparam \aux_timer|count[4]~5 .extended_lut = "off";
+defparam \aux_timer|count[4]~5 .lut_mask = 64'h333B0F0A333BFFFA;
+defparam \aux_timer|count[4]~5 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \aux_timer|count[4] (
 	.clk(\CLOCK_50~input_o ),
-	.d(\aux_timer|count[4]~4_combout ),
+	.d(\aux_timer|count[4]~5_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
@@ -2180,35 +2218,36 @@ defparam \aux_timer|Add0~13 .lut_mask = 64'h00000000000000FF;
 defparam \aux_timer|Add0~13 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \aux_timer|count[5]~3 (
+cyclonev_lcell_comb \aux_timer|count[5]~4 (
 // Equation(s):
-// \aux_timer|count[5]~3_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~13_sumout  & ( (!\ramzor_fsm|yellowLight~combout ) # ((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout )) ) ) ) # ( 
-// !\onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~13_sumout  & ( ((!\ramzor_fsm|yellowLight~combout  & (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout ))) # (\aux_timer|count [5]) ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( 
-// !\aux_timer|Add0~13_sumout  & ( (!\ramzor_fsm|yellowLight~combout  & (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~13_sumout  & ( ((!\ramzor_fsm|yellowLight~combout  & 
-// (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout ))) # (\aux_timer|count [5]) ) ) )
+// \aux_timer|count[5]~4_combout  = ( \aux_timer|Add0~13_sumout  & ( \aux_timer|count[5]~3_combout  & ( (((\aux_timer|Equal0~2_combout  & \switchN~input_o )) # (\onetens_sec_counter|onetens_sec~q )) # (\aux_timer|count [5]) ) ) ) # ( 
+// !\aux_timer|Add0~13_sumout  & ( \aux_timer|count[5]~3_combout  & ( (!\onetens_sec_counter|onetens_sec~q  & (((\aux_timer|Equal0~2_combout  & \switchN~input_o )) # (\aux_timer|count [5]))) # (\onetens_sec_counter|onetens_sec~q  & 
+// (((\aux_timer|Equal0~2_combout )))) ) ) ) # ( \aux_timer|Add0~13_sumout  & ( !\aux_timer|count[5]~3_combout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [5])) # (\onetens_sec_counter|onetens_sec~q  & (((!\aux_timer|Equal0~2_combout ) # 
+// (!\switchN~input_o )))) ) ) ) # ( !\aux_timer|Add0~13_sumout  & ( !\aux_timer|count[5]~3_combout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [5])) # (\onetens_sec_counter|onetens_sec~q  & (((\aux_timer|Equal0~2_combout  & 
+// !\switchN~input_o )))) ) ) )
 
-	.dataa(!\ramzor_fsm|yellowLight~combout ),
-	.datab(!\aux_timer|count [5]),
-	.datac(!\aux_timer|Equal0~0_combout ),
-	.datad(!\aux_timer|Equal0~1_combout ),
-	.datae(!\onetens_sec_counter|onetens_sec~q ),
-	.dataf(!\aux_timer|Add0~13_sumout ),
+	.dataa(!\aux_timer|count [5]),
+	.datab(!\aux_timer|Equal0~2_combout ),
+	.datac(!\switchN~input_o ),
+	.datad(!\onetens_sec_counter|onetens_sec~q ),
+	.datae(!\aux_timer|Add0~13_sumout ),
+	.dataf(!\aux_timer|count[5]~3_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\aux_timer|count[5]~3_combout ),
+	.combout(\aux_timer|count[5]~4_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \aux_timer|count[5]~3 .extended_lut = "off";
-defparam \aux_timer|count[5]~3 .lut_mask = 64'h333B000A333BFFFA;
-defparam \aux_timer|count[5]~3 .shared_arith = "off";
+defparam \aux_timer|count[5]~4 .extended_lut = "off";
+defparam \aux_timer|count[5]~4 .lut_mask = 64'h553055FC573357FF;
+defparam \aux_timer|count[5]~4 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \aux_timer|count[5] (
 	.clk(\CLOCK_50~input_o ),
-	.d(\aux_timer|count[5]~3_combout ),
+	.d(\aux_timer|count[5]~4_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
@@ -2250,15 +2289,16 @@ defparam \aux_timer|Add0~9 .shared_arith = "off";
 
 cyclonev_lcell_comb \aux_timer|count[6]~2 (
 // Equation(s):
-// \aux_timer|count[6]~2_combout  = ( \aux_timer|Add0~9_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [6])) # (\onetens_sec_counter|onetens_sec~q  & (((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout )))) ) ) # ( 
-// !\aux_timer|Add0~9_sumout  & ( (\aux_timer|count [6] & !\onetens_sec_counter|onetens_sec~q ) ) )
+// \aux_timer|count[6]~2_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~9_sumout  & ( (!\aux_timer|Equal0~0_combout ) # ((!\aux_timer|Equal0~1_combout ) # (!\switchN~input_o )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( 
+// \aux_timer|Add0~9_sumout  & ( \aux_timer|count [6] ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~9_sumout  & ( (\aux_timer|Equal0~0_combout  & (\aux_timer|Equal0~1_combout  & !\switchN~input_o )) ) ) ) # ( 
+// !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~9_sumout  & ( \aux_timer|count [6] ) ) )
 
 	.dataa(!\aux_timer|count [6]),
 	.datab(!\aux_timer|Equal0~0_combout ),
 	.datac(!\aux_timer|Equal0~1_combout ),
-	.datad(!\onetens_sec_counter|onetens_sec~q ),
-	.datae(!\aux_timer|Add0~9_sumout ),
-	.dataf(gnd),
+	.datad(!\switchN~input_o ),
+	.datae(!\onetens_sec_counter|onetens_sec~q ),
+	.dataf(!\aux_timer|Add0~9_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -2268,7 +2308,7 @@ cyclonev_lcell_comb \aux_timer|count[6]~2 (
 	.shareout());
 // synopsys translate_off
 defparam \aux_timer|count[6]~2 .extended_lut = "off";
-defparam \aux_timer|count[6]~2 .lut_mask = 64'h550055FC550055FC;
+defparam \aux_timer|count[6]~2 .lut_mask = 64'h555503005555FFFC;
 defparam \aux_timer|count[6]~2 .shared_arith = "off";
 // synopsys translate_on
 
@@ -2315,15 +2355,16 @@ defparam \aux_timer|Add0~5 .shared_arith = "off";
 
 cyclonev_lcell_comb \aux_timer|count[7]~1 (
 // Equation(s):
-// \aux_timer|count[7]~1_combout  = ( \aux_timer|Add0~5_sumout  & ( (!\onetens_sec_counter|onetens_sec~q  & (\aux_timer|count [7])) # (\onetens_sec_counter|onetens_sec~q  & (((!\aux_timer|Equal0~0_combout ) # (!\aux_timer|Equal0~1_combout )))) ) ) # ( 
-// !\aux_timer|Add0~5_sumout  & ( (\aux_timer|count [7] & !\onetens_sec_counter|onetens_sec~q ) ) )
+// \aux_timer|count[7]~1_combout  = ( \onetens_sec_counter|onetens_sec~q  & ( \aux_timer|Add0~5_sumout  & ( (!\aux_timer|Equal0~0_combout ) # ((!\aux_timer|Equal0~1_combout ) # (!\switchN~input_o )) ) ) ) # ( !\onetens_sec_counter|onetens_sec~q  & ( 
+// \aux_timer|Add0~5_sumout  & ( \aux_timer|count [7] ) ) ) # ( \onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~5_sumout  & ( (\aux_timer|Equal0~0_combout  & (\aux_timer|Equal0~1_combout  & !\switchN~input_o )) ) ) ) # ( 
+// !\onetens_sec_counter|onetens_sec~q  & ( !\aux_timer|Add0~5_sumout  & ( \aux_timer|count [7] ) ) )
 
 	.dataa(!\aux_timer|count [7]),
 	.datab(!\aux_timer|Equal0~0_combout ),
 	.datac(!\aux_timer|Equal0~1_combout ),
-	.datad(!\onetens_sec_counter|onetens_sec~q ),
-	.datae(!\aux_timer|Add0~5_sumout ),
-	.dataf(gnd),
+	.datad(!\switchN~input_o ),
+	.datae(!\onetens_sec_counter|onetens_sec~q ),
+	.dataf(!\aux_timer|Add0~5_sumout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -2333,7 +2374,7 @@ cyclonev_lcell_comb \aux_timer|count[7]~1 (
 	.shareout());
 // synopsys translate_off
 defparam \aux_timer|count[7]~1 .extended_lut = "off";
-defparam \aux_timer|count[7]~1 .lut_mask = 64'h550055FC550055FC;
+defparam \aux_timer|count[7]~1 .lut_mask = 64'h555503005555FFFC;
 defparam \aux_timer|count[7]~1 .shared_arith = "off";
 // synopsys translate_on
 
@@ -2378,16 +2419,6 @@ defparam \aux_timer|Equal0~0 .lut_mask = 64'h8000000000000000;
 defparam \aux_timer|Equal0~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_io_ibuf \switchN~input (
-	.i(switchN),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\switchN~input_o ));
-// synopsys translate_off
-defparam \switchN~input .bus_hold = "false";
-defparam \switchN~input .simulate_z_as = "z";
-// synopsys translate_on
-
 cyclonev_lcell_comb \ramzor_fsm|Selector1~0 (
 // Equation(s):
 // \ramzor_fsm|Selector1~0_combout  = ( \switchN~input_o  & ( (!\aux_timer|Equal0~0_combout  & (((\ramzor_fsm|present_state.red_yellow_st~q )))) # (\aux_timer|Equal0~0_combout  & ((!\aux_timer|Equal0~1_combout  & ((\ramzor_fsm|present_state.red_yellow_st~q 
@@ -2429,29 +2460,6 @@ dffeas \ramzor_fsm|present_state.red_yellow_st (
 // synopsys translate_off
 defparam \ramzor_fsm|present_state.red_yellow_st .is_wysiwyg = "true";
 defparam \ramzor_fsm|present_state.red_yellow_st .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \aux_timer|Equal0~2 (
-// Equation(s):
-// \aux_timer|Equal0~2_combout  = (\aux_timer|Equal0~0_combout  & \aux_timer|Equal0~1_combout )
-
-	.dataa(!\aux_timer|Equal0~0_combout ),
-	.datab(!\aux_timer|Equal0~1_combout ),
-	.datac(gnd),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\aux_timer|Equal0~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \aux_timer|Equal0~2 .extended_lut = "off";
-defparam \aux_timer|Equal0~2 .lut_mask = 64'h1111111111111111;
-defparam \aux_timer|Equal0~2 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \ramzor_fsm|present_state.green_st (
@@ -2553,6 +2561,29 @@ cyclonev_lcell_comb \ramzor_fsm|redLight (
 defparam \ramzor_fsm|redLight .extended_lut = "off";
 defparam \ramzor_fsm|redLight .lut_mask = 64'hBBBBBBBBBBBBBBBB;
 defparam \ramzor_fsm|redLight .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ramzor_fsm|yellowLight (
+// Equation(s):
+// \ramzor_fsm|yellowLight~combout  = (\ramzor_fsm|present_state.yellow_st~q ) # (\ramzor_fsm|present_state.red_yellow_st~q )
+
+	.dataa(!\ramzor_fsm|present_state.red_yellow_st~q ),
+	.datab(!\ramzor_fsm|present_state.yellow_st~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ramzor_fsm|yellowLight~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ramzor_fsm|yellowLight .extended_lut = "off";
+defparam \ramzor_fsm|yellowLight .lut_mask = 64'h7777777777777777;
+defparam \ramzor_fsm|yellowLight .shared_arith = "off";
 // synopsys translate_on
 
 assign redLight = \redLight~output_o ;

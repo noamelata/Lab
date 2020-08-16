@@ -1,5 +1,5 @@
 Flow report for SV2Lab
-Sun Aug 16 18:11:08 2020
+Sun Aug 16 19:05:30 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Aug 16 18:11:08 2020       ;
+; Flow Status                     ; Successful - Sun Aug 16 19:05:30 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV2Lab                                      ;
 ; Top-level Entity Name           ; ramzor                                      ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/16/2020 17:55:48 ;
+; Start date & time ; 08/16/2020 19:05:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SV2Lab              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 264390067788297.159758974808080        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 154027290912535.159759390222764        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (SystemVerilog)               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -104,26 +104,10 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4831 MB             ; 00:00:26                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:44                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4831 MB             ; 00:00:31                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4719 MB             ; 00:00:01                           ;
+; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -132,25 +116,9 @@ agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -158,24 +126,8 @@ agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
 
 
 

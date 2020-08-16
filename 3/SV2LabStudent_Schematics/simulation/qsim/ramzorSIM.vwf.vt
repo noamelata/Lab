@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/16/2020 18:11:07"
+// Generated on "08/16/2020 19:05:29"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ramzor
 // 
@@ -74,16 +74,14 @@ end
 initial
 begin
 	switchN = 1'b1;
-	switchN = #470000 1'b0;
-	switchN = #20000 1'b1;
+	switchN = #630000 1'b0;
+	switchN = #10000 1'b1;
 end 
 
 // turbo
 initial
 begin
-	turbo = 1'b0;
-	turbo = #150000 1'b1;
-	turbo = #840000 1'b0;
+	turbo = 1'b1;
 end 
 endmodule
 

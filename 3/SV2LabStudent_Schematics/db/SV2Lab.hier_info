@@ -3,9 +3,9 @@ CLOCK_50 => CLOCK_50.IN3
 resetN => resetN.IN3
 switchN => switchN.IN1
 turbo => turbo.IN1
-redLight <= ramzor_fsm:ramzor_fsm.redLight
-yellowLight <= ramzor_fsm:ramzor_fsm.yellowLight
-greenLight <= ramzor_fsm:ramzor_fsm.greenLight
+redLight << ramzor_fsm:ramzor_fsm.redLight
+yellowLight << ramzor_fsm:ramzor_fsm.yellowLight
+greenLight << ramzor_fsm:ramzor_fsm.greenLight
 
 
 |ramzor|aux_timer:aux_timer
@@ -130,34 +130,23 @@ duty50 <= duty50~reg0.DB_MAX_OUTPUT_PORT_TYPE
 |ramzor|ramzor_fsm:ramzor_fsm
 clk => present_state~1.DATAIN
 resetN => present_state~3.DATAIN
+switchN => loadN.IN0
 switchN => always1.IN0
 endOftime => always1.IN1
-endOftime => Selector2.IN2
-endOftime => Selector3.IN2
-endOftime => Selector0.IN3
-endOftime => Selector4.IN0
-endOftime => Selector5.IN2
-endOftime => Selector7.IN0
-endOftime => Selector4.IN1
-endOftime => Selector6.IN2
-endOftime => Selector7.IN1
-endOftime => Selector4.IN2
-endOftime => Selector6.IN3
-endOftime => Selector4.IN3
-endOftime => Selector5.IN3
-endOftime => Selector7.IN2
-endOftime => Selector7.IN3
-endOftime => Selector3.IN3
-endOftime => Selector1.IN3
 endOftime => Selector2.IN3
-endOftime => loadN.DATAIN
-loadN <= endOftime.DB_MAX_OUTPUT_PORT_TYPE
+endOftime => Selector3.IN3
+endOftime => Selector0.IN3
+endOftime => loadN.IN1
+endOftime => Selector1.IN3
+endOftime => Selector2.IN2
+endOftime => Selector3.IN1
+loadN <= loadN.DB_MAX_OUTPUT_PORT_TYPE
 timer_val[0] <= <GND>
-timer_val[1] <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
-timer_val[2] <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
+timer_val[1] <= timer_val.DB_MAX_OUTPUT_PORT_TYPE
+timer_val[2] <= timer_val[2].DB_MAX_OUTPUT_PORT_TYPE
 timer_val[3] <= <GND>
-timer_val[4] <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
-timer_val[5] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+timer_val[4] <= timer_val[2].DB_MAX_OUTPUT_PORT_TYPE
+timer_val[5] <= timer_val.DB_MAX_OUTPUT_PORT_TYPE
 timer_val[6] <= <GND>
 timer_val[7] <= <GND>
 redLight <= redLight.DB_MAX_OUTPUT_PORT_TYPE
