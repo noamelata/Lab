@@ -4,55 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ss[0]",
+					"name" : "outd",
 					"strict" : false
 				},
 				{
-					"name" : "ss[1]",
+					"name" : "datain[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ss[2]",
+					"name" : "select",
 					"strict" : false
 				},
 				{
-					"name" : "ss[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ss[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ss[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ss[6]",
-					"strict" : false
-				},
-				{
-					"name" : "darkN",
-					"strict" : false
-				},
-				{
-					"name" : "LampTest",
-					"strict" : false
-				},
-				{
-					"name" : "hexin[0]",
-					"strict" : false
-				},
-				{
-					"name" : "hexin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "hexin[2]",
-					"strict" : false
-				},
-				{
-					"name" : "hexin[3]",
+					"name" : "datain[0]",
 					"strict" : false
 				}
 			]
