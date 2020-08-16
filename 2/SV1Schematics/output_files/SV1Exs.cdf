@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/output_files/") File("SV1Exs.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/TECHNION/gitLab/Lab/2/SV1Schematics/output_files/") File("SV1Exs.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

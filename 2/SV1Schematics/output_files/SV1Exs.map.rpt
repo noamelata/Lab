@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SV1Exs
-Sun Aug 16 13:00:35 2020
+Sun Aug 16 14:20:55 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 16 13:00:35 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 16 14:20:54 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV1Exs                                      ;
 ; Top-level Entity Name           ; inflating_cnt_top                           ;
@@ -170,18 +170,18 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; rtl/hexss.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/hexss.sv              ;         ;
-; rtl/up_counter.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv         ;         ;
-; rtl/comparator.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/comparator.sv         ;         ;
-; rtl/inflating_counter.sv         ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv  ;         ;
-; rtl/inflating_cnt_top.bdf        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_cnt_top.bdf ;         ;
-; rtl/one_sec_counter.sv           ; yes             ; User SystemVerilog HDL File        ; C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/one_sec_counter.sv    ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; rtl/hexss.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/hexss.sv              ;         ;
+; rtl/up_counter.sv                ; yes             ; User SystemVerilog HDL File        ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/up_counter.sv         ;         ;
+; rtl/comparator.sv                ; yes             ; User SystemVerilog HDL File        ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/comparator.sv         ;         ;
+; rtl/inflating_counter.sv         ; yes             ; User SystemVerilog HDL File        ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_counter.sv  ;         ;
+; rtl/inflating_cnt_top.bdf        ; yes             ; User Block Diagram/Schematic File  ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_cnt_top.bdf ;         ;
+; rtl/one_sec_counter.sv           ; yes             ; User SystemVerilog HDL File        ; C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/one_sec_counter.sv    ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -303,7 +303,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -313,40 +313,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Aug 16 13:00:16 2020
+    Info: Processing started: Sun Aug 16 14:20:43 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SV1Exs -c SV1Exs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_2to1_if.sv
-    Info (12023): Found entity 1: mux_2to1_if File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv Line: 5
+    Info (12023): Found entity 1: mux_2to1_if File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_4to1_if.sv
-    Info (12023): Found entity 1: mux_4to1_if File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_if.sv Line: 5
+    Info (12023): Found entity 1: mux_4to1_if File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_4to1_if.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_4to1_case.sv
-    Info (12023): Found entity 1: mux_4to1_case File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_case.sv Line: 6
+    Info (12023): Found entity 1: mux_4to1_case File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_4to1_case.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/mux_16to1.sv
-    Info (12023): Found entity 1: mux_16to1 File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_16to1.sv Line: 8
+    Info (12023): Found entity 1: mux_16to1 File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/mux_16to1.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/simple_up_counter.sv
-    Info (12023): Found entity 1: simple_up_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/simple_up_counter.sv Line: 6
+    Info (12023): Found entity 1: simple_up_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/simple_up_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/jmp_counter.sv
-    Info (12023): Found entity 1: jmp_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/jmp_counter.sv Line: 5
+    Info (12023): Found entity 1: jmp_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/jmp_counter.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/hexss.sv
-    Info (12023): Found entity 1: hexss File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/hexss.sv Line: 7
+    Info (12023): Found entity 1: hexss File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/hexss.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/up_counter.sv
-    Info (12023): Found entity 1: up_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 6
+    Info (12023): Found entity 1: up_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/comparator.sv
-    Info (12023): Found entity 1: comparator File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/comparator.sv Line: 7
+    Info (12023): Found entity 1: comparator File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/comparator.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/inflating_counter.sv
-    Info (12023): Found entity 1: inflating_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 6
+    Info (12023): Found entity 1: inflating_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/inflating_cnt_top.bdf
     Info (12023): Found entity 1: inflating_cnt_top
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/one_sec_counter.sv
-    Info (12023): Found entity 1: one_sec_counter File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/one_sec_counter.sv Line: 8
+    Info (12023): Found entity 1: one_sec_counter File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/one_sec_counter.sv Line: 8
 Info (12127): Elaborating entity "inflating_cnt_top" for the top level hierarchy
 Info (12128): Elaborating entity "one_sec_counter" for hierarchy "one_sec_counter:inst3"
 Info (12128): Elaborating entity "inflating_counter" for hierarchy "inflating_counter:inst"
-Info (12128): Elaborating entity "up_counter" for hierarchy "inflating_counter:inst|up_counter:fastC" File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 24
-Warning (10230): Verilog HDL assignment warning at up_counter.sv(30): truncated value with size 32 to match size of target (4) File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 30
-Info (12128): Elaborating entity "comparator" for hierarchy "inflating_counter:inst|comparator:cmp" File: C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 37
+Info (12128): Elaborating entity "up_counter" for hierarchy "inflating_counter:inst|up_counter:fastC" File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at up_counter.sv(30): truncated value with size 32 to match size of target (4) File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/up_counter.sv Line: 30
+Info (12128): Elaborating entity "comparator" for hierarchy "inflating_counter:inst|comparator:cmp" File: C:/TECHNION/gitLab/Lab/2/SV1Schematics/rtl/inflating_counter.sv Line: 37
 Info (12128): Elaborating entity "hexss" for hierarchy "hexss:inst4"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -356,9 +356,9 @@ Info (21057): Implemented 104 device resources after synthesis - the final resou
     Info (21059): Implemented 23 output pins
     Info (21061): Implemented 76 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Sun Aug 16 13:00:35 2020
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:45
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Sun Aug 16 14:20:55 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 
