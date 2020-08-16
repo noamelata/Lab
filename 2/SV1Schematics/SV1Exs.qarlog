@@ -1,0 +1,35 @@
+Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/SV1Exs.qarlog
+
+Archive:	C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/SV1Exs.qar
+Date:		Sun Aug 16 13:15:59 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/ComparatorSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/HexSS_Sim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/InflatingSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/InflatingTopSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/Jump_Counter_Sim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/SV1Exs.qpf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/SV1Exs.qsf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/Simple_Counter_Sim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/UpCountSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/assignment_defaults.qdf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/constraints/pins_test_sv.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/output_files/InflatingTopSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/comparator.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/hexss.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_cnt_top.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/inflating_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/jmp_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_16to1.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_2to1_if.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_case.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/mux_4to1_if.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/one_sec_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/simple_up_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/2/SV1Schematics/rtl/up_counter.sv
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
