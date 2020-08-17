@@ -1,0 +1,97 @@
+Archive Project report for SV2Lab
+Mon Aug 17 21:26:42 2020
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Mon Aug 17 21:26:42 2020 ;
+; Revision Name          ; SV2Lab                                ;
+; Top-level Entity Name  ; bomb_fsm                              ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'SV2Lab.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Mon Aug 17 21:26:42 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++---------------------------------+
+; Files Archived                  ;
++---------------------------------+
+; File Name                       ;
++---------------------------------+
+; assignment_defaults.qdf         ;
+; constraints/pinsSV2.tcl         ;
+; constraints/pinsSV2_bomb.tcl    ;
+; DataIn.bsf                      ;
+; DataIn.qip                      ;
+; DataIn.v                        ;
+; DataIn_bb.v                     ;
+; decimal_down_sim.vwf            ;
+; ramzorSIM.vwf                   ;
+; rtl/aux_timer.sv                ;
+; rtl/bomb_fsm.sv                 ;
+; rtl/decimal_2_digits_counter.sv ;
+; rtl/decimal_down_counter.sv     ;
+; rtl/hexss.sv                    ;
+; rtl/one_sec_counter.sv          ;
+; rtl/onetens_sec_counter.sv      ;
+; rtl/ramzor.sv                   ;
+; rtl/ramzor_fsm.sv               ;
+; rtl/topBomb.bdf                 ;
+; SV2Lab.qpf                      ;
+; SV2Lab.qsf                      ;
+; two_digit_ctr_SIM.vwf           ;
++---------------------------------+
+
+
