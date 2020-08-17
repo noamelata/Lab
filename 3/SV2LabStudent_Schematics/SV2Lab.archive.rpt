@@ -1,5 +1,5 @@
 Archive Project report for SV2Lab
-Mon Aug 17 16:04:44 2020
+Mon Aug 17 21:26:42 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Mon Aug 17 16:04:44 2020 ;
+; Archive Project Status ; Successful - Mon Aug 17 21:26:42 2020 ;
 ; Revision Name          ; SV2Lab                                ;
-; Top-level Entity Name  ; ramzor_fsm                            ;
+; Top-level Entity Name  ; bomb_fsm                              ;
 ; Family                 ; Cyclone V                             ;
 +------------------------+---------------------------------------+
 
@@ -50,19 +50,19 @@ Info: File Set 'Source control' contains:
     Info: Project source and settings files
     Info: Automatically detected source files
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/
+Info (13213): Using common directory C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/SV2_Schematics.qar'
+Info: Generated archive 'C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'SV2Lab.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Mon Aug 17 16:04:44 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Mon Aug 17 21:26:42 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +---------------------------------+
@@ -71,7 +71,6 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; File Name                       ;
 +---------------------------------+
 ; assignment_defaults.qdf         ;
-; bomb_fsm_SIM.vwf                ;
 ; constraints/pinsSV2.tcl         ;
 ; constraints/pinsSV2_bomb.tcl    ;
 ; DataIn.bsf                      ;
@@ -79,7 +78,6 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; DataIn.v                        ;
 ; DataIn_bb.v                     ;
 ; decimal_down_sim.vwf            ;
-; ramzor_fsm_SIM.vwf              ;
 ; ramzorSIM.vwf                   ;
 ; rtl/aux_timer.sv                ;
 ; rtl/bomb_fsm.sv                 ;

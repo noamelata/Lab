@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SV2Lab
-Mon Aug 17 15:45:35 2020
+Mon Aug 17 21:17:33 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Aug 17 15:45:35 2020 ;
+; EDA Netlist Writer Status ; Successful - Mon Aug 17 21:17:33 2020 ;
 ; Revision Name             ; SV2Lab                                ;
-; Top-level Entity Name     ; ramzor_fsm                            ;
+; Top-level Entity Name     ; decimal_2_digits_counter              ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,13 +66,13 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------+
-; Simulation Generated Files                                                   ;
-+------------------------------------------------------------------------------+
-; Generated Files                                                              ;
-+------------------------------------------------------------------------------+
-; C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim//SV2Lab.vo ;
-+------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                  ;
++---------------------------------------------------------------------------------------------+
+; Generated Files                                                                             ;
++---------------------------------------------------------------------------------------------+
+; C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim//SV2Lab.vo ;
++---------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Aug 17 15:45:34 2020
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
+    Info: Processing started: Mon Aug 17 21:17:32 2020
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
 Info (119006): Selected device 5CSXFC6D6F31C6 for design "SV2Lab"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file SV2Lab.vo in folder "C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file SV2Lab.vo in folder "C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4720 megabytes
-    Info: Processing ended: Mon Aug 17 15:45:35 2020
+    Info: Peak virtual memory: 4721 megabytes
+    Info: Processing ended: Mon Aug 17 21:17:33 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

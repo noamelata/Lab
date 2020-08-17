@@ -16,7 +16,8 @@ module bomb_fsm
 	                              
 	output logic countEnable,     // Enable the count down counter 
 	output logic countLoadN,       // Load the bomb down count counter.  
-	output logic lampEnable       // Turn the bomb display to ON - Show the number 00   
+	output logic lampEnable,       // Turn the bomb display to ON - Show the number 00  
+	output logic lampTest         
    );                            
 
 	enum logic [2:0] {Sidle, Sarm, Srun, Spause, SlampOn, SlampOff} prState, nxtState;
@@ -34,66 +35,53 @@ always @(posedge clk or negedge resetN)
 always_comb // Update next state and outputs
 	begin
 		nxtState = prState; // default values 
-		/*   $$$$$$$   remove to fill 
-		countEnable = //fill your code here
-		countLoadN = //fill your code here
-		lampEnable = //fill your code here
-		*/
+		countEnable = 1'b0;
+		countLoadN = 1'b1;
+		lampEnable = 1'b1;
+		lampTest = 1'b0;
 		
 		case (prState)
 				
 			Sidle: begin
-			/*   $$$$$$$   remove to fill 
-				//lampEnable = //fill your code here
+				lampEnable = 1'b0;
 				if (startN == 1'b0) 
-					// nxtState = //fill your code here
-				*/
+					 nxtState = Sarm;
 				end // idle
 						
 			Sarm: begin
-			/*   $$$$$$$   remove to fill 
-				// countLoadN = //fill your code here  // Load the bomb timer 
+				 countLoadN = 1'b0;
 				if (startN == 1'b1)  //Initiat the bomb when the start key is pressed   
-					//fill your code here 
-				*/	
+					nxtState = Srun; 	
 				end // arm
 						
 			Srun: begin
-				/*   $$$$$$$   remove to fill 
-				countEnable = //fill your code here  // allow the timer to run 
-				countLoadN = //fill your code here 
+				countEnable = 1'b1; 
+				countLoadN = 1'b0; 
 				
 				if (tcSec == 1'b1)  // Check if time is over  
-					//fill your code here  // Jump to blink the display 
+					nxtState = SlampOn; 
 				else if (waitN == 1'b0) 
-					//fill your code here 
-				*/
+					nxtState = Spause; 
 				end // run
 				
 			Spause: begin
-			/*   $$$$$$$   remove to fill 
-				countEnable = //fill your code here 
+				countEnable = 1'b0;
 				if (waitN == 1'b1)   // As long as the wait key is pressed it pauses the timer 
-//					nxtState = SlampOn; // For immediate explosion 
-					//fill your code here 	 // For regular operation
-				*/
+					nxtState = Srun; 
 				end // pause
 			
 // The next two states blink the display.  			
 			SlampOn: begin
-			/*   $$$$$$$   remove to fill 
-			 lampEnable = //fill your code here 
-					if (slowClken == 1'b0) 
-					//fill your code here
-			*/
-					end // lampOn
-						
-			SlampOff: begin
-			/*   $$$$$$$   remove to fill 
-				lampEnable = //fill your code here
+			lampEnable = 1'b1; 
+			lampTest = 1'b1;
 				if (slowClken == 1'b1) 
-					//fill your code here
-					*/
+					nxtState = SlampOff;
+				end // lampOn
+						
+			SlampOff: begin 
+				lampEnable = 1'b0; 
+					if (slowClken == 1'b1) 
+						nxtState = SlampOn;
 				end // lampOff
 						
 			endcase

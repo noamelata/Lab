@@ -55,7 +55,7 @@ module decimal_2_digits_counter
 	);
 
 	 
-		assign tc = (Count_out == 8'b0) ? 1'b1 : 1'b0;  
+		assign tc = (Count_out == 8'b0 && resetN) ? 1'b1 : 1'b0;  
 
  
 endmodule

@@ -38,7 +38,7 @@ always_ff @(posedge clk or negedge resetN)
 	
 	
 	// Asynchronic tc
-	assign tc = (count == 4'b0 ) ? 1'b1 : 1'b0; 
+	assign tc = (count == 4'b0 && resetN) ? 1'b1 : 1'b0; 
 
 					
 			
