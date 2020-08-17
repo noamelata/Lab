@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf" --testbench_file="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf" --testbench_file="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf" --testbench_file="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf" --testbench_file="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work SV2Lab.vo
@@ -20,7 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -148,43 +146,43 @@ SIGNAL("CLOCK_50")
 	PARENT = "";
 }
 
-SIGNAL("present_state.green_st")
+SIGNAL("ramzor_fsm:ramzor_fsm|present_state.green_st")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = REGISTERED;
 	PARENT = "";
 }
 
-SIGNAL("present_state.red_st")
+SIGNAL("ramzor_fsm:ramzor_fsm|present_state.red_st")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = REGISTERED;
 	PARENT = "";
 }
 
-SIGNAL("present_state.red_yellow_st")
+SIGNAL("ramzor_fsm:ramzor_fsm|present_state.red_yellow_st")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = REGISTERED;
 	PARENT = "";
 }
 
-SIGNAL("present_state.yellow_st")
+SIGNAL("ramzor_fsm:ramzor_fsm|present_state.yellow_st")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
+	DIRECTION = REGISTERED;
 	PARENT = "";
 }
 
@@ -194,7 +192,9 @@ TRANSITION_LIST("resetN")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 20.0;
-		LEVEL 1 FOR 980.0;
+		LEVEL 1 FOR 790.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 160.0;
 	}
 }
 
@@ -203,9 +203,9 @@ TRANSITION_LIST("switchN")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 630.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 360.0;
+		LEVEL 1 FOR 460.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 490.0;
 	}
 }
 
@@ -214,7 +214,8 @@ TRANSITION_LIST("turbo")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 800.0;
 	}
 }
 
@@ -223,7 +224,9 @@ TRANSITION_LIST("greenLight")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		LEVEL X FOR 200.0;
+		LEVEL 1 FOR 260.0;
+		LEVEL X FOR 540.0;
 	}
 }
 
@@ -259,39 +262,39 @@ TRANSITION_LIST("CLOCK_50")
 	}
 }
 
-TRANSITION_LIST("present_state.green_st")
+TRANSITION_LIST("ramzor_fsm:ramzor_fsm|present_state.green_st")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL U FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("present_state.red_st")
+TRANSITION_LIST("ramzor_fsm:ramzor_fsm|present_state.red_st")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL U FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("present_state.red_yellow_st")
+TRANSITION_LIST("ramzor_fsm:ramzor_fsm|present_state.red_yellow_st")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL U FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("present_state.yellow_st")
+TRANSITION_LIST("ramzor_fsm:ramzor_fsm|present_state.yellow_st")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL U FOR 1000.0;
 	}
 }
 
@@ -360,7 +363,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state.green_st";
+	CHANNEL = "ramzor_fsm:ramzor_fsm|present_state.green_st";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
@@ -369,7 +372,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state.red_st";
+	CHANNEL = "ramzor_fsm:ramzor_fsm|present_state.red_st";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
@@ -378,7 +381,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state.red_yellow_st";
+	CHANNEL = "ramzor_fsm:ramzor_fsm|present_state.red_yellow_st";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
@@ -387,7 +390,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state.yellow_st";
+	CHANNEL = "ramzor_fsm:ramzor_fsm|present_state.yellow_st";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;

@@ -99,10 +99,10 @@ always_comb begin
 
 		endcase
 		end
-	assign loadN = (!endOftime && switchN);
-	assign redLight		=  (present_state == red_st || present_state == red_yellow_st) ? 1 : 0;
-	assign yellowLight	=  (present_state == yellow_st || present_state == red_yellow_st) ? 1 : 0;
-	assign greenLight	= (present_state == green_st) ? 1 : 0;
+	assign loadN = !(endOftime || (present_state == red_st && !switchN));
+	assign redLight		=  (present_state == red_st || present_state == red_yellow_st) ? 1'b1 : 1'b0;
+	assign yellowLight	=  (present_state == yellow_st || present_state == red_yellow_st) ? 1'b1 : 1'b0;
+	assign greenLight	= (present_state == green_st) ? 1'b1 : 1'b0;
   
 
 endmodule

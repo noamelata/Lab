@@ -4,31 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "redLight",
+					"name" : "countEnable",
 					"strict" : false
 				},
 				{
-					"name" : "yellowLight",
+					"name" : "countLoadN",
 					"strict" : false
 				},
 				{
-					"name" : "greenLight",
+					"name" : "lampEnable",
 					"strict" : false
 				},
 				{
-					"name" : "switchN",
+					"name" : "lampTest",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "waitN",
+					"strict" : false
+				},
+				{
+					"name" : "startN",
+					"strict" : false
+				},
+				{
+					"name" : "tcSec",
+					"strict" : false
+				},
+				{
+					"name" : "slowClken",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				},
 				{
 					"name" : "resetN",
-					"strict" : false
-				},
-				{
-					"name" : "turbo",
 					"strict" : false
 				}
 			]

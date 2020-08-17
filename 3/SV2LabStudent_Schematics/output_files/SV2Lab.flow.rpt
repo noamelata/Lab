@@ -1,5 +1,5 @@
 Flow report for SV2Lab
-Sun Aug 16 20:12:52 2020
+Sun Aug 16 22:10:32 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Aug 16 20:12:52 2020       ;
+; Flow Status                     ; Successful - Sun Aug 16 22:10:32 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV2Lab                                      ;
-; Top-level Entity Name           ; ramzor                                      ;
+; Top-level Entity Name           ; bomb_fsm                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 45                                          ;
-; Total pins                      ; 7                                           ;
+; Total registers                 ; 6                                           ;
+; Total pins                      ; 10                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/16/2020 20:04:48 ;
+; Start date & time ; 08/16/2020 21:54:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SV2Lab              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 154027290912535.159759748722308        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 264390067788297.159760404702040        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (SystemVerilog)               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -88,13 +88,13 @@ agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; MISC_FILE                           ; DataIn.bsf                             ; --            ; --          ; --             ;
 ; MISC_FILE                           ; DataIn_bb.v                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; ramzor      ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; ramzor      ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; ramzor      ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; ramzor                                 ; SV2Lab        ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; bomb_fsm                               ; SV2Lab        ; --          ; --             ;
 ; USE_SIGNALTAP_FILE                  ; output_files/stp1.stp                  ; --            ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
@@ -104,12 +104,10 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:08     ; 1.0                     ; 4825 MB             ; 00:02:27                           ;
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 4833 MB             ; 00:00:52                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4720 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4715 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4720 MB             ; 00:00:05                           ;
-; Total                ; 00:01:20     ; --                      ; --                  ; 00:02:39                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,11 +116,9 @@ agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-T071GFT  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -130,10 +126,8 @@ agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf --testbench_file=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ramzorSIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/bomb_fsm_SIM.vwf --testbench_file=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/bomb_fsm_SIM.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
 
 
 

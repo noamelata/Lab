@@ -8,14 +8,14 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim
-vdecimal_2_digits_counter
-Z1 !s110 1597581866
+vbomb_fsm
+Z1 !s110 1597605033
 !i10b 1
-!s100 _GP=jm@[nc2cQDRnT76k<3
-IP;jZek4I7Kjeb?DQM=AA63
+!s100 zP5zF1Ab[m4NLQJP<8bKU1
+Ikf::3h2bOm]R@V=H9z0;m0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1597581865
+w1597605032
 Z3 8SV2Lab.vo
 Z4 FSV2Lab.vo
 Z5 L0 32
@@ -23,14 +23,56 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1597581866.000000
+Z7 !s108 1597605033.000000
 Z8 !s107 SV2Lab.vo|
 Z9 !s90 -work|work|SV2Lab.vo|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
-vdecimal_2_digits_counter_vlg_vec_tst
+vbomb_fsm_vlg_vec_tst
 R1
+!i10b 1
+!s100 W2W_[22579BOQj>7lcAf92
+IJRnEf9JkC5_I383Rjc7R80
+R2
+R0
+w1597605030
+8bomb_fsm_SIM.vwf.vt
+Fbomb_fsm_SIM.vwf.vt
+Z12 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 bomb_fsm_SIM.vwf.vt|
+!s90 -work|work|bomb_fsm_SIM.vwf.vt|
+!i113 1
+R10
+R11
+vdecimal_2_digits_counter
+Z13 !s110 1597581866
+!i10b 1
+!s100 _GP=jm@[nc2cQDRnT76k<3
+IP;jZek4I7Kjeb?DQM=AA63
+R2
+R0
+w1597581865
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z14 !s108 1597581866.000000
+R8
+R9
+!i113 1
+R10
+R11
+vdecimal_2_digits_counter_vlg_vec_tst
+R13
 !i10b 1
 !s100 @9fL?UbEF7jIWF5V<:;Wk1
 IL7CHb^Tmbmn7;g:bfmU2Q3
@@ -39,12 +81,12 @@ R0
 w1597581864
 8two_digit_ctr_SIM.vwf.vt
 Ftwo_digit_ctr_SIM.vwf.vt
-Z12 L0 30
+R12
 R6
 r1
 !s85 0
 31
-R7
+R14
 !s107 two_digit_ctr_SIM.vwf.vt|
 !s90 -work|work|two_digit_ctr_SIM.vwf.vt|
 !i113 1
@@ -65,7 +107,7 @@ R6
 r1
 !s85 0
 31
-Z13 !s108 1597578450.000000
+Z15 !s108 1597578450.000000
 R8
 R9
 !i113 1
@@ -86,20 +128,20 @@ R6
 r1
 !s85 0
 31
-R13
+R15
 !s107 decimal_down_sim.vwf.vt|
 !s90 -work|work|decimal_down_sim.vwf.vt|
 !i113 1
 R10
 R11
 vramzor
-Z14 !s110 1597597979
+!s110 1597600539
 !i10b 1
-!s100 FUSf<K=E4k=Vf52XlfbF;3
-I5nOEOjkPQRJk1IM^mKCFA1
+!s100 <1J?G]9FZAPP9HEjbBK8U2
+IZG>znCG[Ei1miM`G2GT1<0
 R2
-Z15 dC:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim
-w1597597972
+R0
+w1597600538
 R3
 R4
 R5
@@ -107,20 +149,20 @@ R6
 r1
 !s85 0
 31
-!s108 1597597978.000000
+!s108 1597600539.000000
 R8
 R9
 !i113 1
 R10
 R11
 vramzor_vlg_vec_tst
-R14
+!s110 1597600540
 !i10b 1
-!s100 LjW:lO8Y4g7OePFgeP?1=2
-IGYk[2N?oMB`zb<1FT[JSi1
+!s100 2Y]Of9[YGBo6lI_K3g>M<3
+I3N;i_ij3a4jF@6JKR1@lZ0
 R2
-R15
-w1597597965
+R0
+w1597600536
 8ramzorSIM.vwf.vt
 FramzorSIM.vwf.vt
 R12
@@ -128,7 +170,7 @@ R6
 r1
 !s85 0
 31
-!s108 1597597979.000000
+!s108 1597600540.000000
 !s107 ramzorSIM.vwf.vt|
 !s90 -work|work|ramzorSIM.vwf.vt|
 !i113 1
