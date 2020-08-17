@@ -4,43 +4,35 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "loadN",
+					"name" : "countEnable",
 					"strict" : false
 				},
 				{
-					"name" : "timer_val[1]",
+					"name" : "countLoadN",
 					"strict" : false
 				},
 				{
-					"name" : "timer_val[2]",
+					"name" : "lampEnable",
 					"strict" : false
 				},
 				{
-					"name" : "timer_val[4]",
+					"name" : "lampTest",
 					"strict" : false
 				},
 				{
-					"name" : "timer_val[5]",
+					"name" : "waitN",
 					"strict" : false
 				},
 				{
-					"name" : "redLight",
+					"name" : "startN",
 					"strict" : false
 				},
 				{
-					"name" : "yellowLight",
+					"name" : "tcSec",
 					"strict" : false
 				},
 				{
-					"name" : "greenLight",
-					"strict" : false
-				},
-				{
-					"name" : "endOftime",
-					"strict" : false
-				},
-				{
-					"name" : "switchN",
+					"name" : "slowClken",
 					"strict" : false
 				},
 				{

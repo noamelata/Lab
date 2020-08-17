@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf" --testbench_file="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/two_digit_ctr_SIM.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf" --testbench_file="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/two_digit_ctr_SIM.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf" --testbench_file="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/two_digit_ctr_SIM.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf" --testbench_file="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/two_digit_ctr_SIM.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/" SV2Lab -c SV2Lab</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work SV2Lab.vo
@@ -133,7 +133,7 @@ SIGNAL("Data_init[7]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[6]")
@@ -143,7 +143,7 @@ SIGNAL("Data_init[6]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[5]")
@@ -153,7 +153,7 @@ SIGNAL("Data_init[5]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[4]")
@@ -163,7 +163,7 @@ SIGNAL("Data_init[4]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[3]")
@@ -173,7 +173,7 @@ SIGNAL("Data_init[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[2]")
@@ -183,7 +183,7 @@ SIGNAL("Data_init[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[1]")
@@ -193,7 +193,7 @@ SIGNAL("Data_init[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("Data_init[0]")
@@ -203,7 +203,7 @@ SIGNAL("Data_init[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "Data_init";
+	PARENT = "";
 }
 
 SIGNAL("tc")
@@ -223,7 +223,7 @@ SIGNAL("Count_out[7]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[6]")
@@ -233,7 +233,7 @@ SIGNAL("Count_out[6]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[5]")
@@ -243,7 +243,7 @@ SIGNAL("Count_out[5]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[4]")
@@ -253,7 +253,7 @@ SIGNAL("Count_out[4]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[3]")
@@ -263,7 +263,7 @@ SIGNAL("Count_out[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[2]")
@@ -273,7 +273,7 @@ SIGNAL("Count_out[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[1]")
@@ -283,7 +283,7 @@ SIGNAL("Count_out[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 SIGNAL("Count_out[0]")
@@ -293,7 +293,7 @@ SIGNAL("Count_out[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "Count_out";
+	PARENT = "";
 }
 
 GROUP("Count_out_tens")

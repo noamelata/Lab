@@ -1,7 +1,9 @@
 
-State Machine - |ramzor_fsm|present_state
-Name present_state.yellow_st present_state.green_st present_state.red_yellow_st present_state.red_st 
-present_state.red_st 0 0 0 0 
-present_state.red_yellow_st 0 0 1 1 
-present_state.green_st 0 1 0 1 
-present_state.yellow_st 1 0 0 1 
+State Machine - |bomb_fsm|prState
+Name prState.SlampOff prState.SlampOn prState.Spause prState.Srun prState.Sarm prState.Sidle 
+prState.Sidle 0 0 0 0 0 0 
+prState.Sarm 0 0 0 0 1 1 
+prState.Srun 0 0 0 1 0 1 
+prState.Spause 0 0 1 0 0 1 
+prState.SlampOn 0 1 0 0 0 1 
+prState.SlampOff 1 0 0 0 0 1 

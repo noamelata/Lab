@@ -49,14 +49,13 @@ always_comb // Update next state and outputs
 				end // idle
 						
 			Sarm: begin
-				 countLoadN = 1'b0;
+				countLoadN = 1'b0;
 				if (startN == 1'b1)  //Initiat the bomb when the start key is pressed   
 					nxtState = Srun; 	
 				end // arm
 						
 			Srun: begin
 				countEnable = 1'b1; 
-				countLoadN = 1'b0; 
 				
 				if (tcSec == 1'b1)  // Check if time is over  
 					nxtState = SlampOn; 
