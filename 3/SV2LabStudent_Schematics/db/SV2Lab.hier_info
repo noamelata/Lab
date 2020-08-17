@@ -39,9 +39,9 @@ tcSec => nxtState.OUTPUTSELECT
 tcSec => nxtState.OUTPUTSELECT
 tcSec => nxtState.OUTPUTSELECT
 tcSec => nxtState.OUTPUTSELECT
-countEnable <= countEnable.DB_MAX_OUTPUT_PORT_TYPE
-countLoadN <= countLoadN.DB_MAX_OUTPUT_PORT_TYPE
-lampEnable <= lampEnable.DB_MAX_OUTPUT_PORT_TYPE
-lampTest <= lampTest.DB_MAX_OUTPUT_PORT_TYPE
+countEnable << countEnable.DB_MAX_OUTPUT_PORT_TYPE
+countLoadN << countLoadN.DB_MAX_OUTPUT_PORT_TYPE
+lampEnable << lampEnable.DB_MAX_OUTPUT_PORT_TYPE
+lampTest << lampTest.DB_MAX_OUTPUT_PORT_TYPE
 
 

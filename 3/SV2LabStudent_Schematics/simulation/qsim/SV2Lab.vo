@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "08/17/2020 21:17:33"
+// DATE "08/17/2020 21:40:48"
 
 // 
 // Device: Altera 5CSXFC6D6F31C6 Package FBGA896
@@ -29,23 +29,27 @@
 
 `timescale 1 ps/ 1 ps
 
-module decimal_2_digits_counter (
+module bomb_fsm (
 	clk,
 	resetN,
-	ena,
-	ena_cnt,
-	loadN,
-	Data_init,
-	Count_out,
-	tc);
+	startN,
+	waitN,
+	slowClken,
+	tcSec,
+	countEnable,
+	countLoadN,
+	lampEnable,
+	lampTest);
 input 	clk;
 input 	resetN;
-input 	ena;
-input 	ena_cnt;
-input 	loadN;
-input 	[7:0] Data_init;
-output 	[7:0] Count_out;
-output 	tc;
+input 	startN;
+input 	waitN;
+input 	slowClken;
+input 	tcSec;
+output 	countEnable;
+output 	countLoadN;
+output 	lampEnable;
+output 	lampTest;
 
 wire gnd;
 wire vcc;
@@ -58,177 +62,94 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \Count_out[0]~output_o ;
-wire \Count_out[1]~output_o ;
-wire \Count_out[2]~output_o ;
-wire \Count_out[3]~output_o ;
-wire \Count_out[4]~output_o ;
-wire \Count_out[5]~output_o ;
-wire \Count_out[6]~output_o ;
-wire \Count_out[7]~output_o ;
-wire \tc~output_o ;
+wire \countEnable~output_o ;
+wire \countLoadN~output_o ;
+wire \lampEnable~output_o ;
+wire \lampTest~output_o ;
 wire \clk~input_o ;
-wire \loadN~input_o ;
-wire \Data_init[0]~input_o ;
-wire \ones_counter|count~0_combout ;
+wire \waitN~input_o ;
 wire \resetN~input_o ;
-wire \ena~input_o ;
-wire \ena_cnt~input_o ;
-wire \ones_counter|count[0]~1_combout ;
-wire \Data_init[3]~input_o ;
-wire \ones_counter|count~4_combout ;
-wire \Data_init[2]~input_o ;
-wire \ones_counter|count~3_combout ;
-wire \Data_init[1]~input_o ;
-wire \ones_counter|count~2_combout ;
-wire \Data_init[4]~input_o ;
-wire \tens_counter|count~0_combout ;
-wire \tc~0_combout ;
-wire \tens_counter|count[0]~1_combout ;
-wire \Data_init[7]~input_o ;
-wire \tens_counter|count~4_combout ;
-wire \Data_init[6]~input_o ;
-wire \tens_counter|count~3_combout ;
-wire \Data_init[5]~input_o ;
-wire \tens_counter|count~2_combout ;
-wire \tc~1_combout ;
-wire [3:0] \ones_counter|count ;
-wire [3:0] \tens_counter|count ;
+wire \tcSec~input_o ;
+wire \slowClken~input_o ;
+wire \Selector4~2_combout ;
+wire \prState.SlampOn~0_combout ;
+wire \Selector3~0_combout ;
+wire \prState.Spause~q ;
+wire \startN~input_o ;
+wire \Selector4~1_combout ;
+wire \Selector4~3_combout ;
+wire \prState.SlampOn~q ;
+wire \Selector4~0_combout ;
+wire \prState.SlampOff~q ;
+wire \Selector2~0_combout ;
+wire \Selector0~3_combout ;
+wire \prState.Sidle~q ;
+wire \Selector1~0_combout ;
+wire \prState.Sarm~q ;
+wire \Selector0~2_combout ;
+wire \Selector2~1_combout ;
+wire \prState.Srun~q ;
+wire \lampEnable~0_combout ;
 
 
-cyclonev_io_obuf \Count_out[0]~output (
-	.i(\ones_counter|count [0]),
+cyclonev_io_obuf \countEnable~output (
+	.i(\prState.Srun~q ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Count_out[0]~output_o ),
+	.o(\countEnable~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Count_out[0]~output .bus_hold = "false";
-defparam \Count_out[0]~output .open_drain_output = "false";
-defparam \Count_out[0]~output .shift_series_termination_control = "false";
+defparam \countEnable~output .bus_hold = "false";
+defparam \countEnable~output .open_drain_output = "false";
+defparam \countEnable~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \Count_out[1]~output (
-	.i(\ones_counter|count [1]),
+cyclonev_io_obuf \countLoadN~output (
+	.i(!\prState.Sarm~q ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Count_out[1]~output_o ),
+	.o(\countLoadN~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Count_out[1]~output .bus_hold = "false";
-defparam \Count_out[1]~output .open_drain_output = "false";
-defparam \Count_out[1]~output .shift_series_termination_control = "false";
+defparam \countLoadN~output .bus_hold = "false";
+defparam \countLoadN~output .open_drain_output = "false";
+defparam \countLoadN~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \Count_out[2]~output (
-	.i(\ones_counter|count [2]),
+cyclonev_io_obuf \lampEnable~output (
+	.i(!\lampEnable~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Count_out[2]~output_o ),
+	.o(\lampEnable~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Count_out[2]~output .bus_hold = "false";
-defparam \Count_out[2]~output .open_drain_output = "false";
-defparam \Count_out[2]~output .shift_series_termination_control = "false";
+defparam \lampEnable~output .bus_hold = "false";
+defparam \lampEnable~output .open_drain_output = "false";
+defparam \lampEnable~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \Count_out[3]~output (
-	.i(\ones_counter|count [3]),
+cyclonev_io_obuf \lampTest~output (
+	.i(\prState.SlampOn~q ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Count_out[3]~output_o ),
+	.o(\lampTest~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Count_out[3]~output .bus_hold = "false";
-defparam \Count_out[3]~output .open_drain_output = "false";
-defparam \Count_out[3]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \Count_out[4]~output (
-	.i(\tens_counter|count [0]),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\Count_out[4]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \Count_out[4]~output .bus_hold = "false";
-defparam \Count_out[4]~output .open_drain_output = "false";
-defparam \Count_out[4]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \Count_out[5]~output (
-	.i(\tens_counter|count [1]),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\Count_out[5]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \Count_out[5]~output .bus_hold = "false";
-defparam \Count_out[5]~output .open_drain_output = "false";
-defparam \Count_out[5]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \Count_out[6]~output (
-	.i(\tens_counter|count [2]),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\Count_out[6]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \Count_out[6]~output .bus_hold = "false";
-defparam \Count_out[6]~output .open_drain_output = "false";
-defparam \Count_out[6]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \Count_out[7]~output (
-	.i(\tens_counter|count [3]),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\Count_out[7]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \Count_out[7]~output .bus_hold = "false";
-defparam \Count_out[7]~output .open_drain_output = "false";
-defparam \Count_out[7]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \tc~output (
-	.i(\tc~1_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\tc~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \tc~output .bus_hold = "false";
-defparam \tc~output .open_drain_output = "false";
-defparam \tc~output .shift_series_termination_control = "false";
+defparam \lampTest~output .bus_hold = "false";
+defparam \lampTest~output .open_drain_output = "false";
+defparam \lampTest~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_ibuf \clk~input (
@@ -241,47 +162,14 @@ defparam \clk~input .bus_hold = "false";
 defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \loadN~input (
-	.i(loadN),
+cyclonev_io_ibuf \waitN~input (
+	.i(waitN),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\loadN~input_o ));
+	.o(\waitN~input_o ));
 // synopsys translate_off
-defparam \loadN~input .bus_hold = "false";
-defparam \loadN~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Data_init[0]~input (
-	.i(Data_init[0]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[0]~input_o ));
-// synopsys translate_off
-defparam \Data_init[0]~input .bus_hold = "false";
-defparam \Data_init[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \ones_counter|count~0 (
-// Equation(s):
-// \ones_counter|count~0_combout  = (!\loadN~input_o  & ((\Data_init[0]~input_o ))) # (\loadN~input_o  & (!\ones_counter|count [0]))
-
-	.dataa(!\ones_counter|count [0]),
-	.datab(!\loadN~input_o ),
-	.datac(!\Data_init[0]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ones_counter|count~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ones_counter|count~0 .extended_lut = "off";
-defparam \ones_counter|count~0 .lut_mask = 64'h2E2E2E2E2E2E2E2E;
-defparam \ones_counter|count~0 .shared_arith = "off";
+defparam \waitN~input .bus_hold = "false";
+defparam \waitN~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cyclonev_io_ibuf \resetN~input (
@@ -294,519 +182,429 @@ defparam \resetN~input .bus_hold = "false";
 defparam \resetN~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \ena~input (
-	.i(ena),
+cyclonev_io_ibuf \tcSec~input (
+	.i(tcSec),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\ena~input_o ));
+	.o(\tcSec~input_o ));
 // synopsys translate_off
-defparam \ena~input .bus_hold = "false";
-defparam \ena~input .simulate_z_as = "z";
+defparam \tcSec~input .bus_hold = "false";
+defparam \tcSec~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \ena_cnt~input (
-	.i(ena_cnt),
+cyclonev_io_ibuf \slowClken~input (
+	.i(slowClken),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\ena_cnt~input_o ));
+	.o(\slowClken~input_o ));
 // synopsys translate_off
-defparam \ena_cnt~input .bus_hold = "false";
-defparam \ena_cnt~input .simulate_z_as = "z";
+defparam \slowClken~input .bus_hold = "false";
+defparam \slowClken~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_lcell_comb \ones_counter|count[0]~1 (
+cyclonev_lcell_comb \Selector4~2 (
 // Equation(s):
-// \ones_counter|count[0]~1_combout  = (!\loadN~input_o ) # ((\ena~input_o  & \ena_cnt~input_o ))
+// \Selector4~2_combout  = (!\prState.Srun~q  & ((!\prState.SlampOff~q ) # ((!\slowClken~input_o )))) # (\prState.Srun~q  & (!\tcSec~input_o  & ((!\prState.SlampOff~q ) # (!\slowClken~input_o ))))
 
-	.dataa(!\loadN~input_o ),
-	.datab(!\ena~input_o ),
-	.datac(!\ena_cnt~input_o ),
+	.dataa(!\prState.Srun~q ),
+	.datab(!\prState.SlampOff~q ),
+	.datac(!\tcSec~input_o ),
+	.datad(!\slowClken~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector4~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector4~2 .extended_lut = "off";
+defparam \Selector4~2 .lut_mask = 64'hFAC8FAC8FAC8FAC8;
+defparam \Selector4~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \prState.SlampOn~0 (
+// Equation(s):
+// \prState.SlampOn~0_combout  = !\Selector4~2_combout 
+
+	.dataa(!\Selector4~2_combout ),
+	.datab(gnd),
+	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ones_counter|count[0]~1_combout ),
+	.combout(\prState.SlampOn~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \ones_counter|count[0]~1 .extended_lut = "off";
-defparam \ones_counter|count[0]~1 .lut_mask = 64'hABABABABABABABAB;
-defparam \ones_counter|count[0]~1 .shared_arith = "off";
+defparam \prState.SlampOn~0 .extended_lut = "off";
+defparam \prState.SlampOn~0 .lut_mask = 64'hAAAAAAAAAAAAAAAA;
+defparam \prState.SlampOn~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \ones_counter|count[0] (
-	.clk(\clk~input_o ),
-	.d(\ones_counter|count~0_combout ),
-	.asdata(vcc),
-	.clrn(\resetN~input_o ),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\ones_counter|count[0]~1_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\ones_counter|count [0]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \ones_counter|count[0] .is_wysiwyg = "true";
-defparam \ones_counter|count[0] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Data_init[3]~input (
-	.i(Data_init[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[3]~input_o ));
-// synopsys translate_off
-defparam \Data_init[3]~input .bus_hold = "false";
-defparam \Data_init[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \ones_counter|count~4 (
+cyclonev_lcell_comb \Selector3~0 (
 // Equation(s):
-// \ones_counter|count~4_combout  = ( \loadN~input_o  & ( \Data_init[3]~input_o  & ( !\ones_counter|count [3] $ ((((\ones_counter|count [2]) # (\ones_counter|count [1])) # (\ones_counter|count [0]))) ) ) ) # ( !\loadN~input_o  & ( \Data_init[3]~input_o  ) ) 
-// # ( \loadN~input_o  & ( !\Data_init[3]~input_o  & ( !\ones_counter|count [3] $ ((((\ones_counter|count [2]) # (\ones_counter|count [1])) # (\ones_counter|count [0]))) ) ) )
+// \Selector3~0_combout  = (\prState.Srun~q  & (!\waitN~input_o  & !\tcSec~input_o ))
 
-	.dataa(!\ones_counter|count [0]),
-	.datab(!\ones_counter|count [1]),
-	.datac(!\ones_counter|count [2]),
-	.datad(!\ones_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[3]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ones_counter|count~4_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ones_counter|count~4 .extended_lut = "off";
-defparam \ones_counter|count~4 .lut_mask = 64'h0000807FFFFF807F;
-defparam \ones_counter|count~4 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \ones_counter|count[3] (
-	.clk(\clk~input_o ),
-	.d(\ones_counter|count~4_combout ),
-	.asdata(vcc),
-	.clrn(\resetN~input_o ),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\ones_counter|count[0]~1_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\ones_counter|count [3]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \ones_counter|count[3] .is_wysiwyg = "true";
-defparam \ones_counter|count[3] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Data_init[2]~input (
-	.i(Data_init[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[2]~input_o ));
-// synopsys translate_off
-defparam \Data_init[2]~input .bus_hold = "false";
-defparam \Data_init[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \ones_counter|count~3 (
-// Equation(s):
-// \ones_counter|count~3_combout  = ( \loadN~input_o  & ( \Data_init[2]~input_o  & ( (!\ones_counter|count [0] & ((!\ones_counter|count [1] & (!\ones_counter|count [2] & \ones_counter|count [3])) # (\ones_counter|count [1] & (\ones_counter|count [2])))) # 
-// (\ones_counter|count [0] & (((\ones_counter|count [2])))) ) ) ) # ( !\loadN~input_o  & ( \Data_init[2]~input_o  ) ) # ( \loadN~input_o  & ( !\Data_init[2]~input_o  & ( (!\ones_counter|count [0] & ((!\ones_counter|count [1] & (!\ones_counter|count [2] & 
-// \ones_counter|count [3])) # (\ones_counter|count [1] & (\ones_counter|count [2])))) # (\ones_counter|count [0] & (((\ones_counter|count [2])))) ) ) )
-
-	.dataa(!\ones_counter|count [0]),
-	.datab(!\ones_counter|count [1]),
-	.datac(!\ones_counter|count [2]),
-	.datad(!\ones_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ones_counter|count~3_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ones_counter|count~3 .extended_lut = "off";
-defparam \ones_counter|count~3 .lut_mask = 64'h00000787FFFF0787;
-defparam \ones_counter|count~3 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \ones_counter|count[2] (
-	.clk(\clk~input_o ),
-	.d(\ones_counter|count~3_combout ),
-	.asdata(vcc),
-	.clrn(\resetN~input_o ),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\ones_counter|count[0]~1_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\ones_counter|count [2]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \ones_counter|count[2] .is_wysiwyg = "true";
-defparam \ones_counter|count[2] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Data_init[1]~input (
-	.i(Data_init[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[1]~input_o ));
-// synopsys translate_off
-defparam \Data_init[1]~input .bus_hold = "false";
-defparam \Data_init[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \ones_counter|count~2 (
-// Equation(s):
-// \ones_counter|count~2_combout  = ( \loadN~input_o  & ( \Data_init[1]~input_o  & ( (!\ones_counter|count [0] & (!\ones_counter|count [1] & ((\ones_counter|count [3]) # (\ones_counter|count [2])))) # (\ones_counter|count [0] & (\ones_counter|count [1])) ) ) 
-// ) # ( !\loadN~input_o  & ( \Data_init[1]~input_o  ) ) # ( \loadN~input_o  & ( !\Data_init[1]~input_o  & ( (!\ones_counter|count [0] & (!\ones_counter|count [1] & ((\ones_counter|count [3]) # (\ones_counter|count [2])))) # (\ones_counter|count [0] & 
-// (\ones_counter|count [1])) ) ) )
-
-	.dataa(!\ones_counter|count [0]),
-	.datab(!\ones_counter|count [1]),
-	.datac(!\ones_counter|count [2]),
-	.datad(!\ones_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[1]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ones_counter|count~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ones_counter|count~2 .extended_lut = "off";
-defparam \ones_counter|count~2 .lut_mask = 64'h00001999FFFF1999;
-defparam \ones_counter|count~2 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \ones_counter|count[1] (
-	.clk(\clk~input_o ),
-	.d(\ones_counter|count~2_combout ),
-	.asdata(vcc),
-	.clrn(\resetN~input_o ),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\ones_counter|count[0]~1_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\ones_counter|count [1]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \ones_counter|count[1] .is_wysiwyg = "true";
-defparam \ones_counter|count[1] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Data_init[4]~input (
-	.i(Data_init[4]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[4]~input_o ));
-// synopsys translate_off
-defparam \Data_init[4]~input .bus_hold = "false";
-defparam \Data_init[4]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \tens_counter|count~0 (
-// Equation(s):
-// \tens_counter|count~0_combout  = (!\loadN~input_o  & ((\Data_init[4]~input_o ))) # (\loadN~input_o  & (!\tens_counter|count [0]))
-
-	.dataa(!\tens_counter|count [0]),
-	.datab(!\loadN~input_o ),
-	.datac(!\Data_init[4]~input_o ),
+	.dataa(!\prState.Srun~q ),
+	.datab(!\waitN~input_o ),
+	.datac(!\tcSec~input_o ),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tens_counter|count~0_combout ),
+	.combout(\Selector3~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tens_counter|count~0 .extended_lut = "off";
-defparam \tens_counter|count~0 .lut_mask = 64'h2E2E2E2E2E2E2E2E;
-defparam \tens_counter|count~0 .shared_arith = "off";
+defparam \Selector3~0 .extended_lut = "off";
+defparam \Selector3~0 .lut_mask = 64'h4040404040404040;
+defparam \Selector3~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \tc~0 (
-// Equation(s):
-// \tc~0_combout  = (!\ones_counter|count [0] & (!\ones_counter|count [1] & (!\ones_counter|count [2] & !\ones_counter|count [3])))
+dffeas \prState.Spause (
+	.clk(\clk~input_o ),
+	.d(\Selector3~0_combout ),
+	.asdata(vcc),
+	.clrn(\resetN~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector0~3_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\prState.Spause~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \prState.Spause .is_wysiwyg = "true";
+defparam \prState.Spause .power_up = "low";
+// synopsys translate_on
 
-	.dataa(!\ones_counter|count [0]),
-	.datab(!\ones_counter|count [1]),
-	.datac(!\ones_counter|count [2]),
-	.datad(!\ones_counter|count [3]),
+cyclonev_io_ibuf \startN~input (
+	.i(startN),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\startN~input_o ));
+// synopsys translate_off
+defparam \startN~input .bus_hold = "false";
+defparam \startN~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector4~1 (
+// Equation(s):
+// \Selector4~1_combout  = (!\prState.Sarm~q  & (!\prState.Spause~q  $ (((\waitN~input_o ))))) # (\prState.Sarm~q  & (((\startN~input_o ))))
+
+	.dataa(!\prState.Sarm~q ),
+	.datab(!\prState.Spause~q ),
+	.datac(!\startN~input_o ),
+	.datad(!\waitN~input_o ),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tc~0_combout ),
+	.combout(\Selector4~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tc~0 .extended_lut = "off";
-defparam \tc~0 .lut_mask = 64'h8000800080008000;
-defparam \tc~0 .shared_arith = "off";
+defparam \Selector4~1 .extended_lut = "off";
+defparam \Selector4~1 .lut_mask = 64'h8D278D278D278D27;
+defparam \Selector4~1 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \tens_counter|count[0]~1 (
+cyclonev_lcell_comb \Selector4~3 (
 // Equation(s):
-// \tens_counter|count[0]~1_combout  = (!\loadN~input_o ) # ((\resetN~input_o  & (\tc~0_combout  & \ena~input_o )))
+// \Selector4~3_combout  = ( !\prState.SlampOn~q  & ( (!\Selector4~2_combout ) # ((!\prState.SlampOff~q  & ((!\prState.Sidle~q  & ((!\startN~input_o ))) # (\prState.Sidle~q  & (\Selector4~1_combout ))))) ) ) # ( \prState.SlampOn~q  & ( (!\Selector4~2_combout 
+// ) # (((\slowClken~input_o ))) ) )
 
-	.dataa(!\resetN~input_o ),
-	.datab(!\tc~0_combout ),
-	.datac(!\loadN~input_o ),
-	.datad(!\ena~input_o ),
+	.dataa(!\Selector4~2_combout ),
+	.datab(!\Selector4~1_combout ),
+	.datac(!\slowClken~input_o ),
+	.datad(!\startN~input_o ),
+	.datae(!\prState.SlampOn~q ),
+	.dataf(!\prState.Sidle~q ),
+	.datag(!\prState.SlampOff~q ),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector4~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector4~3 .extended_lut = "on";
+defparam \Selector4~3 .lut_mask = 64'hFAAAAFAFBABAAFAF;
+defparam \Selector4~3 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \prState.SlampOn (
+	.clk(\clk~input_o ),
+	.d(\prState.SlampOn~0_combout ),
+	.asdata(vcc),
+	.clrn(\resetN~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~3_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\prState.SlampOn~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \prState.SlampOn .is_wysiwyg = "true";
+defparam \prState.SlampOn .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Selector4~0 (
+// Equation(s):
+// \Selector4~0_combout  = (\prState.SlampOn~q  & \slowClken~input_o )
+
+	.dataa(!\prState.SlampOn~q ),
+	.datab(!\slowClken~input_o ),
+	.datac(gnd),
+	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tens_counter|count[0]~1_combout ),
+	.combout(\Selector4~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tens_counter|count[0]~1 .extended_lut = "off";
-defparam \tens_counter|count[0]~1 .lut_mask = 64'hF0F1F0F1F0F1F0F1;
-defparam \tens_counter|count[0]~1 .shared_arith = "off";
+defparam \Selector4~0 .extended_lut = "off";
+defparam \Selector4~0 .lut_mask = 64'h1111111111111111;
+defparam \Selector4~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \tens_counter|count[0] (
+dffeas \prState.SlampOff (
 	.clk(\clk~input_o ),
-	.d(\tens_counter|count~0_combout ),
+	.d(\Selector4~0_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\tens_counter|count[0]~1_combout ),
+	.ena(\Selector4~3_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\tens_counter|count [0]),
+	.q(\prState.SlampOff~q ),
 	.prn(vcc));
 // synopsys translate_off
-defparam \tens_counter|count[0] .is_wysiwyg = "true";
-defparam \tens_counter|count[0] .power_up = "low";
+defparam \prState.SlampOff .is_wysiwyg = "true";
+defparam \prState.SlampOff .power_up = "low";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Data_init[7]~input (
-	.i(Data_init[7]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[7]~input_o ));
-// synopsys translate_off
-defparam \Data_init[7]~input .bus_hold = "false";
-defparam \Data_init[7]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \tens_counter|count~4 (
+cyclonev_lcell_comb \Selector2~0 (
 // Equation(s):
-// \tens_counter|count~4_combout  = ( \loadN~input_o  & ( \Data_init[7]~input_o  & ( !\tens_counter|count [3] $ ((((\tens_counter|count [2]) # (\tens_counter|count [1])) # (\tens_counter|count [0]))) ) ) ) # ( !\loadN~input_o  & ( \Data_init[7]~input_o  ) ) 
-// # ( \loadN~input_o  & ( !\Data_init[7]~input_o  & ( !\tens_counter|count [3] $ ((((\tens_counter|count [2]) # (\tens_counter|count [1])) # (\tens_counter|count [0]))) ) ) )
+// \Selector2~0_combout  = ( \slowClken~input_o  & ( (!\prState.SlampOff~q  & (!\prState.SlampOn~q  & ((\startN~input_o ) # (\prState.Sidle~q )))) ) ) # ( !\slowClken~input_o  & ( (\startN~input_o ) # (\prState.Sidle~q ) ) )
 
-	.dataa(!\tens_counter|count [0]),
-	.datab(!\tens_counter|count [1]),
-	.datac(!\tens_counter|count [2]),
-	.datad(!\tens_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[7]~input_o ),
+	.dataa(!\prState.Sidle~q ),
+	.datab(!\prState.SlampOff~q ),
+	.datac(!\prState.SlampOn~q ),
+	.datad(!\startN~input_o ),
+	.datae(!\slowClken~input_o ),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tens_counter|count~4_combout ),
+	.combout(\Selector2~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tens_counter|count~4 .extended_lut = "off";
-defparam \tens_counter|count~4 .lut_mask = 64'h0000807FFFFF807F;
-defparam \tens_counter|count~4 .shared_arith = "off";
+defparam \Selector2~0 .extended_lut = "off";
+defparam \Selector2~0 .lut_mask = 64'h55FF40C055FF40C0;
+defparam \Selector2~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \tens_counter|count[3] (
+cyclonev_lcell_comb \Selector0~3 (
+// Equation(s):
+// \Selector0~3_combout  = ( \Selector2~0_combout  & ( ((\prState.Srun~q  & ((!\waitN~input_o ) # (\tcSec~input_o )))) # (\Selector0~2_combout ) ) ) # ( !\Selector2~0_combout  )
+
+	.dataa(!\prState.Srun~q ),
+	.datab(!\waitN~input_o ),
+	.datac(!\Selector0~2_combout ),
+	.datad(!\tcSec~input_o ),
+	.datae(!\Selector2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector0~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector0~3 .extended_lut = "off";
+defparam \Selector0~3 .lut_mask = 64'hFFFF4F5FFFFF4F5F;
+defparam \Selector0~3 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \prState.Sidle (
 	.clk(\clk~input_o ),
-	.d(\tens_counter|count~4_combout ),
+	.d(vcc),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\tens_counter|count[0]~1_combout ),
+	.ena(\Selector0~3_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\tens_counter|count [3]),
+	.q(\prState.Sidle~q ),
 	.prn(vcc));
 // synopsys translate_off
-defparam \tens_counter|count[3] .is_wysiwyg = "true";
-defparam \tens_counter|count[3] .power_up = "low";
+defparam \prState.Sidle .is_wysiwyg = "true";
+defparam \prState.Sidle .power_up = "low";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Data_init[6]~input (
-	.i(Data_init[6]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[6]~input_o ));
-// synopsys translate_off
-defparam \Data_init[6]~input .bus_hold = "false";
-defparam \Data_init[6]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \tens_counter|count~3 (
+cyclonev_lcell_comb \Selector1~0 (
 // Equation(s):
-// \tens_counter|count~3_combout  = ( \loadN~input_o  & ( \Data_init[6]~input_o  & ( (!\tens_counter|count [0] & ((!\tens_counter|count [1] & (!\tens_counter|count [2] & \tens_counter|count [3])) # (\tens_counter|count [1] & (\tens_counter|count [2])))) # 
-// (\tens_counter|count [0] & (((\tens_counter|count [2])))) ) ) ) # ( !\loadN~input_o  & ( \Data_init[6]~input_o  ) ) # ( \loadN~input_o  & ( !\Data_init[6]~input_o  & ( (!\tens_counter|count [0] & ((!\tens_counter|count [1] & (!\tens_counter|count [2] & 
-// \tens_counter|count [3])) # (\tens_counter|count [1] & (\tens_counter|count [2])))) # (\tens_counter|count [0] & (((\tens_counter|count [2])))) ) ) )
+// \Selector1~0_combout  = ( \waitN~input_o  & ( \tcSec~input_o  & ( (!\prState.Srun~q  & (!\startN~input_o  & ((!\prState.Sidle~q ) # (\prState.Sarm~q )))) ) ) ) # ( !\waitN~input_o  & ( \tcSec~input_o  & ( (!\prState.Srun~q  & (!\startN~input_o  & 
+// ((!\prState.Sidle~q ) # (\prState.Sarm~q )))) ) ) ) # ( \waitN~input_o  & ( !\tcSec~input_o  & ( (!\startN~input_o  & ((!\prState.Sidle~q ) # (\prState.Sarm~q ))) ) ) ) # ( !\waitN~input_o  & ( !\tcSec~input_o  & ( (!\prState.Srun~q  & (!\startN~input_o  
+// & ((!\prState.Sidle~q ) # (\prState.Sarm~q )))) ) ) )
 
-	.dataa(!\tens_counter|count [0]),
-	.datab(!\tens_counter|count [1]),
-	.datac(!\tens_counter|count [2]),
-	.datad(!\tens_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[6]~input_o ),
+	.dataa(!\prState.Srun~q ),
+	.datab(!\prState.Sarm~q ),
+	.datac(!\prState.Sidle~q ),
+	.datad(!\startN~input_o ),
+	.datae(!\waitN~input_o ),
+	.dataf(!\tcSec~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tens_counter|count~3_combout ),
+	.combout(\Selector1~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tens_counter|count~3 .extended_lut = "off";
-defparam \tens_counter|count~3 .lut_mask = 64'h00000787FFFF0787;
-defparam \tens_counter|count~3 .shared_arith = "off";
+defparam \Selector1~0 .extended_lut = "off";
+defparam \Selector1~0 .lut_mask = 64'hA200F300A200A200;
+defparam \Selector1~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \tens_counter|count[2] (
+dffeas \prState.Sarm (
 	.clk(\clk~input_o ),
-	.d(\tens_counter|count~3_combout ),
+	.d(\Selector1~0_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\tens_counter|count[0]~1_combout ),
+	.ena(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\tens_counter|count [2]),
+	.q(\prState.Sarm~q ),
 	.prn(vcc));
 // synopsys translate_off
-defparam \tens_counter|count[2] .is_wysiwyg = "true";
-defparam \tens_counter|count[2] .power_up = "low";
+defparam \prState.Sarm .is_wysiwyg = "true";
+defparam \prState.Sarm .power_up = "low";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Data_init[5]~input (
-	.i(Data_init[5]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Data_init[5]~input_o ));
-// synopsys translate_off
-defparam \Data_init[5]~input .bus_hold = "false";
-defparam \Data_init[5]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \tens_counter|count~2 (
+cyclonev_lcell_comb \Selector0~2 (
 // Equation(s):
-// \tens_counter|count~2_combout  = ( \loadN~input_o  & ( \Data_init[5]~input_o  & ( (!\tens_counter|count [0] & (!\tens_counter|count [1] & ((\tens_counter|count [3]) # (\tens_counter|count [2])))) # (\tens_counter|count [0] & (\tens_counter|count [1])) ) ) 
-// ) # ( !\loadN~input_o  & ( \Data_init[5]~input_o  ) ) # ( \loadN~input_o  & ( !\Data_init[5]~input_o  & ( (!\tens_counter|count [0] & (!\tens_counter|count [1] & ((\tens_counter|count [3]) # (\tens_counter|count [2])))) # (\tens_counter|count [0] & 
-// (\tens_counter|count [1])) ) ) )
+// \Selector0~2_combout  = (!\prState.Spause~q  & (\prState.Sarm~q  & (\startN~input_o ))) # (\prState.Spause~q  & (((\waitN~input_o ))))
 
-	.dataa(!\tens_counter|count [0]),
-	.datab(!\tens_counter|count [1]),
-	.datac(!\tens_counter|count [2]),
-	.datad(!\tens_counter|count [3]),
-	.datae(!\loadN~input_o ),
-	.dataf(!\Data_init[5]~input_o ),
+	.dataa(!\prState.Sarm~q ),
+	.datab(!\prState.Spause~q ),
+	.datac(!\startN~input_o ),
+	.datad(!\waitN~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tens_counter|count~2_combout ),
+	.combout(\Selector0~2_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tens_counter|count~2 .extended_lut = "off";
-defparam \tens_counter|count~2 .lut_mask = 64'h00001999FFFF1999;
-defparam \tens_counter|count~2 .shared_arith = "off";
+defparam \Selector0~2 .extended_lut = "off";
+defparam \Selector0~2 .lut_mask = 64'h0437043704370437;
+defparam \Selector0~2 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \tens_counter|count[1] (
+cyclonev_lcell_comb \Selector2~1 (
+// Equation(s):
+// \Selector2~1_combout  = ( \Selector2~0_combout  & ( (!\prState.Srun~q  & (((\Selector0~2_combout )))) # (\prState.Srun~q  & (\waitN~input_o  & ((!\tcSec~input_o )))) ) )
+
+	.dataa(!\prState.Srun~q ),
+	.datab(!\waitN~input_o ),
+	.datac(!\Selector0~2_combout ),
+	.datad(!\tcSec~input_o ),
+	.datae(!\Selector2~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Selector2~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Selector2~1 .extended_lut = "off";
+defparam \Selector2~1 .lut_mask = 64'h00001B0A00001B0A;
+defparam \Selector2~1 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \prState.Srun (
 	.clk(\clk~input_o ),
-	.d(\tens_counter|count~2_combout ),
+	.d(\Selector2~1_combout ),
 	.asdata(vcc),
 	.clrn(\resetN~input_o ),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\tens_counter|count[0]~1_combout ),
+	.ena(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\tens_counter|count [1]),
+	.q(\prState.Srun~q ),
 	.prn(vcc));
 // synopsys translate_off
-defparam \tens_counter|count[1] .is_wysiwyg = "true";
-defparam \tens_counter|count[1] .power_up = "low";
+defparam \prState.Srun .is_wysiwyg = "true";
+defparam \prState.Srun .power_up = "low";
 // synopsys translate_on
 
-cyclonev_lcell_comb \tc~1 (
+cyclonev_lcell_comb \lampEnable~0 (
 // Equation(s):
-// \tc~1_combout  = ( \resetN~input_o  & ( \tc~0_combout  & ( (!\tens_counter|count [0] & (!\tens_counter|count [1] & (!\tens_counter|count [2] & !\tens_counter|count [3]))) ) ) )
+// \lampEnable~0_combout  = (!\prState.Sidle~q ) # (\prState.SlampOff~q )
 
-	.dataa(!\tens_counter|count [0]),
-	.datab(!\tens_counter|count [1]),
-	.datac(!\tens_counter|count [2]),
-	.datad(!\tens_counter|count [3]),
-	.datae(!\resetN~input_o ),
-	.dataf(!\tc~0_combout ),
+	.dataa(!\prState.Sidle~q ),
+	.datab(!\prState.SlampOff~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\tc~1_combout ),
+	.combout(\lampEnable~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \tc~1 .extended_lut = "off";
-defparam \tc~1 .lut_mask = 64'h0000000000008000;
-defparam \tc~1 .shared_arith = "off";
+defparam \lampEnable~0 .extended_lut = "off";
+defparam \lampEnable~0 .lut_mask = 64'hBBBBBBBBBBBBBBBB;
+defparam \lampEnable~0 .shared_arith = "off";
 // synopsys translate_on
 
-assign Count_out[0] = \Count_out[0]~output_o ;
+assign countEnable = \countEnable~output_o ;
 
-assign Count_out[1] = \Count_out[1]~output_o ;
+assign countLoadN = \countLoadN~output_o ;
 
-assign Count_out[2] = \Count_out[2]~output_o ;
+assign lampEnable = \lampEnable~output_o ;
 
-assign Count_out[3] = \Count_out[3]~output_o ;
-
-assign Count_out[4] = \Count_out[4]~output_o ;
-
-assign Count_out[5] = \Count_out[5]~output_o ;
-
-assign Count_out[6] = \Count_out[6]~output_o ;
-
-assign Count_out[7] = \Count_out[7]~output_o ;
-
-assign tc = \tc~output_o ;
+assign lampTest = \lampTest~output_o ;
 
 endmodule
