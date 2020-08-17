@@ -1,0 +1,35 @@
+Quartus Prime Archive log --	C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/SV2_Schematics.qarlog
+
+Archive:	C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/SV2_Schematics.qar
+Date:		Mon Aug 17 16:04:44 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/DataIn.bsf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/DataIn.qip
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/DataIn.v
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/DataIn_bb.v
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/SV2Lab.qpf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/SV2Lab.qsf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/assignment_defaults.qdf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/bomb_fsm_SIM.vwf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/constraints/pinsSV2.tcl
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/constraints/pinsSV2_bomb.tcl
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/decimal_down_sim.vwf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/ramzor_fsm_SIM.vwf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/aux_timer.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/bomb_fsm.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/decimal_2_digits_counter.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/decimal_down_counter.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/hexss.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/one_sec_counter.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/onetens_sec_counter.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/rtl/topBomb.bdf
+C:/TECHNION/gitLab/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
