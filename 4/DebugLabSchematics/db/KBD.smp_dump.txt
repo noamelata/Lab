@@ -1,0 +1,8 @@
+
+State Machine - |bitrec|cur_st
+Name cur_st.CHK_DATA_ST cur_st.HI_CLK_ST cur_st.LOW_CLK_ST cur_st.IDLE_ST cur_st.NEW_DATA_ST 
+cur_st.IDLE_ST 0 0 0 0 0 
+cur_st.LOW_CLK_ST 0 0 1 1 0 
+cur_st.HI_CLK_ST 0 1 0 1 0 
+cur_st.CHK_DATA_ST 1 0 0 1 0 
+cur_st.NEW_DATA_ST 0 0 0 1 1 

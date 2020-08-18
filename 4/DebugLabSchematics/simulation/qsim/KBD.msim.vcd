@@ -1,0 +1,2483 @@
+$comment
+	File created using the following command:
+		vcd file KBD.msim.vcd -direction
+$end
+$date
+	Tue Aug 18 15:41:52 2020
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module keyToggle_decoder_vlg_vec_tst $end
+$var reg 1 ! brakee $end
+$var reg 1 " clk $end
+$var reg 9 # keyCode [8:0] $end
+$var reg 1 $ make $end
+$var reg 1 % resetN $end
+$var wire 1 & keyIsPressed $end
+$var wire 1 ' keyRisingEdgePulse $end
+$var wire 1 ( keyToggle $end
+
+$scope module i1 $end
+$var wire 1 ) gnd $end
+$var wire 1 * vcc $end
+$var wire 1 + unknown $end
+$var tri1 1 , devclrn $end
+$var tri1 1 - devpor $end
+$var tri1 1 . devoe $end
+$var wire 1 / auto_hub|~GND~combout $end
+$var wire 1 0 auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|clr_reg~_wirecell_combout $end
+$var wire 1 1 auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state[0]~_wirecell_combout $end
+$var wire 1 2 auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_out_ff~q $end
+$var wire 1 3 auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_out_mode_ff~q $end
+$var wire 1 4 auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_out_ff~0_combout $end
+$var wire 1 5 auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_out_mode_ff~0_combout $end
+$var wire 1 6 clk~input_o $end
+$var wire 1 7 make~input_o $end
+$var wire 1 8 keyCode[5]~input_o $end
+$var wire 1 9 keyCode[0]~input_o $end
+$var wire 1 : keyCode[1]~input_o $end
+$var wire 1 ; keyCode[2]~input_o $end
+$var wire 1 < keyCode[3]~input_o $end
+$var wire 1 = keyCode[4]~input_o $end
+$var wire 1 > keyIsPressed~0_combout $end
+$var wire 1 ? keyCode[6]~input_o $end
+$var wire 1 @ keyCode[7]~input_o $end
+$var wire 1 A keyCode[8]~input_o $end
+$var wire 1 B keyIsPressed~1_combout $end
+$var wire 1 C brakee~input_o $end
+$var wire 1 D keyIsPressed~2_combout $end
+$var wire 1 E resetN~input_o $end
+$var wire 1 F keyIsPressed~reg0_q $end
+$var wire 1 G keyIsPressed_d~q $end
+$var wire 1 H keyToggle~0_combout $end
+$var wire 1 I keyToggle~reg0_q $end
+$var wire 1 J keyRisingEdgePulse~0_combout $end
+$var wire 1 K altera_reserved_tms~input_o $end
+$var wire 1 L altera_reserved_tck~input_o $end
+$var wire 1 M altera_reserved_tdi~input_o $end
+$var wire 1 N altera_internal_jtag~TCKUTAP $end
+$var wire 1 O altera_internal_jtag~TMSUTAP $end
+$var wire 1 P auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|node_ena_proc~0_combout $end
+$var wire 1 Q auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt~1_combout $end
+$var wire 1 R auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt~2_combout $end
+$var wire 1 S auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt~0_combout $end
+$var wire 1 T auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~0_combout $end
+$var wire 1 U auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~6_combout $end
+$var wire 1 V auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~7_combout $end
+$var wire 1 W auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~4_combout $end
+$var wire 1 X auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~5_combout $end
+$var wire 1 Y auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~8_combout $end
+$var wire 1 Z auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~9_combout $end
+$var wire 1 [ auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~12_combout $end
+$var wire 1 \ auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~13_combout $end
+$var wire 1 ] auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~10_combout $end
+$var wire 1 ^ auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~11_combout $end
+$var wire 1 _ auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|virtual_ir_dr_scan_proc~0_combout $end
+$var wire 1 ` auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~1_combout $end
+$var wire 1 a auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~2_combout $end
+$var wire 1 b auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state~3_combout $end
+$var wire 1 c altera_internal_jtag~TDIUTAP $end
+$var wire 1 d auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_bypass_reg~0_combout $end
+$var wire 1 e auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_bypass_reg~q $end
+$var wire 1 f auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg~1_combout $end
+$var wire 1 g auto_signaltap_0|~GND~combout $end
+$var wire 1 h auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2]~0_combout $end
+$var wire 1 i auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[0]~1_combout $end
+$var wire 1 j auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|Equal0~0_combout $end
+$var wire 1 k auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|Equal1~0_combout $end
+$var wire 1 l auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|virtual_ir_scan_reg~q $end
+$var wire 1 m auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][0]~0_combout $end
+$var wire 1 n auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][1]~q $end
+$var wire 1 o auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][2]~q $end
+$var wire 1 p auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg~3_combout $end
+$var wire 1 q auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|reset_ena_reg_proc~0_combout $end
+$var wire 1 r auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]~3_combout $end
+$var wire 1 s auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][3]~q $end
+$var wire 1 t auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]~4_combout $end
+$var wire 1 u auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][4]~q $end
+$var wire 1 v auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][5]~q $end
+$var wire 1 w auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][6]~q $end
+$var wire 1 x auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][7]~q $end
+$var wire 1 y auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][8]~q $end
+$var wire 1 z auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][9]~q $end
+$var wire 1 { auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]~0_combout $end
+$var wire 1 | auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]~5_combout $end
+$var wire 1 } auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]~6_combout $end
+$var wire 1 ~ auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg[1]~0_combout $end
+$var wire 1 !! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|reset_ena_reg~q $end
+$var wire 1 "! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg[2]~1_combout $end
+$var wire 1 #! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg[2]~2_combout $end
+$var wire 1 $! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|clr_reg_proc~0_combout $end
+$var wire 1 %! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|clr_reg~q $end
+$var wire 1 &! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][0]~q $end
+$var wire 1 '! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|Equal3~0_combout $end
+$var wire 1 (! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|Equal0~1_combout $end
+$var wire 1 )! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|virtual_dr_scan_reg~q $end
+$var wire 1 *! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_proc~0_combout $end
+$var wire 1 +! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|clear_signal~combout $end
+$var wire 1 ,! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal~4_combout $end
+$var wire 1 -! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[2]~1_combout $end
+$var wire 1 .! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal~0_combout $end
+$var wire 1 /! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal~2_combout $end
+$var wire 1 0! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal~3_combout $end
+$var wire 1 1! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal~5_combout $end
+$var wire 1 2! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]~5_combout $end
+$var wire 1 3! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~6_combout $end
+$var wire 1 4! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~8_combout $end
+$var wire 1 5! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~10_combout $end
+$var wire 1 6! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg[0]~0_combout $end
+$var wire 1 7! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric_ident_writedata[0]~0_combout $end
+$var wire 1 8! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~11_combout $end
+$var wire 1 9! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]~4_combout $end
+$var wire 1 :! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~9_combout $end
+$var wire 1 ;! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~7_combout $end
+$var wire 1 <! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~0_combout $end
+$var wire 1 =! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~1_combout $end
+$var wire 1 >! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]~2_combout $end
+$var wire 1 ?! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg~3_combout $end
+$var wire 1 @! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~0_combout $end
+$var wire 1 A! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|reset_all~0_combout $end
+$var wire 1 B! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|reset_all~q $end
+$var wire 1 C! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|run~q $end
+$var wire 1 D! QIC_SIGNALTAP_GND~combout $end
+$var wire 1 E! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|node_ena~0_combout $end
+$var wire 1 F! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|node_ena~1_combout $end
+$var wire 1 G! auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|node_ena~2_combout $end
+$var wire 1 H! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_setup_ena~combout $end
+$var wire 1 I! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|holdff~q $end
+$var wire 1 J! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|p_match_out~0_combout $end
+$var wire 1 K! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:3:sm1|regoutff~q $end
+$var wire 1 L! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|holdff~q $end
+$var wire 1 M! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|p_match_out~0_combout $end
+$var wire 1 N! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:4:sm1|regoutff~q $end
+$var wire 1 O! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|holdff~q $end
+$var wire 1 P! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|p_match_out~0_combout $end
+$var wire 1 Q! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:2:sm1|regoutff~q $end
+$var wire 1 R! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|holdff~q $end
+$var wire 1 S! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|p_match_out~0_combout $end
+$var wire 1 T! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|regoutff~q $end
+$var wire 1 U! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~10 $end
+$var wire 1 V! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~14 $end
+$var wire 1 W! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~18 $end
+$var wire 1 X! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~22 $end
+$var wire 1 Y! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~26 $end
+$var wire 1 Z! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~1_sumout $end
+$var wire 1 [! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[6]~0_combout $end
+$var wire 1 \! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~10 $end
+$var wire 1 ]! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~13_sumout $end
+$var wire 1 ^! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~4_combout $end
+$var wire 1 _! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~9_sumout $end
+$var wire 1 `! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[1]~2_combout $end
+$var wire 1 a! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~13_sumout $end
+$var wire 1 b! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[2]~3_combout $end
+$var wire 1 c! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal2~1_combout $end
+$var wire 1 d! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~17_sumout $end
+$var wire 1 e! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[3]~4_combout $end
+$var wire 1 f! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~21_sumout $end
+$var wire 1 g! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[4]~5_combout $end
+$var wire 1 h! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~25_sumout $end
+$var wire 1 i! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[5]~6_combout $end
+$var wire 1 j! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal2~2_combout $end
+$var wire 1 k! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|process_0~1_combout $end
+$var wire 1 l! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter[0]~1_combout $end
+$var wire 1 m! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|collect_data~combout $end
+$var wire 1 n! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~14 $end
+$var wire 1 o! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~17_sumout $end
+$var wire 1 p! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~5_combout $end
+$var wire 1 q! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~18 $end
+$var wire 1 r! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~21_sumout $end
+$var wire 1 s! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~6_combout $end
+$var wire 1 t! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~22 $end
+$var wire 1 u! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~25_sumout $end
+$var wire 1 v! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~7_combout $end
+$var wire 1 w! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~26 $end
+$var wire 1 x! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~29_sumout $end
+$var wire 1 y! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~8_combout $end
+$var wire 1 z! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~30 $end
+$var wire 1 {! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~2 $end
+$var wire 1 |! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~5_sumout $end
+$var wire 1 }! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~2_combout $end
+$var wire 1 ~! auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal0~1_combout $end
+$var wire 1 !" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~9_sumout $end
+$var wire 1 "" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~3_combout $end
+$var wire 1 #" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal0~0_combout $end
+$var wire 1 $" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add3~1_sumout $end
+$var wire 1 %" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter~0_combout $end
+$var wire 1 &" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~2 $end
+$var wire 1 '" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add0~5_sumout $end
+$var wire 1 (" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count[7]~1_combout $end
+$var wire 1 )" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal2~0_combout $end
+$var wire 1 *" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal2~3_combout $end
+$var wire 1 +" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|process_0~0_combout $end
+$var wire 1 ," auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|segment_shift_var~0_combout $end
+$var wire 1 -" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[2]~q $end
+$var wire 1 ." auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~21_sumout $end
+$var wire 1 /" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[0]~q $end
+$var wire 1 0" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~22 $end
+$var wire 1 1" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~25_sumout $end
+$var wire 1 2" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[1]~q $end
+$var wire 1 3" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~26 $end
+$var wire 1 4" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~1_sumout $end
+$var wire 1 5" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[3]~q $end
+$var wire 1 6" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~2 $end
+$var wire 1 7" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~5_sumout $end
+$var wire 1 8" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[4]~q $end
+$var wire 1 9" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~6 $end
+$var wire 1 :" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~9_sumout $end
+$var wire 1 ;" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[5]~q $end
+$var wire 1 <" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~10 $end
+$var wire 1 =" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~13_sumout $end
+$var wire 1 >" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:next_address[6]~q $end
+$var wire 1 ?" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~14 $end
+$var wire 1 @" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Add2~17_sumout $end
+$var wire 1 A" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped~0_combout $end
+$var wire 1 B" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped~1_combout $end
+$var wire 1 C" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped~2_combout $end
+$var wire 1 D" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:is_buffer_wrapped~q $end
+$var wire 1 E" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|run~0_combout $end
+$var wire 1 F" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|run~q $end
+$var wire 1 G" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|holdff~q $end
+$var wire 1 H" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|p_match_out~0_combout $end
+$var wire 1 I" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_modules_gen:0:trigger_match|gen_sbpmg_pipeline_less_than_two:sm0:1:sm1|regoutff~q $end
+$var wire 1 J" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|last_level_delayed~0_combout $end
+$var wire 1 K" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|last_level_delayed~q $end
+$var wire 1 L" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|final_trigger_set~0_combout $end
+$var wire 1 M" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|final_trigger_set~q $end
+$var wire 1 N" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|done~0_combout $end
+$var wire 1 O" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:done~q $end
+$var wire 1 P" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|Equal0~2_combout $end
+$var wire 1 Q" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|collecting_post_data_var~0_combout $end
+$var wire 1 R" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:collecting_post_data_var~q $end
+$var wire 1 S" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_load_on~0_combout $end
+$var wire 1 T" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_enable_delayed~0_combout $end
+$var wire 1 U" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_enable_delayed~q $end
+$var wire 1 V" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|state_status[2]~0_combout $end
+$var wire 1 W" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|base_address~0_combout $end
+$var wire 1 X" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:base_address[0]~q $end
+$var wire 1 Y" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~16_combout $end
+$var wire 1 Z" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_shift_enable~0_combout $end
+$var wire 1 [" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~15_combout $end
+$var wire 1 \" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~14_combout $end
+$var wire 1 ]" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~13_combout $end
+$var wire 1 ^" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~12_combout $end
+$var wire 1 _" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~11_combout $end
+$var wire 1 `" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~10_combout $end
+$var wire 1 a" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~9_combout $end
+$var wire 1 b" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~8_combout $end
+$var wire 1 c" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~7_combout $end
+$var wire 1 d" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~6_combout $end
+$var wire 1 e" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~5_combout $end
+$var wire 1 f" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~4_combout $end
+$var wire 1 g" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~3_combout $end
+$var wire 1 h" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~2_combout $end
+$var wire 1 i" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~1_combout $end
+$var wire 1 j" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|_~0_combout $end
+$var wire 1 k" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|bypass_reg_out~0_combout $end
+$var wire 1 l" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|bypass_reg_out~q $end
+$var wire 1 m" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~0_combout $end
+$var wire 1 n" auto_signaltap_0|~VCC~combout $end
+$var wire 1 o" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter~2_combout $end
+$var wire 1 p" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter[3]~1_combout $end
+$var wire 1 q" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter~3_combout $end
+$var wire 1 r" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter~4_combout $end
+$var wire 1 s" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter~0_combout $end
+$var wire 1 t" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~0_combout $end
+$var wire 1 u" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR[0]~1_combout $end
+$var wire 1 v" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR[0]~2_combout $end
+$var wire 1 w" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~6_combout $end
+$var wire 1 x" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~9_combout $end
+$var wire 1 y" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~12_combout $end
+$var wire 1 z" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~13_combout $end
+$var wire 1 {" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~14_combout $end
+$var wire 1 |" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR[0]~5_combout $end
+$var wire 1 }" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~10_combout $end
+$var wire 1 ~" auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~11_combout $end
+$var wire 1 !# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~7_combout $end
+$var wire 1 "# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~8_combout $end
+$var wire 1 ## auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~3_combout $end
+$var wire 1 $# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR~4_combout $end
+$var wire 1 %# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[0][0]~q $end
+$var wire 1 &# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[1][0]~q $end
+$var wire 1 '# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[2][0]~q $end
+$var wire 1 (# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[3][0]~q $end
+$var wire 1 )# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita0~sumout $end
+$var wire 1 *# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr_ena~0_combout $end
+$var wire 1 +# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|acq_buf_read_reset~combout $end
+$var wire 1 ,# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita0~sumout $end
+$var wire 1 -# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|offload_shift_ena~combout $end
+$var wire 1 .# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita2~COUT $end
+$var wire 1 /# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita2~1_sumout $end
+$var wire 1 0# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|cout_actual~combout $end
+$var wire 1 1# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita0~COUT $end
+$var wire 1 2# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita1~sumout $end
+$var wire 1 3# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita1~COUT $end
+$var wire 1 4# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_comb_bita2~sumout $end
+$var wire 1 5# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|Equal0~0_combout $end
+$var wire 1 6# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter_clk_ena~combout $end
+$var wire 1 7# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita0~COUT $end
+$var wire 1 8# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita1~sumout $end
+$var wire 1 9# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita1~COUT $end
+$var wire 1 :# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita2~sumout $end
+$var wire 1 ;# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita2~COUT $end
+$var wire 1 <# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita3~sumout $end
+$var wire 1 =# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita3~COUT $end
+$var wire 1 ># auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita4~sumout $end
+$var wire 1 ?# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita4~COUT $end
+$var wire 1 @# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita5~sumout $end
+$var wire 1 A# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita5~COUT $end
+$var wire 1 B# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_comb_bita6~sumout $end
+$var wire 1 C# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a0~portbdataout $end
+$var wire 1 D# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[0][1]~q $end
+$var wire 1 E# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[1][1]~q $end
+$var wire 1 F# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[2][1]~q $end
+$var wire 1 G# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[3][1]~q $end
+$var wire 1 H# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a1~portbdataout $end
+$var wire 1 I# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[0][2]~q $end
+$var wire 1 J# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[1][2]~q $end
+$var wire 1 K# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[2][2]~q $end
+$var wire 1 L# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[3][2]~q $end
+$var wire 1 M# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a2~portbdataout $end
+$var wire 1 N# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[0][3]~q $end
+$var wire 1 O# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[1][3]~q $end
+$var wire 1 P# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[2][3]~q $end
+$var wire 1 Q# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[3][3]~q $end
+$var wire 1 R# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a3~portbdataout $end
+$var wire 1 S# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[0][4]~q $end
+$var wire 1 T# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[1][4]~q $end
+$var wire 1 U# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[2][4]~q $end
+$var wire 1 V# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|acq_data_in_pipe_reg[3][4]~q $end
+$var wire 1 W# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a4~portbdataout $end
+$var wire 1 X# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|_~4_combout $end
+$var wire 1 Y# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|_~3_combout $end
+$var wire 1 Z# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|_~2_combout $end
+$var wire 1 [# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|_~1_combout $end
+$var wire 1 \# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|_~0_combout $end
+$var wire 1 ]# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[6]~q $end
+$var wire 1 ^# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sdr~combout $end
+$var wire 1 _# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[5]~q $end
+$var wire 1 `# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[4]~q $end
+$var wire 1 a# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[3]~q $end
+$var wire 1 b# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[2]~q $end
+$var wire 1 c# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[1]~q $end
+$var wire 1 d# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:last_trigger_address_var[0]~q $end
+$var wire 1 e# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig[0]~0_combout $end
+$var wire 1 f# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped_once_sig~0_combout $end
+$var wire 1 g# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped_once_sig~1_combout $end
+$var wire 1 h# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|is_buffer_wrapped_once_sig~q $end
+$var wire 1 i# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~2_combout $end
+$var wire 1 j# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~3_combout $end
+$var wire 1 k# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~6_combout $end
+$var wire 1 l# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~1_sumout $end
+$var wire 1 m# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~2 $end
+$var wire 1 n# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~5_sumout $end
+$var wire 1 o# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~6 $end
+$var wire 1 p# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~17_sumout $end
+$var wire 1 q# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~18 $end
+$var wire 1 r# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~21_sumout $end
+$var wire 1 s# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~22 $end
+$var wire 1 t# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~25_sumout $end
+$var wire 1 u# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~26 $end
+$var wire 1 v# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~29_sumout $end
+$var wire 1 w# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~30 $end
+$var wire 1 x# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~33_sumout $end
+$var wire 1 y# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~34 $end
+$var wire 1 z# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~9_sumout $end
+$var wire 1 {# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~10 $end
+$var wire 1 |# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~13_sumout $end
+$var wire 1 }# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~14 $end
+$var wire 1 ~# auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~81_sumout $end
+$var wire 1 !$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~82 $end
+$var wire 1 "$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~85_sumout $end
+$var wire 1 #$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~86 $end
+$var wire 1 $$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~89_sumout $end
+$var wire 1 %$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~90 $end
+$var wire 1 &$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~93_sumout $end
+$var wire 1 '$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~94 $end
+$var wire 1 ($ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~97_sumout $end
+$var wire 1 )$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~98 $end
+$var wire 1 *$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~101_sumout $end
+$var wire 1 +$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~102 $end
+$var wire 1 ,$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~105_sumout $end
+$var wire 1 -$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~106 $end
+$var wire 1 .$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~109_sumout $end
+$var wire 1 /$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~110 $end
+$var wire 1 0$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~53_sumout $end
+$var wire 1 1$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~54 $end
+$var wire 1 2$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~113_sumout $end
+$var wire 1 3$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~114 $end
+$var wire 1 4$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~117_sumout $end
+$var wire 1 5$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~118 $end
+$var wire 1 6$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~121_sumout $end
+$var wire 1 7$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~122 $end
+$var wire 1 8$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~125_sumout $end
+$var wire 1 9$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~126 $end
+$var wire 1 :$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~57_sumout $end
+$var wire 1 ;$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~58 $end
+$var wire 1 <$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~61_sumout $end
+$var wire 1 =$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~62 $end
+$var wire 1 >$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~65_sumout $end
+$var wire 1 ?$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~66 $end
+$var wire 1 @$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~69_sumout $end
+$var wire 1 A$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~70 $end
+$var wire 1 B$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~73_sumout $end
+$var wire 1 C$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~74 $end
+$var wire 1 D$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~77_sumout $end
+$var wire 1 E$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~78 $end
+$var wire 1 F$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~37_sumout $end
+$var wire 1 G$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~38 $end
+$var wire 1 H$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~41_sumout $end
+$var wire 1 I$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~42 $end
+$var wire 1 J$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~45_sumout $end
+$var wire 1 K$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~46 $end
+$var wire 1 L$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|Add0~49_sumout $end
+$var wire 1 M$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|process_0~0_combout $end
+$var wire 1 N$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|process_0~1_combout $end
+$var wire 1 O$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~0_combout $end
+$var wire 1 P$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~1_combout $end
+$var wire 1 Q$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~2_combout $end
+$var wire 1 R$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~3_combout $end
+$var wire 1 S$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~4_combout $end
+$var wire 1 T$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~5_combout $end
+$var wire 1 U$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|LessThan0~6_combout $end
+$var wire 1 V$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg[9]~0_combout $end
+$var wire 1 W$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_wrapped_delayed~q $end
+$var wire 1 X$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|buffer_manager:segment_shift_var~q $end
+$var wire 1 Y$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|wdecoder|auto_generated|eq_node[1]~0_combout $end
+$var wire 1 Z$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][0]~q $end
+$var wire 1 [$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|wdecoder|auto_generated|eq_node[0]~1_combout $end
+$var wire 1 \$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][0]~q $end
+$var wire 1 ]$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_comb_bita0~sumout $end
+$var wire 1 ^$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_buf_read_reset~combout $end
+$var wire 1 _$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_comb_bita0~COUT $end
+$var wire 1 `$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_comb_bita0~1_sumout $end
+$var wire 1 a$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|cout_actual~combout $end
+$var wire 1 b$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita0~sumout $end
+$var wire 1 c$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_offload_shift_ena~combout $end
+$var wire 1 d$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita2~COUT $end
+$var wire 1 e$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita3~sumout $end
+$var wire 1 f$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|Equal3~0_combout $end
+$var wire 1 g$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita3~COUT $end
+$var wire 1 h$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita3~1_sumout $end
+$var wire 1 i$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|cout_actual~combout $end
+$var wire 1 j$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita0~COUT $end
+$var wire 1 k$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita1~sumout $end
+$var wire 1 l$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita1~COUT $end
+$var wire 1 m$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_comb_bita2~sumout $end
+$var wire 1 n$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|Equal2~0_combout $end
+$var wire 1 o$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][1]~q $end
+$var wire 1 p$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][1]~q $end
+$var wire 1 q$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][2]~q $end
+$var wire 1 r$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][2]~q $end
+$var wire 1 s$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][3]~q $end
+$var wire 1 t$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][3]~q $end
+$var wire 1 u$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][4]~q $end
+$var wire 1 v$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][4]~q $end
+$var wire 1 w$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][5]~q $end
+$var wire 1 x$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][5]~q $end
+$var wire 1 y$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][6]~q $end
+$var wire 1 z$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][6]~q $end
+$var wire 1 {$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][7]~q $end
+$var wire 1 |$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][7]~q $end
+$var wire 1 }$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][8]~q $end
+$var wire 1 ~$ auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][8]~q $end
+$var wire 1 !% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][9]~q $end
+$var wire 1 "% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][9]~q $end
+$var wire 1 #% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][10]~q $end
+$var wire 1 $% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][10]~q $end
+$var wire 1 %% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][11]~q $end
+$var wire 1 &% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][11]~q $end
+$var wire 1 '% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][12]~q $end
+$var wire 1 (% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][12]~q $end
+$var wire 1 )% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][13]~q $end
+$var wire 1 *% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][13]~q $end
+$var wire 1 +% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][14]~q $end
+$var wire 1 ,% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[0][14]~q $end
+$var wire 1 -% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|_~0_combout $end
+$var wire 1 .% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_ram_shift_load~combout $end
+$var wire 1 /% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~4_combout $end
+$var wire 1 0% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr~3_combout $end
+$var wire 1 1% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_calc_reset~combout $end
+$var wire 1 2% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr[1]~1_combout $end
+$var wire 1 3% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr~2_combout $end
+$var wire 1 4% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr~0_combout $end
+$var wire 1 5% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg~3_combout $end
+$var wire 1 6% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg[0]~0_combout $end
+$var wire 1 7% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg~2_combout $end
+$var wire 1 8% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg~1_combout $end
+$var wire 1 9% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|cdr~0_combout $end
+$var wire 1 :% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~1_combout $end
+$var wire 1 ;% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_internal~5_combout $end
+$var wire 1 <% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~1_combout $end
+$var wire 1 =% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~2_combout $end
+$var wire 1 >% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter~0_combout $end
+$var wire 1 ?% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter[0]~1_combout $end
+$var wire 1 @% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter~5_combout $end
+$var wire 1 A% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter~4_combout $end
+$var wire 1 B% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter~3_combout $end
+$var wire 1 C% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter~2_combout $end
+$var wire 1 D% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~6_combout $end
+$var wire 1 E% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~7_combout $end
+$var wire 1 F% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR[0]~2_combout $end
+$var wire 1 G% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~5_combout $end
+$var wire 1 H% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~3_combout $end
+$var wire 1 I% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~4_combout $end
+$var wire 1 J% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~0_combout $end
+$var wire 1 K% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR~1_combout $end
+$var wire 1 L% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg~3_combout $end
+$var wire 1 M% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]~2_combout $end
+$var wire 1 N% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg~2_combout $end
+$var wire 1 O% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg~1_combout $end
+$var wire 1 P% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg~0_combout $end
+$var wire 1 Q% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~3_combout $end
+$var wire 1 R% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~4_combout $end
+$var wire 1 S% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~5_combout $end
+$var wire 1 T% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo_mux_out~6_combout $end
+$var wire 1 U% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|tdo~q $end
+$var wire 1 V% altera_internal_jtag~TDO $end
+$var wire 1 W% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [15] $end
+$var wire 1 X% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [14] $end
+$var wire 1 Y% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [13] $end
+$var wire 1 Z% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [12] $end
+$var wire 1 [% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [11] $end
+$var wire 1 \% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [10] $end
+$var wire 1 ]% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [9] $end
+$var wire 1 ^% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [8] $end
+$var wire 1 _% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [7] $end
+$var wire 1 `% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [6] $end
+$var wire 1 a% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [5] $end
+$var wire 1 b% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [4] $end
+$var wire 1 c% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [3] $end
+$var wire 1 d% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [2] $end
+$var wire 1 e% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [1] $end
+$var wire 1 f% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state [0] $end
+$var wire 1 g% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [10] $end
+$var wire 1 h% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [9] $end
+$var wire 1 i% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [8] $end
+$var wire 1 j% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [7] $end
+$var wire 1 k% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [6] $end
+$var wire 1 l% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [5] $end
+$var wire 1 m% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [4] $end
+$var wire 1 n% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [3] $end
+$var wire 1 o% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [2] $end
+$var wire 1 p% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [1] $end
+$var wire 1 q% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|irsr_reg [0] $end
+$var wire 1 r% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt [2] $end
+$var wire 1 s% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt [1] $end
+$var wire 1 t% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|tms_cnt [0] $end
+$var wire 1 u% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [6] $end
+$var wire 1 v% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [5] $end
+$var wire 1 w% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [4] $end
+$var wire 1 x% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [3] $end
+$var wire 1 y% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [2] $end
+$var wire 1 z% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [1] $end
+$var wire 1 {% auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig [0] $end
+$var wire 1 |% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR [3] $end
+$var wire 1 }% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR [2] $end
+$var wire 1 ~% auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR [1] $end
+$var wire 1 !& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|WORD_SR [0] $end
+$var wire 1 "& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [32] $end
+$var wire 1 #& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [31] $end
+$var wire 1 $& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [30] $end
+$var wire 1 %& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [29] $end
+$var wire 1 && auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [28] $end
+$var wire 1 '& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [27] $end
+$var wire 1 (& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [26] $end
+$var wire 1 )& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [25] $end
+$var wire 1 *& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [24] $end
+$var wire 1 +& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [23] $end
+$var wire 1 ,& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [22] $end
+$var wire 1 -& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [21] $end
+$var wire 1 .& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [20] $end
+$var wire 1 /& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [19] $end
+$var wire 1 0& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [18] $end
+$var wire 1 1& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [17] $end
+$var wire 1 2& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [16] $end
+$var wire 1 3& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [15] $end
+$var wire 1 4& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [14] $end
+$var wire 1 5& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [13] $end
+$var wire 1 6& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [12] $end
+$var wire 1 7& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [11] $end
+$var wire 1 8& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [10] $end
+$var wire 1 9& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [9] $end
+$var wire 1 :& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [8] $end
+$var wire 1 ;& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [7] $end
+$var wire 1 <& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [6] $end
+$var wire 1 =& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [5] $end
+$var wire 1 >& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [4] $end
+$var wire 1 ?& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [3] $end
+$var wire 1 @& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [2] $end
+$var wire 1 A& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [1] $end
+$var wire 1 B& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|splitter_nodes_receive_0 [0] $end
+$var wire 1 C& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|current_segment_delayed [0] $end
+$var wire 1 D& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [14] $end
+$var wire 1 E& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [13] $end
+$var wire 1 F& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [12] $end
+$var wire 1 G& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [11] $end
+$var wire 1 H& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [10] $end
+$var wire 1 I& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [9] $end
+$var wire 1 J& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [8] $end
+$var wire 1 K& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [7] $end
+$var wire 1 L& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [6] $end
+$var wire 1 M& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [5] $end
+$var wire 1 N& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [4] $end
+$var wire 1 O& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [3] $end
+$var wire 1 P& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [2] $end
+$var wire 1 Q& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [1] $end
+$var wire 1 R& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs [0] $end
+$var wire 1 S& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg [3] $end
+$var wire 1 T& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg [2] $end
+$var wire 1 U& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg [1] $end
+$var wire 1 V& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|design_hash_reg [0] $end
+$var wire 1 W& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [6] $end
+$var wire 1 X& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [5] $end
+$var wire 1 Y& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [4] $end
+$var wire 1 Z& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [3] $end
+$var wire 1 [& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [2] $end
+$var wire 1 \& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [1] $end
+$var wire 1 ]& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed [0] $end
+$var wire 1 ^& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg [3] $end
+$var wire 1 _& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg [2] $end
+$var wire 1 `& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg [1] $end
+$var wire 1 a& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg [0] $end
+$var wire 1 b& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter [3] $end
+$var wire 1 c& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter [2] $end
+$var wire 1 d& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter [1] $end
+$var wire 1 e& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter [0] $end
+$var wire 1 f& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|virtual_ir_tdo_sel_reg [0] $end
+$var wire 1 g& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg [2] $end
+$var wire 1 h& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg [1] $end
+$var wire 1 i& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_mode_reg [0] $end
+$var wire 1 j& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [9] $end
+$var wire 1 k& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [8] $end
+$var wire 1 l& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [7] $end
+$var wire 1 m& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [6] $end
+$var wire 1 n& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [5] $end
+$var wire 1 o& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [4] $end
+$var wire 1 p& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [3] $end
+$var wire 1 q& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [2] $end
+$var wire 1 r& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [1] $end
+$var wire 1 s& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg [0] $end
+$var wire 1 t& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal [4] $end
+$var wire 1 u& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal [3] $end
+$var wire 1 v& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal [2] $end
+$var wire 1 w& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal [1] $end
+$var wire 1 x& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal [0] $end
+$var wire 1 y& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric_ident_writedata [3] $end
+$var wire 1 z& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric_ident_writedata [2] $end
+$var wire 1 {& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric_ident_writedata [1] $end
+$var wire 1 |& auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric_ident_writedata [0] $end
+$var wire 1 }& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [7] $end
+$var wire 1 ~& auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [6] $end
+$var wire 1 !' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [5] $end
+$var wire 1 "' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [4] $end
+$var wire 1 #' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [3] $end
+$var wire 1 $' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [2] $end
+$var wire 1 %' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [1] $end
+$var wire 1 &' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count [0] $end
+$var wire 1 '' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter [4] $end
+$var wire 1 (' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter [3] $end
+$var wire 1 )' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter [2] $end
+$var wire 1 *' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter [1] $end
+$var wire 1 +' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|hub_info_reg|word_counter [0] $end
+$var wire 1 ,' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [31] $end
+$var wire 1 -' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [30] $end
+$var wire 1 .' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [29] $end
+$var wire 1 /' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [28] $end
+$var wire 1 0' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [27] $end
+$var wire 1 1' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [26] $end
+$var wire 1 2' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [25] $end
+$var wire 1 3' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [24] $end
+$var wire 1 4' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [23] $end
+$var wire 1 5' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [22] $end
+$var wire 1 6' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [21] $end
+$var wire 1 7' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [20] $end
+$var wire 1 8' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [19] $end
+$var wire 1 9' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [18] $end
+$var wire 1 :' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [17] $end
+$var wire 1 ;' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [16] $end
+$var wire 1 <' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [15] $end
+$var wire 1 =' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [14] $end
+$var wire 1 >' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [13] $end
+$var wire 1 ?' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [12] $end
+$var wire 1 @' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [11] $end
+$var wire 1 A' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [10] $end
+$var wire 1 B' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [9] $end
+$var wire 1 C' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [8] $end
+$var wire 1 D' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [7] $end
+$var wire 1 E' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [6] $end
+$var wire 1 F' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [5] $end
+$var wire 1 G' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [4] $end
+$var wire 1 H' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [3] $end
+$var wire 1 I' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [2] $end
+$var wire 1 J' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [1] $end
+$var wire 1 K' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg [0] $end
+$var wire 1 L' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg [3] $end
+$var wire 1 M' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg [2] $end
+$var wire 1 N' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg [1] $end
+$var wire 1 O' auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg [0] $end
+$var wire 1 P' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [15] $end
+$var wire 1 Q' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [14] $end
+$var wire 1 R' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [13] $end
+$var wire 1 S' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [12] $end
+$var wire 1 T' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [11] $end
+$var wire 1 U' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [10] $end
+$var wire 1 V' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [9] $end
+$var wire 1 W' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [8] $end
+$var wire 1 X' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [7] $end
+$var wire 1 Y' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [6] $end
+$var wire 1 Z' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [5] $end
+$var wire 1 [' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [4] $end
+$var wire 1 \' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [3] $end
+$var wire 1 ]' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [2] $end
+$var wire 1 ^' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [1] $end
+$var wire 1 _' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg [0] $end
+$var wire 1 `' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [14] $end
+$var wire 1 a' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [13] $end
+$var wire 1 b' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [12] $end
+$var wire 1 c' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [11] $end
+$var wire 1 d' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [10] $end
+$var wire 1 e' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [9] $end
+$var wire 1 f' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [8] $end
+$var wire 1 g' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [7] $end
+$var wire 1 h' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [6] $end
+$var wire 1 i' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [5] $end
+$var wire 1 j' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [4] $end
+$var wire 1 k' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [3] $end
+$var wire 1 l' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [2] $end
+$var wire 1 m' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [1] $end
+$var wire 1 n' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs [0] $end
+$var wire 1 o' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [14] $end
+$var wire 1 p' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [13] $end
+$var wire 1 q' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [12] $end
+$var wire 1 r' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [11] $end
+$var wire 1 s' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [10] $end
+$var wire 1 t' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [9] $end
+$var wire 1 u' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [8] $end
+$var wire 1 v' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [7] $end
+$var wire 1 w' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [6] $end
+$var wire 1 x' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [5] $end
+$var wire 1 y' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [4] $end
+$var wire 1 z' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [3] $end
+$var wire 1 {' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [2] $end
+$var wire 1 |' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [1] $end
+$var wire 1 }' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|trigger_condition_deserialize|dffs [0] $end
+$var wire 1 ~' auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [15] $end
+$var wire 1 !( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [14] $end
+$var wire 1 "( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [13] $end
+$var wire 1 #( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [12] $end
+$var wire 1 $( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [11] $end
+$var wire 1 %( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [10] $end
+$var wire 1 &( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [9] $end
+$var wire 1 '( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [8] $end
+$var wire 1 (( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [7] $end
+$var wire 1 )( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [6] $end
+$var wire 1 *( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [5] $end
+$var wire 1 +( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [4] $end
+$var wire 1 ,( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [3] $end
+$var wire 1 -( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [2] $end
+$var wire 1 .( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [1] $end
+$var wire 1 /( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr [0] $end
+$var wire 1 0( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [14] $end
+$var wire 1 1( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [13] $end
+$var wire 1 2( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [12] $end
+$var wire 1 3( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [11] $end
+$var wire 1 4( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [10] $end
+$var wire 1 5( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [9] $end
+$var wire 1 6( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [8] $end
+$var wire 1 7( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [7] $end
+$var wire 1 8( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [6] $end
+$var wire 1 9( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [5] $end
+$var wire 1 :( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [4] $end
+$var wire 1 ;( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [3] $end
+$var wire 1 <( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [2] $end
+$var wire 1 =( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [1] $end
+$var wire 1 >( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq [0] $end
+$var wire 1 ?( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit [3] $end
+$var wire 1 @( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit [2] $end
+$var wire 1 A( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit [1] $end
+$var wire 1 B( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit [0] $end
+$var wire 1 C( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [7] $end
+$var wire 1 D( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [6] $end
+$var wire 1 E( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [5] $end
+$var wire 1 F( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [4] $end
+$var wire 1 G( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [3] $end
+$var wire 1 H( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [2] $end
+$var wire 1 I( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [1] $end
+$var wire 1 J( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter [0] $end
+$var wire 1 K( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_reg_bit [0] $end
+$var wire 1 L( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_reg_bit [2] $end
+$var wire 1 M( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_reg_bit [1] $end
+$var wire 1 N( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_reg_bit [0] $end
+$var wire 1 O( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [6] $end
+$var wire 1 P( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [5] $end
+$var wire 1 Q( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [4] $end
+$var wire 1 R( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [3] $end
+$var wire 1 S( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [2] $end
+$var wire 1 T( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [1] $end
+$var wire 1 U( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit [0] $end
+$var wire 1 V( auto_signaltap_0|acq_data_in_reg [4] $end
+$var wire 1 W( auto_signaltap_0|acq_data_in_reg [3] $end
+$var wire 1 X( auto_signaltap_0|acq_data_in_reg [2] $end
+$var wire 1 Y( auto_signaltap_0|acq_data_in_reg [1] $end
+$var wire 1 Z( auto_signaltap_0|acq_data_in_reg [0] $end
+$var wire 1 [( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [16] $end
+$var wire 1 \( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [15] $end
+$var wire 1 ]( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [14] $end
+$var wire 1 ^( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [13] $end
+$var wire 1 _( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [12] $end
+$var wire 1 `( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [11] $end
+$var wire 1 a( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [10] $end
+$var wire 1 b( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [9] $end
+$var wire 1 c( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [8] $end
+$var wire 1 d( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [7] $end
+$var wire 1 e( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [6] $end
+$var wire 1 f( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [5] $end
+$var wire 1 g( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [4] $end
+$var wire 1 h( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [3] $end
+$var wire 1 i( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [2] $end
+$var wire 1 j( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [1] $end
+$var wire 1 k( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs [0] $end
+$var wire 1 l( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR [3] $end
+$var wire 1 m( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR [2] $end
+$var wire 1 n( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR [1] $end
+$var wire 1 o( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR [0] $end
+$var wire 1 p( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [6] $end
+$var wire 1 q( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [5] $end
+$var wire 1 r( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [4] $end
+$var wire 1 s( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [3] $end
+$var wire 1 t( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [2] $end
+$var wire 1 u( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [1] $end
+$var wire 1 v( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs [0] $end
+$var wire 1 w( auto_signaltap_0|acq_trigger_in_reg [4] $end
+$var wire 1 x( auto_signaltap_0|acq_trigger_in_reg [3] $end
+$var wire 1 y( auto_signaltap_0|acq_trigger_in_reg [2] $end
+$var wire 1 z( auto_signaltap_0|acq_trigger_in_reg [1] $end
+$var wire 1 {( auto_signaltap_0|acq_trigger_in_reg [0] $end
+$var wire 1 |( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [9] $end
+$var wire 1 }( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [8] $end
+$var wire 1 ~( auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [7] $end
+$var wire 1 !) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [6] $end
+$var wire 1 ") auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [5] $end
+$var wire 1 #) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [4] $end
+$var wire 1 $) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [3] $end
+$var wire 1 %) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [2] $end
+$var wire 1 &) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [1] $end
+$var wire 1 ') auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs [0] $end
+$var wire 1 () auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|condition_delay_reg [3] $end
+$var wire 1 )) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|condition_delay_reg [2] $end
+$var wire 1 *) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|condition_delay_reg [1] $end
+$var wire 1 +) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|condition_delay_reg [0] $end
+$var wire 1 ,) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xraddr [0] $end
+$var wire 1 -) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|trigger_config_deserialize|dffs [3] $end
+$var wire 1 .) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|trigger_config_deserialize|dffs [2] $end
+$var wire 1 /) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|trigger_config_deserialize|dffs [1] $end
+$var wire 1 0) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|trigger_config_deserialize|dffs [0] $end
+$var wire 1 1) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [6] $end
+$var wire 1 2) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [5] $end
+$var wire 1 3) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [4] $end
+$var wire 1 4) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [3] $end
+$var wire 1 5) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [2] $end
+$var wire 1 6) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [1] $end
+$var wire 1 7) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed [0] $end
+$var wire 1 8) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs [4] $end
+$var wire 1 9) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs [3] $end
+$var wire 1 :) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs [2] $end
+$var wire 1 ;) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs [1] $end
+$var wire 1 <) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs [0] $end
+$var wire 1 =) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a0_PORTBDATAOUT_bus [0] $end
+$var wire 1 >) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a1_PORTBDATAOUT_bus [0] $end
+$var wire 1 ?) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a2_PORTBDATAOUT_bus [0] $end
+$var wire 1 @) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a3_PORTBDATAOUT_bus [0] $end
+$var wire 1 A) auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|ram_block1a4_PORTBDATAOUT_bus [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+b0 #
+0$
+0%
+0j$
+0k$
+0l$
+0m$
+0n$
+0o$
+0p$
+0q$
+0r$
+0s$
+0t$
+0u$
+0v$
+0w$
+0x$
+0y$
+0z$
+0{$
+0|$
+0}$
+0~$
+0!%
+0"%
+0#%
+0$%
+0%%
+0&%
+0'%
+0(%
+0)%
+0*%
+0+%
+0,%
+0-%
+1.%
+0/%
+00%
+01%
+12%
+03%
+04%
+x5%
+06%
+07%
+08%
+09%
+0:%
+0;%
+0<%
+0=%
+0>%
+0?%
+0@%
+1A%
+0B%
+0C%
+0D%
+1E%
+0F%
+0G%
+1H%
+1I%
+0J%
+0K%
+xL%
+0M%
+0N%
+0O%
+0P%
+0Q%
+0R%
+1S%
+0T%
+0U%
+zV%
+0f%
+0e%
+0d%
+0c%
+0b%
+0a%
+0`%
+0_%
+0^%
+0]%
+0\%
+0[%
+0Z%
+0Y%
+0X%
+0W%
+0q%
+0p%
+0o%
+0n%
+0m%
+0l%
+0k%
+0j%
+0i%
+0h%
+0g%
+0t%
+0s%
+0r%
+0{%
+0z%
+0y%
+0x%
+0w%
+0v%
+0u%
+0!&
+0~%
+0}%
+0|%
+zB&
+zA&
+z@&
+0?&
+z>&
+z=&
+z<&
+z;&
+z:&
+z9&
+z8&
+z7&
+z6&
+z5&
+z4&
+z3&
+z2&
+z1&
+z0&
+z/&
+z.&
+z-&
+z,&
+z+&
+z*&
+z)&
+z(&
+z'&
+z&&
+z%&
+z$&
+z#&
+z"&
+0C&
+0R&
+0Q&
+0P&
+0O&
+0N&
+0M&
+0L&
+0K&
+0J&
+0I&
+0H&
+0G&
+0F&
+0E&
+0D&
+0V&
+0U&
+0T&
+0S&
+0]&
+0\&
+0[&
+0Z&
+0Y&
+0X&
+0W&
+0a&
+0`&
+0_&
+0^&
+0e&
+0d&
+0c&
+0b&
+0f&
+0i&
+0h&
+0g&
+0s&
+0r&
+0q&
+0p&
+0o&
+0n&
+0m&
+0l&
+0k&
+0j&
+0x&
+0w&
+0v&
+0u&
+0t&
+0|&
+0{&
+0z&
+0y&
+0&'
+0%'
+0$'
+0#'
+0"'
+0!'
+0~&
+0}&
+0+'
+0*'
+0)'
+0('
+0''
+0K'
+0J'
+0I'
+0H'
+0G'
+0F'
+0E'
+0D'
+0C'
+0B'
+0A'
+0@'
+0?'
+0>'
+0='
+0<'
+0;'
+0:'
+09'
+08'
+07'
+06'
+05'
+04'
+03'
+02'
+01'
+00'
+0/'
+0.'
+0-'
+0,'
+0O'
+0N'
+0M'
+0L'
+0_'
+0^'
+0]'
+0\'
+0['
+0Z'
+0Y'
+0X'
+0W'
+0V'
+0U'
+0T'
+0S'
+0R'
+0Q'
+0P'
+0n'
+0m'
+0l'
+0k'
+0j'
+0i'
+0h'
+0g'
+0f'
+0e'
+0d'
+0c'
+0b'
+0a'
+0`'
+0}'
+0|'
+0{'
+0z'
+0y'
+0x'
+0w'
+0v'
+0u'
+0t'
+0s'
+0r'
+0q'
+0p'
+0o'
+0/(
+0.(
+0-(
+0,(
+0+(
+0*(
+0)(
+0((
+0'(
+0&(
+0%(
+0$(
+0#(
+z"(
+z!(
+z~'
+0>(
+0=(
+0<(
+0;(
+0:(
+09(
+08(
+07(
+06(
+05(
+04(
+03(
+02(
+01(
+00(
+0B(
+0A(
+0@(
+0?(
+0J(
+0I(
+0H(
+0G(
+0F(
+0E(
+0D(
+0C(
+0K(
+0N(
+0M(
+0L(
+0U(
+0T(
+0S(
+0R(
+0Q(
+0P(
+0O(
+0Z(
+0Y(
+0X(
+0W(
+0V(
+0k(
+0j(
+0i(
+0h(
+0g(
+0f(
+0e(
+0d(
+0c(
+0b(
+0a(
+0`(
+0_(
+0^(
+0](
+0\(
+0[(
+0o(
+0n(
+0m(
+0l(
+0v(
+0u(
+0t(
+0s(
+0r(
+0q(
+0p(
+0{(
+0z(
+0y(
+0x(
+0w(
+0')
+0&)
+0%)
+0$)
+0#)
+0")
+0!)
+0~(
+0}(
+0|(
+0+)
+0*)
+0))
+0()
+0,)
+00)
+0/)
+0.)
+0-)
+07)
+06)
+05)
+04)
+03)
+02)
+01)
+0<)
+0;)
+0:)
+09)
+08)
+0=)
+0>)
+0?)
+0@)
+0A)
+0&
+0'
+0(
+0)
+1*
+x+
+1,
+1-
+1.
+0/
+10
+11
+02
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+1B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+zK
+zL
+zM
+zN
+zO
+0P
+xQ
+0R
+0S
+xT
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+1`
+0a
+0b
+zc
+0d
+0e
+0f
+0g
+1h
+1i
+1j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+1,!
+0-!
+1.!
+1/!
+10!
+11!
+02!
+13!
+04!
+05!
+06!
+07!
+x8!
+09!
+0:!
+0;!
+1<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+1J!
+0K!
+0L!
+1M!
+0N!
+0O!
+1P!
+0Q!
+0R!
+1S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+1[!
+0\!
+0]!
+0^!
+0_!
+1`!
+0a!
+1b!
+0c!
+0d!
+1e!
+0f!
+1g!
+0h!
+1i!
+0j!
+1k!
+0l!
+0m!
+0n!
+0o!
+0p!
+0q!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0}!
+1~!
+1!"
+1""
+1#"
+0$"
+0%"
+0&"
+0'"
+1("
+0)"
+0*"
+0+"
+0,"
+0-"
+1."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+0G"
+1H"
+0I"
+0J"
+0K"
+0L"
+0M"
+0N"
+0O"
+1P"
+0Q"
+0R"
+0S"
+1T"
+0U"
+0V"
+0W"
+0X"
+xY"
+0Z"
+0["
+0\"
+0]"
+0^"
+0_"
+0`"
+0a"
+0b"
+0c"
+0d"
+0e"
+0f"
+0g"
+0h"
+0i"
+0j"
+0k"
+0l"
+1m"
+1n"
+0o"
+1p"
+0q"
+0r"
+1s"
+0t"
+0u"
+1v"
+1w"
+0x"
+1y"
+0z"
+1{"
+0|"
+0}"
+0~"
+0!#
+1"#
+0##
+0$#
+0%#
+0&#
+0'#
+0(#
+1)#
+0*#
+1+#
+1,#
+0-#
+0.#
+0/#
+00#
+01#
+02#
+03#
+04#
+05#
+16#
+07#
+08#
+09#
+0:#
+0;#
+0<#
+0=#
+0>#
+0?#
+0@#
+0A#
+0B#
+0C#
+0D#
+0E#
+0F#
+0G#
+0H#
+0I#
+0J#
+0K#
+0L#
+0M#
+0N#
+0O#
+0P#
+0Q#
+0R#
+0S#
+0T#
+0U#
+0V#
+0W#
+0X#
+0Y#
+0Z#
+0[#
+0\#
+0]#
+1^#
+0_#
+0`#
+0a#
+0b#
+0c#
+0d#
+0e#
+0f#
+0g#
+0h#
+0i#
+1j#
+0k#
+1l#
+0m#
+1n#
+0o#
+1p#
+0q#
+1r#
+0s#
+1t#
+0u#
+1v#
+0w#
+1x#
+0y#
+1z#
+0{#
+1|#
+0}#
+1~#
+0!$
+1"$
+0#$
+1$$
+0%$
+1&$
+0'$
+1($
+0)$
+1*$
+0+$
+1,$
+0-$
+1.$
+0/$
+10$
+01$
+12$
+03$
+14$
+05$
+16$
+07$
+18$
+09$
+1:$
+0;$
+1<$
+0=$
+1>$
+0?$
+1@$
+0A$
+1B$
+0C$
+1D$
+0E$
+1F$
+0G$
+1H$
+0I$
+1J$
+0K$
+1L$
+0M$
+0N$
+1O$
+1P$
+1Q$
+1R$
+1S$
+1T$
+1U$
+0V$
+0W$
+0X$
+0Y$
+0Z$
+0[$
+0\$
+1]$
+1^$
+0_$
+0`$
+1a$
+1b$
+0c$
+0d$
+0e$
+0f$
+0g$
+0h$
+0i$
+$end
+#5000
+1"
+16
+1U"
+1I"
+1T!
+1Q!
+1N!
+1K!
+1+)
+#10000
+1%
+0"
+1E
+06
+#15000
+1"
+16
+1V(
+1*)
+1w(
+#20000
+0"
+06
+#25000
+1"
+16
+1L!
+1S#
+1))
+#30000
+0"
+06
+#35000
+1"
+16
+1()
+1T#
+#40000
+0"
+06
+#45000
+1"
+16
+1U#
+#50000
+0"
+06
+#55000
+1"
+16
+1V#
+#60000
+1$
+b100000 #
+b101000 #
+b101001 #
+0"
+17
+19
+1<
+18
+06
+1>
+1D
+#65000
+1"
+16
+1F
+1&
+1J
+1H
+1'
+#70000
+0"
+06
+#75000
+1"
+16
+1G
+1I
+1(
+0J
+0'
+#80000
+0"
+06
+#85000
+1"
+16
+#90000
+0"
+06
+#95000
+1"
+16
+#100000
+0"
+06
+#105000
+1"
+16
+#110000
+0"
+06
+#115000
+1"
+16
+#120000
+0"
+06
+#125000
+1"
+16
+#130000
+0"
+06
+#135000
+1"
+16
+#140000
+0"
+06
+#145000
+1"
+16
+#150000
+0"
+06
+#155000
+1"
+16
+#160000
+0"
+06
+#165000
+1"
+16
+#170000
+0"
+06
+#175000
+1"
+16
+#180000
+0"
+06
+#185000
+1"
+16
+#190000
+1!
+0$
+0"
+1C
+07
+06
+0D
+#195000
+1"
+16
+0F
+0&
+#200000
+0"
+06
+#205000
+1"
+16
+0G
+#210000
+0"
+06
+#215000
+1"
+16
+#220000
+0"
+06
+#225000
+1"
+16
+#230000
+0!
+1$
+0"
+0C
+17
+06
+1D
+#235000
+1"
+16
+1F
+1&
+1J
+0H
+1'
+#240000
+0"
+06
+#245000
+1"
+16
+1G
+0I
+0(
+0J
+0'
+#250000
+0"
+06
+#255000
+1"
+16
+#260000
+0"
+06
+#265000
+1"
+16
+#270000
+0"
+06
+#275000
+1"
+16
+#280000
+0"
+06
+#285000
+1"
+16
+#290000
+0"
+06
+#295000
+1"
+16
+#300000
+0"
+06
+#305000
+1"
+16
+#310000
+0"
+06
+#315000
+1"
+16
+#320000
+0"
+06
+#325000
+1"
+16
+#330000
+0"
+06
+#335000
+1"
+16
+#340000
+0"
+06
+#345000
+1"
+16
+#350000
+0"
+06
+#355000
+1"
+16
+#360000
+0"
+06
+#365000
+1"
+16
+#370000
+0"
+06
+#375000
+1"
+16
+#380000
+0"
+06
+#385000
+1"
+16
+#390000
+0"
+06
+#395000
+1"
+16
+#400000
+0"
+06
+#405000
+1"
+16
+#410000
+1!
+0$
+0"
+1C
+07
+06
+0D
+#415000
+1"
+16
+0F
+0&
+#420000
+0"
+06
+#425000
+1"
+16
+0G
+#430000
+0"
+06
+#435000
+1"
+16
+#440000
+0"
+06
+#445000
+1"
+16
+#450000
+0"
+06
+#455000
+1"
+16
+#460000
+0"
+06
+#465000
+1"
+16
+#470000
+0"
+06
+#475000
+1"
+16
+#480000
+0"
+06
+#485000
+1"
+16
+#490000
+0"
+06
+#495000
+1"
+16
+#500000
+0"
+06
+#505000
+1"
+16
+#510000
+b1101001 #
+b1111001 #
+b1111011 #
+b1011011 #
+b1011010 #
+0!
+1$
+0"
+09
+1:
+1=
+08
+1?
+0C
+17
+06
+0B
+0>
+#515000
+1"
+16
+#520000
+0"
+06
+#525000
+1"
+16
+#530000
+0"
+06
+#535000
+1"
+16
+#540000
+0"
+06
+#545000
+1"
+16
+#550000
+0"
+06
+#555000
+1"
+16
+#560000
+0"
+06
+#565000
+1"
+16
+#570000
+0"
+06
+#575000
+1"
+16
+#580000
+0"
+06
+#585000
+1"
+16
+#590000
+0"
+06
+#595000
+1"
+16
+#600000
+0"
+06
+#605000
+1"
+16
+#610000
+0"
+06
+#615000
+1"
+16
+#620000
+0"
+06
+#625000
+1"
+16
+#630000
+0"
+06
+#635000
+1"
+16
+#640000
+0"
+06
+#645000
+1"
+16
+#650000
+0"
+06
+#655000
+1"
+16
+#660000
+0"
+06
+#665000
+1"
+16
+#670000
+0"
+06
+#675000
+1"
+16
+#680000
+0"
+06
+#685000
+1"
+16
+#690000
+0"
+06
+#695000
+1"
+16
+#700000
+1!
+0$
+0"
+1C
+07
+06
+#705000
+1"
+16
+#710000
+0!
+0"
+0C
+06
+#715000
+1"
+16
+#720000
+0"
+06
+#725000
+1"
+16
+#730000
+0"
+06
+#735000
+1"
+16
+#740000
+0"
+06
+#745000
+1"
+16
+#750000
+0"
+06
+#755000
+1"
+16
+#760000
+0"
+06
+#765000
+1"
+16
+#770000
+0"
+06
+#775000
+1"
+16
+#780000
+0"
+06
+#785000
+1"
+16
+#790000
+0"
+06
+#795000
+1"
+16
+#800000
+0"
+06
+#805000
+1"
+16
+#810000
+0"
+06
+#815000
+1"
+16
+#820000
+0"
+06
+#825000
+1"
+16
+#830000
+0"
+06
+#835000
+1"
+16
+#840000
+0"
+06
+#845000
+1"
+16
+#850000
+0"
+06
+#855000
+1"
+16
+#860000
+0"
+06
+#865000
+1"
+16
+#870000
+0"
+06
+#875000
+1"
+16
+#880000
+0"
+06
+#885000
+1"
+16
+#890000
+0"
+06
+#895000
+1"
+16
+#900000
+0"
+06
+#905000
+1"
+16
+#910000
+0"
+06
+#915000
+1"
+16
+#920000
+0"
+06
+#925000
+1"
+16
+#930000
+0"
+06
+#935000
+1"
+16
+#940000
+0"
+06
+#945000
+1"
+16
+#950000
+0"
+06
+#955000
+1"
+16
+#960000
+0"
+06
+#965000
+1"
+16
+#970000
+0"
+06
+#975000
+1"
+16
+#980000
+0"
+06
+#985000
+1"
+16
+#990000
+b11010 #
+b1010 #
+b1000 #
+b101000 #
+b101001 #
+0"
+19
+0:
+0=
+18
+0?
+06
+1B
+1>
+#995000
+1"
+16
+#1000000

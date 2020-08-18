@@ -1,0 +1,138 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/simulation/qsim
+vbitrec
+Z1 !s110 1597751460
+!i10b 1
+!s100 ?H8EgJW_jImVm7?DMiIPG3
+IUJ=bBgRSzTA5KS^ikBoMT2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1597751458
+Z3 8KBDINTF.vo
+Z4 FKBDINTF.vo
+Z5 L0 32
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1597751459.000000
+Z7 !s107 KBDINTF.vo|
+Z8 !s90 -work|work|KBDINTF.vo|
+!i113 1
+Z9 o-work work
+Z10 tCvgOpt 0
+vbitrec_vlg_vec_tst
+R1
+!i10b 1
+!s100 G1mMbEGWfBLCK;2:B?2042
+IMZblGdokV>^>UD@gLAkFm1
+R2
+R0
+w1597751456
+8KBSim.vwf.vt
+FKBSim.vwf.vt
+Z11 L0 30
+R6
+r1
+!s85 0
+31
+!s108 1597751460.000000
+!s107 KBSim.vwf.vt|
+!s90 -work|work|KBSim.vwf.vt|
+!i113 1
+R9
+R10
+vkeyToggle_decoder
+Z12 !s110 1597754512
+!i10b 1
+!s100 9UhMX??;`bf9NlzVg[L7o2
+IgQXJ_E?L`J2<i;N2HEB2i2
+R2
+R0
+w1597754510
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1597754511.000000
+R7
+R8
+!i113 1
+R9
+R10
+nkey@toggle_decoder
+vkeyToggle_decoder_vlg_vec_tst
+R12
+!i10b 1
+!s100 OOFdLHf5lI1T`W0^<<oVG0
+IR4TJ<SMV^ZCBfNzdS`T`J2
+R2
+R0
+w1597754508
+8KeyToggleSim.vwf.vt
+FKeyToggleSim.vwf.vt
+R11
+R6
+r1
+!s85 0
+31
+!s108 1597754512.000000
+!s107 KeyToggleSim.vwf.vt|
+!s90 -work|work|KeyToggleSim.vwf.vt|
+!i113 1
+R9
+R10
+nkey@toggle_decoder_vlg_vec_tst
+vrandom
+Z13 !s110 1597739322
+!i10b 1
+!s100 fKDEE^39L6Sdb:O:e9]NU0
+INDILDYNBo^j3=DXQ]7NJB1
+R2
+R0
+w1597739321
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z14 !s108 1597739322.000000
+R7
+R8
+!i113 1
+R9
+R10
+vrandom_vlg_vec_tst
+R13
+!i10b 1
+!s100 nIeX[OgQaLB]EXM=Rz=kQ1
+IoljzG6kcD:nP5][kQkgWC1
+R2
+R0
+w1597739318
+8RandomSim.vwf.vt
+FRandomSim.vwf.vt
+R11
+R6
+r1
+!s85 0
+31
+R14
+!s107 RandomSim.vwf.vt|
+!s90 -work|work|RandomSim.vwf.vt|
+!i113 1
+R9
+R10

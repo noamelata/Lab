@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBDSchematic.qarlog
+
+Archive:	C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBDSchematic.qar
+Date:		Tue Aug 18 15:43:53 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBD.qpf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBDINTF.qsf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KeyToggleSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/RandomSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/assignment_defaults.qdf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/db/stp3_auto_stripped.stp
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/pin.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/HexSS.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/KBD_EMULATOR.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/TOP_KBDINTF.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/TOP_KBD_DEMO.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/TOP_RANDOM.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/bitrec.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/byterec.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/keyToggle_decoder.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/lpf.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/random.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/simple_up_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/stp3.stp
+	======= Total: 20 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
