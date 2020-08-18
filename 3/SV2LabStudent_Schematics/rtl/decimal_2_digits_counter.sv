@@ -45,7 +45,7 @@ module decimal_2_digits_counter
 		.clk(clk), 
 		.resetN(resetN), 
 		.ena(ena), 
-		.ena_cnt(tc_ones) ,  
+		.ena_cnt(tc_ones && ena_cnt) ,  
 		.loadN(loadN), 
 		
 		.datain(Data_init[7:4]),

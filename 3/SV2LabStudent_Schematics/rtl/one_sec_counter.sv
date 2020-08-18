@@ -15,8 +15,8 @@ module one_sec_counter
 	output logic duty50
    );
 	
-//	localparam oneSecVal = 26'd50_000_000; //// large value for real time
-	localparam oneSecVal = 26'd32;          //smaller parameter for simulation
+	localparam oneSecVal = 26'd50_000_000; //// large value for real time
+//	localparam oneSecVal = 26'd32;          //smaller parameter for simulation
 	localparam oneSecValTurbo = oneSecVal/16; 
 	int oneSecCount ;
 	int sec ;

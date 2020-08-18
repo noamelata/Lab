@@ -20,8 +20,11 @@ module bomb_fsm
 	output logic lampTest         
    );                            
 
-	enum logic [2:0] {Sidle, Sarm, Srun, Spause, SlampOn, SlampOff} prState, nxtState;
- 	
+	enum logic [2:0] {Sidle, Sarm, Srun, Spause, Sdelay, SlampOn, SlampOff} prState, nxtState;
+ 
+localparam selfDestruct = 0; //do not self destruct
+localparam addDelay = 1;
+ 
 always @(posedge clk or negedge resetN)
    begin
 	   
@@ -59,13 +62,27 @@ always_comb // Update next state and outputs
 				
 				if (tcSec == 1'b1)  // Check if time is over  
 					nxtState = SlampOn; 
-				else if (waitN == 1'b0) 
-					nxtState = Spause; 
+				else if (waitN == 1'b0) begin
+					if (selfDestruct)
+						nxtState = SlampOn; 
+					else
+						nxtState = Spause; 
+				end
 				end // run
 				
 			Spause: begin
 				countEnable = 1'b0;
-				if (waitN == 1'b1)   // As long as the wait key is pressed it pauses the timer 
+				if (waitN == 1'b1) begin  // As long as the wait key is pressed it pauses the timer 
+					if (!addDelay)
+						nxtState = Srun;
+					else if (slowClken == 1'b1) 
+						nxtState = Sdelay;
+				end
+				end // pause
+				
+			Sdelay: begin
+				countEnable = 1'b0;
+				if (slowClken == 1'b0)  
 					nxtState = Srun; 
 				end // pause
 			
@@ -79,7 +96,7 @@ always_comb // Update next state and outputs
 						
 			SlampOff: begin 
 				lampEnable = 1'b0; 
-					if (slowClken == 1'b1) 
+					if (slowClken == 1'b0) 
 						nxtState = SlampOn;
 				end // lampOff
 						

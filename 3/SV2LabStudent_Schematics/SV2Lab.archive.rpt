@@ -1,5 +1,5 @@
 Archive Project report for SV2Lab
-Mon Aug 17 21:43:40 2020
+Tue Aug 18 10:53:13 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Mon Aug 17 21:43:40 2020 ;
+; Archive Project Status ; Successful - Tue Aug 18 10:53:13 2020 ;
 ; Revision Name          ; SV2Lab                                ;
-; Top-level Entity Name  ; bomb_fsm                              ;
+; Top-level Entity Name  ; topBomb                               ;
 ; Family                 ; Cyclone V                             ;
 +------------------------+---------------------------------------+
 
@@ -59,10 +59,10 @@ Info: ----------------------------------------------------------
 Info: Generated report 'SV2Lab.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Mon Aug 17 21:43:40 2020
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Tue Aug 18 10:53:13 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +---------------------------------+
@@ -72,6 +72,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 +---------------------------------+
 ; assignment_defaults.qdf         ;
 ; bomb_fsm_SIM.vwf                ;
+; BombSim.vwf                     ;
 ; constraints/pinsSV2.tcl         ;
 ; constraints/pinsSV2_bomb.tcl    ;
 ; DataIn.bsf                      ;

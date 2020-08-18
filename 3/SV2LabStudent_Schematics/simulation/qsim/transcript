@@ -1,31 +1,31 @@
 # do SV2Lab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:40:49 on Aug 17,2020
+# Start time: 10:09:03 on Aug 18,2020
 # vlog -work work SV2Lab.vo 
-# -- Compiling module bomb_fsm
+# -- Compiling module topBomb
 # 
 # Top level modules:
-# 	bomb_fsm
-# End time: 21:40:49 on Aug 17,2020, Elapsed time: 0:00:00
+# 	topBomb
+# End time: 10:09:04 on Aug 18,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:40:49 on Aug 17,2020
-# vlog -work work bomb_fsm_SIM.vwf.vt 
-# -- Compiling module bomb_fsm_vlg_vec_tst
+# Start time: 10:09:04 on Aug 18,2020
+# vlog -work work BombSim.vwf.vt 
+# -- Compiling module topBomb_vlg_vec_tst
 # 
 # Top level modules:
-# 	bomb_fsm_vlg_vec_tst
-# End time: 21:40:49 on Aug 17,2020, Elapsed time: 0:00:00
+# 	topBomb_vlg_vec_tst
+# End time: 10:09:04 on Aug 18,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.bomb_fsm_vlg_vec_tst 
-# Start time: 21:40:49 on Aug 17,2020
-# Loading work.bomb_fsm_vlg_vec_tst
-# Loading work.bomb_fsm
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.topBomb_vlg_vec_tst 
+# Start time: 10:09:04 on Aug 18,2020
+# Loading work.topBomb_vlg_vec_tst
+# Loading work.topBomb
 # Loading altera_ver.dffeas
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#25
-# ** Note: $finish    : bomb_fsm_SIM.vwf.vt(61)
-#    Time: 1 us  Iteration: 0  Instance: /bomb_fsm_vlg_vec_tst
-# End time: 21:40:50 on Aug 17,2020, Elapsed time: 0:00:01
+# ** Note: $finish    : BombSim.vwf.vt(69)
+#    Time: 1 us  Iteration: 0  Instance: /topBomb_vlg_vec_tst
+# End time: 10:09:04 on Aug 18,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

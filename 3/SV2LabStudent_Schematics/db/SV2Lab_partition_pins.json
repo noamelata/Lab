@@ -4,23 +4,83 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "countEnable",
+					"name" : "duty50",
 					"strict" : false
 				},
 				{
-					"name" : "countLoadN",
+					"name" : "tc",
 					"strict" : false
 				},
 				{
-					"name" : "lampEnable",
+					"name" : "lampDarkN",
 					"strict" : false
 				},
 				{
-					"name" : "lampTest",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "waitN",
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "resetN",
+					"strict" : false
+				},
+				{
+					"name" : "turbo",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
@@ -28,19 +88,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "tcSec",
-					"strict" : false
-				},
-				{
-					"name" : "slowClken",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "resetN",
+					"name" : "waitN",
 					"strict" : false
 				}
 			]

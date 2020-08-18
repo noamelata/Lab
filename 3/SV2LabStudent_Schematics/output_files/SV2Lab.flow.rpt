@@ -1,5 +1,5 @@
 Flow report for SV2Lab
-Mon Aug 17 21:40:48 2020
+Tue Aug 18 10:50:47 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,25 +41,25 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Aug 17 21:40:48 2020       ;
+; Flow Status                     ; Successful - Tue Aug 18 10:50:47 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SV2Lab                                      ;
-; Top-level Entity Name           ; bomb_fsm                                    ;
+; Top-level Entity Name           ; topBomb                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 6                                           ;
-; Total pins                      ; 10                                          ;
+; Logic utilization (in ALMs)     ; 62 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 52                                          ;
+; Total pins                      ; 32 / 499 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 15 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/17/2020 21:40:25 ;
+; Start date & time ; 08/18/2020 10:49:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SV2Lab              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 154027290912535.159768962524676        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 154027290912535.159773694109916        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (SystemVerilog)               ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -88,46 +88,52 @@ agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; MISC_FILE                           ; DataIn.bsf                             ; --            ; --          ; --             ;
 ; MISC_FILE                           ; DataIn_bb.v                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; bomb_fsm    ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; topBomb     ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; topBomb     ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; topBomb     ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; bomb_fsm                               ; SV2Lab        ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; topBomb                                ; SV2Lab        ; --          ; --             ;
 ; USE_SIGNALTAP_FILE                  ; output_files/stp1.stp                  ; --            ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4833 MB             ; 00:00:27                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:29                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 4840 MB             ; 00:00:45                           ;
+; Fitter                    ; 00:01:00     ; 1.0                     ; 6625 MB             ; 00:01:55                           ;
+; Assembler                 ; 00:00:10     ; 1.0                     ; 4835 MB             ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.1                     ; 5137 MB             ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4741 MB             ; 00:00:03                           ;
+; Total                     ; 00:01:41     ; --                      ; --                  ; 00:03:02                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Elata-LenX1      ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SV2Lab -c SV2Lab
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SV2Lab -c SV2Lab --vector_source=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/bomb_fsm_SIM.vwf --testbench_file=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/bomb_fsm_SIM.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/simulation/qsim/ SV2Lab -c SV2Lab
+quartus_fit --read_settings_files=off --write_settings_files=off SV2Lab -c SV2Lab
+quartus_asm --read_settings_files=off --write_settings_files=off SV2Lab -c SV2Lab
+quartus_sta SV2Lab -c SV2Lab
+quartus_eda --read_settings_files=off --write_settings_files=off SV2Lab -c SV2Lab
 
 
 

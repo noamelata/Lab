@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Aug 17 21:40:37 2020
+Analysis & Synthesis Status : Successful - Tue Aug 18 10:49:20 2020
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : SV2Lab
-Top-level Entity Name : bomb_fsm
+Top-level Entity Name : topBomb
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 6
-Total pins : 10
+Total registers : 49
+Total pins : 32
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

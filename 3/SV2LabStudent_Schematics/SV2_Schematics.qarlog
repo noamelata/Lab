@@ -1,10 +1,11 @@
 Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/SV2_Schematics.qarlog
 
 Archive:	C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/SV2_Schematics.qar
-Date:		Mon Aug 17 21:43:40 2020
+Date:		Tue Aug 18 10:53:13 2020
 Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/BombSim.vwf
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.bsf
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.qip
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.v
@@ -29,7 +30,7 @@ C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/topBomb.bdf
 C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf
-	======= Total: 24 files to archive =======
+	======= Total: 25 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.
