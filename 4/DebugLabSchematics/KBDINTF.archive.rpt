@@ -1,5 +1,5 @@
 Archive Project report for KBDINTF
-Tue Aug 18 15:43:53 2020
+Thu Aug 20 12:12:56 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Tue Aug 18 15:43:53 2020 ;
+; Archive Project Status ; Successful - Thu Aug 20 12:12:56 2020 ;
 ; Revision Name          ; KBDINTF                               ;
-; Top-level Entity Name  ; keyToggle_decoder                     ;
+; Top-level Entity Name  ; TOP_KBD_DEMO                          ;
 ; Family                 ; Cyclone V                             ;
 +------------------------+---------------------------------------+
 
@@ -50,19 +50,19 @@ Info: File Set 'Source control' contains:
     Info: Project source and settings files
     Info: Automatically detected source files
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/
+Info (13213): Using common directory C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/KBDSchematic.qar'
+Info: Generated archive 'C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/DebugArchived.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'KBDINTF.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4829 megabytes
-    Info: Processing ended: Tue Aug 18 15:43:53 2020
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Thu Aug 20 12:12:56 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +---------------------------+
@@ -71,7 +71,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; File Name                 ;
 +---------------------------+
 ; assignment_defaults.qdf   ;
-; db/stp3_auto_stripped.stp ;
+; db/stp2_auto_stripped.stp ;
 ; KBD.qpf                   ;
 ; KBDINTF.qsf               ;
 ; KBSim.vwf                 ;
@@ -82,6 +82,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; rtl/byterec.sv            ;
 ; rtl/HexSS.sv              ;
 ; rtl/KBD_EMULATOR.sv       ;
+; rtl/KBDINTF.bdf           ;
 ; rtl/keyToggle_decoder.sv  ;
 ; rtl/lpf.sv                ;
 ; rtl/random.sv             ;
@@ -89,7 +90,8 @@ Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
 ; rtl/TOP_KBD_DEMO.bdf      ;
 ; rtl/TOP_KBDINTF.bdf       ;
 ; rtl/TOP_RANDOM.bdf        ;
-; stp3.stp                  ;
+; stp1.stp                  ;
+; stp2.stp                  ;
 +---------------------------+
 
 

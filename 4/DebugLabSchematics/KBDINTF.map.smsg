@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at lpf.sv(42): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/lpf.sv Line: 42
-Warning (10268): Verilog HDL information at byterec.sv(68): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/4/DebugLabSchematics/rtl/byterec.sv Line: 68
+Warning (10268): Verilog HDL information at lpf.sv(42): always construct contains both blocking and non-blocking assignments File: C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/lpf.sv Line: 42
+Warning (10268): Verilog HDL information at byterec.sv(68): always construct contains both blocking and non-blocking assignments File: C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/byterec.sv Line: 68
