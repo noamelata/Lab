@@ -1,0 +1,52 @@
+Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/VGASchematics.qarlog
+
+Archive:	C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/VGASchematics.qar
+Date:		Tue Aug 25 12:40:32 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/DE10_Standard_Audio.sdc
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/Lab1Demo.qpf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/Lab1Demo.qsf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/KEYBOARD/keyPad_decoder.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/KEYBOARD/keyToggle_decoder.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/KEYBOARD/random.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/SinTable.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/TOP_MSS_DEMO.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/ToneDecoder.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/addr_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/data_conversion.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/MSS/prescaler.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/Seg7/SEG7.SV
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/NumbersBitMap.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/TOP_VGA_DEMO_WITH_MSS_ALL.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/VGA_Controller.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/back_ground_drawSquare.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/game_controller.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/game_controller_all.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/objects_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/objects_mux_all.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/smileyBitMap.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/smileyface_moveCollision.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/square_object.sv
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/valX.bsf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/valX.qip
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/valX.v
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/valX_bb.v
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/valX_inst.v
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/audio_codec_controller/audio_codec_controller.qxp
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/numberPosition.bsf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/numberPosition.qip
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/numberPosition.v
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/numberPosition_bb.v
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/assignment_defaults.qdf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/constraints/DE10_Standard_Audio.sdc
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/constraints/pin.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/db/stp1_auto_stripped.stp
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/output_files/Chain1.cdf
+C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/output_files/stp1.stp
+	======= Total: 41 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
