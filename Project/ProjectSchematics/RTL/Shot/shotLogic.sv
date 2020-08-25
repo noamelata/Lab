@@ -7,6 +7,7 @@ module	shotLogic	(
 					input logic deploy,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input logic collision,  //collision if shot hits
+					input logic [7:0] random, //random number from random generator
 					input logic [1:0] direction,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
@@ -33,8 +34,8 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-const int speedX;
-int speedY;
+int speedX;
+const int speedY = 10;
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
@@ -53,12 +54,18 @@ begin
 				topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b1;
+				speed <= 0;
+				case (direction)
+					0: speedX <= 0;
+					1: speedX <= 5;
+					2: speedX <= -5;
+				endcase
 			end
 			if (isActive) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint + speedX;
 				topLeftY_FixedPoint <= topLeftY_FixedPoint - speedY;
 			end
-			if (topLeftY_FixedPoint == -32) begin
+			if ((collision) || (topLeftY_FixedPoint == -32)) begin
 				topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b0;

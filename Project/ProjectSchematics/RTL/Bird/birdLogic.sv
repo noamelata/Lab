@@ -6,6 +6,8 @@ module	birdLogic	(
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input logic collision,  //collision if shot hits
+					input logic [7:0] random, //random number from random generator
+
 					input logic [1:0] speed,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
@@ -20,6 +22,7 @@ parameter int INITIAL_Y = 185; //todo
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
 parameter int life;
+// sample random with parameter
 
 
 
@@ -43,8 +46,8 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
 	begin
-		topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
-		topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
+		topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
+		topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 

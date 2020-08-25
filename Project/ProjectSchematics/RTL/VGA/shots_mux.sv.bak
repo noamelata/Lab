@@ -8,15 +8,15 @@ module	objects_mux_all	(
 					input		logic	playerDrawingRequest,
 					input		logic	[7:0] playerRGB, 
 		// bird
-					input		logic	birdsDrawingRequest,
-					input		logic	[7:0] birdsRGB, 
+					input		logic	birdDrawingRequest,
+					input		logic	[7:0] birdRGB, 
 		// shot		
-					input		logic	shotsDrawingRequest,
-					input		logic	[7:0] shotsRGB, 
+					input		logic	shotDrawingRequest,
+					input		logic	[7:0] shotRGB, 
 					
 		// tree
-					input		logic	treesDrawingRequest,
-					input		logic	[7:0] treesRGB, 
+					input		logic	treerDrawingRequest,
+					input		logic	[7:0] treeRGB, 
 					
 					
 		// background 
@@ -46,14 +46,14 @@ begin
 		if (playerDrawingRequest == 1'b1 )   
 			tmpRGB <= playerRGB;  //first priority 
 
-		else if (birdsDrawingRequest == 1'b1 )   
-			tmpRGB <= birdsRGB;  //second priority 
+		else if (birdDrawingRequest == 1'b1 )   
+			tmpRGB <= birdRGB;  //second priority 
 			
-		else if (shotsDrawingRequest == 1'b1 )   
-			tmpRGB <= shotsRGB;  //third priority 
+		else if (shotDrawingRequest == 1'b1 )   
+			tmpRGB <= shotRGB;  //third priority 
 			
-		else if (treesDrawingRequest == 1'b1 )   
-			tmpRGB <= treesRGB;  //forth priority 
+		else if (treeDrawingRequest == 1'b1 )   
+			tmpRGB <= treeRGB;  //forth priority 
 		
 		else
 			tmpRGB <= backGroundRGB ; // last priority 

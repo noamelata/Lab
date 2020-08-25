@@ -507,6 +507,12 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/collision_player_tree.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/collision_bird_shot.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/trees_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/birds_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/shots_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Tree/treeLogic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Tree/treeDraw.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Shot/shotLogic.sv
@@ -541,5 +547,4 @@ set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name QIP_FILE RTL/VGA/valX.qip
 set_global_assignment -name QIP_FILE RTL/numberPosition.qip
 set_global_assignment -name BDF_FILE RTL/VGA/TOP_VGA_DEMO_WITH_MSS_ALL.bdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
