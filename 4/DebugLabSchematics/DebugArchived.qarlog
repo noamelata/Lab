@@ -1,0 +1,33 @@
+Quartus Prime Archive log --	C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/DebugArchived.qarlog
+
+Archive:	C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/DebugArchived.qar
+Date:		Thu Aug 20 12:12:56 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/KBD.qpf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/KBDINTF.qsf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/KBSim.vwf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/KeyToggleSim.vwf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/RandomSim.vwf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/assignment_defaults.qdf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/db/stp2_auto_stripped.stp
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/pin.tcl
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/HexSS.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/KBDINTF.bdf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/KBD_EMULATOR.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/TOP_KBDINTF.bdf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/TOP_KBD_DEMO.bdf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/TOP_RANDOM.bdf
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/bitrec.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/byterec.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/keyToggle_decoder.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/lpf.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/random.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/rtl/simple_up_counter.sv
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/stp1.stp
+C:/TECHNION/gitLab/Lab/4/DebugLabSchematics/stp2.stp
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
