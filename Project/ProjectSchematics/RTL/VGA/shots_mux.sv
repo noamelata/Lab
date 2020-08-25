@@ -3,7 +3,7 @@
 module	shots_mux	(	
 //		--------	Clock Input	 	
 					input		logic	clk,
-					input		logic	resetN
+					input		logic	resetN,
 
 					input		logic	shot1DrawingRequest,
 					input		logic	[7:0] shot1RGB, 
@@ -29,7 +29,7 @@ module	shots_mux	(
 					input		logic	shot8DrawingRequest,
 					input		logic	[7:0] shot8RGB, 
 					
-					output	logic shotsDrawingRequest
+					output	logic shotsDrawingRequest,
 					output	logic	[7:0] shotsRGB, 
 					
 );
@@ -42,10 +42,10 @@ assign shotsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color
 assign shotsDrawingRequest  = (shots1DrawingRequest || shots2DrawingRequest 
 						|| shots3DrawingRequest || shots4DrawingRequest
 						|| shots5DrawingRequest || shots6DrawingRequest
-						|| shots7DrawingRequest || shots8DrawingRequest)
+						|| shots7DrawingRequest || shots8DrawingRequest);
 
 
-//
+
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin

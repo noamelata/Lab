@@ -3,7 +3,7 @@
 module	birds_mux	(	
 //		--------	Clock Input	 	
 					input		logic	clk,
-					input		logic	resetN
+					input		logic	resetN,
 
 					input		logic	bird1DrawingRequest,
 					input		logic	[7:0] bird1RGB, 
@@ -12,7 +12,7 @@ module	birds_mux	(
 					input		logic	[7:0] bird2RGB, 
 					
 
-					output	logic birdsDrawingRequest
+					output	logic birdsDrawingRequest,
 					output	logic	[7:0] birdsRGB, 
 					
 );
@@ -22,7 +22,7 @@ logic [7:0] tmpRGB;
 
 
 assign birdsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign birdsDrawingRequest  = (bird1DrawingRequest || bird2DrawingRequest)
+assign birdsDrawingRequest  = (bird1DrawingRequest || bird2DrawingRequest);
 
 //
 always_ff@(posedge clk or negedge resetN)

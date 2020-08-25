@@ -2,23 +2,23 @@
 
 module	trees_mux	(	
 //		--------	Clock Input	 	
-					input		logic	clk,
-					input		logic	resetN
+					input logic	clk,
+					input	logic	resetN,
 
-					input		logic	tree1DrawingRequest,
-					input		logic	[7:0] tree1RGB, 
+					input logic	tree1DrawingRequest,
+					input logic	[7:0] tree1RGB, 
 					
-					input		logic	tree2DrawingRequest,
-					input		logic	[7:0] tree2RGB, 
+					input logic	tree2DrawingRequest,
+					input logic	[7:0] tree2RGB, 
 					
-					input		logic	tree3DrawingRequest,
-					input		logic	[7:0] tree3RGB, 
+					input logic	tree3DrawingRequest,
+					input logic	[7:0] tree3RGB, 
 					
-					input		logic	tree4DrawingRequest,
-					input		logic	[7:0] tree4RGB, 
+					input logic	tree4DrawingRequest,
+					input logic	[7:0] tree4RGB, 
 					
-					input		logic	tree5DrawingRequest,
-					input		logic	[7:0] tree5RGB, 
+					input logic	tree5DrawingRequest,
+					input logic	[7:0] tree5RGB, 
 					
 					input		logic	tree6DrawingRequest,
 					input		logic	[7:0] tree6RGB, 
@@ -29,7 +29,7 @@ module	trees_mux	(
 					input		logic	tree8DrawingRequest,
 					input		logic	[7:0] tree8RGB, 
 					
-					output	logic treesDrawingRequest
+					output	logic treesDrawingRequest,
 					output	logic	[7:0] treesRGB, 
 					
 );
@@ -42,9 +42,9 @@ assign treesRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color
 assign treesDrawingRequest  = (trees1DrawingRequest || trees2DrawingRequest 
 						|| trees3DrawingRequest || trees4DrawingRequest
 						|| trees5DrawingRequest || trees6DrawingRequest
-						|| trees7DrawingRequest || trees8DrawingRequest)
+						|| trees7DrawingRequest || trees8DrawingRequest);
 
-//
+
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
