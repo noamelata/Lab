@@ -14,7 +14,7 @@ module	playerBitmap	(
 
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
-localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^6 = 64 
+localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
 
 
 localparam  int OBJECT_HEIGHT_Y = 1 <<  OBJECT_NUMBER_OF_Y_BITS ;

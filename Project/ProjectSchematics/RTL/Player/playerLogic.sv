@@ -7,13 +7,13 @@ module	playerLogic	(
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input	logic	left,  //turn left
 					input	logic	right,  //turn right
-					input logic collision,  //collision if smiley hits an object
+					input logic collision,  //collision if player hits an object
 
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
 
 
-// a module used to generate the  ball trajectory.  
+// a module used to generate player movement.  
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;

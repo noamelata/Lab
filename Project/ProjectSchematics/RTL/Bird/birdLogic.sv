@@ -21,8 +21,12 @@ parameter int INITIAL_X = 280; //todo
 parameter int INITIAL_Y = 185; //todo
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
-parameter int life;
-// sample random with parameter
+parameter int life = 3;
+parameter int RANDOM_OFFSET = 0; // sample random with parameter
+parameter int MAX_RANDOM = 255; // max value of random
+parameter int RIGHT_INDICATOR = 155; // after this point turn right
+parameter int LEFT_INDICATOR = 100; // before this point turn right
+
 
 
 
@@ -36,11 +40,18 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
 int step;
-int random;
+int random_num;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
+always_comb
+begin
+	random_num = random + RANDOM_OFFSET;
+	if (random_num > MAX_RANDOM) begin
+		random_num = random_num - MAX_RANDOM;
+	end
+end
 
 always_ff@(posedge clk or negedge resetN)
 begin
@@ -51,10 +62,10 @@ begin
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
-			else if (/*move right*/ && (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER)))) begin
+			if ((random_num > RIGHT_INDICATOR) && (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER)))) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
 			end 
-			else if (/*move left*/ && (topLeftX_FixedPoint > 0)) begin
+			else if ((random_num < LEFT_INDICATOR) && (topLeftX_FixedPoint > 0)) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
 			end
 		end

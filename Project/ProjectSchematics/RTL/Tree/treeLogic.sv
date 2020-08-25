@@ -8,7 +8,7 @@ module	treeLogic	(
 					input logic collision,  //collision if shot hits
 					input logic deploy,
 					input logic remove,
-					input logic [7:0] random, //random number from random generator
+					input logic [9:0] random, //random number from random generator
 					input logic [1:0] speed,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
@@ -40,6 +40,11 @@ logic [11:0] initial_x;
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
+
+always_comb
+begin
+	initial_x = 
+end
 
 always_ff@(posedge clk or negedge resetN)
 begin
