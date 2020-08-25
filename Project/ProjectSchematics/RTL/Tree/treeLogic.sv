@@ -8,7 +8,7 @@ module	treeLogic	(
 					input logic collision,  //collision if shot hits
 					input logic deploy,
 					input logic remove,
-					input logic [9:0] random, //random number from random generator
+					input logic [7:0] random, //random number from random generator
 					input logic [1:0] speed,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
@@ -17,7 +17,7 @@ module	treeLogic	(
 // a module used to generate the  ball trajectory.  
 
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_Y = 185; //todo
+parameter int INITIAL_Y = -32; // if tree is 32 bit
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
 
@@ -32,19 +32,12 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step
-int random;
-
-logic [11:0] initial_x;
+int step = 5;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
 
-always_comb
-begin
-	initial_x = 
-end
 
 always_ff@(posedge clk or negedge resetN)
 begin
@@ -56,7 +49,7 @@ begin
 	else begin
 		if (deploy) begin
 				//generate random
-				topLeftX_FixedPoint	<=  initial_x * FIXED_POINT_MULTIPLIER;
+				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 			end
 		
@@ -64,10 +57,10 @@ begin
 			if (topLeftY_FixedPoint > (y_FRAME_SIZE - 32)) begin
 				topLeftY_FixedPoint <= 0;
 				//generate random
-				topLeftX_FixedPoint	<=  initial_x * FIXED_POINT_MULTIPLIER;
+				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
 			end 
 			else begin
-				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
+				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
 			end
 		end
 		

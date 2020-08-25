@@ -7,9 +7,9 @@ module	shotLogic	(
 					input logic deploy,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input logic collision,  //collision if shot hits
-					input logic [7:0] random, //random number from random generator
 					input logic [1:0] direction,
-					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
+					input logic signed [9:0] initial_x,
+					output logic signed [9:0] [1:0]	coordinate,// output the top left corner 					
 );
 
 
@@ -17,7 +17,6 @@ module	shotLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_X = 303; // default value
 parameter int INITIAL_Y = 415; // default value
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
@@ -51,7 +50,7 @@ begin
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second
 			if (deploy) begin
-				topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
+				topLeftX_FixedPoint	<=  initial_x * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b1;
 				speed <= 0;
@@ -61,9 +60,9 @@ begin
 					2: speedX <= -5;
 				endcase
 			end
-			if (isActive) begin
+			if (isActive) begin // move
 				topLeftX_FixedPoint <= topLeftX_FixedPoint + speedX;
-				topLeftY_FixedPoint <= topLeftY_FixedPoint - speedY;
+				topLeftY_FixedPoint <= topLeftY_FixedPoint - speedY; 
 			end
 			if ((collision) || (topLeftY_FixedPoint == -32)) begin
 				topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
