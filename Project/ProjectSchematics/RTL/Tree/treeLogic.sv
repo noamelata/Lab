@@ -1,0 +1,116 @@
+
+
+module	treeLogic	(	
+ 
+					input	logic	clk,
+					input	logic	resetN,
+					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
+					input logic collision,  //collision if shot hits
+					input logic deploy,
+					input logic [1:0] speed,
+					input logic [11:0] initial_x,
+					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
+);
+
+
+// a module used to generate the  ball trajectory.  
+
+parameter int SCREEN_HEIGHT = 480;
+parameter int INITIAL_Y = 185; //todo
+parameter int IMAGE_WIDTH = 32;
+parameter int IMAGE_HeiGHT = 32;
+
+
+
+const int	FIXED_POINT_MULTIPLIER	=	64;
+// FIXED_POINT_MULTIPLIER is used to work with integers in high resolution 
+// we do all calulations with topLeftX_FixedPoint  so we get a resulytion inthe calcuatuions of 1/64 pixel 
+// we devide at the end by FIXED_POINT_MULTIPLIER which must be 2^n 
+const int	x_FRAME_SIZE	=	639 * FIXED_POINT_MULTIPLIER; // note it must be 2^n 
+const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
+
+
+int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
+
+
+//////////--------------------------------------------------------------------------------------------------------------=
+//  calculation x Axis speed 
+
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN)
+		Xspeed	<= INITIAL_X_SPEED;
+	else 	begin
+		
+				
+	end
+end
+
+
+//////////--------------------------------------------------------------------------------------------------------------=
+//  calculation Y Axis speed using gravity
+
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN) begin 
+		Yspeed	<= INITIAL_Y_SPEED;
+	end 
+	else begin
+		if (toggleY)  
+			Yspeed <= -Yspeed ; 
+			
+		if (startOfFrame == 1'b1) 
+				Yspeed <= Yspeed  - Y_ACCEL ; // deAccelerate : slow the speed down every clock tick 
+			
+					
+	// colision Calcultaion 
+			
+		//hit bit map has  one bit per edge:  Left-Top-Right-Bottom	 
+
+	
+		if (collision && HitEdgeCode [2] == 1 )   // hit top border of brick  
+				if (Yspeed < 0) // while moving up
+						Yspeed <= -Yspeed ; 
+			
+			if (collision && HitEdgeCode [0] == 1 )   // hit bottom border of brick  
+				if (Yspeed > 0 ) //  while moving doun
+					Yspeed <= -Yspeed ; 
+		
+
+	end
+end
+
+//////////--------------------------------------------------------------------------------------------------------------=
+// position calculate 
+
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN)
+	begin
+		topLeftX_FixedPoint	<= INITIAL_X * FIXED_POINT_MULTIPLIER;
+		topLeftY_FixedPoint	<= INITIAL_Y * FIXED_POINT_MULTIPLIER;
+	end
+	else begin
+		
+		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
+
+			topLeftY_FixedPoint  <= topLeftY_FixedPoint + Yspeed; 
+
+			if (X_direction==1'b0) //  while moving down
+				topLeftX_FixedPoint  <= topLeftX_FixedPoint + Xspeed; 
+			else 
+				topLeftX_FixedPoint  <= topLeftX_FixedPoint - Xspeed; 
+
+
+
+					
+			end
+	end
+end
+
+//get a better (64 times) resolution using integer   
+assign 	topLeftX = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
+assign 	topLeftY = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
+
+
+endmodule
