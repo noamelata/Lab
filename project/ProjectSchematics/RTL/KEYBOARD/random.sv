@@ -9,31 +9,49 @@ module random
   //generating a random number by latching a fast counter with the rising edge of an input ( e.g. key pressed )
   
 parameter SIZE_BITS = 8;
-parameter MIN_VAL = 0;  //set the min and max values 
-parameter MAX_VAL = 479;
+//parameter MIN_VAL = 0;  //set the min and max values 
+//parameter MAX_VAL = 508;
 
-	logic [SIZE_BITS-1:0] counter;
+	logic [25 - 1:0] counter;
 	logic rise_d;
 	
 	
+//always_ff @(posedge clk or negedge resetN) begin
+//		if(!resetN) begin
+//			dout <= 0;
+//			counter <= MIN_VAL;
+//			rise_d <= 1'b0;
+//		end
+//		
+//		else begin
+//			counter <= counter + 1;
+//			if ( counter >= MAX_VAL ) 
+//					counter <=  MIN_VAL ; // set min and max mvalues 
+//			rise_d <= rise;
+//			if (rise && !rise_d) // rizing edge 
+//				dout <= counter[SIZE_BITS-1:0];
+//		end
+//			
+//	
+//	end
+
+
 always_ff @(posedge clk or negedge resetN) begin
-		if(!resetN) begin
-			dout <= 0;
-			counter <= MIN_VAL;
-			rise_d <= 1'b0;
-		end
-		
-		else begin
-			counter <= counter+1;
-			if ( counter >= MAX_VAL ) 
-					counter <=  MIN_VAL ; // set min and max mvalues 
-			rise_d <= rise;
-			if (rise && !rise_d) // rizing edge 
-				dout <= counter;
-		end
-			
-	
+	if(!resetN) begin
+		dout <= 0;
+		rise_d <= 1'b0;
+		counter <= 26'hFFFFFFF;
 	end
+	
+	else begin
+		counter <= {counter[25-2:0], counter[25-1] ^ counter[1]} ;
+		rise_d <= rise;
+		if (rise && !rise_d) // rizing edge 
+			dout <= counter[9:2];
+	end
+		
+
+end
 	
  
 

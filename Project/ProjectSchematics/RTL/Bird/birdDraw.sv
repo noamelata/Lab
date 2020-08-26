@@ -2,7 +2,7 @@
 module	birdDraw	(	
 					input	logic	clk,
 					input	logic	resetN,
-					input logic signed [10:0] [1:0]	coordinate,
+					input logic signed [1:0] [10:0]	coordinate,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket 
 					input logic flash,
 					input logic deploy,

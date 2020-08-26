@@ -13,7 +13,7 @@ module	birdLogic	(
 					input logic [1:0] speed,
 					output logic alive,
 					output logic red,
-					output logic signed [10:0] [1:0]	coordinate// output the top left corner 					
+					output logic signed [1:0] [10:0]	coordinate// output the top left corner 					
 );
 
 
@@ -22,7 +22,7 @@ module	birdLogic	(
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
 parameter int INITIAL_X = 280; //todo
-parameter int INITIAL_Y = 185; //todo
+parameter int INITIAL_Y = 185; 
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
 
@@ -31,7 +31,7 @@ parameter int MAX_RANDOM = 255; // max value of random
 parameter int RIGHT_INDICATOR = 155; // after this point turn right
 parameter int LEFT_INDICATOR = 100; // before this point turn left
 
-
+enum logic [1:0] {idle_state, right_state, left_state} state, next_state;
 
 
 const int	FIXED_POINT_MULTIPLIER	=	64;
@@ -43,10 +43,11 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step;
+int step = 50;
 int life;
 int counter;
 int random_num;
+int chance_to_change = 8;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -57,8 +58,30 @@ begin
 	if (random_num > MAX_RANDOM) begin
 		random_num = random_num - MAX_RANDOM;
 	end
+	
+	next_state = state;
+	if ((startOfFrame == 1'b1) && (random_num < chance_to_change)) begin
+		if (state == idle_state)
+			next_state = (random_num < (chance_to_change/2)) ? right_state : left_state;
+		else
+			next_state = idle_state;
+				
+	end
+	
 end
 
+
+always @(posedge clk or negedge resetN)
+   begin
+	   
+   if ( !resetN )  // Asynchronic reset
+		state <= idle_state;
+   else 		// Synchronic logic FSM
+		state <= next_state;
+
+	end // always
+
+	
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
@@ -73,25 +96,33 @@ begin
 			if (deploy) begin
 				life <= starting_life;
 			end
-			
-			if ((random_num > RIGHT_INDICATOR) && (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER)))) begin
-				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
-			end 
-			else if ((random_num < LEFT_INDICATOR) && (topLeftX_FixedPoint > 0)) begin
-				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
-			end
-			
 			if (collision) begin
 				life <= life - 1;
 				counter <= 32; // frames to stay red, should be calculated
 			end
+			
+			case (state)
+			right_state: 
+				if (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER))) begin
+					topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
+				end
+			left_state: 
+				if (topLeftX_FixedPoint > 0) begin
+					topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
+				end
+			default:
+				topLeftX_FixedPoint <= topLeftX_FixedPoint;
+					
+			endcase
+			
 		end		
 	end
 end
 
 //get a better (64 times) resolution using integer   
-assign 	topLeftX = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
-assign 	topLeftY = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
+assign 	coordinate[0] = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   
+assign 	coordinate[1] = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
+
 assign 	red = counter > 0;
 assign 	alive = (life > 0) || red; // dont disappear until finished flashing red
 

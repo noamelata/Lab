@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Aug 27 00:43:05 2020
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : Lab1Demo
+Top-level Entity Name : GAME_TOP
+Family : Cyclone V
+Device : 5CSXFC6D6F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 1,839 / 41,910 ( 4 % )
+Total registers : 3327
+Total pins : 35 / 499 ( 7 % )
+Total virtual pins : 0
+Total block memory bits : 143,360 / 5,662,720 ( 3 % )
+Total RAM Blocks : 14 / 553 ( 3 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
+Total HSSI RX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
+Total HSSI TX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 9 ( 0 % )
+Total PLLs : 0 / 15 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

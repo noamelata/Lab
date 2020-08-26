@@ -7,22 +7,16 @@
 
 module	back_ground_drawSquare	(	
 
-					input	logic	clk,
-					input	logic	resetN,
-					input 	logic	[10:0]	pixelX,
-					input 	logic	[10:0]	pixelY,
-
-					output	logic	[7:0]	BG_RGB,
-					output	logic		boardersDrawReq 
+					output	logic	[7:0]	BG_RGB
 );
 
 const int	xFrameSize	=	639;
 const int	yFrameSize	=	479;
 const int	bracketOffset =	30;
 
-localparam logic [7:0] COLOR = 8'h111 ;// bitmap of a dark color
+localparam logic [7:0] COLOR = 8'h22;// bitmap of a dark color
 
-assign BG_RGB =  COLOR ; //collect color nibbles to an 8 bit word 
+assign BG_RGB = COLOR ; //collect color nibbles to an 8 bit word 
 
 endmodule
 

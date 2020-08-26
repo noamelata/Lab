@@ -2,9 +2,9 @@
 module	treeDraw (
 					input	logic	clk,
 					input	logic	resetN,
-					input logic signed [10:0] [1:0]	coordinate,
+					input logic signed  [1:0] [10:0] coordinate,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket 
-					input logic Deploy, //input that tree should be desplayed 
+					input logic deploy, //input that tree should be desplayed 
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
@@ -76,7 +76,7 @@ begin
 		//HitEdgeCode <= hit_colors[offsetY >> OBJECT_HEIGHT_Y_DIVIDER][offsetX >> OBJECT_WIDTH_X_DIVIDER];	//get hitting edge from the colors table  
 
 	
-		if ((InsideRectangle == 1'b1) && (Deploy == 1'b1))  // inside an external bracket 
+		if ((InsideRectangle == 1'b1) && (deploy == 1'b1))  // inside an external bracket 
 			RGBout <= object_colors[coordinate[1]][coordinate[0]];
 //			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
 		else 

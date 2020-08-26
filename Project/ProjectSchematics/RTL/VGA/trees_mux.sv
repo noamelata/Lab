@@ -5,29 +5,9 @@ module	trees_mux	(
 					input logic	clk,
 					input	logic	resetN,
 
-					input logic	tree1DrawingRequest,
-					input logic	[7:0] tree1RGB, 
 					
-					input logic	tree2DrawingRequest,
-					input logic	[7:0] tree2RGB, 
-					
-					input logic	tree3DrawingRequest,
-					input logic	[7:0] tree3RGB, 
-					
-					input logic	tree4DrawingRequest,
-					input logic	[7:0] tree4RGB, 
-					
-					input logic	tree5DrawingRequest,
-					input logic	[7:0] tree5RGB, 
-					
-					input		logic	tree6DrawingRequest,
-					input		logic	[7:0] tree6RGB, 
-					
-					input		logic	tree7DrawingRequest,
-					input		logic	[7:0] tree7RGB, 
-					
-					input		logic	tree8DrawingRequest,
-					input		logic	[7:0] tree8RGB, 
+					input	logic	[7:0] treesBusRequest,
+					input	logic	[7:0] [7:0] treesBusRGB, 
 					
 					output	logic treesDrawingRequest,
 					output	logic	[7:0] treesRGB
@@ -38,11 +18,10 @@ logic [7:0] tmpRGB;
 
 
 assign treesRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign treesDrawingRequest  = (tree1DrawingRequest || tree2DrawingRequest 
-						|| tree3DrawingRequest || tree4DrawingRequest
-						|| tree5DrawingRequest || tree6DrawingRequest
-						|| tree7DrawingRequest || tree8DrawingRequest);
-
+assign treesDrawingRequest  = (treesBusRequest[0] || treesBusRequest [1]
+						|| treesBusRequest[2] || treesBusRequest[3]
+						|| treesBusRequest[4] || treesBusRequest[5]
+						|| treesBusRequest[6] || treesBusRequest[7]);
 
 always_ff@(posedge clk or negedge resetN)
 begin
@@ -50,30 +29,30 @@ begin
 			tmpRGB	<= 8'b0;
 	end
 	else begin
-		if (tree1DrawingRequest == 1'b1 )   
-			tmpRGB <= tree1RGB;  //first priority 
+		if (treesBusRequest[0] == 1'b1 )   
+			tmpRGB <= treesBusRGB[0];  //first priority 
 
-		else if (tree2DrawingRequest == 1'b1 )   
-			tmpRGB <= tree2RGB;  //second priority 
+		else if (treesBusRequest[1] == 1'b1 )   
+			tmpRGB <= treesBusRGB[1];  //second priority 
 			
-		else if (tree3DrawingRequest == 1'b1 )   
-			tmpRGB <= tree3RGB;  //third priority 
+		else if (treesBusRequest[2] == 1'b1 )   
+			tmpRGB <= treesBusRGB[2];  //third priority 
 		
-		else if (tree4DrawingRequest == 1'b1 )   
-			tmpRGB <= tree4RGB;  //forth priority 
+		else if (treesBusRequest[3] == 1'b1 )   
+			tmpRGB <= treesBusRGB[3];  //forth priority 
 			
-		else if (tree5DrawingRequest == 1'b1 )   
-			tmpRGB <= tree5RGB;  //fifth priority 
+		else if (treesBusRequest[4] == 1'b1 )   
+			tmpRGB <= treesBusRGB[4];  //fifth priority 
 		
-		else if (tree6DrawingRequest == 1'b1 )   
-			tmpRGB <= tree6RGB;  //sixth priority 
+		else if (treesBusRequest[5] == 1'b1 )   
+			tmpRGB <= treesBusRGB[5];  //sixth priority 
 			
-		else if (tree7DrawingRequest == 1'b1 )   
-			tmpRGB <= tree7RGB;  //seventh priority 
+		else if (treesBusRequest[6] == 1'b1 )   
+			tmpRGB <= treesBusRGB[6];  //seventh priority 
 		
-		else if (tree8DrawingRequest == 1'b1 )   
-			tmpRGB <= tree8RGB;  //eighth priority 
-		
+		else if (treesBusRequest[7] == 1'b1 )   
+			tmpRGB <= treesBusRGB[7];  //eighth priority 
+			
 		else
 			tmpRGB <= 8'hff ; // last priority 
 		end ; 

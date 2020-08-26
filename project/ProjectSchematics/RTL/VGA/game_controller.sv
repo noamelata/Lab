@@ -7,7 +7,7 @@ module	game_controller	(
 			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 			input logic shoot,
 			input logic [10:0] playerCoordinates,
-			input logic random,
+			input logic [7:0] random,
 			input logic [1:0] bird_alive,
 			input logic collision, // active in case of collision between player and tree
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
@@ -27,12 +27,12 @@ module	game_controller	(
 
 
 int number_of_trees = 0;
-int number_of_birds = 1;
+const int number_of_birds = 1;
 assign tree_speed = 2'b0;
 assign bird_speed = 2'b0;
 
 
-int cooldown_time = 20;
+int cooldown_time = 100;
 int cooldown = 0;
 int current_shot = 0;
 int current_tree = 0;
@@ -42,7 +42,7 @@ localparam int MAX_TREES = 8;
 int tree_wait;
 int tree_counter;
 int life = 3; //bird life
-int trees_to_add = 0;//VERIFY WITH N
+const int trees_to_add = 0;//VERIFY WITH N
 logic start_level;
 
 assign tree_wait = 8; //should be calculated using tree speed and number of trees
@@ -59,14 +59,17 @@ begin
 	end 
 	else begin 
 		if (startOfFrame) begin
-			deploy_tree <= 1'h0;
+			deploy_tree <= 8'h0;
 			cooldown <= (cooldown == 0) ? 0 : cooldown - 1;
+			current_shot <= current_shot;
 			start_level <= 1'b0;
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 2'b00;
+			deploy_shot <= 8'h00;
+
 			
-			if (shoot && !cooldown) begin // trying to shoot
+			if (shoot && (cooldown == 0)) begin // trying to shoot
 				deploy_shot[current_shot] <= 1'b1;
 				current_shot <= (current_shot == MAX_SHOTS - 1) ? 0 : current_shot + 1;
 				cooldown <= cooldown_time;

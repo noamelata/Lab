@@ -2,7 +2,7 @@
 module	playerDraw	(	
 					input	logic	clk,
 					input	logic	resetN,
-					input logic signed [10:0] [1:0]	coordinate,
+					input logic signed [1:0] [10:0]	offsetCoordinate,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket 
 					input logic flash,
 					input	logic	left,  //turn left
@@ -26,7 +26,7 @@ localparam  int OBJECT_WIDTH_X_DIVIDER =  OBJECT_NUMBER_OF_X_BITS - 2;
 
 // generating a smiley bitmap
 
-localparam logic [7:0] TRANSPARENT_ENCODING = 8'h88 ;// RGB value in the bitmap representing a transparent pixel 
+localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
 
 logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors = {
 {8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88, 8'h88 },
@@ -77,7 +77,7 @@ begin
 	else begin
 	
 		if (InsideRectangle == 1'b1 )  // inside an external bracket 
-			RGBout <= object_colors[coordinate[1]][coordinate[0]];	 
+			RGBout <= object_colors[offsetCoordinate[1]][offsetCoordinate[0]];	 
 //			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 

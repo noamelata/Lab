@@ -14,12 +14,14 @@ logic [9:0] flag ; // a semaphore to set the output only once per frame / regard
 parameter int NUM_OF_SHOTS = 8;
 parameter int NUM_OF_BIRDS = 2;
 
-logic shot = (shotsDrawingRequest[0] || shotsDrawingRequest[1] 
+logic shot;
+assign shot = (shotsDrawingRequest[0] || shotsDrawingRequest[1] 
 						|| shotsDrawingRequest[2] || shotsDrawingRequest[3]
 						|| shotsDrawingRequest[4] || shotsDrawingRequest[5]
 						|| shotsDrawingRequest[6] || shotsDrawingRequest[7]);
 						
-logic bird = (birdsDrawingRequest[0] || birdsDrawingRequest[1]);
+logic bird;
+assign bird = (birdsDrawingRequest[0] || birdsDrawingRequest[1]);
 logic [NUM_OF_BIRDS - 1:0] collision_birds;
 logic [NUM_OF_SHOTS - 1:0] collision_shots;
 			
@@ -42,10 +44,12 @@ begin
 		SingleHitPulse_shots <= 8'h00; 
 	end 
 	else begin 
-		SingleHitPulse_birds <= 2'b00;
-		SingleHitPulse_shots <= 8'h00;  // default 
+		SingleHitPulse_birds <= SingleHitPulse_birds;
+		SingleHitPulse_shots <= SingleHitPulse_shots;  // default 
 		if (startOfFrame) 
-			flag <= 10'h0;; // reset for next time 
+			flag <= 10'h00; // reset for next time 
+			SingleHitPulse_birds <= 2'b00;
+			SingleHitPulse_shots <= 8'h00;
 		for (int i = 0 ; i < 8 ; i++) begin
 			if (collision_shots[i]  && (flag[i] == 1'b0)) begin
 				flag[i] <= 1'b1;

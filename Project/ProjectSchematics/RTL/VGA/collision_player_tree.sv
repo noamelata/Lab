@@ -9,6 +9,7 @@ module	collision_player_tree	(
 );
 
 logic flag; // a semaphore to set the output only once per frame / regardless of the number of collisions 
+logic collision;
 			
 assign collision = (playerDrawingRequest && 
 						(treesDrawingRequest[0] || treesDrawingRequest[1] 
@@ -25,9 +26,10 @@ begin
 		SingleHitPulse <= 1'b0 ; 
 	end 
 	else begin 
-			SingleHitPulse <= 1'b0 ; // default 
+			SingleHitPulse <= SingleHitPulse ; // default 
 			if(startOfFrame) 
 				flag = 1'b0 ; // reset for next time 
+				SingleHitPulse <= 1'b0 ; 
 			if ( collision  && (flag == 1'b0)) begin 
 				flag	<= 1'b1; // to enter only once 
 				SingleHitPulse <= 1'b1 ; 

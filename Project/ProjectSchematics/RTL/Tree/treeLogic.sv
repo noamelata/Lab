@@ -5,12 +5,12 @@ module	treeLogic	(
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					input logic collision,  //collision if shot hits
-					input logic deploy, //MOVED TO DRAW SHOULD BE DELETED HERE
-					input logic remove,
+					//input logic collision,  //collision if shot hits
+					input logic deploy, 
+					//input logic remove,
 					input logic [7:0] random, //random number from random generator
 					input logic [1:0] speed,
-					output logic signed [10:0] [1:0]	coordinate// output the top left corner 		
+					output logic signed [1:0] [10:0]	coordinate// output the top left corner 		
 );
 
 
@@ -33,7 +33,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step = 5; // moving speed of tree
+int step = 25; // moving speed of tree
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -65,17 +65,16 @@ begin
 			end
 		end
 		
-		if (remove) begin
+		/*if (remove) begin
 			topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 			topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
-		end
+		end*/
 	end
 end
 
 
 //get a better (64 times) resolution using integer   
-assign 	topLeftX = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
-assign 	topLeftY = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
-
+assign 	coordinate[0] = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   
+assign 	coordinate[1] = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ; 
 
 endmodule
