@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "drawingRequest",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RGBout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "resetN",
+					"strict" : false
+				},
+				{
+					"name" : "InsideRectangle",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
