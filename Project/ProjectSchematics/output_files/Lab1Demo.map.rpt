@@ -1,0 +1,271 @@
+Analysis & Elaboration report for Lab1Demo
+Wed Aug 26 09:11:15 2020
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
+  6. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Failed - Wed Aug 26 09:11:15 2020           ;
+; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                 ; Lab1Demo                                    ;
+; Top-level Entity Name         ; TOP_VGA_DEMO_WITH_MSS_ALL                   ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                                  ;
++---------------------------------------------------------------------------------+---------------------------+--------------------+
+; Option                                                                          ; Setting                   ; Default Value      ;
++---------------------------------------------------------------------------------+---------------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6            ;                    ;
+; Top-level entity name                                                           ; TOP_VGA_DEMO_WITH_MSS_ALL ; Lab1Demo           ;
+; Family name                                                                     ; Cyclone V                 ; Cyclone V          ;
+; Use smart compilation                                                           ; On                        ; Off                ;
+; Maximum processors allowed for parallel compilation                             ; All                       ;                    ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                        ; On                 ;
+; Enable compact report table                                                     ; Off                       ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                      ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                       ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                       ; Off                ;
+; Preserve fewer node names                                                       ; On                        ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable                    ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001              ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993                 ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                      ; Auto               ;
+; Safe State Machine                                                              ; Off                       ; Off                ;
+; Extract Verilog State Machines                                                  ; On                        ; On                 ;
+; Extract VHDL State Machines                                                     ; On                        ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                       ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                      ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                       ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                        ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                        ; On                 ;
+; Parallel Synthesis                                                              ; On                        ; On                 ;
+; DSP Block Balancing                                                             ; Auto                      ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                        ; On                 ;
+; Power-Up Don't Care                                                             ; On                        ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                       ; Off                ;
+; Remove Duplicate Registers                                                      ; On                        ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                       ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                       ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                       ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                       ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                       ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                        ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                       ; Off                ;
+; Optimization Technique                                                          ; Balanced                  ; Balanced           ;
+; Carry Chain Length                                                              ; 70                        ; 70                 ;
+; Auto Carry Chains                                                               ; On                        ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                        ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                       ; Off                ;
+; Auto ROM Replacement                                                            ; On                        ; On                 ;
+; Auto RAM Replacement                                                            ; On                        ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                        ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                      ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                      ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                        ; On                 ;
+; Strict RAM Replacement                                                          ; Off                       ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                        ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                       ; Off                ;
+; Auto Resource Sharing                                                           ; Off                       ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                       ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                       ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                       ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                        ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                       ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                        ; On                 ;
+; Report Parameter Settings                                                       ; On                        ; On                 ;
+; Report Source Assignments                                                       ; On                        ; On                 ;
+; Report Connectivity Checks                                                      ; On                        ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                       ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                         ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation        ; Normal compilation ;
+; HDL message level                                                               ; Level2                    ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                       ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                      ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                      ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                       ; 100                ;
+; Clock MUX Protection                                                            ; On                        ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                       ; Off                ;
+; Block Design Naming                                                             ; Auto                      ; Auto               ;
+; SDC constraint protection                                                       ; Off                       ; Off                ;
+; Synthesis Effort                                                                ; Auto                      ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                        ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                       ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium                    ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                      ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                        ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                        ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                       ; Off                ;
++---------------------------------------------------------------------------------+---------------------------+--------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed Aug 26 09:11:05 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo --analysis_and_elaboration
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Error (10170): Verilog HDL syntax error at GAME_TOP.sv(11) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GAME_TOP.sv Line: 11
+Error (10112): Ignored design unit "game_top" at GAME_TOP.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GAME_TOP.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/game_top.sv
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/collision_player_tree.sv
+    Info (12023): Found entity 1: collision_player_tree File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_player_tree.sv Line: 2
+Error (10170): Verilog HDL syntax error at collision_bird_shot.sv(10) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_bird_shot.sv Line: 10
+Error (10112): Ignored design unit "collision_bird_shot" at collision_bird_shot.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_bird_shot.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/collision_bird_shot.sv
+Error (10170): Verilog HDL syntax error at trees_mux.sv(35) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/trees_mux.sv Line: 35
+Error (10112): Ignored design unit "trees_mux" at trees_mux.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/trees_mux.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/trees_mux.sv
+Error (10170): Verilog HDL syntax error at birds_mux.sv(18) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/birds_mux.sv Line: 18
+Error (10112): Ignored design unit "birds_mux" at birds_mux.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/birds_mux.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/birds_mux.sv
+Error (10170): Verilog HDL syntax error at shots_mux.sv(35) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/shots_mux.sv Line: 35
+Error (10112): Ignored design unit "shots_mux" at shots_mux.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/shots_mux.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/shots_mux.sv
+Error (10170): Verilog HDL syntax error at treeLogic.sv(14) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeLogic.sv Line: 14
+Error (10112): Ignored design unit "treeLogic" at treeLogic.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeLogic.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/tree/treelogic.sv
+Error (10170): Verilog HDL syntax error at treeDraw.sv(10) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeDraw.sv Line: 10
+Error (10112): Ignored design unit "treeBitmap" at treeDraw.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeDraw.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/tree/treedraw.sv
+Error (10170): Verilog HDL syntax error at shotLogic.sv(13) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotLogic.sv Line: 13
+Error (10112): Ignored design unit "shotLogic" at shotLogic.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotLogic.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/shot/shotlogic.sv
+Error (10170): Verilog HDL syntax error at shotDraw.sv(10) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotDraw.sv Line: 10
+Error (10112): Ignored design unit "shotBitmap" at shotDraw.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotDraw.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/shot/shotdraw.sv
+Error (10170): Verilog HDL syntax error at birdLogic.sv(16) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv Line: 16
+Error (10112): Ignored design unit "birdLogic" at birdLogic.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/bird/birdlogic.sv
+Error (10170): Verilog HDL syntax error at birdDraw.sv(12) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdDraw.sv Line: 12
+Error (10112): Ignored design unit "playerBitmap" at birdDraw.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdDraw.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/bird/birddraw.sv
+Error (10170): Verilog HDL syntax error at playerLogic.sv(14) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerLogic.sv Line: 14
+Error (10112): Ignored design unit "playerLogic" at playerLogic.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerLogic.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/player/playerlogic.sv
+Error (10170): Verilog HDL syntax error at playerDraw.sv(13) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerDraw.sv Line: 13
+Error (10112): Ignored design unit "playerBitmap" at playerDraw.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerDraw.sv Line: 2
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/player/playerdraw.sv
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/player/playerbitmap.sv
+Warning (10229): Verilog HDL Expression warning at back_ground_drawSquare.sv(23): truncated literal to match 8 bits File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/back_ground_drawsquare.sv
+    Info (12023): Found entity 1: back_ground_drawSquare File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv Line: 8
+Error (10170): Verilog HDL syntax error at game_controller.sv(19) near text: "life";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 19
+Error (10170): Verilog HDL syntax error at game_controller.sv(24) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 24
+Error (10112): Ignored design unit "game_controller" at game_controller.sv(4) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 4
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/game_controller.sv
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/objects_mux_all.sv
+    Info (12023): Found entity 1: objects_mux_all File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/objects_mux_all.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/square_object.sv
+    Info (12023): Found entity 1: square_object File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/square_object.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/objects_mux.sv
+    Info (12023): Found entity 1: objects_mux File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/objects_mux.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/vga_controller.sv
+    Info (12023): Found entity 1: VGA_Controller File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/VGA_Controller.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/numbersbitmap.sv
+    Info (12023): Found entity 1: NumbersBitMap File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/NumbersBitMap.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/tonedecoder.sv
+    Info (12023): Found entity 1: ToneDecoder File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/ToneDecoder.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/top_mss_demo.bdf
+    Info (12023): Found entity 1: TOP_MSS_DEMO
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/sintable.sv
+    Info (12023): Found entity 1: sintable File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/SinTable.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/prescaler.sv
+    Info (12023): Found entity 1: prescaler File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/prescaler.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/data_conversion.sv
+    Info (12023): Found entity 1: data_conversion File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/data_conversion.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/mss/addr_counter.sv
+    Info (12023): Found entity 1: addr_counter File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/addr_counter.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio_codec_controller/audio_codec_controller.qxp
+    Info (12023): Found entity 1: audio_codec_controller File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/audio_codec_controller/audio_codec_controller.qxp Line: -1
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboard/top_kbd_demoall.bdf
+    Info (12023): Found entity 1: TOP_KBD_DEMOALL
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboard/random.sv
+    Info (12023): Found entity 1: random File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/KEYBOARD/random.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboard/keytoggle_decoder.sv
+    Info (12023): Found entity 1: keyToggle_decoder File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/KEYBOARD/keyToggle_decoder.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboard/keypad_decoder.sv
+    Info (12023): Found entity 1: keyPad_decoder File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/KEYBOARD/keyPad_decoder.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/seg7/seg7.sv
+    Info (12023): Found entity 1: SEG7 File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Seg7/SEG7.SV Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/valx.v
+    Info (12023): Found entity 1: valX File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/numberposition.v
+    Info (12023): Found entity 1: numberPosition File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/numberPosition.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/top_vga_demo_with_mss_all.bdf
+    Info (12023): Found entity 1: TOP_VGA_DEMO_WITH_MSS_ALL
+Info (144001): Generated suppressed messages file C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/output_files/Lab1Demo.map.smsg
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 29 errors, 1 warning
+    Error: Peak virtual memory: 4781 megabytes
+    Error: Processing ended: Wed Aug 26 09:11:15 2020
+    Error: Elapsed time: 00:00:10
+    Error: Total CPU time (on all processors): 00:00:25
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/output_files/Lab1Demo.map.smsg.
+
+

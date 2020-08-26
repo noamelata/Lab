@@ -4,22 +4,35 @@ module	collision_player_tree	(
 					input		logic	resetN,
 					
 					input		logic	playerDrawingRequest,	
-					input		logic	tree1DrawingRequest,					
-					input		logic	tree2DrawingRequest,					
-					input		logic	tree3DrawingRequest,					
-					input		logic	tree4DrawingRequest,					
-					input		logic	tree5DrawingRequest,					
-					input		logic	tree6DrawingRequest,					
-					input		logic	tree7DrawingRequest,					
-					input		logic	tree8DrawingRequest,					
-					output	logic collision,
-					
+					input		logic	[7:0] treesDrawingRequest,			
+					output	logic SingleHitPulse			
 );
+
+logic flag; // a semaphore to set the output only once per frame / regardless of the number of collisions 
 			
 assign collision = (playerDrawingRequest && 
-						(trees1DrawingRequest || trees2DrawingRequest 
-						|| trees3DrawingRequest || trees4DrawingRequest
-						|| trees5DrawingRequest || trees6DrawingRequest
-						|| trees7DrawingRequest || trees8DrawingRequest));
+						(treesDrawingRequest[0] || treesDrawingRequest[1] 
+						|| treesDrawingRequest[2] || treesDrawingRequest[3]
+						|| treesDrawingRequest[4] || treesDrawingRequest[5]
+						|| treesDrawingRequest[6] || treesDrawingRequest[7]));
+
+						
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN)
+	begin 
+		flag	<= 1'b0;
+		SingleHitPulse <= 1'b0 ; 
+	end 
+	else begin 
+			SingleHitPulse <= 1'b0 ; // default 
+			if(startOfFrame) 
+				flag = 1'b0 ; // reset for next time 
+			if ( collision  && (flag == 1'b0)) begin 
+				flag	<= 1'b1; // to enter only once 
+				SingleHitPulse <= 1'b1 ; 
+			end
+	end 
+end
 			
 endmodule

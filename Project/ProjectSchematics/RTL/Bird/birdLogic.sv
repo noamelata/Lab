@@ -7,8 +7,12 @@ module	birdLogic	(
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 					input logic collision,  //collision if shot hits
 					input logic [7:0] random, //random number from random generator
+					input logic [3:0] starting_life,
+					input logic deploy,
 
 					input logic [1:0] speed,
+					output logic alive,
+					output logic red,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
 
@@ -21,7 +25,7 @@ parameter int INITIAL_X = 280; //todo
 parameter int INITIAL_Y = 185; //todo
 parameter int IMAGE_WIDTH = 32;
 parameter int IMAGE_HeiGHT = 32;
-parameter int life = 3;
+
 parameter int RANDOM_OFFSET = 0; // sample random with parameter
 parameter int MAX_RANDOM = 255; // max value of random
 parameter int RIGHT_INDICATOR = 155; // after this point turn right
@@ -40,7 +44,8 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
 int step;
-int random_num;
+int life;
+int counter;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -62,19 +67,31 @@ begin
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
+			counter <= (counter > 0) ? counter - 1 : 0;
+			
+			if (deploy) begin
+				life <= starting_life;
+			end
+			
 			if ((random_num > RIGHT_INDICATOR) && (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER)))) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
 			end 
 			else if ((random_num < LEFT_INDICATOR) && (topLeftX_FixedPoint > 0)) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
 			end
-		end
+			
+			if (collison) begin
+				life <= life - 1;
+				counter <= 32 // frames to stay red, should be calculated
+			end
+		end		
 	end
 end
 
 //get a better (64 times) resolution using integer   
 assign 	topLeftX = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
 assign 	topLeftY = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
-
+assign 	red = counter > 0;
+assign 	alive = (life > 0) || red; // dont disappear until finished flashing red
 
 endmodule
