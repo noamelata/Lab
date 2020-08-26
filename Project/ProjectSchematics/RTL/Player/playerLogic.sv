@@ -10,7 +10,7 @@ module	playerLogic	(
 					input logic collision,  //collision if player hits an object
 					input logic invincible, //turn on invincible
 
-					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
+					output logic signed [10:0] [1:0]	coordinate// output the top left corner 					
 );
 
 
@@ -32,7 +32,7 @@ const int	x_FRAME_SIZE	=	639 * FIXED_POINT_MULTIPLIER; // note it must be 2^n
 const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
-int topLeftX_FixedPoint; // local parameters 
+int topLeftX_FixedPoint, topLeftY_FixedPoint; // local parameters 
 int step = 10;
 
 

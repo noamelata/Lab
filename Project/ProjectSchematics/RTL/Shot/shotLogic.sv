@@ -9,7 +9,7 @@ module	shotLogic	(
 					input logic collision,  //collision if shot hits
 					input logic [1:0] direction,
 					input logic signed [9:0] initial_x,
-					output logic signed [9:0] [1:0]	coordinate,// output the top left corner 					
+					output logic signed [9:0] [1:0]	coordinate// output the top left corner 					
 );
 
 
@@ -33,8 +33,8 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int speedX;
-const int speedY = 10;
+int speedX = 0; //speed of bullet in X axis
+const int speedY = 10; //speed of bullet in Y axis
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
@@ -53,7 +53,7 @@ begin
 				topLeftX_FixedPoint	<=  initial_x * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b1;
-				speed <= 0;
+				//speed <= 0;
 				case (direction)
 					0: speedX <= 0;
 					1: speedX <= 5;

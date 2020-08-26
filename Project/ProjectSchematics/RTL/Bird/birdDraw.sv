@@ -1,5 +1,5 @@
 
-module	playerBitmap	(	
+module	birdDraw	(	
 					input	logic	clk,
 					input	logic	resetN,
 					input logic signed [10:0] [1:0]	coordinate,
@@ -8,7 +8,7 @@ module	playerBitmap	(
 					input logic deploy,
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
-					output	logic	[7:0] RGBout,  //rgb value from the bitmap 
+					output	logic	[7:0] RGBout  //rgb value from the bitmap 
  ) ;
 
 // this is the devider used to acess the right pixel 
@@ -23,8 +23,8 @@ localparam  int OBJECT_WIDTH_X = 1 <<  OBJECT_NUMBER_OF_X_BITS;
 localparam  int OBJECT_HEIGHT_Y_DIVIDER = OBJECT_NUMBER_OF_Y_BITS - 2; //how many pixel bits are in every collision pixel
 localparam  int OBJECT_WIDTH_X_DIVIDER =  OBJECT_NUMBER_OF_X_BITS - 2;
 
-parameter DARK_COLOR;
-parameter LIGHT_COLOR;
+parameter DARK_COLOR = 8'hFF; //PLACEHOLDER PLEASE CHANGE
+parameter LIGHT_COLOR = 8'hFF; //PLACEHOLDER PLEASE CHANGE
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
 
 logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors = {
@@ -74,11 +74,11 @@ begin
 		RGBout <=	8'h00;
 	end
 	else begin
-		HitEdgeCode <= hit_colors[offsetY >> OBJECT_HEIGHT_Y_DIVIDER][offsetX >> OBJECT_WIDTH_X_DIVIDER];	//get hitting edge from the colors table  
+		//HitEdgeCode <= hit_colors[offsetY >> OBJECT_HEIGHT_Y_DIVIDER][offsetX >> OBJECT_WIDTH_X_DIVIDER];	//get hitting edge from the colors table  
 
 	
 		if (InsideRectangle == 1'b1 )  // inside an external bracket 
-			RGBout <= object_colors[offsetY][offsetX];	 
+			RGBout <= object_colors[coordinate[1]][coordinate[0]];	 
 //			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 

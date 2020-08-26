@@ -1,5 +1,5 @@
 
-module	playerBitmap	(	
+module	playerDraw	(	
 					input	logic	clk,
 					input	logic	resetN,
 					input logic signed [10:0] [1:0]	coordinate,
@@ -9,7 +9,7 @@ module	playerBitmap	(
 					input	logic	right,  //turn right
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
-					output	logic	[7:0] RGBout,  //rgb value from the bitmap 
+					output	logic	[7:0] RGBout  //rgb value from the bitmap 
  ) ;
 
 // this is the devider used to acess the right pixel 
@@ -77,7 +77,7 @@ begin
 	else begin
 	
 		if (InsideRectangle == 1'b1 )  // inside an external bracket 
-			RGBout <= object_colors[offsetY][offsetX];	 
+			RGBout <= object_colors[coordinate[1]][coordinate[0]];	 
 //			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 

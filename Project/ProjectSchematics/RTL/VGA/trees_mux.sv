@@ -30,19 +30,18 @@ module	trees_mux	(
 					input		logic	[7:0] tree8RGB, 
 					
 					output	logic treesDrawingRequest,
-					output	logic	[7:0] treesRGB, 
+					output	logic	[7:0] treesRGB
 					
 );
 
 logic [7:0] tmpRGB;
 
 
-
 assign treesRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign treesDrawingRequest  = (trees1DrawingRequest || trees2DrawingRequest 
-						|| trees3DrawingRequest || trees4DrawingRequest
-						|| trees5DrawingRequest || trees6DrawingRequest
-						|| trees7DrawingRequest || trees8DrawingRequest);
+assign treesDrawingRequest  = (tree1DrawingRequest || tree2DrawingRequest 
+						|| tree3DrawingRequest || tree4DrawingRequest
+						|| tree5DrawingRequest || tree6DrawingRequest
+						|| tree7DrawingRequest || tree8DrawingRequest);
 
 
 always_ff@(posedge clk or negedge resetN)

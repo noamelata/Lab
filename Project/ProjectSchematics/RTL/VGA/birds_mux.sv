@@ -13,7 +13,7 @@ module	birds_mux	(
 					
 
 					output	logic birdsDrawingRequest,
-					output	logic	[7:0] birdsRGB, 
+					output	logic	[7:0] birdsRGB 
 					
 );
 

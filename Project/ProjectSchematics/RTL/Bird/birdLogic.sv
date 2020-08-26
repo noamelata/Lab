@@ -13,7 +13,7 @@ module	birdLogic	(
 					input logic [1:0] speed,
 					output logic alive,
 					output logic red,
-					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
+					output logic signed [10:0] [1:0]	coordinate// output the top left corner 					
 );
 
 
@@ -29,7 +29,7 @@ parameter int IMAGE_HeiGHT = 32;
 parameter int RANDOM_OFFSET = 0; // sample random with parameter
 parameter int MAX_RANDOM = 255; // max value of random
 parameter int RIGHT_INDICATOR = 155; // after this point turn right
-parameter int LEFT_INDICATOR = 100; // before this point turn right
+parameter int LEFT_INDICATOR = 100; // before this point turn left
 
 
 
@@ -46,6 +46,7 @@ int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters
 int step;
 int life;
 int counter;
+int random_num;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -80,9 +81,9 @@ begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
 			end
 			
-			if (collison) begin
+			if (collision) begin
 				life <= life - 1;
-				counter <= 32 // frames to stay red, should be calculated
+				counter <= 32; // frames to stay red, should be calculated
 			end
 		end		
 	end

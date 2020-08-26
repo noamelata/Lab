@@ -30,7 +30,7 @@ module	shots_mux	(
 					input		logic	[7:0] shot8RGB, 
 					
 					output	logic shotsDrawingRequest,
-					output	logic	[7:0] shotsRGB, 
+					output	logic	[7:0] shotsRGB 
 					
 );
 
@@ -39,10 +39,10 @@ logic [7:0] tmpRGB;
 
 
 assign shotsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign shotsDrawingRequest  = (shots1DrawingRequest || shots2DrawingRequest 
-						|| shots3DrawingRequest || shots4DrawingRequest
-						|| shots5DrawingRequest || shots6DrawingRequest
-						|| shots7DrawingRequest || shots8DrawingRequest);
+assign shotsDrawingRequest  = (shot1DrawingRequest || shot2DrawingRequest 
+						|| shot3DrawingRequest || shot4DrawingRequest
+						|| shot5DrawingRequest || shot6DrawingRequest
+						|| shot7DrawingRequest || shot8DrawingRequest);
 
 
 

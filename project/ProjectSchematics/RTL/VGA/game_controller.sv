@@ -2,8 +2,8 @@
 
 
 module	game_controller	(	
-			input		logic	clk,
-			input		logic	resetN,
+			input	logic	clk,
+			input	logic	resetN,
 			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 			input logic shoot,
 			input logic [10:0] playerCoordinates,
@@ -21,7 +21,7 @@ module	game_controller	(
 			output logic [3:0] bird_life,
 			output logic player_red,
 			
-			output logic total_time,
+			output logic total_time
 );
 
 
@@ -41,6 +41,8 @@ localparam int MAX_SHOTS = 8;
 localparam int MAX_TREES = 8;
 int tree_wait;
 int tree_counter;
+int life = 3; //bird life
+int trees_to_add = 0;//VERIFY WITH N
 logic start_level;
 
 assign tree_wait = 8; //should be calculated using tree speed and number of trees
@@ -72,15 +74,15 @@ begin
 			
 			if ((number_of_trees >= 0) && (tree_counter == (tree_wait - 1))) begin // when to deploy tree
 				deploy_tree[current_tree] <= 1'b1;
-				current_tree <= current_tree == MAX_trees - 1 ? 0 : current_tree + 1;
+				current_tree <= current_tree == MAX_TREES - 1 ? 0 : current_tree + 1;
 				number_of_trees <= number_of_trees - 1;
 			end
 			
 			if (start_level == 1'b1) begin // at beginning of level
-				for (int i = 0; i < number_of_birds; i ++) begin
+				for (int i = 0; i < number_of_birds; i++) begin
 					deploy_bird[i] <= 1'b1;
 				end
-				number_of_trees <= trees_to_to_add;
+				number_of_trees <= trees_to_add;
 			end
 			
 			if (SingleHitPulse) begin // when hit

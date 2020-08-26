@@ -1,11 +1,11 @@
 
 module	collision_player_tree	(	
-					input		logic	clk,
-					input		logic	resetN,
-					
-					input		logic	playerDrawingRequest,	
-					input		logic	[7:0] treesDrawingRequest,			
-					output	logic SingleHitPulse			
+					input	logic	clk,
+					input	logic	resetN,
+					input logic startOfFrame,
+					input	logic	playerDrawingRequest,	
+					input	logic	[7:0] treesDrawingRequest,			
+					output logic SingleHitPulse			
 );
 
 logic flag; // a semaphore to set the output only once per frame / regardless of the number of collisions 
