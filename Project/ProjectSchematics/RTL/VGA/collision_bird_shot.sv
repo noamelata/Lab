@@ -1,5 +1,5 @@
 
-module	collision_bird_shot	(	
+module collision_bird_shot (	
 					input		logic	clk,
 					input		logic	resetN,
 					
@@ -7,7 +7,7 @@ module	collision_bird_shot	(
 					input		logic	[7:0] shotsDrawingRequest,									
 					output	logic [1:0] SingleHitPulse_birds,
 					output	logic [7:0] SingleHitPulse_shots,					
-);
+					);
 
 logic [9:0] flag ; // a semaphore to set the output only once per frame / regardless of the number of collisions 
 

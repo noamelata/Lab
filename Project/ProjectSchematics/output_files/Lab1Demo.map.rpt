@@ -1,5 +1,5 @@
-Analysis & Synthesis report for Lab1Demo
-Tue Aug 25 23:44:55 2020
+Analysis & Elaboration report for Lab1Demo
+Wed Aug 26 09:11:15 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -7,11 +7,11 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
+  6. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -35,26 +35,42 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Aug 25 23:44:55 2020           ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name               ; Lab1Demo                                    ;
-; Top-level Entity Name       ; TOP_VGA_DEMO_WITH_MSS_ALL                   ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Failed - Wed Aug 26 09:11:15 2020           ;
+; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                 ; Lab1Demo                                    ;
+; Top-level Entity Name         ; TOP_VGA_DEMO_WITH_MSS_ALL                   ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                                    ;
+; Analysis & Elaboration Settings                                                                                                  ;
 +---------------------------------------------------------------------------------+---------------------------+--------------------+
 ; Option                                                                          ; Setting                   ; Default Value      ;
 +---------------------------------------------------------------------------------+---------------------------+--------------------+
@@ -141,32 +157,17 @@ agreement for further details.
 +---------------------------------------------------------------------------------+---------------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Aug 25 23:44:46 2020
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
+    Info: Processing started: Wed Aug 26 09:11:05 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo --analysis_and_elaboration
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Error (10170): Verilog HDL syntax error at GAME_TOP.sv(11) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GAME_TOP.sv Line: 11
+Error (10112): Ignored design unit "game_top" at GAME_TOP.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GAME_TOP.sv Line: 3
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/game_top.sv
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/collision_player_tree.sv
     Info (12023): Found entity 1: collision_player_tree File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_player_tree.sv Line: 2
@@ -195,7 +196,6 @@ Error (10170): Verilog HDL syntax error at shotDraw.sv(10) near text: ")";  expe
 Error (10112): Ignored design unit "shotBitmap" at shotDraw.sv(2) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotDraw.sv Line: 2
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/shot/shotdraw.sv
 Error (10170): Verilog HDL syntax error at birdLogic.sv(16) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv Line: 16
-Error (10170): Verilog HDL syntax error at birdLogic.sv(70) near text: "end";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv Line: 70
 Error (10112): Ignored design unit "birdLogic" at birdLogic.sv(3) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv Line: 3
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/bird/birdlogic.sv
 Error (10170): Verilog HDL syntax error at birdDraw.sv(12) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdDraw.sv Line: 12
@@ -211,10 +211,9 @@ Info (12021): Found 0 design units, including 0 entities, in source file rtl/pla
 Warning (10229): Verilog HDL Expression warning at back_ground_drawSquare.sv(23): truncated literal to match 8 bits File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/back_ground_drawsquare.sv
     Info (12023): Found entity 1: back_ground_drawSquare File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv Line: 8
-Error (10170): Verilog HDL syntax error at game_controller.sv(25) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 25
-Error (10759): Verilog HDL error at game_controller.sv(29): object tree_speed declared in a list of port declarations cannot be redeclared within the module body File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 29
-Error (10759): Verilog HDL error at game_controller.sv(30): object bird_speed declared in a list of port declarations cannot be redeclared within the module body File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 30
-Error (10112): Ignored design unit "game_controller" at game_controller.sv(6) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 6
+Error (10170): Verilog HDL syntax error at game_controller.sv(19) near text: "life";  expecting ")". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 19
+Error (10170): Verilog HDL syntax error at game_controller.sv(24) near text: ")";  expecting a direction. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 24
+Error (10112): Ignored design unit "game_controller" at game_controller.sv(4) due to previous errors File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv Line: 4
 Info (12021): Found 0 design units, including 0 entities, in source file rtl/vga/game_controller.sv
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/objects_mux_all.sv
     Info (12023): Found entity 1: objects_mux_all File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/objects_mux_all.sv Line: 3
@@ -257,16 +256,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/num
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/top_vga_demo_with_mss_all.bdf
     Info (12023): Found entity 1: TOP_VGA_DEMO_WITH_MSS_ALL
 Info (144001): Generated suppressed messages file C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/output_files/Lab1Demo.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 30 errors, 1 warning
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 29 errors, 1 warning
     Error: Peak virtual memory: 4781 megabytes
-    Error: Processing ended: Tue Aug 25 23:44:55 2020
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:23
+    Error: Processing ended: Wed Aug 26 09:11:15 2020
+    Error: Elapsed time: 00:00:10
+    Error: Total CPU time (on all processors): 00:00:25
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
 The suppressed messages can be found in C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/output_files/Lab1Demo.map.smsg.
 
 

@@ -12,6 +12,7 @@ module	birdLogic	(
 
 					input logic [1:0] speed,
 					output logic alive,
+					output logic red,
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
 
@@ -44,6 +45,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
 int step;
 int life;
+int counter;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -65,6 +67,8 @@ begin
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
+			counter <= (counter > 0) ? counter - 1 : 0;
+			
 			if (deploy) begin
 				life <= starting_life;
 			end
@@ -78,9 +82,8 @@ begin
 			
 			if (collison) begin
 				life <= life - 1;
-				//flash red once (connect collision to birdDraw/red)
+				counter <= 32 // frames to stay red, should be calculated
 			end
-			
 		end		
 	end
 end
@@ -88,6 +91,7 @@ end
 //get a better (64 times) resolution using integer   
 assign 	topLeftX = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
 assign 	topLeftY = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
-assign 	alive = (life > 0) || collision; // dont disappear until finished flashing red
+assign 	red = counter > 0;
+assign 	alive = (life > 0) || red; // dont disappear until finished flashing red
 
 endmodule

@@ -8,7 +8,7 @@ module	playerLogic	(
 					input	logic	left,  //turn left
 					input	logic	right,  //turn right
 					input logic collision,  //collision if player hits an object
-					input logic god_mode, //turn on god mode
+					input logic invincible, //turn on invincible
 
 					output logic signed [10:0] [1:0]	coordinate,// output the top left corner 					
 );
