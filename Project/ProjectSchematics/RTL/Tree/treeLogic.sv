@@ -10,7 +10,8 @@ module	treeLogic	(
 					//input logic remove,
 					input logic [7:0] random, //random number from random generator
 					input logic [1:0] speed,
-					output logic signed [1:0] [10:0]	coordinate// output the top left corner 		
+					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
+					output logic isActive //should tree be on screen
 );
 
 
@@ -33,7 +34,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step = 25; // moving speed of tree
+int step = 50; // moving speed of tree
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -46,28 +47,32 @@ begin
 	begin
 		topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 		topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
+		isActive <= 1'b0;
 	end
 	else begin
+		isActive <= isActive;
 		if (deploy) begin
 				//generate random
 				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
+				isActive <= 1'b1;
 			end
 		
-		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
-			if (topLeftY_FixedPoint > (y_FRAME_SIZE - 32)) begin
+		if ((startOfFrame == 1'b1) && isActive) begin // perform  position integral only 30 times per second 
+			if (topLeftY_FixedPoint > (y_FRAME_SIZE - (32 * FIXED_POINT_MULTIPLIER))) begin
 				topLeftY_FixedPoint <= INITIAL_Y;
 				//generate random
 				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
 			end 
 			else begin
-				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
+				topLeftY_FixedPoint <= topLeftY_FixedPoint + step;
 			end
 		end
 		
 		/*if (remove) begin
 			topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 			topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
+			isActive <= 1'b0;
 		end*/
 	end
 end

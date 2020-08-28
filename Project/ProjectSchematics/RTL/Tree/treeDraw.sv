@@ -4,12 +4,13 @@ module	treeDraw (
 					input	logic	resetN,
 					input logic signed  [1:0] [10:0] coordinate,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket 
-					input logic deploy, //input that tree should be desplayed 
+					input logic isActive, //input that tree should be desplayed 
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
  ) ;
 
+ 
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
 localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
@@ -76,7 +77,7 @@ begin
 		//HitEdgeCode <= hit_colors[offsetY >> OBJECT_HEIGHT_Y_DIVIDER][offsetX >> OBJECT_WIDTH_X_DIVIDER];	//get hitting edge from the colors table  
 
 	
-		if ((InsideRectangle == 1'b1) && (deploy == 1'b1))  // inside an external bracket 
+		if ((InsideRectangle == 1'b1))  // inside an external bracket 
 			RGBout <= object_colors[coordinate[1]][coordinate[0]];
 //			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
 		else 
@@ -86,6 +87,6 @@ end
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // decide if to draw the pixel or not 
-assign drawingRequest = (RGBout != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
+assign drawingRequest = (RGBout != TRANSPARENT_ENCODING && isActive) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 
 endmodule

@@ -26,14 +26,16 @@ begin
 		SingleHitPulse <= 1'b0 ; 
 	end 
 	else begin 
-			SingleHitPulse <= SingleHitPulse ; // default 
-			if(startOfFrame) 
-				flag = 1'b0 ; // reset for next time 
-				SingleHitPulse <= 1'b0 ; 
-			if ( collision  && (flag == 1'b0)) begin 
-				flag	<= 1'b1; // to enter only once 
-				SingleHitPulse <= 1'b1 ; 
-			end
+		flag <= flag;
+		SingleHitPulse <= SingleHitPulse ; // default 
+		if(startOfFrame) begin
+			flag <= 1'b0 ; // reset for next time 
+			SingleHitPulse <= 1'b0 ; 
+		end
+		if ( collision  && (flag == 1'b0)) begin 
+			flag	<= 1'b1; // to enter only once 
+			SingleHitPulse <= 1'b1 ; 
+		end
 	end 
 end
 			

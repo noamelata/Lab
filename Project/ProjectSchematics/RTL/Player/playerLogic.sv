@@ -33,7 +33,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftX_FixedPoint, topLeftY_FixedPoint; // local parameters 
-int step = 100;
+int step = 150;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -53,7 +53,7 @@ begin
 			else if (right && (topLeftX_FixedPoint < (x_FRAME_SIZE - (32*FIXED_POINT_MULTIPLIER)))) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
 			end 
-			else if (left && (topLeftX_FixedPoint > 0)) begin
+			else if (left && (((topLeftX_FixedPoint - step) / FIXED_POINT_MULTIPLIER) > (step / FIXED_POINT_MULTIPLIER))) begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
 			end
 		end

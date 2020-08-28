@@ -20,7 +20,7 @@ module	game_controller	(
 			output logic [1:0] deploy_bird,
 			output logic [3:0] bird_life,
 			output logic player_red,
-			
+			output logic player_active,
 			output logic total_time
 );
 
@@ -30,6 +30,8 @@ int number_of_trees = 0;
 const int number_of_birds = 1;
 assign tree_speed = 2'b0;
 assign bird_speed = 2'b0;
+assign bird_life = 4'h3;
+
 
 
 int cooldown_time = 100;
@@ -41,11 +43,15 @@ localparam int MAX_SHOTS = 8;
 localparam int MAX_TREES = 8;
 int tree_wait;
 int tree_counter;
-int life = 3; //bird life
-const int trees_to_add = 0;//VERIFY WITH N
+int player_life = 3; //player life
+const int trees_to_add = 2;//VERIFY WITH N
 logic start_level;
+logic invincible;
+int red_counter;
 
-assign tree_wait = 8; //should be calculated using tree speed and number of trees
+assign tree_wait = 400; //should be calculated using tree speed and number of trees
+
+assign invincible = (red_counter > 0) ? 1'b1 : 1'b0;
 
 
 always_ff@(posedge clk or negedge resetN)
@@ -55,10 +61,18 @@ begin
 		current_shot <= 0;
 		current_tree <= 0;
 		cooldown <= 0;
-		tree_counter <= 0;
+		tree_counter <= 300;
+		start_level <= 1'b1; 
+		deploy_tree <= 8'h0;
+		deploy_bird <= 2'b00;
+		deploy_shot <= 8'h00;
+		player_active <= 1'b1;
+		player_life <= 3;
 	end 
 	else begin 
+	player_active <= player_active;
 		if (startOfFrame) begin
+			red_counter <= (red_counter > 0) ? red_counter - 1 : 0;
 			deploy_tree <= 8'h0;
 			cooldown <= (cooldown == 0) ? 0 : cooldown - 1;
 			current_shot <= current_shot;
@@ -75,7 +89,7 @@ begin
 				cooldown <= cooldown_time;
 			end
 			
-			if ((number_of_trees >= 0) && (tree_counter == (tree_wait - 1))) begin // when to deploy tree
+			if ((number_of_trees > 0) && (tree_counter == (tree_wait - 1))) begin // when to deploy tree
 				deploy_tree[current_tree] <= 1'b1;
 				current_tree <= current_tree == MAX_TREES - 1 ? 0 : current_tree + 1;
 				number_of_trees <= number_of_trees - 1;
@@ -88,14 +102,14 @@ begin
 				number_of_trees <= trees_to_add;
 			end
 			
-			if (SingleHitPulse) begin // when hit
-				if (life > 1) begin
-					life <= life - 1;
-					//flash red
+			if (SingleHitPulse && !invincible) begin // when hit
+				if (player_life > 1) begin
+					player_life <= player_life - 1;
+					red_counter <= 64;
 				end
 				else begin
 					// game over
-					//remove player untill reset
+					player_active <= 1'b0;
 				end
 			end
 			
@@ -106,5 +120,7 @@ begin
 		end
 	end 
 end
+
+assign player_red = red_counter > 0;
 
 endmodule
