@@ -34,6 +34,7 @@ logic playerDrawingRequest;
 logic [1:0] birdsBusRequest;
 logic [7:0] shotsBusRequest;
 logic [7:0] treesBusRequest;
+logic [3:0] timerBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
@@ -41,6 +42,7 @@ logic [7:0] playerRGB;
 logic [1:0] [7:0] birdsBusRGB;
 logic [7:0] [7:0] shotsBusRGB;
 logic [7:0] [7:0] treesBusRGB;
+logic [3:0] [7:0] timerBusRGB;	
 logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
@@ -267,6 +269,40 @@ generate
 			.drawingRequest(treesBusRequest[i]), 
 			.RGBout(treesBusRGB[i])
 		) ;
+
+  end
+endgenerate
+
+generate
+	for (i=0; i < 4; i++) begin : generate_timers_id
+		logic InsideSquare;
+		logic [1:0] [10:0] number_offset;
+		square_object #(.OBJECT_WIDTH_X(16)) treessquare(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(i*16), 
+			.topLeftY(10'h000),
+
+			.offsetX(number_offset[0]), 
+			.offsetY(number_offset[1]),
+			.drawingRequest(InsideSquare),
+			.RGBout(timerBusRGB[i]) 
+		);
+
+			
+		NumbersBitMap	(	
+					.clk(clk),
+					.resetN(resetN),
+					.offsetX(number_offset[0]), 
+					.offsetY(number_offset[1]),
+					.InsideRectangle(InsideSquare), //input that the pixel is within a bracket 
+					.digit(timer_digit[i]), // digit to display
+					
+					.drawingRequest(timerBusRequest[i]), //output that the pixel should be dispalyed 
+					.RGBout()
+		);
 
   end
 endgenerate
