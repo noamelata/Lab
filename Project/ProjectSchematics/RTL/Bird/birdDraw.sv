@@ -13,7 +13,7 @@ module	birdDraw	(
 
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
-localparam  int OBJECT_NUMBER_OF_X_BITS = 2;  // 2^5 = 32 
+localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
 
 //for left wing (invert of right wing BITMAP)
 logic [10:0] Inverted_offsetX;
