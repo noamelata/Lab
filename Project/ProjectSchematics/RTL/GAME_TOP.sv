@@ -140,7 +140,7 @@ playerDraw playerdraw	(
 genvar i;
 generate
 	for (i=0; i < 2; i++) begin : generate_birds_id
-		birdLogic birdlogic (	
+		birdLogic #(i * 128) birdlogic (	
 							.clk(clk),
 							.resetN(resetN),
 							.startOfFrame(startOfFrame),
@@ -362,7 +362,7 @@ VGA_Controller	vga (
 					.oVGA_BLANK(VGA_BLANK_N),
 					.oVGA_CLOCK(VGA_CLK),
 					.clk(clk),
-					.resetN(resetN),
+					.resetN(resetN)
 					);
 					
 random randomizer (
