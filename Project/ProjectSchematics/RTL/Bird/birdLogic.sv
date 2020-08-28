@@ -1,6 +1,6 @@
 
 
-module	birdLogic	(	
+module	birdLogic #(parameter RANDOM_OFFSET = 0) /* sample random with parameter */	(	
  
 					input	logic	clk,
 					input	logic	resetN,
@@ -9,8 +9,8 @@ module	birdLogic	(
 					input logic [7:0] random, //random number from random generator
 					input logic [3:0] starting_life,
 					input logic deploy,
-
 					input logic [1:0] speed,
+					
 					output logic alive,
 					output logic red,
 					output logic signed [1:0] [10:0]	coordinate// output the top left corner 					
@@ -19,17 +19,14 @@ module	birdLogic	(
 
 // a module used to generate the  ball trajectory.  
 
-parameter int SCREEN_WIDTH = 640;
-parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_X = 280; //todo
-parameter int INITIAL_Y = 185; 
-parameter int IMAGE_WIDTH = 32;
-parameter int IMAGE_HeiGHT = 32;
+localparam int SCREEN_WIDTH = 640;
+localparam int SCREEN_HEIGHT = 480;
+localparam int INITIAL_X = 280; //todo
+localparam int INITIAL_Y = 185; 
+localparam int IMAGE_WIDTH = 32;
+localparam int IMAGE_HeiGHT = 32;
 
-parameter int RANDOM_OFFSET = 0; // sample random with parameter
-parameter int MAX_RANDOM = 255; // max value of random
-parameter int RIGHT_INDICATOR = 155; // after this point turn right
-parameter int LEFT_INDICATOR = 100; // before this point turn left
+localparam int MAX_RANDOM = 255; // max value of random
 
 enum logic [1:0] {idle_state, right_state, left_state} state, next_state;
 
@@ -43,7 +40,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step = 50;
+int step;
 int life;
 int counter;
 int random_num;
@@ -54,6 +51,7 @@ int chance_to_change = 8;
 // position calculate 
 always_comb
 begin
+	step = 50 + (20 * speed);
 	random_num = random + RANDOM_OFFSET;
 	if (random_num > MAX_RANDOM) begin
 		random_num = random_num - MAX_RANDOM;

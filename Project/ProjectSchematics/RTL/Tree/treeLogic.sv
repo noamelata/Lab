@@ -10,6 +10,7 @@ module	treeLogic	(
 					//input logic remove,
 					input logic [7:0] random, //random number from random generator
 					input logic [1:0] speed,
+					
 					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
 					output logic isActive //should tree be on screen
 );
@@ -34,11 +35,16 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step = 50; // moving speed of tree
+int step; // moving speed of tree
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
+
+always_comb 
+begin
+	step = 50 + (20 * speed);
+end
 
 
 always_ff@(posedge clk or negedge resetN)
