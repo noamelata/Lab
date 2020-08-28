@@ -1,3 +1,0 @@
-Warning (10268): Verilog HDL information at game_controller_all.sv(23): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/game_controller_all.sv Line: 23
-Warning (10268): Verilog HDL information at game_controller.sv(22): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/game_controller.sv Line: 22
-Warning (10268): Verilog HDL information at square_object.sv(38): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/5/VGASchematics/RTL/VGA/square_object.sv Line: 38
