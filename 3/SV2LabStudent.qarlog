@@ -1,0 +1,33 @@
+Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent.qarlog
+
+Archive:	C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent.qar
+Date:		Mon Aug 17 21:26:42 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.bsf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.qip
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn.v
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/DataIn_bb.v
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/SV2Lab.qpf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/SV2Lab.qsf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/assignment_defaults.qdf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/constraints/pinsSV2.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/constraints/pinsSV2_bomb.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/decimal_down_sim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/ramzorSIM.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/aux_timer.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/bomb_fsm.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/decimal_2_digits_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/decimal_down_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/hexss.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/one_sec_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/onetens_sec_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/ramzor_fsm.sv
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/rtl/topBomb.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/3/SV2LabStudent_Schematics/two_digit_ctr_SIM.vwf
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
