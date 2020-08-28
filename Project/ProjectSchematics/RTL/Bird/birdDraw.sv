@@ -3,9 +3,7 @@ module	birdDraw	(
 					input	logic	clk,
 					input	logic	resetN,
 					input logic signed [1:0] [10:0]	coordinate,
-					input	logic	InsideRectangle_left, //input that the pixel is within a leftside bracket 
-					input	logic	InsideRectangle_middle, //input that the pixel is within a middle bracket 
-					input	logic	InsideRectangle_right, //input that the pixel is within a rightside bracket 
+					input	logic	InsideRectangle, //input that the pixel is within a leftside bracket  
 					input logic flash,
 					input logic alive,
 
@@ -15,7 +13,7 @@ module	birdDraw	(
 
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
-localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
+localparam  int OBJECT_NUMBER_OF_X_BITS = 2;  // 2^5 = 32 
 
 //for left wing (invert of right wing BITMAP)
 logic [10:0] Inverted_offsetX;
@@ -109,40 +107,8 @@ logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors = {
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF }
 };
 
-logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors_wing_up = {
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h86, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00 },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF },
-{8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h86, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF }
-};
+
+
 
 
 
@@ -158,37 +124,17 @@ begin
 	end
 	else
 	begin
-		if (InsideRectangle_left == 1'b1 ) // inside an external leftside bracket 
+		if (InsideRectangle == 1'b1 ) // inside an external leftside bracket 
 		begin
-			if (flash && (object_colors_wing_up[Inverted_offsetY][Inverted_offsetX] != TRANSPARENT_ENCODING))
+			if (flash && (object_colors[coordinate[1]][coordinate[0]] != TRANSPARENT_ENCODING))
 			begin
 				RGBout <= RED;
 			end
 			else 
 			begin
-				RGBout <= object_colors_wing_up[Inverted_offsetY][Inverted_offsetX];	
-			end
-		end 
-		else if (InsideRectangle_middle == 1'b1 ) // inside an external middle bracket 
-		begin 
-			if (flash && (object_colors[coordinate[1]][coordinate[0]] != TRANSPARENT_ENCODING))
-			begin
-				RGBout <= RED;
-			end else
-			begin
 				RGBout <= object_colors[coordinate[1]][coordinate[0]];	
 			end
-		end
-		else if (InsideRectangle_right == 1'b1 )  // inside an external rightside bracket 
-		begin
-			if (flash && (object_colors_wing_up[coordinate[1]][coordinate[0]] != TRANSPARENT_ENCODING))
-			begin
-				RGBout <= RED;
-			end else
-			begin
-				RGBout <= object_colors_wing_up[coordinate[1]][coordinate[0]];	
-			end
-		end
+		end 
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
 	end 

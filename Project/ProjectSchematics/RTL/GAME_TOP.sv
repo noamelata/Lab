@@ -27,9 +27,7 @@ logic signed [1:0] [1:0] [10:0] birdsOffset;
 logic signed [7:0] [1:0] [10:0] shotsOffset;
 logic signed [7:0] [1:0] [10:0] treesOffset;
 logic playerInsideSquare;
-logic [1:0] birdsInsideSquare_left;
-logic [1:0] birdsInsideSquare_middle;
-logic [1:0] birdsInsideSquare_right;
+logic [1:0] birdsInsideSquare;
 logic [7:0] shotsInsideSquare;
 logic [7:0] treesInsideSquare;
 logic playerDrawingRequest;
@@ -156,7 +154,7 @@ generate
 							.coordinate(birdsCoordinates[i])					
 		);
 
-		square_bird_object	birdssquare(	
+		square_object	birdssquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
@@ -165,9 +163,7 @@ generate
 			.topLeftY(birdsCoordinates[i][1]),
 			.offsetX(birdsOffset[i][0]), 
 			.offsetY(birdsOffset[i][1]),
-			.drawingRequest_left(birdsInsideSquare_left[i]),
-			.drawingRequest_middle(birdsInsideSquare_middle[i]),
-			.drawingRequest_right(birdsInsideSquare_right[i]),
+			.drawingRequest(birdsInsideSquare[i]),
 			.RGBout() 
 		);
 
@@ -175,9 +171,7 @@ generate
 			.clk(clk),
 			.resetN(resetN),
 			.coordinate(birdsOffset[i]),
-			.InsideRectangle_left(birdsInsideSquare_left[i]), 
-			.InsideRectangle_middle(birdsInsideSquare_middle[i]),
-			.InsideRectangle_right(birdsInsideSquare_right[i]),
+			.InsideRectangle(birdsInsideSquare[i]), 
 			.flash(bird_red[i]),
 			.alive(bird_alive[i]),
 			.drawingRequest(birdsBusRequest[i]), 
