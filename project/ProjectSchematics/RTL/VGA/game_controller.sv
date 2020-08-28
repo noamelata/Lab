@@ -27,12 +27,20 @@ module	game_controller	(
 
 
 int number_of_trees = 0;
-const int number_of_birds = 1;
-assign tree_speed = 2'b0;
-assign bird_speed = 2'b0;
+logic num_of_birds;
+const int number_of_birds = num_of_birds + 1;
 assign bird_life = 4'h3;
+logic [1:0] trees_to_add;//VERIFY WITH N
+logic start_level;
+logic level_up;
 
-
+levelFSM level_fsm(
+	.level_up(level_up),
+	.trees_to_add(trees_to_add),
+	.tree_speed(tree_speed),
+	.bird_speed(bird_speed),
+	.number_of_birds(num_of_birds),
+                );
 
 int cooldown_time = 100;
 int cooldown = 0;
@@ -44,8 +52,7 @@ localparam int MAX_TREES = 8;
 int tree_wait;
 int tree_counter;
 int player_life = 3; //player life
-const int trees_to_add = 2;//VERIFY WITH N
-logic start_level;
+
 logic invincible;
 int red_counter;
 
@@ -62,7 +69,8 @@ begin
 		current_tree <= 0;
 		cooldown <= 0;
 		tree_counter <= 300;
-		start_level <= 1'b1; 
+		start_level <= 1'b1;
+		level_up <= 1'b0;
 		deploy_tree <= 8'h0;
 		deploy_bird <= 2'b00;
 		deploy_shot <= 8'h00;
@@ -77,6 +85,7 @@ begin
 			cooldown <= (cooldown == 0) ? 0 : cooldown - 1;
 			current_shot <= current_shot;
 			start_level <= 1'b0;
+			level_up <= 1'b0;
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 2'b00;
@@ -115,6 +124,7 @@ begin
 			
 			if (bird_alive == 2'b00) begin // finished level
 				start_level <= 1'b1;
+				level_up <= 1'b1;
 			end
 		
 		end
