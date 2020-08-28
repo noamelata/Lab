@@ -197,7 +197,7 @@ generate
 			.deploy(deploy_shot[i]),
 			.collision(SingleHitPulse_shots[i]),
 			.direction({left,right}),
-			.initial_x(playerCoordinates),
+			.initial_x(playerCoordinates + 16), //might not work (shot is now 16 bit)
 			.isActive(shots_active[i]),
 			.coordinate(shotsCoordinates[i])			
 		);
