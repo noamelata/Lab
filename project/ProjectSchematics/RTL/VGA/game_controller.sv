@@ -22,7 +22,7 @@ module	game_controller	(
 			output logic [3:0] bird_life,
 			output logic player_red,
 			output logic player_active,
-			output logic add_time;
+			output logic add_time,
 			output logic [3:0] [3:0] time_to_add
 );
 
@@ -32,7 +32,7 @@ int number_of_trees = 0;
 logic num_of_birds;
 
 
-assign bird_life = 4'h3;
+assign bird_life = 4'h1;
 logic [1:0] trees_to_add;//VERIFY WITH N
 logic start_level;
 logic level_up;
@@ -96,6 +96,7 @@ begin
 		time_to_add <= {4'h0, 4'h0, 4'h0, 4'h0};
 		add_time <= 1'b0;
 		level_up <= 1'b0;
+		bird_hit_flag <= bird_hit_flag;
 		if (startOfFrame) begin
 			red_counter <= (red_counter > 0) ? red_counter - 1 : 0;
 			level_counter <= (level_counter > 0) ? level_counter - 1 : 0;
@@ -126,6 +127,9 @@ begin
 					deploy_bird[i] <= 1'b1;
 				end
 				number_of_trees <= trees_to_add;
+			end
+			
+			if (bird_alive != 2'b0) begin
 				bird_hit_flag <= 1'b0;
 			end
 			
@@ -141,7 +145,7 @@ begin
 			end
 			
 			if ((bird_hit_flag == 1'b0) && (bird_alive == 2'b00)) begin // finished level
-				level_counter <= 32;
+				level_counter <= 100;
 				level_up <= 1'b1;
 				bird_hit_flag <= 1'b1;
 			end
