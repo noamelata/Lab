@@ -86,6 +86,7 @@ logic [3:0] [3:0] timer_digit;
 logic timer_load
 
 logic god_mode;
+logic rapid_fire;
 
 logic [7:0] random_number;
 
@@ -95,6 +96,7 @@ assign right = !KEY[1];
 assign shoot = !KEY[2] || SW[0];
 assign left = !KEY[3];
 assign god_mode = SW[9];
+assign rapid_fire = SW[8];
 assign backgroundRGB = 8'h5c;
 
 game_controller gamecontroller (.clk(clk),
@@ -102,6 +104,7 @@ game_controller gamecontroller (.clk(clk),
 			.startOfFrame(startOfFrame),   
 			.shoot(shoot),
 			.god_mode(god_mode),
+			.rapid_fire(rapid_fire),
 			.playerCoordinates(playerCoordinates),
 			.random(random_number),
 			.bird_alive(bird_alive),
