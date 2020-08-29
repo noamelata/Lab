@@ -129,6 +129,7 @@ begin
 				isUp <= 1'b1;
 			wings_down:
 				isUp <= 1'b0;	
+			endcase
 		end		
 	end
 end

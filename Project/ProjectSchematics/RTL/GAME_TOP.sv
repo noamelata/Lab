@@ -69,7 +69,7 @@ logic player_red;
 
 logic total_time;
 logic [1:0] bird_red;
-logic isUp;
+logic [1:0] wings_Up;
 logic [7:0] redOut;
 logic [7:0] greenOut; 
 logic [7:0] blueOut;
@@ -78,7 +78,7 @@ logic left;
 logic right;
 logic clk;
 
-logic timer_load
+logic timer_load;
 logic onc_sec;
 logic [3:0] [3:0] time_to_add;
 logic [3:0] [3:0] timer_digit;
@@ -164,7 +164,7 @@ generate
 							.speed(bird_speed),
 							.alive(bird_alive[i]),
 							.red(bird_red[i]),
-							.isUp(isUp),
+							.isUp(wings_Up[i]),
 							.coordinate(birdsCoordinates[i])					
 		);
 
@@ -188,7 +188,7 @@ generate
 			.InsideRectangle(birdsInsideSquare[i]), 
 			.flash(bird_red[i]),
 			.alive(bird_alive[i]),
-			.isUp(isUp),
+			.isUp(wings_Up[i]),
 			.drawingRequest(birdsBusRequest[i]), 
 			.RGBout(birdsBusRGB[i])
 		) ;
@@ -210,12 +210,12 @@ generate
 			.deploy(deploy_shot[i]),
 			.collision(SingleHitPulse_shots[i]),
 			.direction({left,right}),
-			.initial_x(playerCoordinates + 16), //might not work (shot is now 16 bit)
+			.initial_x(playerCoordinates + 10'h8), //might not work (shot is now 8 bit)
 			.isActive(shots_active[i]),
 			.coordinate(shotsCoordinates[i])			
 		);
 		
-		square_object	shotssquare(	
+		square_object #(.OBJECT_WIDTH_X(16), .OBJECT_HEIGHT_Y(16))	shotssquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
@@ -248,16 +248,14 @@ generate
 			.clk(clk),
 			.resetN(resetN),
 			.startOfFrame(startOfFrame),
-			//.collision(???),
 			.deploy(deploy_tree[i]),
-			//.remove(???),
 			.random(random_number),
 			.speed(tree_speed),
 			.coordinate(treesCoordinates[i]),		
 			.isActive(trees_active[i])
 		);
 
-		square_object	treessquare(	
+		square_object #(.OBJECT_WIDTH_X(32), .OBJECT_HEIGHT_Y(64)) treessquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
@@ -286,7 +284,7 @@ generate
   end
 endgenerate
 
-
+/*
 timer_4_digits_counter timer (
 			.clk(clk),
 			.resetN(resetN),
@@ -331,6 +329,7 @@ generate
 
   end
 endgenerate
+*/
 
 
  
