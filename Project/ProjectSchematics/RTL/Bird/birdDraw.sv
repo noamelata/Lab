@@ -8,7 +8,7 @@ module	birdDraw	(
 					input logic alive, //is bird alive
 					input logic duty50, //wings up or down
 					input	logic	[0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] wings_up_object_colors,
-					input	logic	[0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] wings_down_object_colors
+					input	logic	[0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] wings_down_object_colors,
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
@@ -17,12 +17,6 @@ module	birdDraw	(
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
 localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
-
-//for left wing (invert of right wing BITMAP)
-logic [10:0] Inverted_offsetX;
-logic [10:0] Inverted_offsetY;
-assign Inverted_offsetX = OBJECT_WIDTH_X - coordinate[0];
-assign Inverted_offsetY = OBJECT_HEIGHT_Y - coordinate[1];
 
 
 localparam  int OBJECT_HEIGHT_Y = 1 <<  OBJECT_NUMBER_OF_Y_BITS ;
@@ -36,6 +30,7 @@ parameter COLOR = 8'h33; //default bird color
 parameter RED = 8'hE0;
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
 
+logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors;
 
 always_comb
 begin

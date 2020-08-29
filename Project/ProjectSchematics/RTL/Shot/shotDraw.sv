@@ -34,13 +34,9 @@ begin
 	if(!resetN) begin
 		RGBout <=	8'h00;
 	end
-	else begin
-		//HitEdgeCode <= hit_colors[offsetY >> OBJECT_HEIGHT_Y_DIVIDER][offsetX >> OBJECT_WIDTH_X_DIVIDER];	//get hitting edge from the colors table  
-
-	
+	else begin 
 		if (InsideRectangle == 1'b1 )  // inside an external bracket 
-			RGBout <= object_colors[coordinate[1]][coordinate[0]];	 
-//			RGBout <=  {HitEdgeCode, 4'b0000 } ;  //get RGB from the colors table, option  for debug 
+			RGBout <= object_colors[coordinate[1]][coordinate[0]];	  
 		else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
 	end 

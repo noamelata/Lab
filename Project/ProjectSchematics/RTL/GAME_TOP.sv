@@ -161,11 +161,9 @@ playerDraw playerdraw	(
 					.RGBout(playerRGB)
  ) ;
 
-logic [0:31] [0:31] [7:0] bird_wings_up_bitmap;
-birdBMP birdBMP(.object_colors(bird_wings_up_bitmap));
-
-logic [0:15] [0:15] [7:0] bird_bitmap;
-shotBMP shotBMP(.object_colors(shot_bitmap));
+logic [0:31] [0:31] [7:0] wings_up_bitmap;
+logic [0:31] [0:31] [7:0] wings_down_bitmap;
+birdBMP birdBMP(.wings_up_object_colors(wings_up_bitmap), .wings_down_object_colors(wings_down_bitmap));
  
 genvar i;
 generate
@@ -197,7 +195,7 @@ generate
 			.RGBout() 
 		);
 
-		birdDraw #(.COLOR(i == 0 ? 8'h33 : 8'hb3)) birddraw	(	
+		birdDraw #(.COLOR(i == 0 ? 8'h33 : 8'hE2)) birddraw	(	
 			.clk(clk),
 			.resetN(resetN),
 			.coordinate(birdsOffset[i]),
@@ -205,6 +203,8 @@ generate
 			.flash(bird_red[i]),
 			.alive(bird_alive[i]),
 			.duty50(duty50),
+			.wings_up_object_colors(wings_up_bitmap),
+			.wings_down_object_colors(wings_down_bitmap),
 			.drawingRequest(birdsBusRequest[i]), 
 			.RGBout(birdsBusRGB[i])
 		) ;
@@ -214,7 +214,7 @@ generate
 endgenerate
 			
 				
-logic [0:15] [0:15] [7:0] tree_bitmap;
+logic [0:15] [0:15] [7:0] shot_bitmap;
 shotBMP shotBMP(.object_colors(shot_bitmap));
 
 generate
