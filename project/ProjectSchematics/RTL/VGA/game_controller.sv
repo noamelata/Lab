@@ -7,6 +7,7 @@ module	game_controller	(
 			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 			input logic shoot,
 			input logic god_mode,
+			input logic rapid_fire,
 			input logic [10:0] playerCoordinates,
 			input logic [7:0] random,
 			input logic [1:0] bird_alive,
@@ -49,7 +50,7 @@ levelFSM level_fsm(
                 );
 
 
-int cooldown_time = 100;
+int cooldown_time;
 int cooldown = 0;
 int current_shot = 0;
 int current_tree = 0;
@@ -66,6 +67,7 @@ int red_counter;
 int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
+assign cooldown_time == (rapid_fire) ? 50 : 100;
 
 assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode);
 
