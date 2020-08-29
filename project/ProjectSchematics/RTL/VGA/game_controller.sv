@@ -6,6 +6,7 @@ module	game_controller	(
 			input	logic	resetN,
 			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 			input logic shoot,
+			input logic god_mode,
 			input logic [10:0] playerCoordinates,
 			input logic [7:0] random,
 			input logic [1:0] bird_alive,
@@ -65,7 +66,7 @@ int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
 
-assign invincible = (red_counter > 0) ? 1'b1 : 1'b0;
+assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode);
 
 
 always_ff@(posedge clk or negedge resetN)

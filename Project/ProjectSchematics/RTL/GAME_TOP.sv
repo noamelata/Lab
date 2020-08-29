@@ -3,6 +3,7 @@ module GAME_TOP	(
 					input logic	CLOCK_50,
 					input logic	resetN,
 					input logic [3:0] KEY,
+					input logic [9:0] SW,
 					
 					output logic [7:0] VGA_R,
 					output logic [7:0] VGA_G,
@@ -84,19 +85,23 @@ logic [3:0] [3:0] time_to_add;
 logic [3:0] [3:0] timer_digit;
 logic timer_load
 
+logic god_mode;
+
 logic [7:0] random_number;
 
 
 assign clk = CLOCK_50;
 assign right = !KEY[1];
-assign shoot = !KEY[2];
+assign shoot = !KEY[2] || SW[0];
 assign left = !KEY[3];
+assign god_mode = SW[9];
 assign backgroundRGB = 8'h5c;
 
 game_controller gamecontroller (.clk(clk),
 			.resetN(resetN),
 			.startOfFrame(startOfFrame),   
 			.shoot(shoot),
+			.god_mode(god_mode),
 			.playerCoordinates(playerCoordinates),
 			.random(random_number),
 			.bird_alive(bird_alive),
