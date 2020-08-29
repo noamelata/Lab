@@ -69,6 +69,7 @@ logic player_red;
 
 logic total_time;
 logic [1:0] bird_red;
+logic isUp;
 logic [7:0] redOut;
 logic [7:0] greenOut; 
 logic [7:0] blueOut;
@@ -163,6 +164,7 @@ generate
 							.speed(bird_speed),
 							.alive(bird_alive[i]),
 							.red(bird_red[i]),
+							.isUp(isUp),
 							.coordinate(birdsCoordinates[i])					
 		);
 
@@ -186,6 +188,7 @@ generate
 			.InsideRectangle(birdsInsideSquare[i]), 
 			.flash(bird_red[i]),
 			.alive(bird_alive[i]),
+			.isUp(isUp),
 			.drawingRequest(birdsBusRequest[i]), 
 			.RGBout(birdsBusRGB[i])
 		) ;
