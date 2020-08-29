@@ -161,6 +161,12 @@ playerDraw playerdraw	(
 					.RGBout(playerRGB)
  ) ;
 
+logic [0:31] [0:31] [7:0] bird_wings_up_bitmap;
+birdBMP birdBMP(.object_colors(bird_wings_up_bitmap));
+
+logic [0:15] [0:15] [7:0] bird_bitmap;
+shotBMP shotBMP(.object_colors(shot_bitmap));
+ 
 genvar i;
 generate
 	for (i=0; i < 2; i++) begin : generate_birds_id
@@ -208,7 +214,8 @@ generate
 endgenerate
 			
 				
-
+logic [0:15] [0:15] [7:0] tree_bitmap;
+shotBMP shotBMP(.object_colors(shot_bitmap));
 
 generate
 	for (i=0; i < 8; i++) begin : generate_shots_id
@@ -244,6 +251,7 @@ generate
 			.resetN(resetN),
 			.coordinate(shotsOffset[i]),
 			.InsideRectangle(shotsInsideSquare[i] && shots_active[i]),
+			.object_colors(shot_bitmap),
 			.drawingRequest(shotsBusRequest[i]), 
 			.RGBout(shotsBusRGB[i])
 		) ;
@@ -251,7 +259,7 @@ generate
 	end
 endgenerate
 
-logic tree_bitmap;
+logic [0:63] [0:31] [7:0] tree_bitmap;
 treeBMP treeBMP(.object_colors(tree_bitmap));
 
 generate
