@@ -21,8 +21,6 @@ module	treeLogic	(
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
 parameter int INITIAL_Y = -32; // if tree is 32 bit
-parameter int IMAGE_WIDTH = 32;
-parameter int IMAGE_HeiGHT = 32;
 
 
 

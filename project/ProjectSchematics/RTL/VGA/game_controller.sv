@@ -42,6 +42,7 @@ levelFSM level_fsm(
 	.clk(clk),
 	.resetN(resetN),
 	.level_up(level_up),
+	.startOfFrame(startOfFrame),
 	.trees_to_add(trees_to_add),
 	.tree_speed(tree_speed),
 	.bird_speed(bird_speed),
@@ -147,7 +148,7 @@ begin
 				bird_hit_flag <= 1'b1;
 			end
 			
-			if ((level_counter == 2) && (bird_alive == 2'b00)) begin
+			if ((level_counter == 1) && (bird_alive == 2'b00)) begin
 				start_level <= 1'b1;
 			end
 		end

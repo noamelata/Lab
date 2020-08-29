@@ -3,6 +3,7 @@ module levelFSM (
 					 input logic clk,             
 					 input logic resetN,
                 input logic level_up,
+					 input logic startOfFrame,
 
 					 
                 output logic [1:0] trees_to_add,
@@ -18,7 +19,7 @@ always @(posedge clk or negedge resetN)
 	   
    if ( !resetN )  // Asynchronic reset
 		level <= level_1;
-   else 		// Synchronic logic FSM
+   else 	// Synchronic logic FSM
 		level <= next_level;
 
 end // always
