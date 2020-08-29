@@ -69,7 +69,6 @@ logic player_red;
 
 logic total_time;
 logic [1:0] bird_red;
-logic [1:0] wings_Up;
 logic [7:0] redOut;
 logic [7:0] greenOut; 
 logic [7:0] blueOut;
@@ -85,6 +84,9 @@ logic [3:0] [3:0] timer_digit;
 logic timer_load
 
 logic [7:0] random_number;
+logic turbo;
+logic one_sec;
+logic duty50;
 
 
 assign clk = CLOCK_50;
@@ -156,7 +158,7 @@ playerDraw playerdraw	(
 genvar i;
 generate
 	for (i=0; i < 2; i++) begin : generate_birds_id
-		birdLogic #(i * 128) birdlogic (	
+		birdLogic #(.RANDOM_OFFSET(i * 128), .INITIAL_Y(128 - (i * 64))) birdlogic (	
 							.clk(clk),
 							.resetN(resetN),
 							.startOfFrame(startOfFrame),
@@ -167,7 +169,6 @@ generate
 							.speed(bird_speed),
 							.alive(bird_alive[i]),
 							.red(bird_red[i]),
-							.isUp(wings_Up[i]),
 							.coordinate(birdsCoordinates[i])					
 		);
 
@@ -184,14 +185,14 @@ generate
 			.RGBout() 
 		);
 
-		birdDraw birddraw	(	
+		birdDraw #(.COLOR(i == 0 ? 8'h33 : 8'hb3)) birddraw	(	
 			.clk(clk),
 			.resetN(resetN),
 			.coordinate(birdsOffset[i]),
 			.InsideRectangle(birdsInsideSquare[i]), 
 			.flash(bird_red[i]),
 			.alive(bird_alive[i]),
-			.isUp(wings_Up[i]),
+			.duty50(duty50),
 			.drawingRequest(birdsBusRequest[i]), 
 			.RGBout(birdsBusRGB[i])
 		) ;
@@ -451,6 +452,17 @@ random randomizer (
 						.dout(random_number)	
 						);
 
+						
+one_sec_counter one_sec_counter  (
+
+						.clk(clk), 
+						.resetN(resetN), 
+						.turbo(turbo),
+						.one_sec(one_sec), 
+						.duty50(duty50)
+						);
+	
+						
 
 endmodule
 

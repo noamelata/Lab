@@ -13,7 +13,6 @@ module	birdLogic #(parameter RANDOM_OFFSET = 0) /* sample random with parameter 
 					
 					output logic alive,
 					output logic red,
-					output logic isUp,
 					output logic signed [1:0] [10:0]	coordinate// output the top left corner 					
 );
 
@@ -23,7 +22,7 @@ module	birdLogic #(parameter RANDOM_OFFSET = 0) /* sample random with parameter 
 localparam int SCREEN_WIDTH = 640;
 localparam int SCREEN_HEIGHT = 480;
 localparam int INITIAL_X = 280; //todo
-localparam int INITIAL_Y = 185; 
+parameter int INITIAL_Y = 185; 
 localparam int IMAGE_WIDTH = 32;
 localparam int IMAGE_HeiGHT = 32;
 
@@ -45,7 +44,6 @@ int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters
 int step;
 int life;
 int counter;
-int wing_counter;
 int random_num;
 int chance_to_change = 8;
 
@@ -61,14 +59,11 @@ begin
 	end
 	
 	next_state = state;
-	next_wing_state = wing_state;
 	if ((startOfFrame == 1'b1) && (random_num < chance_to_change)) begin
 		if (state == idle_state)
 			next_state = (random_num < (chance_to_change/2)) ? right_state : left_state;
 		else
 			next_state = idle_state;
-		if (wing_change)
-			next_wing_state = next_wing_state.next;
 	end
 	
 end
@@ -80,12 +75,10 @@ always @(posedge clk or negedge resetN)
    if ( !resetN )  // Asynchronic reset
 	begin
 		state <= idle_state;
-		wing_state <= wings_up;
 	end
    else 		// Synchronic logic FSM
 	begin	
 		state <= next_state;
-		wing_state <= next_wing_state;
 	end
 	end // always
 
@@ -96,12 +89,10 @@ begin
 	begin
 		topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
 		topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
-		wing_counter <= 32;
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
 			counter <= (counter > 0) ? counter - 1 : 0;
-			wing_counter <= (wing_counter > 0) ? wing_counter - 1 : 32;
 			
 			if (deploy) begin
 				life <= starting_life;
@@ -124,12 +115,6 @@ begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint;
 					
 			endcase
-			case(wing_state)
-			wings_up:
-				isUp <= 1'b1;
-			wings_down:
-				isUp <= 1'b0;	
-			endcase
 		end		
 	end
 end
@@ -138,7 +123,6 @@ end
 assign 	coordinate[0] = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   
 assign 	coordinate[1] = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
 
-assign wing_change = (wing_counter == 0);
 assign 	red = counter > 0;
 assign 	alive = (life > 0) || red; // dont disappear until finished flashing red
 

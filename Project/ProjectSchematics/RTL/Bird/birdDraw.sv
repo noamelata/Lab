@@ -6,7 +6,7 @@ module	birdDraw	(
 					input	logic	InsideRectangle, //input that the pixel is within a leftside bracket  
 					input logic flash, //should bird flash red (got hit)
 					input logic alive, //is bird alive
-					input logic isUp, //wings up or down
+					input logic duty50, //wings up or down
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
@@ -30,8 +30,7 @@ localparam  int OBJECT_WIDTH_X = 1 <<  OBJECT_NUMBER_OF_X_BITS;
 localparam  int OBJECT_HEIGHT_Y_DIVIDER = OBJECT_NUMBER_OF_Y_BITS - 2; //how many pixel bits are in every collision pixel
 localparam  int OBJECT_WIDTH_X_DIVIDER =  OBJECT_NUMBER_OF_X_BITS - 2;
 
-parameter DARK_COLOR = 8'hFF; //PLACEHOLDER PLEASE CHANGE
-parameter LIGHT_COLOR = 8'hFF; //PLACEHOLDER PLEASE CHANGE
+parameter COLOR = 8'h33; //default bird color
 parameter RED = 8'hE0;
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
 
@@ -149,7 +148,7 @@ logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors;
 
 always_comb
 begin
-	object_colors = isUp ? wings_up_object_colors : wings_down_object_colors;
+	object_colors = duty50 ? wings_up_object_colors : wings_down_object_colors;
 end
 
 
@@ -173,7 +172,10 @@ begin
 			end
 			else 
 			begin
-				RGBout <= object_colors[coordinate[1]][coordinate[0]];	
+				if (object_colors[coordinate[1]][coordinate[0]] == 8'h33) 
+					RGBout <= COLOR;
+				else
+					RGBout <= object_colors[coordinate[1]][coordinate[0]];	
 			end
 		end 
 		else 
