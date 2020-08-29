@@ -78,11 +78,9 @@ logic left;
 logic right;
 logic clk;
 
-logic timer_load;
-logic onc_sec;
 logic [3:0] [3:0] time_to_add;
 logic [3:0] [3:0] timer_digit;
-logic timer_load
+logic timer_load;
 
 logic god_mode;
 
@@ -293,7 +291,7 @@ generate
   end
 endgenerate
 
-/*
+
 timer_4_digits_counter timer (
 			.clk(clk),
 			.resetN(resetN),
@@ -338,7 +336,7 @@ generate
 
   end
 endgenerate
-*/
+
 
 
  

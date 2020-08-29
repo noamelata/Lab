@@ -19,9 +19,7 @@ logic [7:0] tmpRGB;
 
 assign digitsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
 assign digitsDrawingRequest  = (digitsBusRequest[0] || digitsBusRequest [1]
-						|| digitsBusRequest[2] || digitsBusRequest[3]
-						|| digitsBusRequest[4] || digitsBusRequest[5]
-						|| digitsBusRequest[6] || digitsBusRequest[7]);
+						|| digitsBusRequest[2] || digitsBusRequest[3]);
 
 
 

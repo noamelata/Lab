@@ -20,7 +20,8 @@ module	treeLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_Y = -32; // if tree is 32 bit
+parameter int IMAGE_HEIGHT = 64;
+const int INITIAL_Y = -IMAGE_HEIGHT; // if tree is 32 bit
 
 
 
@@ -63,7 +64,7 @@ begin
 			end
 		
 		if ((startOfFrame == 1'b1) && isActive) begin // perform  position integral only 30 times per second 
-			if (topLeftY_FixedPoint > (y_FRAME_SIZE - (32 * FIXED_POINT_MULTIPLIER))) begin
+			if (topLeftY_FixedPoint > (y_FRAME_SIZE)) begin
 				topLeftY_FixedPoint <= INITIAL_Y;
 				//generate random
 				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;

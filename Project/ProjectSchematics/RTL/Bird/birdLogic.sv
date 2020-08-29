@@ -1,6 +1,6 @@
 
 
-module	birdLogic #(parameter RANDOM_OFFSET = 0) /* sample random with parameter */	(	
+module	birdLogic /*#(parameter RANDOM_OFFSET = 0) /* sample random with parameter */	(	
  
 					input	logic	clk,
 					input	logic	resetN,
@@ -19,6 +19,7 @@ module	birdLogic #(parameter RANDOM_OFFSET = 0) /* sample random with parameter 
 
 // a module used to generate the  ball trajectory.  
 
+parameter RANDOM_OFFSET = 0;
 localparam int SCREEN_WIDTH = 640;
 localparam int SCREEN_HEIGHT = 480;
 localparam int INITIAL_X = 280; //todo

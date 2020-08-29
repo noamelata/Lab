@@ -23,15 +23,16 @@ module timer_4_digits_counter
 	begin
 		for (int j=0; j < 4; j++) begin
 			sum = carry[j];
-			sum = sum + add_time[j]
+			sum = sum + add_time[j];
 			sum = sum + Count_out[j];
-			if (sum <= 4'b9) begin
+			if (sum <= 9) begin
 				datain[j] = sum;
 				carry[j+1] = 1'b0;
 			end else begin
 				datain[j] = sum - 10;
 				carry[j+1] = 1'b1;
 			end
+		end
 	end
 	
 	genvar i;
