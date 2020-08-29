@@ -253,6 +253,8 @@ generate
 	end
 endgenerate
 
+logic tree_bitmap;
+treeBMP treeBMP(.object_colors(tree_bitmap));
 
 generate
 	for (i=0; i < 8; i++) begin : generate_trees_id
@@ -288,6 +290,7 @@ generate
 			.coordinate(treesOffset[i]),
 			.InsideRectangle(treesInsideSquare[i]),
 			.isActive(trees_active[i]), 
+			.object_colors(tree_bitmap),
 
 			.drawingRequest(treesBusRequest[i]), 
 			.RGBout(treesBusRGB[i])
