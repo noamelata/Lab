@@ -29,19 +29,23 @@ module	game_controller	(
 
 int number_of_trees = 0;
 logic num_of_birds;
-const int number_of_birds = num_of_birds + 1;
+
+
 assign bird_life = 4'h3;
 logic [1:0] trees_to_add;//VERIFY WITH N
 logic start_level;
 logic level_up;
 
 levelFSM level_fsm(
+	.clk(clk),
+	.resetN(resetN),
 	.level_up(level_up),
 	.trees_to_add(trees_to_add),
 	.tree_speed(tree_speed),
 	.bird_speed(bird_speed),
-	.number_of_birds(num_of_birds),
+	.number_of_birds(num_of_birds)
                 );
+
 
 int cooldown_time = 100;
 int cooldown = 0;
@@ -55,7 +59,9 @@ int tree_counter;
 int player_life = 3; //player life
 
 logic invincible;
+logic bird_hit_flag;
 int red_counter;
+int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
 
@@ -79,18 +85,22 @@ begin
 		deploy_shot <= 8'h00;
 		player_active <= 1'b1;
 		player_life <= 3;
+		red_counter <= 0;
+		level_counter <= 0;
+		bird_hit_flag <= 1'b0;
 	end 
 	else begin 
-	player_active <= player_active;
-	time_to_add <= {4'h0, 4'h0, 4'h0, 4'h0};
-	add_time <= 1'b0;
+		player_active <= player_active;
+		time_to_add <= {4'h0, 4'h0, 4'h0, 4'h0};
+		add_time <= 1'b0;
+		level_up <= 1'b0;
 		if (startOfFrame) begin
 			red_counter <= (red_counter > 0) ? red_counter - 1 : 0;
+			level_counter <= (level_counter > 0) ? level_counter - 1 : 0;
 			deploy_tree <= 8'h0;
 			cooldown <= (cooldown == 0) ? 0 : cooldown - 1;
 			current_shot <= current_shot;
 			start_level <= 1'b0;
-			level_up <= 1'b0;
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 2'b00;
@@ -110,10 +120,11 @@ begin
 			end
 			
 			if (start_level == 1'b1) begin // at beginning of level
-				for (int i = 0; i < number_of_birds; i++) begin
+				for (int i = 0; i <= num_of_birds; i++) begin
 					deploy_bird[i] <= 1'b1;
 				end
 				number_of_trees <= trees_to_add;
+				bird_hit_flag <= 1'b0;
 			end
 			
 			if (SingleHitPulse && !invincible) begin // when hit
@@ -127,11 +138,15 @@ begin
 				end
 			end
 			
-			if (bird_alive == 2'b00) begin // finished level
-				start_level <= 1'b1;
+			if ((bird_hit_flag == 1'b0) && (bird_alive == 2'b00)) begin // finished level
+				level_counter <= 32;
 				level_up <= 1'b1;
+				bird_hit_flag <= 1'b1;
 			end
-		
+			
+			if ((level_counter == 2) && (bird_alive == 2'b00)) begin
+				start_level <= 1'b1;
+			end
 		end
 	end 
 end
