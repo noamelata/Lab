@@ -82,6 +82,7 @@ logic timer_load;
 logic onc_sec;
 logic [3:0] [3:0] time_to_add;
 logic [3:0] [3:0] timer_digit;
+logic timer_load
 
 logic [7:0] random_number;
 
@@ -110,7 +111,9 @@ game_controller gamecontroller (.clk(clk),
 			.bird_life(bird_life),
 			.player_red(player_red),
 			.player_active(player_active),
-			.total_time(total_time));
+			.add_time(timer_load),
+			.time_to_add(time_to_add)
+			);
 
 playerLogic playerlogic(.clk(clk),
 					.resetN(resetN),
@@ -300,7 +303,7 @@ generate
 	for (i=0; i < 4; i++) begin : generate_timers_id
 		logic InsideSquare;
 		logic [1:0] [10:0] number_offset;
-		square_object #(.OBJECT_WIDTH_X(16)) treessquare(	
+		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
@@ -336,6 +339,8 @@ endgenerate
 objects_mux_all	mux_all(	
 					.clk(clk),
 					.resetN(resetN),
+					.digitsDrawingRequest(digitsDrawingRequest),
+					.digitsRGB(digitsRGB), 
 					.playerDrawingRequest(playerDrawingRequest),
 					.playerRGB(playerRGB), 
 					.birdsDrawingRequest(birdsDrawingRequest),
@@ -350,6 +355,20 @@ objects_mux_all	mux_all(
 					.blueOut(blueOut) 
 					
 );
+
+logic timerDrawingRequest;
+logic timerRGB;
+
+digits_mux digits_mux(
+					.clk(clk),
+					.resetN(resetN),
+					.digitsBusRequest(timerBusRequest),
+					.digitsBusRGB(timerBusRGB), 
+					.digitsDrawingRequest(timerDrawingRequest),
+					.digitsRGB(timerRGB)
+					
+);
+
 
 birds_mux	birds_mux(	
 					.clk(clk),
