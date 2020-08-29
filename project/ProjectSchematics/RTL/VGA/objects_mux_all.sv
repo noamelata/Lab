@@ -4,6 +4,9 @@ module	objects_mux_all	(
 //		--------	Clock Input	 	
 					input		logic	clk,
 					input		logic	resetN,
+		// digits	
+					input		logic	digitsDrawingRequest,
+					input		logic	[7:0] digitsRGB, 
 		// player
 					input		logic	playerDrawingRequest,
 					input		logic	[7:0] playerRGB, 
@@ -17,6 +20,7 @@ module	objects_mux_all	(
 		// tree
 					input		logic	treesDrawingRequest,
 					input		logic	[7:0] treesRGB, 
+					
 					
 					
 		// background 
@@ -43,17 +47,20 @@ begin
 			tmpRGB	<= 8'b0;
 	end
 	else begin
-		if (playerDrawingRequest == 1'b1 )   
-			tmpRGB <= playerRGB;  //first priority 
+		if (digitsDrawingRequest == 1'b1 )   
+			tmpRGB <= digitsRGB;  //first priority 
+			
+		else if (playerDrawingRequest == 1'b1 )   
+			tmpRGB <= playerRGB;  //second priority 
 
 		else if (birdsDrawingRequest == 1'b1 )   
-			tmpRGB <= birdsRGB;  //second priority 
+			tmpRGB <= birdsRGB;  //third priority 
 			
 		else if (shotsDrawingRequest == 1'b1 )   
-			tmpRGB <= shotsRGB;  //third priority 
+			tmpRGB <= shotsRGB;  //forth priority 
 			
 		else if (treesDrawingRequest == 1'b1 )   
-			tmpRGB <= treesRGB;  //forth priority 
+			tmpRGB <= treesRGB;  //fifth priority 
 		
 		else
 			tmpRGB <= backGroundRGB ; // last priority 

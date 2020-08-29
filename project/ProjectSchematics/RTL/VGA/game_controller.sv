@@ -21,7 +21,8 @@ module	game_controller	(
 			output logic [3:0] bird_life,
 			output logic player_red,
 			output logic player_active,
-			output logic total_time
+			output logic add_time;
+			output logic [3:0] [3:0] time_to_add
 );
 
 
@@ -65,6 +66,8 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
 	begin 
+		time_to_add <= {4'h0, 4'h0, 4'h9, 4'h9};
+		add_time <= 1'b1;
 		current_shot <= 0;
 		current_tree <= 0;
 		cooldown <= 0;
@@ -79,6 +82,8 @@ begin
 	end 
 	else begin 
 	player_active <= player_active;
+	time_to_add <= {4'h0, 4'h0, 4'h0, 4'h0};
+	add_time <= 1'b0;
 		if (startOfFrame) begin
 			red_counter <= (red_counter > 0) ? red_counter - 1 : 0;
 			deploy_tree <= 8'h0;
