@@ -22,6 +22,7 @@ logic signed [1:0] [10:0] playerCoordinates;
 logic signed [1:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [7:0] [1:0] [10:0] treesCoordinates;
+
 logic signed [1:0] [10:0] playerOffset;
 logic signed [1:0] [1:0] [10:0] birdsOffset;
 logic signed [7:0] [1:0] [10:0] shotsOffset;
@@ -47,21 +48,25 @@ logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
+
 logic [1:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
 logic [1:0] bird_alive;
 logic player_SingleHitPulse;
 logic player_collision;
+
 logic [1:0] tree_speed;
 logic [1:0] bird_speed;
 logic [7:0] deploy_shot;
 logic [7:0] deploy_tree;
 logic [1:0] deploy_bird;
 logic [3:0] bird_life;
+
 logic [7:0] shots_active;
 logic [7:0] trees_active;
 logic player_active;
 logic player_red;
+
 logic total_time;
 logic [1:0] bird_red;
 logic [7:0] redOut;
@@ -71,6 +76,11 @@ logic shoot;
 logic left;
 logic right;
 logic clk;
+
+logic timer_load
+logic onc_sec;
+logic [3:0] [3:0] time_to_add;
+logic [3:0] [3:0] timer_digit;
 
 logic [7:0] random_number;
 
@@ -272,6 +282,18 @@ generate
 
   end
 endgenerate
+
+
+timer_4_digits_counter timer (
+			.clk(clk),
+			.resetN(resetN),
+			.ena(1'b1), 
+			.ena_cnt(one_sec), 
+			.loadN(!timer_load), 
+			.add_time(time_to_add),
+			.Count_out(timer_digit),
+			.tc()
+			);
 
 generate
 	for (i=0; i < 4; i++) begin : generate_timers_id
