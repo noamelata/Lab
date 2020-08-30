@@ -9,7 +9,7 @@ module	treeLogic	(
 					input logic deploy, 
 					//input logic remove,
 					input logic [7:0] random, //random number from random generator
-					input logic [1:0] speed,
+					input logic [2:0] speed,
 					
 					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
 					output logic isActive //should tree be on screen
@@ -20,8 +20,8 @@ module	treeLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int IMAGE_HEIGHT = 64;
-const int INITIAL_Y = -IMAGE_HEIGHT; // if tree is 32 bit
+//parameter int IMAGE_HEIGHT = 64;
+const int INITIAL_Y = 0; // if tree is 32 bit
 
 
 
@@ -42,7 +42,7 @@ int step; // moving speed of tree
 
 always_comb 
 begin
-	step = 50 + (20 * speed);
+	step = 64 + (32 * speed);
 end
 
 

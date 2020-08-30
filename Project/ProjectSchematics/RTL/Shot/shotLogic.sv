@@ -19,7 +19,7 @@ module	shotLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_Y = 415; // default value
+parameter int INITIAL_Y = 383; // default value
 parameter int IMAGE_WIDTH = 16;
 parameter int IMAGE_HEIGHT = 16;
 

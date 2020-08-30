@@ -5,9 +5,9 @@ module levelFSM (
                 input logic level_up,
 					 input logic startOfFrame,
 
-					 
+					 output logic [3:0] bird_life,
                 output logic [1:0] trees_to_add,
-                output logic [1:0] tree_speed,
+                output logic [2:0] tree_speed,
                 output logic [1:0] bird_speed,
                 output logic number_of_birds
                 );
@@ -36,9 +36,10 @@ begin
 		next_level = level.next;	
   
 	trees_to_add = 2'b0;
-	tree_speed = 2'b0;
+	tree_speed = 3'b0;
 	bird_speed = 2'b0;
 	number_of_birds = 1'b0;
+	bird_life = 4'h3;
 	  
 	case(level)
 	level_1:
@@ -46,61 +47,61 @@ begin
 	  
 	level_2:
 	begin
-	trees_to_add = 2'b10;
+		trees_to_add = 2'b10;
 		bird_speed = 2'b01;
+		tree_speed = 3'b001;
 	end
 		 
 	level_3:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b01;
+		 tree_speed = 3'b010;
 		 bird_speed = 2'b01;
+		 bird_life = 4'h4;
 	end
 		 
 	level_4:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b01;
+		 tree_speed = 3'b011;
 		 bird_speed = 2'b10;
 		 trees_to_add = 2'b10;
+		 bird_life = 4'h4;
 	end
 	  
 	level_5:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b10;
+		 tree_speed = 3'b100;
 		 bird_speed = 2'b10;
+		 bird_life = 4'h5;
 	end
 	  
-	level_5:
-	begin
-		 number_of_birds = 1'b1;
-		 tree_speed = 2'b10;
-		 bird_speed = 2'b10;
-		 trees_to_add = 2'b10;
-	end
-		 
 	level_6:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b11;
+		 tree_speed = 3'b101;
 		 bird_speed = 2'b10;
+		 trees_to_add = 2'b10;
+		 bird_life = 4'h5;
 	end
 		 
 	level_7:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b11;
+		 tree_speed = 3'b110;
 		 bird_speed = 2'b11;
+		 bird_life = 4'h6;
 	end
-	
+		 
 	level_8:
 	begin
 		 number_of_birds = 1'b1;
-		 tree_speed = 2'b11;
+		 tree_speed = 3'b111;
 		 bird_speed = 2'b11;
+		 bird_life = 4'h7;
 	end
-		
+	
 	  endcase;
 end
 

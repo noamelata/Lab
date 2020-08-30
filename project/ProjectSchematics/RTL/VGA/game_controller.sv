@@ -15,7 +15,7 @@ module	game_controller	(
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
 		
 			
-			output logic [1:0] tree_speed,
+			output logic [2:0] tree_speed,
 			output logic [1:0] bird_speed,
 			output logic [7:0] deploy_shot,
 			output logic [7:0] deploy_tree,
@@ -32,8 +32,6 @@ module	game_controller	(
 int number_of_trees = 0;
 logic num_of_birds;
 
-
-assign bird_life = 4'h1;
 logic [1:0] trees_to_add;//VERIFY WITH N
 logic start_level;
 logic level_up;
@@ -43,6 +41,7 @@ levelFSM level_fsm(
 	.resetN(resetN),
 	.level_up(level_up),
 	.startOfFrame(startOfFrame),
+	.bird_life(bird_life),
 	.trees_to_add(trees_to_add),
 	.tree_speed(tree_speed),
 	.bird_speed(bird_speed),
@@ -128,7 +127,7 @@ begin
 				for (int i = 0; i <= num_of_birds; i++) begin
 					deploy_bird[i] <= 1'b1;
 				end
-				number_of_trees <= trees_to_add;
+				number_of_trees <= number_of_trees + trees_to_add;
 			end
 			
 			if (bird_alive != 2'b0) begin

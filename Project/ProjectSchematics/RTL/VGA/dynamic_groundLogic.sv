@@ -5,7 +5,7 @@ module	dynamic_groundLogic	(
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					input logic [1:0] speed,
+					input logic [2:0] speed,
 					
 					output logic signed [1:0] [10:0]	coordinate// output the top left corner 	
 );
@@ -15,8 +15,8 @@ module	dynamic_groundLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_Y = -32; // if tree is 32 bit
-const int INITIAL_X = 1;
+parameter int INITIAL_Y = 0; // if tree is 32 bit
+const int INITIAL_X = 0;
 
 
 
@@ -37,7 +37,7 @@ int step; // moving speed of tree
 
 always_comb 
 begin
-	step = 50 + (20 * speed);
+	step = 64 + (32 * speed);
 end
 
 
@@ -50,7 +50,7 @@ begin
 	end
 	else begin	
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
-			if (topLeftY_FixedPoint > (y_FRAME_SIZE)) begin
+			if (topLeftY_FixedPoint >= (31 * FIXED_POINT_MULTIPLIER)) begin
 				topLeftY_FixedPoint <= INITIAL_Y;
 				topLeftX_FixedPoint	<= INITIAL_X;
 			end 

@@ -24,21 +24,22 @@ assign treesDrawingRequest  = (treesBusRequest[0] || treesBusRequest [1]
 						|| treesBusRequest[4] || treesBusRequest[5]
 						|| treesBusRequest[6] || treesBusRequest[7]);
 
-logic [3:0] [3:0] order_to_tree_num ;
+logic [7:0] [3:0] order_to_tree_num ;
 logic [3:0] temp;
 
 always_comb
 begin
-
+	
+	temp = 4'b0;
 	for (int i=0; i<8; i++) begin
 		order_to_tree_num[i] = i;
 	end
 	
-	for (i=0; i<8; i++) begin
-		for (int j=i+1; j<8; j++) begin
-			if (treesCoordinates[i][1] < treesCoordinates[j][1]) begin
-				temp = order_to_tree_num[i];
-				order_to_tree_num[i] = order_to_tree_num[j];
+	for (int i = 8; i > 0; i--) begin
+		for (int j = 1; j < i; j++) begin
+			if (treesCoordinates[j-1][1] < treesCoordinates[j][1]) begin
+				temp = order_to_tree_num[j-1];
+				order_to_tree_num[j-1] = order_to_tree_num[j];
 				order_to_tree_num[j] = temp;
 			end
 		end
