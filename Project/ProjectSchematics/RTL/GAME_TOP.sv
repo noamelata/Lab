@@ -460,6 +460,7 @@ shots_mux shots_mux(
 trees_mux trees_mux(	
 					.clk(clk),
 					.resetN(resetN),
+					.treesCoordinates(treesCoordinates),
 					.treesBusRequest(treesBusRequest),
 					.treesBusRGB(treesBusRGB), 
 					.treesDrawingRequest(treesDrawingRequest),
