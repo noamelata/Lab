@@ -21,7 +21,9 @@ module	objects_mux_all	(
 					input		logic	treesDrawingRequest,
 					input		logic	[7:0] treesRGB, 
 					
-					
+		// dynamic ground
+					input		logic	dynamic_ground_Request,
+					input		logic	[7:0] dynamic_ground_RGB, 
 					
 		// background 
 					input		logic	[7:0] backGroundRGB, 
@@ -61,7 +63,10 @@ begin
 			
 		else if (treesDrawingRequest == 1'b1 )   
 			tmpRGB <= treesRGB;  //fifth priority 
-		
+			
+		else if (dynamic_ground_Request == 1'b1 )   
+			tmpRGB <= dynamic_ground_RGB;  //next to last priority 
+			
 		else
 			tmpRGB <= backGroundRGB ; // last priority 
 		end ; 

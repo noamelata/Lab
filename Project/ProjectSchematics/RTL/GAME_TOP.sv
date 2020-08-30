@@ -20,6 +20,7 @@ module GAME_TOP	(
 logic startOfFrame;
 logic signed [1:0] [10:0] drawCoordinates;
 logic signed [1:0] [10:0] playerCoordinates;
+logic signed [1:0] [10:0] dynamic_ground_Coordinates; 
 logic signed [1:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [7:0] [1:0] [10:0] treesCoordinates;
@@ -28,7 +29,9 @@ logic signed [1:0] [10:0] playerOffset;
 logic signed [1:0] [1:0] [10:0] birdsOffset;
 logic signed [7:0] [1:0] [10:0] shotsOffset;
 logic signed [7:0] [1:0] [10:0] treesOffset;
+logic signed [1:0] [10:0] dynamic_ground_Offset;
 logic playerInsideSquare;
+logic dynamic_ground_InsideSquare;
 logic [1:0] birdsInsideSquare;
 logic [7:0] shotsInsideSquare;
 logic [7:0] treesInsideSquare;
@@ -40,6 +43,7 @@ logic [3:0] timerBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
+logic dynamic_ground_Request;
 logic [7:0] playerRGB;
 logic [1:0] [7:0] birdsBusRGB;
 logic [7:0] [7:0] shotsBusRGB;
@@ -49,6 +53,7 @@ logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
+logic [7:0] dynamic_ground_RGB;
 
 logic [1:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
@@ -156,6 +161,7 @@ playerDraw playerdraw	(
 					.left(left),
 					.right(right),
 					.isActive(player_active),
+					.invincible(god_mode),
 
 					.drawingRequest(playerDrawingRequest),
 					.RGBout(playerRGB)
@@ -305,6 +311,44 @@ generate
   end
 endgenerate
 
+logic [0:31] [0:31] [7:0] dynamic_ground_bitmap;
+dynamic_groundBMP dynamic_groundBMP(.object_colors(dynamic_ground_bitmap));
+
+dynamic_groundLogic dynamic_groundlogic(	
+			.clk(clk),
+			.resetN(resetN),
+			.startOfFrame(startOfFrame),
+			.speed(tree_speed),
+			.coordinate(dynamic_ground_Coordinates)		
+		);
+		
+		
+		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(1000)) dynamic_ground_square(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(dynamic_ground_Coordinates[0]), 
+			.topLeftY(dynamic_ground_Coordinates[1]),
+
+			.offsetX(dynamic_ground_Offset[0]), 
+			.offsetY(dynamic_ground_Offset[1]),
+			.drawingRequest(dynamic_ground_InsideSquare),
+			.RGBout() 
+		);
+	
+
+			
+		dynamic_groundDraw dynamic_groundDraw(
+			.clk(clk),
+			.resetN(resetN),
+			.coordinate(dynamic_ground_Offset),
+			.object_colors(dynamic_ground_bitmap),
+			.InsideRectangle(dynamic_ground_InsideSquare),
+			
+			.drawingRequest(dynamic_ground_Request), 
+			.RGBout(dynamic_ground_RGB)
+		) ;
 
 timer_4_digits_counter timer (
 			.clk(clk),
@@ -367,6 +411,8 @@ objects_mux_all	mux_all(
 					.shotsRGB(shotsRGB), 
 					.treesDrawingRequest(treesDrawingRequest),
 					.treesRGB(treesRGB), 
+					.dynamic_ground_Request(dynamic_ground_Request),
+					.dynamic_ground_RGB(dynamic_ground_RGB), 
 					.backGroundRGB(backgroundRGB), 
 					.redOut(redOut),
 					.greenOut(greenOut), 

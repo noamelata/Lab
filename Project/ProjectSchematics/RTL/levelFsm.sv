@@ -19,8 +19,13 @@ always @(posedge clk or negedge resetN)
 	   
    if ( !resetN )  // Asynchronic reset
 		level <= level_1;
-   else 	// Synchronic logic FSM
-		level <= next_level;
+   else begin 	// Synchronic logic FSM
+		if (level == level_8)
+			level <= level;
+		else
+			level <= next_level;
+	end
+			
 
 end // always
 
@@ -83,6 +88,13 @@ begin
 	end
 		 
 	level_7:
+	begin
+		 number_of_birds = 1'b1;
+		 tree_speed = 2'b11;
+		 bird_speed = 2'b11;
+	end
+	
+	level_8:
 	begin
 		 number_of_birds = 1'b1;
 		 tree_speed = 2'b11;
