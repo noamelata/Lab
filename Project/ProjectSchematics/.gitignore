@@ -1,0 +1,3 @@
+stp1.stp
+*.stp*
+./output_files/*.stp*
