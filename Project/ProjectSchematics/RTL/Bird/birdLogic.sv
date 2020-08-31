@@ -53,7 +53,7 @@ int chance_to_change = 8;
 // position calculate 
 always_comb
 begin
-	step = 50 + (20 * speed);
+	step = 64 + (32 * speed);
 	random_num = random + RANDOM_OFFSET;
 	if (random_num > MAX_RANDOM) begin
 		random_num = random_num - MAX_RANDOM;
@@ -109,7 +109,7 @@ begin
 					topLeftX_FixedPoint <= topLeftX_FixedPoint + step;
 				end
 			left_state: 
-				if (topLeftX_FixedPoint > 0) begin
+				if (((topLeftX_FixedPoint - step) / FIXED_POINT_MULTIPLIER) > (step / FIXED_POINT_MULTIPLIER)) begin
 					topLeftX_FixedPoint <= topLeftX_FixedPoint - step;
 				end
 			default:

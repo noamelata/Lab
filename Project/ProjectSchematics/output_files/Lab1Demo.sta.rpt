@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Lab1Demo
-Thu Aug 27 00:43:44 2020
+Sun Aug 30 14:33:53 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -103,14 +103,14 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.54        ;
+; Average used               ; 1.92        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  18.2%      ;
-;     Processor 3            ;  18.1%      ;
-;     Processor 4            ;  18.0%      ;
+;     Processor 2            ;  30.7%      ;
+;     Processor 3            ;  30.6%      ;
+;     Processor 4            ;  30.5%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +119,7 @@ agreement for further details.
 +-------------------------------------+--------+--------------------------+
 ; SDC File Path                       ; Status ; Read at                  ;
 +-------------------------------------+--------+--------------------------+
-; constraints/DE10_Standard_Audio.sdc ; OK     ; Thu Aug 27 00:43:21 2020 ;
+; constraints/DE10_Standard_Audio.sdc ; OK     ; Sun Aug 30 14:32:57 2020 ;
 +-------------------------------------+--------+--------------------------+
 
 
@@ -134,14 +134,14 @@ agreement for further details.
 +---------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
 
 
-+-----------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                        ;
-+------------+-----------------+---------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
-+------------+-----------------+---------------------+------+
-; 54.39 MHz  ; 54.39 MHz       ; altera_reserved_tck ;      ;
-; 113.39 MHz ; 113.39 MHz      ; CLOCK_50            ;      ;
-+------------+-----------------+---------------------+------+
++----------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                       ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 54.39 MHz ; 54.39 MHz       ; altera_reserved_tck ;      ;
+; 80.38 MHz ; 80.38 MHz       ; CLOCK_50            ;      ;
++-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -156,8 +156,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
+; CLOCK_50            ; 7.559  ; 0.000         ;
 ; altera_reserved_tck ; 10.807 ; 0.000         ;
-; CLOCK_50            ; 11.181 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -166,8 +166,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.146 ; 0.000         ;
-; CLOCK_50            ; 0.221 ; 0.000         ;
+; CLOCK_50            ; 0.237 ; 0.000         ;
+; altera_reserved_tck ; 0.423 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -176,7 +176,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 35.442 ; 0.000         ;
+; altera_reserved_tck ; 36.126 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -185,7 +185,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.651 ; 0.000         ;
+; altera_reserved_tck ; 0.808 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -194,8 +194,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; CLOCK_50            ; 8.885  ; 0.000              ;
-; altera_reserved_tck ; 18.640 ; 0.000              ;
+; CLOCK_50            ; 8.882  ; 0.000              ;
+; altera_reserved_tck ; 18.567 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -206,19 +206,19 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 22
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 52.096 ns
+Worst Case Available Settling Time: 52.588 ns
 
 
 
 
-+-----------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                         ;
-+------------+-----------------+---------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
-+------------+-----------------+---------------------+------+
-; 54.84 MHz  ; 54.84 MHz       ; altera_reserved_tck ;      ;
-; 112.71 MHz ; 112.71 MHz      ; CLOCK_50            ;      ;
-+------------+-----------------+---------------------+------+
++----------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                        ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 54.84 MHz ; 54.84 MHz       ; altera_reserved_tck ;      ;
+; 79.86 MHz ; 79.86 MHz       ; CLOCK_50            ;      ;
++-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -227,8 +227,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
+; CLOCK_50            ; 7.478  ; 0.000         ;
 ; altera_reserved_tck ; 10.882 ; 0.000         ;
-; CLOCK_50            ; 11.128 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -237,8 +237,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.134 ; 0.000         ;
-; CLOCK_50            ; 0.210 ; 0.000         ;
+; CLOCK_50            ; 0.224 ; 0.000         ;
+; altera_reserved_tck ; 0.421 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -247,7 +247,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 35.647 ; 0.000         ;
+; altera_reserved_tck ; 36.310 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -256,7 +256,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.616 ; 0.000         ;
+; altera_reserved_tck ; 0.748 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -265,8 +265,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.921  ; 0.000             ;
-; altera_reserved_tck ; 18.659 ; 0.000             ;
+; CLOCK_50            ; 8.915  ; 0.000             ;
+; altera_reserved_tck ; 18.608 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -277,7 +277,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 22
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 52.227 ns
+Worst Case Available Settling Time: 52.719 ns
 
 
 
@@ -287,8 +287,8 @@ Worst Case Available Settling Time: 52.227 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
+; CLOCK_50            ; 12.829 ; 0.000         ;
 ; altera_reserved_tck ; 12.888 ; 0.000         ;
-; CLOCK_50            ; 14.642 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -297,8 +297,8 @@ Worst Case Available Settling Time: 52.227 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.036 ; 0.000         ;
-; CLOCK_50            ; 0.130 ; 0.000         ;
+; CLOCK_50            ; 0.142 ; 0.000         ;
+; altera_reserved_tck ; 0.217 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -307,7 +307,7 @@ Worst Case Available Settling Time: 52.227 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 36.806 ; 0.000         ;
+; altera_reserved_tck ; 37.328 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -316,7 +316,7 @@ Worst Case Available Settling Time: 52.227 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.267 ; 0.000         ;
+; altera_reserved_tck ; 0.359 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -325,8 +325,8 @@ Worst Case Available Settling Time: 52.227 ns
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; CLOCK_50            ; 8.483  ; 0.000              ;
-; altera_reserved_tck ; 18.401 ; 0.000              ;
+; CLOCK_50            ; 8.480  ; 0.000              ;
+; altera_reserved_tck ; 18.340 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -337,7 +337,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 22
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 55.265 ns
+Worst Case Available Settling Time: 55.520 ns
 
 
 
@@ -348,7 +348,7 @@ Worst Case Available Settling Time: 55.265 ns
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
 ; altera_reserved_tck ; 13.011 ; 0.000         ;
-; CLOCK_50            ; 15.177 ; 0.000         ;
+; CLOCK_50            ; 13.441 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -357,8 +357,8 @@ Worst Case Available Settling Time: 55.265 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.024 ; 0.000         ;
-; CLOCK_50            ; 0.118 ; 0.000         ;
+; CLOCK_50            ; 0.132 ; 0.000         ;
+; altera_reserved_tck ; 0.199 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -367,7 +367,7 @@ Worst Case Available Settling Time: 55.265 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 37.173 ; 0.000         ;
+; altera_reserved_tck ; 37.619 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -376,7 +376,7 @@ Worst Case Available Settling Time: 55.265 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.231 ; 0.000         ;
+; altera_reserved_tck ; 0.309 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -385,8 +385,8 @@ Worst Case Available Settling Time: 55.265 ns
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.439  ; 0.000             ;
-; altera_reserved_tck ; 18.424 ; 0.000             ;
+; CLOCK_50            ; 8.436  ; 0.000             ;
+; altera_reserved_tck ; 18.399 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -397,7 +397,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 22
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 55.723 ns
+Worst Case Available Settling Time: 55.946 ns
 
 
 
@@ -407,9 +407,9 @@ Worst Case Available Settling Time: 55.723 ns
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 10.807 ; 0.024 ; 35.442   ; 0.231   ; 8.439               ;
-;  CLOCK_50            ; 11.128 ; 0.118 ; N/A      ; N/A     ; 8.439               ;
-;  altera_reserved_tck ; 10.807 ; 0.024 ; 35.442   ; 0.231   ; 18.401              ;
+; Worst-case Slack     ; 7.478  ; 0.132 ; 36.126   ; 0.309   ; 8.436               ;
+;  CLOCK_50            ; 7.478  ; 0.132 ; N/A      ; N/A     ; 8.436               ;
+;  altera_reserved_tck ; 10.807 ; 0.199 ; 36.126   ; 0.309   ; 18.340              ;
 ; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50            ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
@@ -460,11 +460,21 @@ Worst Case Available Settling Time: 55.723 ns
 ; Pin                 ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+--------------+-----------------+-----------------+
 ; KEY[0]              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[2]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[3]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[4]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[5]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[6]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[7]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; CLOCK_50            ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[2]              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; resetN              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[9]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[1]              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[3]              ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[8]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tms ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tck ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; altera_reserved_tdi ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -628,10 +638,10 @@ Worst Case Available Settling Time: 55.723 ns
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 9373       ; 57       ; 56       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 6961       ; 56       ; 56       ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 111670     ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 14457120   ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -641,10 +651,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 9373       ; 57       ; 56       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 6961       ; 56       ; 56       ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 111670     ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 14457120   ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -654,7 +664,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 695        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 399        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -665,7 +675,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 695        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 399        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -690,8 +700,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 1337  ; 1337 ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 2317  ; 2317 ;
 ; Unconstrained Output Ports      ; 27    ; 27   ;
 ; Unconstrained Output Port Paths ; 41    ; 41   ;
 +---------------------------------+-------+------+
@@ -717,6 +727,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; KEY[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resetN     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
@@ -764,6 +777,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; KEY[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; resetN     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
@@ -809,7 +825,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Aug 27 00:43:19 2020
+    Info: Processing started: Sun Aug 30 14:32:48 2020
 Info: Command: quartus_sta Lab1Demo -c Lab1Demo
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -821,101 +837,101 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): if { [string equal quartus_fit $::TimeQuestInfo(nameofexecutable)] } { set_max_delay -to [get_ports { altera_reserved_tdo } ] 0 }
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'constraints/DE10_Standard_Audio.sdc'
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
-    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
-    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
-    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 9
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 10
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 11
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
+    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 14
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
+    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 17
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
+    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 18
 Warning (332043): Overwriting existing clock: altera_reserved_tck
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 39
-Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 39
+Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
     Info (332050): create_generated_clock -source [get_pins {u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
-Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
+                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
+Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 38
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
-    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
-    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 67
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
+    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
+    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 63
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 67
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
     Info (332050): set_multicycle_path -from [get_clocks {clk_dram_ext}] \
                     -to [get_clocks {u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                                                  -setup 2 File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
+                                                  -setup 2 File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 81
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc Line: 83
 Warning (332060): Node: VGA_Controller:vga|oVGA_HS was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register VGA_Controller:vga|V_Cont[5] is being clocked by VGA_Controller:vga|oVGA_HS
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 10.807
+Info (332146): Worst-case setup slack is 7.559
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):     7.559               0.000 CLOCK_50 
     Info (332119):    10.807               0.000 altera_reserved_tck 
-    Info (332119):    11.181               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.146
+Info (332146): Worst-case hold slack is 0.237
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.146               0.000 altera_reserved_tck 
-    Info (332119):     0.221               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 35.442
+    Info (332119):     0.237               0.000 CLOCK_50 
+    Info (332119):     0.423               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 36.126
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    35.442               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.651
+    Info (332119):    36.126               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.808
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.651               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.885
+    Info (332119):     0.808               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.882
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.885               0.000 CLOCK_50 
-    Info (332119):    18.640               0.000 altera_reserved_tck 
+    Info (332119):     8.882               0.000 CLOCK_50 
+    Info (332119):    18.567               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 22 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 22
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 52.096 ns
+    Info (332114): Worst Case Available Settling Time: 52.588 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -923,35 +939,35 @@ Info (334004): Delay annotation completed successfully
 Warning (332060): Node: VGA_Controller:vga|oVGA_HS was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register VGA_Controller:vga|V_Cont[5] is being clocked by VGA_Controller:vga|oVGA_HS
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 10.882
+Info (332146): Worst-case setup slack is 7.478
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):     7.478               0.000 CLOCK_50 
     Info (332119):    10.882               0.000 altera_reserved_tck 
-    Info (332119):    11.128               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.134
+Info (332146): Worst-case hold slack is 0.224
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.134               0.000 altera_reserved_tck 
-    Info (332119):     0.210               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 35.647
+    Info (332119):     0.224               0.000 CLOCK_50 
+    Info (332119):     0.421               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 36.310
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    35.647               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.616
+    Info (332119):    36.310               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.748
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.616               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.921
+    Info (332119):     0.748               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.915
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.921               0.000 CLOCK_50 
-    Info (332119):    18.659               0.000 altera_reserved_tck 
+    Info (332119):     8.915               0.000 CLOCK_50 
+    Info (332119):    18.608               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 22 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 22
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 52.227 ns
+    Info (332114): Worst Case Available Settling Time: 52.719 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
@@ -959,35 +975,35 @@ Info (334004): Delay annotation completed successfully
 Warning (332060): Node: VGA_Controller:vga|oVGA_HS was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register VGA_Controller:vga|V_Cont[5] is being clocked by VGA_Controller:vga|oVGA_HS
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 12.888
+Info (332146): Worst-case setup slack is 12.829
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    12.829               0.000 CLOCK_50 
     Info (332119):    12.888               0.000 altera_reserved_tck 
-    Info (332119):    14.642               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.036
+Info (332146): Worst-case hold slack is 0.142
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.036               0.000 altera_reserved_tck 
-    Info (332119):     0.130               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 36.806
+    Info (332119):     0.142               0.000 CLOCK_50 
+    Info (332119):     0.217               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 37.328
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.806               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.267
+    Info (332119):    37.328               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.359
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.267               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.483
+    Info (332119):     0.359               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.480
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.483               0.000 CLOCK_50 
-    Info (332119):    18.401               0.000 altera_reserved_tck 
+    Info (332119):     8.480               0.000 CLOCK_50 
+    Info (332119):    18.340               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 22 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 22
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 55.265 ns
+    Info (332114): Worst Case Available Settling Time: 55.520 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Warning (332060): Node: VGA_Controller:vga|oVGA_HS was determined to be a clock but was found without an associated clock assignment.
@@ -997,38 +1013,38 @@ Info (332146): Worst-case setup slack is 13.011
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    13.011               0.000 altera_reserved_tck 
-    Info (332119):    15.177               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.024
+    Info (332119):    13.441               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.132
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.024               0.000 altera_reserved_tck 
-    Info (332119):     0.118               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 37.173
+    Info (332119):     0.132               0.000 CLOCK_50 
+    Info (332119):     0.199               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 37.619
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    37.173               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.231
+    Info (332119):    37.619               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.309
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.231               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.439
+    Info (332119):     0.309               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.436
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.439               0.000 CLOCK_50 
-    Info (332119):    18.424               0.000 altera_reserved_tck 
+    Info (332119):     8.436               0.000 CLOCK_50 
+    Info (332119):    18.399               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 22 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 22
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 55.723 ns
+    Info (332114): Worst Case Available Settling Time: 55.946 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 5240 megabytes
-    Info: Processing ended: Thu Aug 27 00:43:44 2020
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 5292 megabytes
+    Info: Processing ended: Sun Aug 30 14:33:53 2020
+    Info: Elapsed time: 00:01:05
+    Info: Total CPU time (on all processors): 00:01:20
 
 

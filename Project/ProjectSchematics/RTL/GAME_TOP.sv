@@ -21,22 +21,22 @@ logic startOfFrame;
 logic signed [1:0] [10:0] drawCoordinates;
 logic signed [1:0] [10:0] playerCoordinates;
 logic signed [1:0] [10:0] dynamic_ground_Coordinates; 
-logic signed [1:0] [1:0] [10:0] birdsCoordinates;
+logic signed [3:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [7:0] [1:0] [10:0] treesCoordinates;
 
 logic signed [1:0] [10:0] playerOffset;
-logic signed [1:0] [1:0] [10:0] birdsOffset;
+logic signed [3:0] [1:0] [10:0] birdsOffset;
 logic signed [7:0] [1:0] [10:0] shotsOffset;
 logic signed [7:0] [1:0] [10:0] treesOffset;
 logic signed [1:0] [10:0] dynamic_ground_Offset;
 logic playerInsideSquare;
 logic dynamic_ground_InsideSquare;
-logic [1:0] birdsInsideSquare;
+logic [3:0] birdsInsideSquare;
 logic [7:0] shotsInsideSquare;
 logic [7:0] treesInsideSquare;
 logic playerDrawingRequest;
-logic [1:0] birdsBusRequest;
+logic [3:0] birdsBusRequest;
 logic [7:0] shotsBusRequest;
 logic [7:0] treesBusRequest;
 logic [3:0] timerBusRequest;
@@ -45,7 +45,7 @@ logic shotsDrawingRequest;
 logic treesDrawingRequest;
 logic dynamic_ground_Request;
 logic [7:0] playerRGB;
-logic [1:0] [7:0] birdsBusRGB;
+logic [3:0] [7:0] birdsBusRGB;
 logic [7:0] [7:0] shotsBusRGB;
 logic [7:0] [7:0] treesBusRGB;
 logic [3:0] [7:0] timerBusRGB;	
@@ -55,17 +55,17 @@ logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
 logic [7:0] dynamic_ground_RGB;
 
-logic [1:0] SingleHitPulse_birds;
+logic [3:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
-logic [1:0] bird_alive;
+logic [3:0] bird_alive;
 logic player_SingleHitPulse;
 logic player_collision;
 
-logic [1:0] tree_speed;
+logic [2:0] tree_speed;
 logic [1:0] bird_speed;
 logic [7:0] deploy_shot;
 logic [7:0] deploy_tree;
-logic [1:0] deploy_bird;
+logic [3:0] deploy_bird;
 logic [3:0] bird_life;
 
 logic [7:0] shots_active;
@@ -74,7 +74,7 @@ logic player_active;
 logic player_red;
 
 logic total_time;
-logic [1:0] bird_red;
+logic [3:0] bird_red;
 logic [7:0] redOut;
 logic [7:0] greenOut; 
 logic [7:0] blueOut;
@@ -169,12 +169,13 @@ playerDraw playerdraw	(
 
 logic [0:31] [0:31] [7:0] wings_up_bitmap;
 logic [0:31] [0:31] [7:0] wings_down_bitmap;
+logic [3:0] [7:0] bird_color = {8'h33, 8'hE2,,};
 birdBMP birdBMP(.wings_up_object_colors(wings_up_bitmap), .wings_down_object_colors(wings_down_bitmap));
  
 genvar i;
 generate
-	for (i=0; i < 2; i++) begin : generate_birds_id
-		birdLogic #(.RANDOM_OFFSET(i * 128), .INITIAL_Y(128 - (i * 64))) birdlogic (	
+	for (i=0; i < 4; i++) begin : generate_birds_id
+		birdLogic #(.RANDOM_OFFSET(i * 64), .INITIAL_Y(128 - (i * 32))) birdlogic (	
 							.clk(clk),
 							.resetN(resetN),
 							.startOfFrame(startOfFrame),
@@ -323,7 +324,7 @@ dynamic_groundLogic dynamic_groundlogic(
 		);
 		
 		
-		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(1000)) dynamic_ground_square(	
+		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(480)) dynamic_ground_square(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
@@ -361,21 +362,24 @@ timer_4_digits_counter timer (
 			.tc()
 			);
 
+logic [3:0] digitInsideSquare;
+logic [3:0] [1:0] [10:0] digit_number_offset;
+			
 generate
 	for (i=0; i < 4; i++) begin : generate_timers_id
-		logic InsideSquare;
-		logic [1:0] [10:0] number_offset;
+		//logic InsideSquare;
+		//logic [1:0] [10:0] number_offset;
 		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
 			.pixelY(drawCoordinates[1]),
-			.topLeftX(i*16), 
-			.topLeftY(10'h000),
+			.topLeftX(1 + i*16), 
+			.topLeftY(10'h1),
 
-			.offsetX(number_offset[0]), 
-			.offsetY(number_offset[1]),
-			.drawingRequest(InsideSquare),
+			.offsetX(digit_number_offset[i][0]), 
+			.offsetY(digit_number_offset[i][1]),
+			.drawingRequest(digitInsideSquare[i]),
 			.RGBout(timerBusRGB[i]) 
 		);
 
@@ -383,9 +387,9 @@ generate
 		NumbersBitMap	(	
 					.clk(clk),
 					.resetN(resetN),
-					.offsetX(number_offset[0]), 
-					.offsetY(number_offset[1]),
-					.InsideRectangle(InsideSquare), //input that the pixel is within a bracket 
+					.offsetX(digit_number_offset[i][0]), 
+					.offsetY(digit_number_offset[i][1]),
+					.InsideRectangle(digitInsideSquare[i]), //input that the pixel is within a bracket 
 					.digit(timer_digit[i]), // digit to display
 					
 					.drawingRequest(timerBusRequest[i]), //output that the pixel should be dispalyed 
