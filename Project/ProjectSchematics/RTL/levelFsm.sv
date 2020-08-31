@@ -35,7 +35,7 @@ begin
 	if (level_up == 1'b1)
 		next_level = level.next;	
   
-	trees_to_add = 2'b0;
+	trees_to_add = 2'b10;
 	tree_speed = 3'b0;
 	bird_speed = 2'b0;
 	number_of_birds = 2'b00;

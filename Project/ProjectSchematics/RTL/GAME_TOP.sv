@@ -23,31 +23,25 @@ logic signed [1:0] [10:0] playerCoordinates;
 logic signed [1:0] [10:0] dynamic_ground_Coordinates; 
 logic signed [3:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
-logic signed [7:0] [1:0] [10:0] treesCoordinates;
+logic signed [15:0] [1:0] [10:0] treesCoordinates;
 
 logic signed [1:0] [10:0] playerOffset;
-logic signed [3:0] [1:0] [10:0] birdsOffset;
-logic signed [7:0] [1:0] [10:0] shotsOffset;
-logic signed [7:0] [1:0] [10:0] treesOffset;
+
 logic signed [1:0] [10:0] dynamic_ground_Offset;
 logic playerInsideSquare;
 logic dynamic_ground_InsideSquare;
-logic [3:0] birdsInsideSquare;
-logic [7:0] shotsInsideSquare;
-logic [7:0] treesInsideSquare;
+
 logic playerDrawingRequest;
 logic [3:0] birdsBusRequest;
 logic [7:0] shotsBusRequest;
-logic [7:0] treesBusRequest;
+logic [15:0] treesBusRequest;
 logic [1:0] timerBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
 logic dynamic_ground_Request;
 logic [7:0] playerRGB;
-logic [3:0] [7:0] birdsBusRGB;
-logic [7:0] [7:0] shotsBusRGB;
-logic [7:0] [7:0] treesBusRGB;
+
 logic [1:0] [7:0] timerBusRGB;	
 logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
@@ -71,13 +65,10 @@ logic [7:0] deploy_tree;
 logic [3:0] deploy_bird;
 logic [3:0] bird_life;
 
-logic [7:0] shots_active;
-logic [7:0] trees_active;
 logic player_active;
 logic player_red;
 
 logic total_time;
-logic [3:0] bird_red;
 logic [7:0] redOut;
 logic [7:0] greenOut; 
 logic [7:0] blueOut;
@@ -170,150 +161,57 @@ playerDraw playerdraw	(
 					.RGBout(playerRGB)
  ) ;
 
-logic [0:31] [0:31] [7:0] wings_up_bitmap;
-logic [0:31] [0:31] [7:0] wings_down_bitmap;
-localparam int bird_color[0:3] = '{8'h33, 8'hE2, 8'hFC, 8'h1F};
-birdBMP birdBMP(.wings_up_object_colors(wings_up_bitmap), .wings_down_object_colors(wings_down_bitmap));
- 
-genvar i;
-generate
-	for (i=0; i < 4; i++) begin : generate_birds_id
-		birdLogic #(.RANDOM_OFFSET(i * 64), .INITIAL_Y(128 - (i * 32))) birdlogic (	
-							.clk(clk),
-							.resetN(resetN),
-							.startOfFrame(startOfFrame),
-							.collision(SingleHitPulse_birds[i]),
-							.random(random_number), 
-							.starting_life(bird_life),
-							.deploy(deploy_bird[i]),
-							.speed(bird_speed),
-							.alive(bird_alive[i]),
-							.red(bird_red[i]),
-							.coordinate(birdsCoordinates[i])					
-		);
-
-		square_object	birdssquare(	
-			.clk(clk),
-			.resetN(resetN),
-			.pixelX(drawCoordinates[0]),
-			.pixelY(drawCoordinates[1]),
-			.topLeftX(birdsCoordinates[i][0]), 
-			.topLeftY(birdsCoordinates[i][1]),
-			.offsetX(birdsOffset[i][0]), 
-			.offsetY(birdsOffset[i][1]),
-			.drawingRequest(birdsInsideSquare[i]),
-			.RGBout() 
-		);
-
-		birdDraw #(.COLOR(bird_color[i])) birddraw	(	
-			.clk(clk),
-			.resetN(resetN),
-			.coordinate(birdsOffset[i]),
-			.InsideRectangle(birdsInsideSquare[i]), 
-			.flash(bird_red[i]),
-			.alive(bird_alive[i]),
-			.duty50(duty50),
-			.wings_up_object_colors(wings_up_bitmap),
-			.wings_down_object_colors(wings_down_bitmap),
-			.drawingRequest(birdsBusRequest[i]), 
-			.RGBout(birdsBusRGB[i])
-		) ;
-
-
-	end
-endgenerate
+BIRD_TOP bird_top(
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.random_number(random_number),
+					.duty50(duty50),
+					.SingleHitPulse_birds(SingleHitPulse_birds),
+					.deploy_bird(deploy_bird),
+					.bird_speed(bird_speed),
+					.bird_life(bird_life),
+					.drawCoordinates(drawCoordinates),
+					
+					.birdsBusRequest(birdsBusRequest),
+					.birdsCoordinates(birdsCoordinates),
+					.birdsDrawingRequest(birdsDrawingRequest),
+					.birdsRGB(birdsRGB),
+					.bird_alive(bird_alive)
+);
 			
 				
-logic [0:15] [0:15] [7:0] shot_bitmap;
-shotBMP shotBMP(.object_colors(shot_bitmap));
+SHOT_TOP shot_top(
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.left(left),
+					.right(right),
+					.playerCoordinates(playerCoordinates),
+					.SingleHitPulse_shots(SingleHitPulse_shots),
+					.deploy_shot(deploy_shot),
+					.drawCoordinates(drawCoordinates),
+					
+					.shotsBusRequest(shotsBusRequest),
+					.shotsCoordinates(shotsCoordinates),
+					.shotsDrawingRequest(shotsDrawingRequest),
+					.shotsRGB(shotsRGB)
+);
 
-generate
-	for (i=0; i < 8; i++) begin : generate_shots_id
-		shotLogic shotlogic(	
-
-			.clk(clk),
-			.resetN(resetN),
-			.startOfFrame(startOfFrame),
-			.deploy(deploy_shot[i]),
-			.collision(SingleHitPulse_shots[i]),
-			.direction({left,right}),
-			.initial_x(playerCoordinates + 10'h8), //might not work (shot is now 8 bit)
-			.isActive(shots_active[i]),
-			.coordinate(shotsCoordinates[i])			
-		);
-		
-		square_object #(.OBJECT_WIDTH_X(16), .OBJECT_HEIGHT_Y(16))	shotssquare(	
-			.clk(clk),
-			.resetN(resetN),
-			.pixelX(drawCoordinates[0]),
-			.pixelY(drawCoordinates[1]),
-			.topLeftX(shotsCoordinates[i][0]), 
-			.topLeftY(shotsCoordinates[i][1]),
-			
-			.offsetX(shotsOffset[i][0]), 
-			.offsetY(shotsOffset[i][1]),
-			.drawingRequest(shotsInsideSquare[i]),
-			.RGBout() 
-		);
-		
-		shotDraw	shotdraw(	
-			.clk(clk),
-			.resetN(resetN),
-			.coordinate(shotsOffset[i]),
-			.InsideRectangle(shotsInsideSquare[i] && shots_active[i]),
-			.object_colors(shot_bitmap),
-			.drawingRequest(shotsBusRequest[i]), 
-			.RGBout(shotsBusRGB[i])
-		) ;
-
-	end
-endgenerate
-
-logic [0:63] [0:31] [7:0] tree_bitmap;
-treeBMP treeBMP(.object_colors(tree_bitmap));
-
-generate
-	for (i=0; i < 8; i++) begin : generate_trees_id
-		treeLogic treelogic(	
-			.clk(clk),
-			.resetN(resetN),
-			.startOfFrame(startOfFrame),
-			.deploy(deploy_tree[i]),
-			.random(random_number),
-			.speed(tree_speed),
-			.coordinate(treesCoordinates[i]),		
-			.isActive(trees_active[i])
-		);
-
-		square_object #(.OBJECT_WIDTH_X(32), .OBJECT_HEIGHT_Y(64)) treessquare(	
-			.clk(clk),
-			.resetN(resetN),
-			.pixelX(drawCoordinates[0]),
-			.pixelY(drawCoordinates[1]),
-			.topLeftX(treesCoordinates[i][0]), 
-			.topLeftY(treesCoordinates[i][1]),
-
-			.offsetX(treesOffset[i][0]), 
-			.offsetY(treesOffset[i][1]),
-			.drawingRequest(treesInsideSquare[i]),
-			.RGBout() 
-		);
-
-			
-		treeDraw treedraw(
-			.clk(clk),
-			.resetN(resetN),
-			.coordinate(treesOffset[i]),
-			.InsideRectangle(treesInsideSquare[i]),
-			.isActive(trees_active[i]), 
-			.object_colors(tree_bitmap),
-
-			.drawingRequest(treesBusRequest[i]), 
-			.RGBout(treesBusRGB[i])
-		) ;
-
-  end
-endgenerate
+TREE_TOP tree_top(
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.random_number(random_number),
+					.tree_speed(tree_speed),
+					.deploy_tree(deploy_tree),
+					.drawCoordinates(drawCoordinates),
+					
+					.treesBusRequest(treesBusRequest),
+					.treesCoordinates(treesCoordinates),
+					.treesDrawingRequest(treesDrawingRequest),
+					.treesRGB(treesRGB)
+);
 
 logic [0:63] [0:31] [7:0] dynamic_ground_bitmap;
 dynamic_groundBMP dynamic_groundBMP(.object_colors(dynamic_ground_bitmap));
@@ -367,7 +265,8 @@ timer_4_digits_counter timer (
 
 logic [1:0] digitInsideSquare;
 logic [1:0] [1:0] [10:0] digit_number_offset;
-			
+	
+genvar i;	
 generate
 	for (i=0; i < 2; i++) begin : generate_timers_id
 		//logic InsideSquare;
@@ -438,38 +337,6 @@ digits_mux digits_mux(
 					
 );
 
-
-birds_mux	birds_mux(	
-					.clk(clk),
-					.resetN(resetN),
-					.birdsBusRequest(birdsBusRequest),
-					.birdsBusRGB(birdsBusRGB), 
-					.birdsDrawingRequest(birdsDrawingRequest),
-					.birdsRGB(birdsRGB)
-					
-);
-
-
-shots_mux shots_mux(	
-					.clk(clk),
-					.resetN(resetN),
-					.shotsBusRequest(shotsBusRequest),
-					.shotsBusRGB(shotsBusRGB), 
-					.shotsDrawingRequest(shotsDrawingRequest),
-					.shotsRGB(shotsRGB)
-					
-);
-
-trees_mux trees_mux(	
-					.clk(clk),
-					.resetN(resetN),
-					.treesCoordinates(treesCoordinates),
-					.treesBusRequest(treesBusRequest),
-					.treesBusRGB(treesBusRGB), 
-					.treesDrawingRequest(treesDrawingRequest),
-					.treesRGB(treesRGB)
-					
-);
 
 
 collision_player_tree	collision_player_tree(	

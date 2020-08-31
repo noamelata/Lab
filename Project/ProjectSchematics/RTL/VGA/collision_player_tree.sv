@@ -4,7 +4,7 @@ module	collision_player_tree	(
 					input	logic	resetN,
 					input logic startOfFrame,
 					input	logic	playerDrawingRequest,	
-					input	logic	[7:0] treesDrawingRequest,			
+					input	logic	[15:0] treesDrawingRequest,			
 					output logic SingleHitPulse			
 );
 
@@ -15,7 +15,11 @@ assign collision = (playerDrawingRequest &&
 						(treesDrawingRequest[0] || treesDrawingRequest[1] 
 						|| treesDrawingRequest[2] || treesDrawingRequest[3]
 						|| treesDrawingRequest[4] || treesDrawingRequest[5]
-						|| treesDrawingRequest[6] || treesDrawingRequest[7]));
+						|| treesDrawingRequest[6] || treesDrawingRequest[7]
+						|| treesDrawingRequest[8] || treesDrawingRequest[9] 
+						|| treesDrawingRequest[10] || treesDrawingRequest[11]
+						|| treesDrawingRequest[12] || treesDrawingRequest[13]
+						|| treesDrawingRequest[14] || treesDrawingRequest[15]));
 
 						
 always_ff@(posedge clk or negedge resetN)

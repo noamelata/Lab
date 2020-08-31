@@ -5,7 +5,7 @@ module	treeLogic	(
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					//input logic collision,  //collision if shot hits
+					//input logic collision,  //collision if tree hits
 					input logic deploy, 
 					//input logic remove,
 					input logic [7:0] random, //random number from random generator

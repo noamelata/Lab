@@ -5,7 +5,7 @@ module	birdLogic /*#(parameter RANDOM_OFFSET = 0) /* sample random with paramete
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					input logic collision,  //collision if shot hits
+					input logic collision,  //collision if tree hits
 					input logic [7:0] random, //random number from random generator
 					input logic [3:0] starting_life,
 					input logic deploy,
@@ -133,6 +133,6 @@ assign 	coordinate[0] = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;
 assign 	coordinate[1] = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ;    
 
 assign 	red = counter > 0;
-assign 	alive = (life > 0) || red; // dont disappear until finished flashing red
+assign 	alive = ((life > 0) || red) && resetN; // dont disappear until finished flashing red
 
 endmodule

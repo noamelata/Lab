@@ -18,7 +18,7 @@ module	game_controller	(
 			output logic [2:0] tree_speed,
 			output logic [1:0] bird_speed,
 			output logic [7:0] deploy_shot,
-			output logic [7:0] deploy_tree,
+			output logic [15:0] deploy_tree,
 			output logic [3:0] deploy_bird,
 			output logic [3:0] bird_life,
 			output logic player_red,
@@ -83,9 +83,9 @@ begin
 		tree_counter <= 300;
 		start_level <= 1'b1;
 		level_up <= 1'b0;
-		deploy_tree <= 8'h0;
-		deploy_bird <= 4'h0;
 		deploy_shot <= 8'h00;
+		deploy_bird <= 4'h0;
+		deploy_tree <= 8'h00;
 		player_active <= 1'b1;
 		player_life <= 3;
 		red_counter <= 0;
@@ -101,14 +101,14 @@ begin
 		if (startOfFrame) begin
 			red_counter <= (red_counter > 0) ? red_counter - 1 : 0;
 			level_counter <= (level_counter > 0) ? level_counter - 1 : 0;
-			deploy_tree <= 8'h0;
+			deploy_shot <= 8'h00;
 			cooldown <= (cooldown == 0) ? 0 : cooldown - 1;
 			current_shot <= current_shot;
 			start_level <= 1'b0;
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 4'h0;
-			deploy_shot <= 8'h00;
+			deploy_tree <= 8'h00;
 
 			
 			if (shoot && (cooldown == 0)) begin // trying to shoot
