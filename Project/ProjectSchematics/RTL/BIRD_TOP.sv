@@ -10,6 +10,7 @@ module BIRD_TOP	(
 					input logic [1:0] bird_speed,
 					input logic [3:0] bird_life,
 					input logic [1:0] [10:0] drawCoordinates,
+					input logic [1:0] damage,
 
 					
 					output logic [NUM_OF_BIRDS - 1:0] birdsBusRequest,
@@ -65,6 +66,7 @@ generate
 							.starting_life(bird_life),
 							.deploy(deploy_bird[i]),
 							.speed(bird_speed),
+							.damage(damage),
 							.alive(bird_alive[i]),
 							.red(bird_red[i]),
 							.coordinate(Coordinates[i])					

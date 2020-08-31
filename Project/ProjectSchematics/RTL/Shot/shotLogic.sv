@@ -36,7 +36,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
 int speedX = 0; //speed of bullet in X axis
-const int speedY = 150; //speed of bullet in Y axis
+const int speedY = 250; //speed of bullet in Y axis
 
 //////////--------------------------------------------------------------------------------------------------------------=
 // position calculate 
@@ -58,8 +58,8 @@ begin
 				speedX <= 0;
 				case (direction)
 					0: speedX <= 0;
-					1: speedX <= 50;
-					2: speedX <= -50;
+					1: speedX <= 75;
+					2: speedX <= -75;
 				endcase
 			end
 			if (isActive) begin // move

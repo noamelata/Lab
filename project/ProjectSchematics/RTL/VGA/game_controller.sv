@@ -13,7 +13,7 @@ module	game_controller	(
 			input logic [3:0] bird_alive,
 			input logic collision, // active in case of collision between player and tree
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
-		
+			input logic out_of_time,		
 			
 			output logic [2:0] tree_speed,
 			output logic [1:0] bird_speed,
@@ -24,7 +24,7 @@ module	game_controller	(
 			output logic player_red,
 			output logic player_active,
 			output logic add_time,
-			output logic [3:0] [3:0] time_to_add
+			output logic [1:0] [3:0] time_to_add
 );
 
 
@@ -32,7 +32,7 @@ module	game_controller	(
 int number_of_trees = 0;
 logic [1:0] num_of_birds;
 
-logic [1:0] trees_to_add;//VERIFY WITH N
+logic [1:0] trees_to_add;
 logic start_level;
 logic level_up;
 
@@ -53,9 +53,14 @@ int cooldown_time;
 int cooldown = 0;
 int current_shot = 0;
 int current_tree = 0;
+int last_birds;
+int power_up_time;
+int power_up_counter = 0;
+logic [3:0] powerups; // invinciblity, rapid fire, damage, double shot.
+logic power_up_collision;
 
 localparam int MAX_SHOTS = 8;
-localparam int MAX_TREES = 8;
+localparam int MAX_TREES = 16;
 int tree_wait;
 int tree_counter;
 int player_life = 3; //player life
@@ -66,16 +71,17 @@ int red_counter;
 int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
-assign cooldown_time = (rapid_fire) ? 25 : 100;
+assign cooldown_time = (rapid_fire || powerups[2] ) ? 25 : 100;
+assign power_up_time = 5000;
 
-assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode);
+assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode || powerups[0]);
 
 
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
 	begin 
-		time_to_add <= {4'h0, 4'h0, 4'h9, 4'h9};
+		time_to_add <= {4'h9, 4'h9};
 		add_time <= 1'b1;
 		current_shot <= 0;
 		current_tree <= 0;
@@ -85,12 +91,16 @@ begin
 		level_up <= 1'b0;
 		deploy_shot <= 8'h00;
 		deploy_bird <= 4'h0;
-		deploy_tree <= 8'h00;
+		deploy_tree <= 16'h0000;
 		player_active <= 1'b1;
 		player_life <= 3;
 		red_counter <= 0;
 		level_counter <= 0;
 		bird_hit_flag <= 1'b0;
+		last_birds <= 0;
+		power_up_counter <= 0;
+		powerups <= 4b'0;
+		
 	end 
 	else begin 
 		player_active <= player_active;
@@ -108,8 +118,9 @@ begin
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 4'h0;
-			deploy_tree <= 8'h00;
-
+			deploy_tree <= 16'h0000;
+			last_birds <= bird_alive;
+			power_up_counter <= (power_up_counter > 0) ? power_up_counter - 1 : 0;
 			
 			if (shoot && (cooldown == 0)) begin // trying to shoot
 				deploy_shot[current_shot] <= 1'b1;
@@ -145,6 +156,11 @@ begin
 				end
 			end
 			
+			if (out_of_time) begin
+				// game over
+				player_active <= 1'b0;
+			end
+			
 			if ((bird_hit_flag == 1'b0) && (bird_alive == 4'h0)) begin // finished level
 				level_counter <= 100;
 				level_up <= 1'b1;
@@ -153,6 +169,20 @@ begin
 			
 			if ((level_counter == 1) && (bird_alive == 4'h0)) begin
 				start_level <= 1'b1;
+			end
+			
+			if (bird_alive < last_birds) begin
+				time_to_add <= {4'h1, 4'h0};
+				add_time <= 1'b1;
+			end
+			
+			if (power_up_counter == 0) begin
+				powerups <= 4b'0;
+			end
+			
+			if (power_up_collision) begin
+				powerups[random_number >> 6] <= 1'b1;
+				power_up_counter <= power_up_time;
 			end
 		end
 	end 

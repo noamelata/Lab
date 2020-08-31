@@ -10,6 +10,7 @@ module	birdLogic /*#(parameter RANDOM_OFFSET = 0) /* sample random with paramete
 					input logic [3:0] starting_life,
 					input logic deploy,
 					input logic [1:0] speed,
+					input logic [1:0] damage,
 					
 					output logic alive,
 					output logic red,
@@ -98,6 +99,7 @@ begin
 	begin
 		topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
 		topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
+		life <= 0;
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
@@ -107,7 +109,7 @@ begin
 				life <= starting_life;
 			end
 			if (collision && !red) begin
-				life <= life - 1;
+				life <= life - damage;
 				counter <= 32; // frames to stay red, should be calculated
 			end
 			

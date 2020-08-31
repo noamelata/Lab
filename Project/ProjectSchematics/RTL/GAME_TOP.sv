@@ -61,7 +61,7 @@ logic player_collision;
 logic [2:0] tree_speed;
 logic [1:0] bird_speed;
 logic [7:0] deploy_shot;
-logic [7:0] deploy_tree;
+logic [15:0] deploy_tree;
 logic [3:0] deploy_bird;
 logic [3:0] bird_life;
 
@@ -80,14 +80,17 @@ logic clk;
 logic [1:0] [3:0] time_to_add;
 logic [1:0] [3:0] timer_digit;
 logic timer_load;
+logic timer_on;
 
 logic god_mode;
 logic rapid_fire;
+logic [1:0] damage;
 
 logic [7:0] random_number;
 logic turbo;
 logic one_sec;
 logic duty50;
+logic out_of_time;
 
 
 assign clk = CLOCK_50;
@@ -96,6 +99,7 @@ assign shoot = player_active && (!KEY[2] || SW[0]);
 assign left = !KEY[3];
 assign god_mode = SW[9];
 assign rapid_fire = SW[8];
+assign damage = SW[7] ? 2'b11 : 2'b01;
 assign backgroundRGB = 8'h5c;
 
 game_controller gamecontroller (.clk(clk),
@@ -109,6 +113,7 @@ game_controller gamecontroller (.clk(clk),
 			.bird_alive(bird_alive),
 			.collision(player_collision), 
 			.SingleHitPulse(player_SingleHitPulse), 
+			.out_of_time(out_of_time),
 			
 			.tree_speed(tree_speed),
 			.bird_speed(bird_speed),
@@ -172,6 +177,7 @@ BIRD_TOP bird_top(
 					.bird_speed(bird_speed),
 					.bird_life(bird_life),
 					.drawCoordinates(drawCoordinates),
+					.damage(damage),
 					
 					.birdsBusRequest(birdsBusRequest),
 					.birdsCoordinates(birdsCoordinates),
@@ -255,12 +261,12 @@ dynamic_groundLogic dynamic_groundlogic(
 timer_4_digits_counter timer (
 			.clk(clk),
 			.resetN(resetN),
-			.ena(1'b1), 
+			.ena(timer_on), 
 			.ena_cnt(one_sec), 
 			.loadN(!timer_load), 
 			.add_time(time_to_add),
 			.Count_out(timer_digit),
-			.tc()
+			.tc(out_of_time)
 			);
 
 logic [1:0] digitInsideSquare;
@@ -396,6 +402,16 @@ one_sec_counter one_sec_counter  (
 						.duty50(duty50)
 						);
 	
+always @(posedge clk or negedge resetN)
+   begin
+	timer_on <= timer_on;
+   if ( !resetN )  // Asynchronic reset
+		timer_on <= 1'b1;
+	else if (timer_load)
+		timer_on <= 1'b1;
+   else if (out_of_time)	// Synchronic logic FSM
+		timer_on <= 1'b0;
+end
 						
 
 endmodule
