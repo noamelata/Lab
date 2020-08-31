@@ -10,7 +10,7 @@ module	game_controller	(
 			input logic rapid_fire,
 			input logic [10:0] playerCoordinates,
 			input logic [7:0] random,
-			input logic [1:0] bird_alive,
+			input logic [3:0] bird_alive,
 			input logic collision, // active in case of collision between player and tree
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
 		
@@ -19,7 +19,7 @@ module	game_controller	(
 			output logic [1:0] bird_speed,
 			output logic [7:0] deploy_shot,
 			output logic [7:0] deploy_tree,
-			output logic [1:0] deploy_bird,
+			output logic [3:0] deploy_bird,
 			output logic [3:0] bird_life,
 			output logic player_red,
 			output logic player_active,
@@ -30,7 +30,7 @@ module	game_controller	(
 
 
 int number_of_trees = 0;
-logic num_of_birds;
+logic [1:0] num_of_birds;
 
 logic [1:0] trees_to_add;//VERIFY WITH N
 logic start_level;
@@ -66,7 +66,7 @@ int red_counter;
 int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
-assign cooldown_time = (rapid_fire) ? 50 : 100;
+assign cooldown_time = (rapid_fire) ? 25 : 100;
 
 assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode);
 
@@ -84,7 +84,7 @@ begin
 		start_level <= 1'b1;
 		level_up <= 1'b0;
 		deploy_tree <= 8'h0;
-		deploy_bird <= 2'b00;
+		deploy_bird <= 4'h0;
 		deploy_shot <= 8'h00;
 		player_active <= 1'b1;
 		player_life <= 3;
@@ -107,7 +107,7 @@ begin
 			start_level <= 1'b0;
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
-			deploy_bird <= 2'b00;
+			deploy_bird <= 4'h0;
 			deploy_shot <= 8'h00;
 
 			
@@ -145,13 +145,13 @@ begin
 				end
 			end
 			
-			if ((bird_hit_flag == 1'b0) && (bird_alive == 2'b00)) begin // finished level
+			if ((bird_hit_flag == 1'b0) && (bird_alive == 4'h0)) begin // finished level
 				level_counter <= 100;
 				level_up <= 1'b1;
 				bird_hit_flag <= 1'b1;
 			end
 			
-			if ((level_counter == 1) && (bird_alive == 2'b00)) begin
+			if ((level_counter == 1) && (bird_alive == 4'h0)) begin
 				start_level <= 1'b1;
 			end
 		end

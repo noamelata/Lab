@@ -25,7 +25,7 @@ localparam int SCREEN_HEIGHT = 480;
 localparam int INITIAL_X = 280; //todo
 parameter int INITIAL_Y = 185; 
 localparam int IMAGE_WIDTH = 32;
-localparam int IMAGE_HeiGHT = 32;
+localparam int IMAGE_HEIGHT = 32;
 
 localparam int MAX_RANDOM = 255; // max value of random
 
@@ -59,10 +59,18 @@ begin
 		random_num = random_num - MAX_RANDOM;
 	end
 	
+	
 	next_state = state;
 	if ((startOfFrame == 1'b1) && (random_num < chance_to_change)) begin
 		if (state == idle_state)
-			next_state = (random_num < (chance_to_change/2)) ? right_state : left_state;
+		begin
+			if (topLeftX_FixedPoint < 2 * IMAGE_WIDTH * FIXED_POINT_MULTIPLIER)
+				next_state = right_state;
+			else if (topLeftX_FixedPoint > x_FRAME_SIZE - (2 * IMAGE_WIDTH * FIXED_POINT_MULTIPLIER))
+				next_state = left_state;
+			else
+				next_state = (random_num < (chance_to_change/2)) ? right_state : left_state;
+		end
 		else
 			next_state = idle_state;
 	end
@@ -98,7 +106,7 @@ begin
 			if (deploy) begin
 				life <= starting_life;
 			end
-			if (collision) begin
+			if (collision && !red) begin
 				life <= life - 1;
 				counter <= 32; // frames to stay red, should be calculated
 			end

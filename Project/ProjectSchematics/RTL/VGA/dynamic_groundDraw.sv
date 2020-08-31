@@ -11,7 +11,7 @@ module	dynamic_groundDraw (
  ) ;
 
 // this is the devider used to access the right pixel 
-localparam  int OBJECT_NUMBER_OF_Y_BITS = 5;  // 2^5 = 32 
+localparam  int OBJECT_NUMBER_OF_Y_BITS = 6;  // 2^5 = 32 
 localparam  int OBJECT_NUMBER_OF_X_BITS = 5;  // 2^5 = 32 
 
 

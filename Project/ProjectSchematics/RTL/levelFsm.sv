@@ -9,7 +9,7 @@ module levelFSM (
                 output logic [1:0] trees_to_add,
                 output logic [2:0] tree_speed,
                 output logic [1:0] bird_speed,
-                output logic number_of_birds
+                output logic [1:0] number_of_birds
                 );
                 
 enum logic [3:0] {level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8} level, next_level;
@@ -38,7 +38,7 @@ begin
 	trees_to_add = 2'b0;
 	tree_speed = 3'b0;
 	bird_speed = 2'b0;
-	number_of_birds = 1'b0;
+	number_of_birds = 2'b00;
 	bird_life = 4'h3;
 	  
 	case(level)
@@ -54,7 +54,7 @@ begin
 		 
 	level_3:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b01;
 		 tree_speed = 3'b010;
 		 bird_speed = 2'b01;
 		 bird_life = 4'h4;
@@ -62,7 +62,7 @@ begin
 		 
 	level_4:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b01;
 		 tree_speed = 3'b011;
 		 bird_speed = 2'b10;
 		 trees_to_add = 2'b10;
@@ -71,7 +71,7 @@ begin
 	  
 	level_5:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b10;
 		 tree_speed = 3'b100;
 		 bird_speed = 2'b10;
 		 bird_life = 4'h5;
@@ -79,7 +79,7 @@ begin
 	  
 	level_6:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b10;
 		 tree_speed = 3'b101;
 		 bird_speed = 2'b10;
 		 trees_to_add = 2'b10;
@@ -88,7 +88,7 @@ begin
 		 
 	level_7:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b11;
 		 tree_speed = 3'b110;
 		 bird_speed = 2'b11;
 		 bird_life = 4'h6;
@@ -96,7 +96,7 @@ begin
 		 
 	level_8:
 	begin
-		 number_of_birds = 1'b1;
+		 number_of_birds = 2'b11;
 		 tree_speed = 3'b111;
 		 bird_speed = 2'b11;
 		 bird_life = 4'h7;

@@ -30,7 +30,7 @@ logic [3:0] temp;
 always_comb
 begin
 	
-	temp = 4'b0;
+	temp = 4'h0;
 	for (int i=0; i<8; i++) begin
 		order_to_tree_num[i] = i;
 	end

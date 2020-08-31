@@ -50,8 +50,8 @@ begin
 	end
 	else begin	
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
-			if (topLeftY_FixedPoint >= (31 * FIXED_POINT_MULTIPLIER)) begin
-				topLeftY_FixedPoint <= INITIAL_Y;
+			if (topLeftY_FixedPoint >= (63 * FIXED_POINT_MULTIPLIER)) begin
+				topLeftY_FixedPoint <= INITIAL_Y + step;
 				topLeftX_FixedPoint	<= INITIAL_X;
 			end 
 			else begin

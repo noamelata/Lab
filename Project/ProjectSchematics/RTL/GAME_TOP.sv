@@ -39,7 +39,7 @@ logic playerDrawingRequest;
 logic [3:0] birdsBusRequest;
 logic [7:0] shotsBusRequest;
 logic [7:0] treesBusRequest;
-logic [3:0] timerBusRequest;
+logic [1:0] timerBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
@@ -48,12 +48,15 @@ logic [7:0] playerRGB;
 logic [3:0] [7:0] birdsBusRGB;
 logic [7:0] [7:0] shotsBusRGB;
 logic [7:0] [7:0] treesBusRGB;
-logic [3:0] [7:0] timerBusRGB;	
+logic [1:0] [7:0] timerBusRGB;	
 logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
 logic [7:0] dynamic_ground_RGB;
+
+logic timerDrawingRequest;
+logic timerRGB;
 
 logic [3:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
@@ -83,8 +86,8 @@ logic left;
 logic right;
 logic clk;
 
-logic [3:0] [3:0] time_to_add;
-logic [3:0] [3:0] timer_digit;
+logic [1:0] [3:0] time_to_add;
+logic [1:0] [3:0] timer_digit;
 logic timer_load;
 
 logic god_mode;
@@ -98,7 +101,7 @@ logic duty50;
 
 assign clk = CLOCK_50;
 assign right = !KEY[1];
-assign shoot = !KEY[2] || SW[0];
+assign shoot = player_active && (!KEY[2] || SW[0]);
 assign left = !KEY[3];
 assign god_mode = SW[9];
 assign rapid_fire = SW[8];
@@ -169,7 +172,7 @@ playerDraw playerdraw	(
 
 logic [0:31] [0:31] [7:0] wings_up_bitmap;
 logic [0:31] [0:31] [7:0] wings_down_bitmap;
-logic [3:0] [7:0] bird_color = {8'h33, 8'hE2,,};
+localparam int bird_color[0:3] = '{8'h33, 8'hE2, 8'hFC, 8'h1F};
 birdBMP birdBMP(.wings_up_object_colors(wings_up_bitmap), .wings_down_object_colors(wings_down_bitmap));
  
 genvar i;
@@ -202,7 +205,7 @@ generate
 			.RGBout() 
 		);
 
-		birdDraw #(.COLOR(i == 0 ? 8'h33 : 8'hE2)) birddraw	(	
+		birdDraw #(.COLOR(bird_color[i])) birddraw	(	
 			.clk(clk),
 			.resetN(resetN),
 			.coordinate(birdsOffset[i]),
@@ -312,7 +315,7 @@ generate
   end
 endgenerate
 
-logic [0:31] [0:31] [7:0] dynamic_ground_bitmap;
+logic [0:63] [0:31] [7:0] dynamic_ground_bitmap;
 dynamic_groundBMP dynamic_groundBMP(.object_colors(dynamic_ground_bitmap));
 
 dynamic_groundLogic dynamic_groundlogic(	
@@ -362,11 +365,11 @@ timer_4_digits_counter timer (
 			.tc()
 			);
 
-logic [3:0] digitInsideSquare;
-logic [3:0] [1:0] [10:0] digit_number_offset;
+logic [1:0] digitInsideSquare;
+logic [1:0] [1:0] [10:0] digit_number_offset;
 			
 generate
-	for (i=0; i < 4; i++) begin : generate_timers_id
+	for (i=0; i < 2; i++) begin : generate_timers_id
 		//logic InsideSquare;
 		//logic [1:0] [10:0] number_offset;
 		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
@@ -374,8 +377,8 @@ generate
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
 			.pixelY(drawCoordinates[1]),
-			.topLeftX(1 + i*16), 
-			.topLeftY(10'h1),
+			.topLeftX(48 - (i*32)), 
+			.topLeftY(10'h10),
 
 			.offsetX(digit_number_offset[i][0]), 
 			.offsetY(digit_number_offset[i][1]),
@@ -405,8 +408,8 @@ endgenerate
 objects_mux_all	mux_all(	
 					.clk(clk),
 					.resetN(resetN),
-					.digitsDrawingRequest(digitsDrawingRequest),
-					.digitsRGB(digitsRGB), 
+					.digitsDrawingRequest(timerDrawingRequest),
+					.digitsRGB(timerRGB), 
 					.playerDrawingRequest(playerDrawingRequest),
 					.playerRGB(playerRGB), 
 					.birdsDrawingRequest(birdsDrawingRequest),
@@ -424,8 +427,6 @@ objects_mux_all	mux_all(
 					
 );
 
-logic timerDrawingRequest;
-logic timerRGB;
 
 digits_mux digits_mux(
 					.clk(clk),
@@ -441,10 +442,8 @@ digits_mux digits_mux(
 birds_mux	birds_mux(	
 					.clk(clk),
 					.resetN(resetN),
-					.bird1DrawingRequest(birdsBusRequest[0]),
-					.bird1RGB(birdsBusRGB[0]), 
-					.bird2DrawingRequest(birdsBusRequest[1]),
-					.bird2RGB(birdsBusRGB[1]), 
+					.birdsBusRequest(birdsBusRequest),
+					.birdsBusRGB(birdsBusRGB), 
 					.birdsDrawingRequest(birdsDrawingRequest),
 					.birdsRGB(birdsRGB)
 					

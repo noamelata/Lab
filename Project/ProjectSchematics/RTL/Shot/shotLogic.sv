@@ -58,8 +58,8 @@ begin
 				speedX <= 0;
 				case (direction)
 					0: speedX <= 0;
-					1: speedX <= 25;
-					2: speedX <= -25;
+					1: speedX <= 50;
+					2: speedX <= -50;
 				endcase
 			end
 			if (isActive) begin // move
