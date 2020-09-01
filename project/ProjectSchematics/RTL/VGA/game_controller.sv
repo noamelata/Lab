@@ -99,7 +99,7 @@ begin
 		bird_hit_flag <= 1'b0;
 		last_birds <= 0;
 		power_up_counter <= 0;
-		powerups <= 4b'0;
+		powerups <= 4'b0;
 		
 	end 
 	else begin 
@@ -177,11 +177,11 @@ begin
 			end
 			
 			if (power_up_counter == 0) begin
-				powerups <= 4b'0;
+				powerups <= 4'b0;
 			end
 			
 			if (power_up_collision) begin
-				powerups[random_number >> 6] <= 1'b1;
+				powerups[random >> 6] <= 1'b1;
 				power_up_counter <= power_up_time;
 			end
 		end

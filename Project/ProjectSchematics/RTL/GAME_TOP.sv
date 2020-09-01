@@ -25,11 +25,6 @@ logic signed [3:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [15:0] [1:0] [10:0] treesCoordinates;
 
-logic signed [1:0] [10:0] playerOffset;
-
-logic signed [1:0] [10:0] dynamic_ground_Offset;
-logic playerInsideSquare;
-logic dynamic_ground_InsideSquare;
 
 logic playerDrawingRequest;
 logic [3:0] birdsBusRequest;
@@ -78,7 +73,7 @@ logic right;
 logic clk;
 
 logic [1:0] [3:0] time_to_add;
-logic [1:0] [3:0] timer_digit;
+logic [1:0] [3:0] timer_digits;
 logic timer_load;
 logic timer_on;
 
@@ -127,44 +122,22 @@ game_controller gamecontroller (.clk(clk),
 			.time_to_add(time_to_add)
 			);
 
-playerLogic playerlogic(.clk(clk),
-					.resetN(resetN),
-					.startOfFrame(startOfFrame), 
-					.left(left),  
-					.right(right),  
-					.collision(player_SingleHitPulse),  
-					.invincible(),
-					.coordinate(playerCoordinates)
-					);
-					
-square_object	playersquare(	
+PLAYER_TOP player_top (
 					.clk(clk),
 					.resetN(resetN),
-					.pixelX(drawCoordinates[0]),
-					.pixelY(drawCoordinates[1]),
-					.topLeftX(playerCoordinates[0]), 
-					.topLeftY(playerCoordinates[1]),
-					.offsetX(playerOffset[0]), 
-					.offsetY(playerOffset[1]),
-					.drawingRequest(playerInsideSquare),
-					.RGBout() 
-);
-
-					
-playerDraw playerdraw	(	
-					.clk(clk),
-					.resetN(resetN),
-					.offsetCoordinate(playerOffset),
-					.InsideRectangle(playerInsideSquare),
-					.flash(player_red),
+					.startOfFrame(startOfFrame),
 					.left(left),
 					.right(right),
-					.isActive(player_active),
+					.player_SingleHitPulse(player_SingleHitPulse),
+					.drawCoordinates(drawCoordinates),
+					.player_red(player_red),
+					.player_active(player_active),
 					.invincible(god_mode),
-
-					.drawingRequest(playerDrawingRequest),
-					.RGBout(playerRGB)
- ) ;
+					
+					.playerCoordinates(playerCoordinates),
+					.playerDrawingRequest(playerDrawingRequest),
+					.playerRGB(playerRGB)
+);
 
 BIRD_TOP bird_top(
 					.clk(clk),
@@ -219,94 +192,33 @@ TREE_TOP tree_top(
 					.treesRGB(treesRGB)
 );
 
-logic [0:63] [0:31] [7:0] dynamic_ground_bitmap;
-dynamic_groundBMP dynamic_groundBMP(.object_colors(dynamic_ground_bitmap));
+GROUND_TOP ground_top(.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.tree_speed(tree_speed),
+					.drawCoordinates(drawCoordinates),
+					
+					.dynamic_ground_Coordinates(dynamic_ground_Coordinates),
+					.dynamic_ground_Request(dynamic_ground_Request),
+					.dynamic_ground_RGB(dynamic_ground_RGB)
+);
 
-dynamic_groundLogic dynamic_groundlogic(	
-			.clk(clk),
-			.resetN(resetN),
-			.startOfFrame(startOfFrame),
-			.speed(tree_speed),
-			.coordinate(dynamic_ground_Coordinates)		
-		);
-		
-		
-		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(480)) dynamic_ground_square(	
-			.clk(clk),
-			.resetN(resetN),
-			.pixelX(drawCoordinates[0]),
-			.pixelY(drawCoordinates[1]),
-			.topLeftX(dynamic_ground_Coordinates[0]), 
-			.topLeftY(dynamic_ground_Coordinates[1]),
 
-			.offsetX(dynamic_ground_Offset[0]), 
-			.offsetY(dynamic_ground_Offset[1]),
-			.drawingRequest(dynamic_ground_InsideSquare),
-			.RGBout() 
-		);
-	
-
-			
-		dynamic_groundDraw dynamic_groundDraw(
-			.clk(clk),
-			.resetN(resetN),
-			.coordinate(dynamic_ground_Offset),
-			.object_colors(dynamic_ground_bitmap),
-			.InsideRectangle(dynamic_ground_InsideSquare),
-			
-			.drawingRequest(dynamic_ground_Request), 
-			.RGBout(dynamic_ground_RGB)
-		) ;
-
-timer_4_digits_counter timer (
-			.clk(clk),
-			.resetN(resetN),
-			.ena(timer_on), 
-			.ena_cnt(one_sec), 
-			.loadN(!timer_load), 
-			.add_time(time_to_add),
-			.Count_out(timer_digit),
-			.tc(out_of_time)
-			);
-
-logic [1:0] digitInsideSquare;
-logic [1:0] [1:0] [10:0] digit_number_offset;
-	
-genvar i;	
-generate
-	for (i=0; i < 2; i++) begin : generate_timers_id
-		//logic InsideSquare;
-		//logic [1:0] [10:0] number_offset;
-		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
-			.clk(clk),
-			.resetN(resetN),
-			.pixelX(drawCoordinates[0]),
-			.pixelY(drawCoordinates[1]),
-			.topLeftX(48 - (i*32)), 
-			.topLeftY(10'h10),
-
-			.offsetX(digit_number_offset[i][0]), 
-			.offsetY(digit_number_offset[i][1]),
-			.drawingRequest(digitInsideSquare[i]),
-			.RGBout(timerBusRGB[i]) 
-		);
-
-			
-		NumbersBitMap	(	
+TOP_BAR_TOP top_bar_top(
 					.clk(clk),
 					.resetN(resetN),
-					.offsetX(digit_number_offset[i][0]), 
-					.offsetY(digit_number_offset[i][1]),
-					.InsideRectangle(digitInsideSquare[i]), //input that the pixel is within a bracket 
-					.digit(timer_digit[i]), // digit to display
+					.startOfFrame(startOfFrame),
+					.timer_load(timer_load),
+					.time_to_add(time_to_add),
+					.drawCoordinates(drawCoordinates),
 					
-					.drawingRequest(timerBusRequest[i]), //output that the pixel should be dispalyed 
-					.RGBout()
-		);
-
-  end
-endgenerate
-
+					.timer(timer_digits),
+					.one_sec_out(one_sec),
+					.duty50_out(duty50),
+					.out_of_time(out_of_time),
+					.timerDrawingRequest(timerDrawingRequest),
+					.timerRGB(timerRGB)
+					);
 
 
  
@@ -332,16 +244,6 @@ objects_mux_all	mux_all(
 					
 );
 
-
-digits_mux digits_mux(
-					.clk(clk),
-					.resetN(resetN),
-					.digitsBusRequest(timerBusRequest),
-					.digitsBusRGB(timerBusRGB), 
-					.digitsDrawingRequest(timerDrawingRequest),
-					.digitsRGB(timerRGB)
-					
-);
 
 
 
@@ -391,28 +293,7 @@ random randomizer (
 						.rise(startOfFrame),
 						.dout(random_number)	
 						);
-
-						
-one_sec_counter one_sec_counter  (
-
-						.clk(clk), 
-						.resetN(resetN), 
-						.turbo(turbo),
-						.one_sec(one_sec), 
-						.duty50(duty50)
-						);
-	
-always @(posedge clk or negedge resetN)
-   begin
-	timer_on <= timer_on;
-   if ( !resetN )  // Asynchronic reset
-		timer_on <= 1'b1;
-	else if (timer_load)
-		timer_on <= 1'b1;
-   else if (out_of_time)	// Synchronic logic FSM
-		timer_on <= 1'b0;
-end
-						
+		
 
 endmodule
 
