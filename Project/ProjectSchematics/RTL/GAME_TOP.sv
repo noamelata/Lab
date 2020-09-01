@@ -24,6 +24,7 @@ logic signed [1:0] [10:0] dynamic_ground_Coordinates;
 logic signed [3:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [15:0] [1:0] [10:0] treesCoordinates;
+logic signed [1:0] [10:0] pickupCoordinates;
 
 
 logic playerDrawingRequest;
@@ -35,14 +36,17 @@ logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
 logic dynamic_ground_Request;
-logic [7:0] playerRGB;
+logic pickupDrawingRequest;
 
+
+logic [7:0] playerRGB;
 logic [1:0] [7:0] timerBusRGB;	
 logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
 logic [7:0] dynamic_ground_RGB;
+logic [7:0] pickupRGB;
 
 logic timerDrawingRequest;
 logic timerRGB;
@@ -51,6 +55,7 @@ logic [3:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
 logic [3:0] bird_alive;
 logic player_SingleHitPulse;
+logic pickup_SingleHitPulse;
 logic player_collision;
 
 logic [2:0] tree_speed;
@@ -58,6 +63,7 @@ logic [1:0] bird_speed;
 logic [7:0] deploy_shot;
 logic [15:0] deploy_tree;
 logic [3:0] deploy_bird;
+logic deploy_pickup;
 logic [3:0] bird_life;
 
 logic player_active;
@@ -80,6 +86,7 @@ logic timer_on;
 logic god_mode;
 logic rapid_fire;
 logic [1:0] damage;
+logic more_damage;
 
 logic [7:0] random_number;
 logic turbo;
@@ -94,7 +101,7 @@ assign shoot = player_active && (!KEY[2] || SW[0]);
 assign left = !KEY[3];
 assign god_mode = SW[9];
 assign rapid_fire = SW[8];
-assign damage = SW[7] ? 2'b11 : 2'b01;
+assign damage = (SW[7] || more_damage) ? 2'b11 : 2'b01;
 assign backgroundRGB = 8'h5c;
 
 game_controller gamecontroller (.clk(clk),
@@ -108,6 +115,7 @@ game_controller gamecontroller (.clk(clk),
 			.bird_alive(bird_alive),
 			.collision(player_collision), 
 			.SingleHitPulse(player_SingleHitPulse), 
+			.pickup_hit(pickup_SingleHitPulse),
 			.out_of_time(out_of_time),
 			
 			.tree_speed(tree_speed),
@@ -115,11 +123,13 @@ game_controller gamecontroller (.clk(clk),
 			.deploy_shot(deploy_shot),
 			.deploy_tree(deploy_tree),
 			.deploy_bird(deploy_bird),
+			.deploy_pickup(deploy_pickup),
 			.bird_life(bird_life),
 			.player_red(player_red),
 			.player_active(player_active),
 			.add_time(timer_load),
-			.time_to_add(time_to_add)
+			.time_to_add(time_to_add),
+			.more_damage(more_damage)
 			);
 
 PLAYER_TOP player_top (
@@ -219,6 +229,21 @@ TOP_BAR_TOP top_bar_top(
 					.timerDrawingRequest(timerDrawingRequest),
 					.timerRGB(timerRGB)
 					);
+					
+PICKUP_TOP pickup_top (
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.random_number(random_number),
+					.pickup_speed(tree_speed),
+					.deploy_pickup(deploy_pickup),
+					.drawCoordinates(drawCoordinates),
+					.pickup_hit(pickup_SingleHitPulse),
+					
+					.pickupCoordinates(pickupCoordinates),
+					.pickupDrawingRequest(pickupDrawingRequest),
+					.pickupRGB(pickupRGB)
+					);
 
 
  
@@ -233,6 +258,8 @@ objects_mux_all	mux_all(
 					.birdsRGB(birdsRGB), 
 					.shotsDrawingRequest(shotsDrawingRequest),
 					.shotsRGB(shotsRGB), 
+					.pickupDrawingRequest(pickupDrawingRequest),
+					.pickupRGB(pickupRGB),
 					.treesDrawingRequest(treesDrawingRequest),
 					.treesRGB(treesRGB), 
 					.dynamic_ground_Request(dynamic_ground_Request),
@@ -254,6 +281,15 @@ collision_player_tree	collision_player_tree(
 					.playerDrawingRequest(playerDrawingRequest),	
 					.treesDrawingRequest(treesBusRequest),			
 					.SingleHitPulse(player_SingleHitPulse)			
+);
+
+collision_player_pickup	collision_player_pickup(	
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.playerDrawingRequest(playerDrawingRequest),	
+					.pickupDrawingRequest(pickupDrawingRequest),			
+					.SingleHitPulse(pickup_SingleHitPulse)			
 );
 
 

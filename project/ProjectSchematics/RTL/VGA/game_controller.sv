@@ -13,6 +13,7 @@ module	game_controller	(
 			input logic [3:0] bird_alive,
 			input logic collision, // active in case of collision between player and tree
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
+			input logic pickup_hit,
 			input logic out_of_time,		
 			
 			output logic [2:0] tree_speed,
@@ -20,11 +21,13 @@ module	game_controller	(
 			output logic [7:0] deploy_shot,
 			output logic [15:0] deploy_tree,
 			output logic [3:0] deploy_bird,
+			output logic deploy_pickup,
 			output logic [3:0] bird_life,
 			output logic player_red,
 			output logic player_active,
 			output logic add_time,
-			output logic [1:0] [3:0] time_to_add
+			output logic [1:0] [3:0] time_to_add,
+			output logic more_damage
 );
 
 
@@ -71,9 +74,9 @@ int red_counter;
 int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
-assign cooldown_time = (rapid_fire || powerups[2] ) ? 25 : 100;
-assign power_up_time = 5000;
-
+assign cooldown_time = (rapid_fire || powerups[1] ) ? 25 : 100;
+assign power_up_time = 250;
+assign more_damage = powerups[2];
 assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode || powerups[0]);
 
 
@@ -92,6 +95,7 @@ begin
 		deploy_shot <= 8'h00;
 		deploy_bird <= 4'h0;
 		deploy_tree <= 16'h0000;
+		deploy_pickup <= 1'b0;
 		player_active <= 1'b1;
 		player_life <= 3;
 		red_counter <= 0;
@@ -119,6 +123,7 @@ begin
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 4'h0;
 			deploy_tree <= 16'h0000;
+			deploy_pickup <= 1'b0;
 			last_birds <= bird_alive;
 			power_up_counter <= (power_up_counter > 0) ? power_up_counter - 1 : 0;
 			
@@ -138,6 +143,7 @@ begin
 				for (int i = 0; i <= num_of_birds; i++) begin
 					deploy_bird[i] <= 1'b1;
 				end
+				deploy_pickup <= 1'b1;
 				number_of_trees <= number_of_trees + trees_to_add;
 			end
 			
@@ -171,7 +177,7 @@ begin
 				start_level <= 1'b1;
 			end
 			
-			if (bird_alive < last_birds) begin
+			if ((bird_alive < last_birds) && player_active) begin
 				time_to_add <= {4'h1, 4'h0};
 				add_time <= 1'b1;
 			end
@@ -180,7 +186,7 @@ begin
 				powerups <= 4'b0;
 			end
 			
-			if (power_up_collision) begin
+			if (pickup_hit) begin
 				powerups[random >> 6] <= 1'b1;
 				power_up_counter <= power_up_time;
 			end

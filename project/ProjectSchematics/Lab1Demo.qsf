@@ -291,6 +291,11 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=4" -
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=4" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=36" -section_id auto_signaltap_0
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Pickup/pickupLogic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Pickup/pickupDraw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Pickup/pickupBMP.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Pickup/PICKUP_TOP.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/collision_player_pickup.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/TOP_BAR_TOP.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/GROUND_TOP.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/PLAYER_TOP.sv
