@@ -9,6 +9,7 @@ module SHOT_TOP	(
 					input logic [NUM_OF_SHOTS - 1:0] SingleHitPulse_shots,
 					input logic [NUM_OF_SHOTS - 1:0] deploy_shot,
 					input logic [1:0] [10:0] drawCoordinates,
+					input logic high_damage,
 					
 					output logic [NUM_OF_SHOTS - 1:0] shotsBusRequest,
 					output logic [NUM_OF_SHOTS - 1:0] [1:0] [10:0] shotsCoordinates,
@@ -75,6 +76,7 @@ generate
 			.coordinate(shotsOffset[i]),
 			.InsideRectangle(shotsInsideSquare[i] && shots_active[i]),
 			.object_colors(shot_bitmap),
+			.high_damage(high_damage),
 			.drawingRequest(BusRequest[i]), 
 			.RGBout(shotsBusRGB[i])
 		) ;

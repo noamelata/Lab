@@ -27,7 +27,8 @@ module	game_controller	(
 			output logic player_active,
 			output logic add_time,
 			output logic [1:0] [3:0] time_to_add,
-			output logic more_damage
+			output logic more_damage,
+			output logic shield
 );
 
 
@@ -59,7 +60,7 @@ int current_tree = 0;
 int last_birds;
 int power_up_time;
 int power_up_counter = 0;
-logic [3:0] powerups; // invinciblity, rapid fire, damage, double shot.
+logic [3:0] powerups; // invinciblity, rapid fire, damage,life.
 logic power_up_collision;
 
 localparam int MAX_SHOTS = 8;
@@ -75,9 +76,10 @@ int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
 assign cooldown_time = (rapid_fire || powerups[1] ) ? 25 : 100;
-assign power_up_time = 750;
+assign power_up_time = 1000;
 assign more_damage = powerups[2];
 assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode || powerups[0]);
+assign shield = god_mode || powerups[0];
 
 
 always_ff@(posedge clk or negedge resetN)
@@ -187,8 +189,13 @@ begin
 			end
 			
 			if (pickup_hit) begin
-				powerups[random >> 6] <= 1'b1;
+				powerups[random[5:4]] <= 1'b1;
 				power_up_counter <= power_up_time;
+			end
+			
+			if (powerups[3] == 1'b1) begin
+				player_life <= (player_life > 2) ? player_life : player_life + 1;
+				powerups[3] <= 1'b0;
 			end
 		end
 	end 

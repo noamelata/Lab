@@ -93,6 +93,7 @@ logic god_mode;
 logic rapid_fire;
 logic [1:0] damage;
 logic more_damage;
+logic shield;
 
 logic [7:0] random_number;
 logic turbo;
@@ -135,7 +136,8 @@ game_controller gamecontroller (.clk(clk),
 			.player_active(player_active),
 			.add_time(timer_load),
 			.time_to_add(time_to_add),
-			.more_damage(more_damage)
+			.more_damage(more_damage),
+			.shield(shield)
 			);
 
 PLAYER_TOP player_top (
@@ -148,7 +150,7 @@ PLAYER_TOP player_top (
 					.drawCoordinates(drawCoordinates),
 					.player_red(player_red),
 					.player_active(player_active),
-					.invincible(god_mode),
+					.invincible(shield),
 					
 					.playerCoordinates(playerCoordinates),
 					.playerDrawingRequest(playerDrawingRequest),
@@ -187,6 +189,7 @@ SHOT_TOP shot_top(
 					.SingleHitPulse_shots(SingleHitPulse_shots),
 					.deploy_shot(deploy_shot),
 					.drawCoordinates(drawCoordinates),
+					.high_damage((damage == 2'b11) ? 1'b1 : 1'b0),
 					
 					.shotsBusRequest(shotsBusRequest),
 					.shotsCoordinates(shotsCoordinates),
