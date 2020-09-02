@@ -5,7 +5,7 @@ module	trees_mux	(
 					input logic	clk,
 					input	logic	resetN,
 					
-					input	logic	[15:0] [1:0] [10:0] treesCoordinates,
+					input	logic	signed [15:0] [1:0] [10:0] treesCoordinates,
 					
 					input	logic	[15:0] treesBusRequest,
 					input	logic	[15:0] [7:0] treesBusRGB, 

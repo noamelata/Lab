@@ -25,6 +25,7 @@ logic signed [3:0] [1:0] [10:0] birdsCoordinates;
 logic signed [7:0] [1:0] [10:0] shotsCoordinates;
 logic signed [15:0] [1:0] [10:0] treesCoordinates;
 logic signed [1:0] [10:0] pickupCoordinates;
+logic signed [7:0] [1:0] [10:0] shitsCoordinates;
 
 
 logic playerDrawingRequest;
@@ -32,11 +33,13 @@ logic [3:0] birdsBusRequest;
 logic [7:0] shotsBusRequest;
 logic [15:0] treesBusRequest;
 logic [1:0] timerBusRequest;
+logic [7:0] shitsBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
 logic dynamic_ground_Request;
 logic pickupDrawingRequest;
+logic shitsDrawingRequest;
 
 
 logic [7:0] playerRGB;
@@ -47,6 +50,7 @@ logic [7:0] treesRGB;
 logic [7:0] backgroundRGB;
 logic [7:0] dynamic_ground_RGB;
 logic [7:0] pickupRGB;
+logic [7:0] shitsRGB;
 
 logic timerDrawingRequest;
 logic timerRGB;
@@ -56,6 +60,7 @@ logic [7:0] SingleHitPulse_shots;
 logic [3:0] bird_alive;
 logic player_SingleHitPulse;
 logic pickup_SingleHitPulse;
+logic shit_SingleHitPulse;
 logic player_collision;
 
 logic [2:0] tree_speed;
@@ -64,6 +69,7 @@ logic [7:0] deploy_shot;
 logic [15:0] deploy_tree;
 logic [3:0] deploy_bird;
 logic deploy_pickup;
+logic [7:0] deploy_shit;
 logic [3:0] bird_life;
 
 logic player_active;
@@ -114,7 +120,7 @@ game_controller gamecontroller (.clk(clk),
 			.random(random_number),
 			.bird_alive(bird_alive),
 			.collision(player_collision), 
-			.SingleHitPulse(player_SingleHitPulse), 
+			.SingleHitPulse(player_SingleHitPulse || shit_SingleHitPulse), 
 			.pickup_hit(pickup_SingleHitPulse),
 			.out_of_time(out_of_time),
 			
@@ -162,6 +168,7 @@ BIRD_TOP bird_top(
 					.drawCoordinates(drawCoordinates),
 					.damage(damage),
 					
+					.deploy_shit(deploy_shit),
 					.birdsBusRequest(birdsBusRequest),
 					.birdsCoordinates(birdsCoordinates),
 					.birdsDrawingRequest(birdsDrawingRequest),
@@ -244,6 +251,21 @@ PICKUP_TOP pickup_top (
 					.pickupDrawingRequest(pickupDrawingRequest),
 					.pickupRGB(pickupRGB)
 					);
+					
+SHIT_TOP shit_top(
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.initial_Coordinates(birdsCoordinates),
+					.shit_speed(tree_speed),
+					.deploy_shit(deploy_shit),
+					.drawCoordinates(drawCoordinates),
+					
+					.shitsBusRequest(shitsBusRequest),
+					.shitsCoordinates(shitsCoordinates),
+					.shitsDrawingRequest(shitsDrawingRequest),
+					.shitsRGB(shitsRGB)
+);
 
 
  
@@ -260,6 +282,8 @@ objects_mux_all	mux_all(
 					.shotsRGB(shotsRGB), 
 					.pickupDrawingRequest(pickupDrawingRequest),
 					.pickupRGB(pickupRGB),
+					.shitsDrawingRequest(shitsDrawingRequest),
+					.shitsRGB(shitsRGB), 
 					.treesDrawingRequest(treesDrawingRequest),
 					.treesRGB(treesRGB), 
 					.dynamic_ground_Request(dynamic_ground_Request),
@@ -291,6 +315,16 @@ collision_player_pickup	collision_player_pickup(
 					.pickupDrawingRequest(pickupDrawingRequest),			
 					.SingleHitPulse(pickup_SingleHitPulse)			
 );
+
+collision_player_shit	collision_player_shit(	
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.playerDrawingRequest(playerDrawingRequest),	
+					.shitsDrawingRequest(shitsBusRequest),			
+					.SingleHitPulse(shit_SingleHitPulse)			
+);
+
 
 
 collision_bird_shot collision_bird_shot(	

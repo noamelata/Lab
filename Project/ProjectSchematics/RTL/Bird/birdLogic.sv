@@ -12,6 +12,7 @@ module	birdLogic /*#(parameter RANDOM_OFFSET = 0) /* sample random with paramete
 					input logic [1:0] speed,
 					input logic [1:0] damage,
 					
+					output deploy_shit,
 					output logic alive,
 					output logic red,
 					output logic signed [1:0] [10:0]	coordinate// output the top left corner 					
@@ -46,6 +47,7 @@ int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters
 int step;
 int life;
 int counter;
+int shit_counter;
 int random_num;
 int chance_to_change = 8;
 
@@ -100,10 +102,15 @@ begin
 		topLeftX_FixedPoint	<=  INITIAL_X * FIXED_POINT_MULTIPLIER;
 		topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 		life <= 0;
+		shit_counter <= 100;
+		deploy_shit <= 1'b0;
 	end
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
 			counter <= (counter > 0) ? counter - 1 : 0;
+			shit_counter <= (shit_counter > 0) ? shit_counter - 1 : 0;
+			deploy_shit <= 1'b0;
+
 			
 			if (deploy) begin
 				life <= starting_life;
@@ -126,6 +133,11 @@ begin
 				topLeftX_FixedPoint <= topLeftX_FixedPoint;
 					
 			endcase
+			
+			if ((life > 0) && (shit_counter == 0) && (random_num > 240)) begin
+				deploy_shit <= 1'b1;
+				shit_counter <= 500;
+			end
 		end		
 	end
 end

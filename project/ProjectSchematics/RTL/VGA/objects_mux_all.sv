@@ -19,6 +19,9 @@ module	objects_mux_all	(
 		// pickup
 					input		logic	pickupDrawingRequest,
 					input		logic	[7:0] pickupRGB, 
+		// shit
+					input		logic	shitsDrawingRequest,
+					input		logic	[7:0] shitsRGB, 
 		// tree
 					input		logic	treesDrawingRequest,
 					input		logic	[7:0] treesRGB, 
@@ -66,8 +69,11 @@ begin
 		else if (pickupDrawingRequest == 1'b1 )   
 			tmpRGB <= pickupRGB;  //fifth priority 
 			
+		else if (shitsDrawingRequest == 1'b1 )   
+			tmpRGB <= shitsRGB;  //sixth priority 
+			
 		else if (treesDrawingRequest == 1'b1 )   
-			tmpRGB <= treesRGB;  //sixth priority 
+			tmpRGB <= treesRGB;  //seventh priority
 			
 		else if (dynamic_ground_Request == 1'b1 )   
 			tmpRGB <= dynamic_ground_RGB;  //next to last priority 

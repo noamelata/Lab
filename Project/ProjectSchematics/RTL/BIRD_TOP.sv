@@ -12,7 +12,7 @@ module BIRD_TOP	(
 					input logic [1:0] [10:0] drawCoordinates,
 					input logic [1:0] damage,
 
-					
+					output logic [NUM_OF_BIRDS - 1:0] deploy_shit,
 					output logic [NUM_OF_BIRDS - 1:0] birdsBusRequest,
 					output logic [NUM_OF_BIRDS - 1:0] [1:0] [10:0] birdsCoordinates,
 					output logic birdsDrawingRequest,
@@ -67,6 +67,7 @@ generate
 							.deploy(deploy_bird[i]),
 							.speed(bird_speed),
 							.damage(damage),
+							.deploy_shit(deploy_shit[i]),
 							.alive(bird_alive[i]),
 							.red(bird_red[i]),
 							.coordinate(Coordinates[i])					
