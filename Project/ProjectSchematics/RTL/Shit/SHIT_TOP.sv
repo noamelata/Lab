@@ -16,6 +16,7 @@ module SHIT_TOP	(
 );
  
 parameter NUM_OF_SHITS = 8;
+localparam int bit_8 = 8;
 localparam int bit_16 = 16;
 localparam int bit_64 = 64;
 
@@ -34,9 +35,12 @@ logic [NUM_OF_SHITS - 1:0] [7:0] shitsBusRGB;
 
 logic [NUM_OF_SHITS - 1:0] shits_active;
 
-			
-logic [0:bit_16 - 1] [0:bit_16 - 1] [7:0] shit_bitmap;
-shitBMP shitBMP(.object_colors(shit_bitmap));
+logic [7:0] splash;
+
+logic [0:bit_16 - 1] [0:bit_16 - 1] [7:0] shit_fall_object_colors;	
+logic [0:bit_16 - 1] [0:bit_16 - 1] [7:0] shit_splash_object_colors;
+shitBMP shitBMP(.shit_fall_object_colors(shit_fall_object_colors),
+						.shit_splash_object_colors(shit_splash_object_colors));
 
 genvar i;
 generate
@@ -46,11 +50,12 @@ generate
 			.resetN(resetN),
 			.startOfFrame(startOfFrame),
 			.deploy(deploy_shit[i]),
-			.initial_x(initial_Coordinates[i][0]),
-			.initial_y(initial_Coordinates[i][1]),
+			.initial_x(initial_Coordinates[i][0] + bit_8),
+			.initial_y(initial_Coordinates[i][1] + bit_16),
 			.speed(shit_speed),
 			.coordinate(Coordinates[i]),		
-			.isActive(shits_active[i])
+			.isActive(shits_active[i]),
+			.splash(splash[i])
 		);
 
 		square_object #(.OBJECT_WIDTH_X(bit_16), .OBJECT_HEIGHT_Y(bit_16)) shitssquare(	
@@ -74,7 +79,9 @@ generate
 			.coordinate(shitsOffset[i]),
 			.InsideRectangle(shitsInsideSquare[i]),
 			.isActive(shits_active[i]), 
-			.object_colors(shit_bitmap),
+			.shit_fall_object_colors(shit_fall_object_colors),
+			.shit_splash_object_colors(shit_splash_object_colors),
+			.splash(splash[i]),
 
 			.drawingRequest(BusRequest[i]), 
 			.RGBout(shitsBusRGB[i])

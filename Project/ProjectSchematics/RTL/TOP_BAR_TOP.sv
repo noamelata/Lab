@@ -112,7 +112,7 @@ one_sec_counter one_sec_counter  (
 						.duty50(duty50)
 						);
 	
-always @(posedge clk or negedge resetN)
+always_ff @(posedge clk or negedge resetN)
    begin
 	timer_on <= timer_on;
    if ( !resetN )  // Asynchronic reset

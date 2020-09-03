@@ -75,7 +75,7 @@ int red_counter;
 int level_counter;
 
 assign tree_wait = 400; //should be calculated using tree speed and number of trees
-assign cooldown_time = (rapid_fire || powerups[1] ) ? 25 : 100;
+assign cooldown_time = (rapid_fire || powerups[1] ) ? 20 : 50;
 assign power_up_time = 1000;
 assign more_damage = powerups[2];
 assign invincible = (((red_counter > 0) ? 1'b1 : 1'b0) || god_mode || powerups[0]);

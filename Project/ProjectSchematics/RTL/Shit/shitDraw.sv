@@ -5,7 +5,9 @@ module	shitDraw (
 					input logic signed  [1:0] [10:0] coordinate,
 					input	logic	InsideRectangle, //input that the pixel is within a bracket 
 					input logic isActive, //input that shit should be desplayed 
-					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors,
+					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] shit_fall_object_colors,
+					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] shit_splash_object_colors,
+					input logic splash,
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
@@ -38,9 +40,12 @@ begin
 	else begin  
 
 	
-		if ((InsideRectangle == 1'b1))  // inside an external bracket 
-			RGBout <= object_colors[coordinate[1]][coordinate[0]]; 
-		else 
+		if ((InsideRectangle == 1'b1)) begin  // inside an external bracket 
+			if (splash)
+				RGBout <= shit_splash_object_colors[coordinate[1]][coordinate[0]]; 
+			else
+				RGBout <= shit_fall_object_colors[coordinate[1]][coordinate[0]];
+		end else 
 			RGBout <= TRANSPARENT_ENCODING ; // force color to transparent so it will not be displayed 
 	end 
 end

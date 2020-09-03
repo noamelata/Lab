@@ -13,7 +13,8 @@ module	shitLogic	(
 					input logic [2:0] speed,
 					
 					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
-					output logic isActive //should shit be on screen
+					output logic isActive, //should shit be on screen
+					output logic splash
 );
 
 
@@ -36,6 +37,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
 int step; // moving speed of shit
+int counter;
 
 
 //////////--------------------------------------------------------------------------------------------------------------=
@@ -62,16 +64,22 @@ begin
 				topLeftX_FixedPoint	<=  initial_x * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  initial_y * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b1;
+				counter <= 64;
 			end
 		
 		if ((startOfFrame == 1'b1) && isActive) begin // perform  position integral only 30 times per second 
+			counter <= (counter > 0) ? counter - 1 : 0;
 			if (topLeftY_FixedPoint > (y_FRAME_SIZE)) begin
 				topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b0;
 			end 
 			else begin
-				topLeftY_FixedPoint <= topLeftY_FixedPoint + step;
+				if (counter > 0) begin 
+					topLeftY_FixedPoint <= topLeftY_FixedPoint + 64;
+				end else begin
+					topLeftY_FixedPoint <= topLeftY_FixedPoint + step;
+				end
 			end
 		end
 		/*
@@ -88,5 +96,6 @@ end
 //get a better (64 times) resolution using integer   
 assign 	coordinate[0] = topLeftX_FixedPoint / FIXED_POINT_MULTIPLIER ;   
 assign 	coordinate[1] = topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER ; 
+assign 	splash = (counter == 0);
 
 endmodule
