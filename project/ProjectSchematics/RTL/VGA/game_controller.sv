@@ -6,7 +6,7 @@ module	game_controller	(
 			input	logic	resetN,
 			input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
 			input logic shoot,
-			input logic god_mode,
+			input logic god_mode, //invincible cheat
 			input logic rapid_fire,
 			input logic [10:0] playerCoordinates,
 			input logic [7:0] random,
@@ -29,6 +29,7 @@ module	game_controller	(
 			output logic [1:0] [3:0] time_to_add,
 			output logic more_damage,
 			output logic shield
+			output logic [1:0] num_of_hearts
 );
 
 
@@ -110,7 +111,7 @@ begin
 	end 
 	else begin 
 		player_active <= player_active;
-		time_to_add <= {4'h0, 4'h0, 4'h0, 4'h0};
+		time_to_add <= {4'h0, 4'h0};
 		add_time <= 1'b0;
 		level_up <= 1'b0;
 		bird_hit_flag <= bird_hit_flag;
@@ -202,5 +203,6 @@ begin
 end
 
 assign player_red = red_counter > 0;
+assign num_of_hearts = player_life;
 
 endmodule

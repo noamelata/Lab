@@ -6,16 +6,16 @@ module TOP_BAR_TOP	(
 					input logic timer_load,
 					input logic [1:0] [3:0] time_to_add,
 					input logic [1:0] [10:0] drawCoordinates,
+					input logic [1:0] num_of_hearts,
 					
 					output logic [1:0] [3:0] timer,
 					output logic one_sec_out,
 					output logic duty50_out,
 					output logic out_of_time,
-					output logic timerDrawingRequest,
-					output logic [7:0] timerRGB
+					output logic barDrawingRequest,
+					output logic [7:0] barRGB
 					
 );
- 
  
 
 logic [1:0] timerBusRequest;
@@ -24,6 +24,8 @@ logic [1:0] [7:0] timerBusRGB;
 
 logic [1:0] digitInsideSquare;
 logic [1:0] [1:0] [10:0] digit_number_offset;
+logic timerDrawingRequest;
+logic [7:0] timerRGB;
 
 
 logic total_time;
@@ -42,6 +44,8 @@ logic one_sec;
 assign one_sec_out = one_sec;
 logic duty50;
 assign duty50_out = duty50;
+
+localparam bit_32 = 32;
 
 
 timer_4_digits_counter timer_inst (
@@ -64,8 +68,8 @@ generate
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
 			.pixelY(drawCoordinates[1]),
-			.topLeftX(48 - (i*32)), 
-			.topLeftY(10'h10),
+			.topLeftX(320 - (i*16)), 
+			.topLeftY(10'h8),
 
 			.offsetX(digit_number_offset[i][0]), 
 			.offsetY(digit_number_offset[i][1]),
@@ -112,7 +116,7 @@ one_sec_counter one_sec_counter  (
 						.duty50(duty50)
 						);
 	
-always @(posedge clk or negedge resetN)
+always_ff @(posedge clk or negedge resetN)
    begin
 	timer_on <= timer_on;
    if ( !resetN )  // Asynchronic reset
@@ -122,6 +126,117 @@ always @(posedge clk or negedge resetN)
    else if (tc)	// Synchronic logic FSM
 		timer_on <= 1'b0;
 end
+
+
+logic signed [1:0] [10:0] backgroudOffset;
+logic backgroundInsideSquare;
+logic backgroundRequest;
+logic [7:0] backgroundRGB;
+
+		
+	
+square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(48)) background_square(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(10'b0), 
+			.topLeftY(10'b0),
+
+			.offsetX(backgroudOffset[0]), 
+			.offsetY(backgroudOffset[1]),
+			.drawingRequest(backgroundInsideSquare),
+			.RGBout() 
+		);
+	
+
+			
+		barDraw barDraw(
+			.clk(clk),
+			.resetN(resetN),
+			.coordinate(backgroudOffset),
+			.InsideRectangle(backgroundInsideSquare),
+			
+			.drawingRequest(backgroundRequest), 
+			.RGBout(backgroundRGB)
+		) ;
+		
+
+
+/******************************************/
+
+logic signed [2:0] [1:0] [10:0] heartoffset;
+logic [2:0] heartInsideSquare;
+logic [2:0] heartsBusRequest;
+logic [2:0] [7:0] heartBusRGB;
+logic heartsDrawingRequest;
+logic [7:0] heartsRGB;
+
+logic [0:bit_32 - 1] [0:bit_32 - 1] [7:0] heart_bitmap;
+heartBMP heartBMP(.object_colors(heart_bitmap));
+logic [2:0] hearts_active;
+		
+generate
+	for (i=0; i < 3; i++) begin : generate_hearts_id
+		square_object heartSquare(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(16 + (i*48)), 
+			.topLeftY(10'h8),
+
+			.offsetX(heartoffset[i][0]), 
+			.offsetY(heartoffset[i][1]),
+			.drawingRequest(heartInsideSquare[i]),
+			.RGBout() 
+		);
+
+			
+		heartDraw heartdraw(
+			.clk(clk),
+			.resetN(resetN),
+			.coordinate(heartoffset[i]),
+			.InsideRectangle(heartInsideSquare[i]),
+			.isActive(hearts_active[i]), 
+			.object_colors(heart_bitmap),
+
+			.drawingRequest(heartsBusRequest[i]), 
+			.RGBout(heartBusRGB[i])
+		);
+
+  end
+endgenerate
+
+heart_mux heart_mux(	
+					.clk(clk),
+					.resetN(resetN),
+					.heartsBusRequest(heartsBusRequest),
+					.heartsBusRGB(heartBusRGB),
+					
+					.heartsDrawingRequest(heartsDrawingRequest),
+					.heartsRGB(heartsRGB)
+					
+);
+
+assign hearts_active[0] = (num_of_hearts >= 1) ? 1'b1 : 1'b0; 
+assign hearts_active[1] = (num_of_hearts >= 2) ? 1'b1 : 1'b0;
+assign hearts_active[2] = (num_of_hearts >= 3) ? 1'b1 : 1'b0;
+
+bar_mux	bar_mux	(	
+			.clk(clk),
+			.resetN(resetN),
+			.timerDrawingRequest(timerDrawingRequest),
+			.timerRGB(timerRGB),	
+			.backgroundRequest(backgroundRequest),
+			.backgroundRGB(backgroundRGB),
+			.heartsDrawingRequest(heartsDrawingRequest),
+			.heartsRGB(heartsRGB),
+					
+			.barDrawingRequest(barDrawingRequest),
+			.barRGB(barRGB)
+					
+);
 						
 
 endmodule
