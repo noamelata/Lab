@@ -173,7 +173,7 @@ logic heartsDrawingRequest;
 logic [7:0] heartsRGB;
 
 logic [0:bit_32 - 1] [0:bit_32 - 1] [7:0] heart_bitmap;
-heartBMP heartBMP(.object_colors(heart_bitmap));
+heartBMP heartBMP(.object_color(heart_bitmap));
 logic [2:0] hearts_active;
 		
 generate
@@ -199,7 +199,7 @@ generate
 			.coordinate(heartoffset[i]),
 			.InsideRectangle(heartInsideSquare[i]),
 			.isActive(hearts_active[i]), 
-			.object_colors(heart_bitmap),
+			.object_color(heart_bitmap),
 
 			.drawingRequest(heartsBusRequest[i]), 
 			.RGBout(heartBusRGB[i])
