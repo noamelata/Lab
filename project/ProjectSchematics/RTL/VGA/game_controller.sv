@@ -28,7 +28,7 @@ module	game_controller	(
 			output logic add_time,
 			output logic [1:0] [3:0] time_to_add,
 			output logic more_damage,
-			output logic shield
+			output logic shield,
 			output logic [1:0] num_of_hearts
 );
 
@@ -162,6 +162,7 @@ begin
 				else begin
 					// game over
 					player_active <= 1'b0;
+					player_life <= player_life - 1;
 				end
 			end
 			

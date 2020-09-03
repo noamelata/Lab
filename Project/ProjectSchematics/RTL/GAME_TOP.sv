@@ -138,7 +138,7 @@ game_controller gamecontroller (.clk(clk),
 			.add_time(timer_load),
 			.time_to_add(time_to_add),
 			.more_damage(more_damage),
-			.shield(shield)
+			.shield(shield),
 			.num_of_hearts(num_of_hearts)
 			);
 

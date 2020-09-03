@@ -1,6 +1,6 @@
 
 
-module	playerLogic	(	
+module	HeartLogic	(	
  
 					input	logic	clk,
 					input	logic	resetN,

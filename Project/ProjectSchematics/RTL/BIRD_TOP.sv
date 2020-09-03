@@ -57,7 +57,7 @@ birdBMP birdBMP(.wings_up_object_colors(wings_up_bitmap), .wings_down_object_col
 genvar i;
 generate
 	for (i=0; i < NUM_OF_BIRDS; i++) begin : generate_birds_id
-		birdLogic #(.RANDOM_OFFSET(i * bit_64), .INITIAL_Y(bit_128 - (i * bit_32))) birdlogic (	
+		birdLogic #(.RANDOM_OFFSET(i * bit_64), .INITIAL_Y(bit_128 - ((i - 1) * bit_32))) birdlogic (	
 							.clk(clk),
 							.resetN(resetN),
 							.startOfFrame(startOfFrame),

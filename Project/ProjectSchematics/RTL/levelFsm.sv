@@ -65,13 +65,14 @@ begin
 		 number_of_birds = 2'b01;
 		 tree_speed = 3'b011;
 		 bird_speed = 2'b10;
-		 trees_to_add = 2'b10;
+		 trees_to_add = 2'b01;
 		 bird_life = 4'h4;
 	end
 	  
 	level_5:
 	begin
 		 number_of_birds = 2'b10;
+		 trees_to_add = 2'b01;
 		 tree_speed = 3'b100;
 		 bird_speed = 2'b10;
 		 bird_life = 4'h5;
@@ -82,12 +83,13 @@ begin
 		 number_of_birds = 2'b10;
 		 tree_speed = 3'b101;
 		 bird_speed = 2'b10;
-		 trees_to_add = 2'b10;
+		 trees_to_add = 2'b01;
 		 bird_life = 4'h5;
 	end
 		 
 	level_7:
 	begin
+		 trees_to_add = 2'b01;
 		 number_of_birds = 2'b11;
 		 tree_speed = 3'b110;
 		 bird_speed = 2'b11;
@@ -96,6 +98,7 @@ begin
 		 
 	level_8:
 	begin
+		 trees_to_add = 2'b01;
 		 number_of_birds = 2'b11;
 		 tree_speed = 3'b111;
 		 bird_speed = 2'b11;
