@@ -42,8 +42,7 @@ logic pickupDrawingRequest;
 logic shitsDrawingRequest;
 
 
-logic [7:0] playerRGB;
-logic [1:0] [7:0] timerBusRGB;	
+logic [7:0] playerRGB;	
 logic [7:0] birdsRGB;
 logic [7:0] shotsRGB;
 logic [7:0] treesRGB;
@@ -52,8 +51,8 @@ logic [7:0] dynamic_ground_RGB;
 logic [7:0] pickupRGB;
 logic [7:0] shitsRGB;
 
-logic timerDrawingRequest;
-logic timerRGB;
+logic barDrawingRequest;
+logic [7:0] barRGB;
 
 logic [3:0] SingleHitPulse_birds;
 logic [7:0] SingleHitPulse_shots;
@@ -101,6 +100,8 @@ logic one_sec;
 logic duty50;
 logic out_of_time;
 
+logic [1:0] num_of_hearts;
+
 
 assign clk = CLOCK_50;
 assign right = !KEY[1];
@@ -138,6 +139,7 @@ game_controller gamecontroller (.clk(clk),
 			.time_to_add(time_to_add),
 			.more_damage(more_damage),
 			.shield(shield)
+			.num_of_hearts(num_of_hearts)
 			);
 
 PLAYER_TOP player_top (
@@ -231,13 +233,14 @@ TOP_BAR_TOP top_bar_top(
 					.timer_load(timer_load),
 					.time_to_add(time_to_add),
 					.drawCoordinates(drawCoordinates),
+					.num_of_hearts(num_of_hearts),
 					
 					.timer(timer_digits),
 					.one_sec_out(one_sec),
 					.duty50_out(duty50),
 					.out_of_time(out_of_time),
-					.timerDrawingRequest(timerDrawingRequest),
-					.timerRGB(timerRGB)
+					.barDrawingRequest(barDrawingRequest),
+					.barRGB(barRGB)
 					);
 					
 PICKUP_TOP pickup_top (
@@ -275,8 +278,8 @@ SHIT_TOP shit_top(
 objects_mux_all	mux_all(	
 					.clk(clk),
 					.resetN(resetN),
-					.digitsDrawingRequest(timerDrawingRequest),
-					.digitsRGB(timerRGB), 
+					.digitsDrawingRequest(barDrawingRequest),
+					.digitsRGB(barRGB), 
 					.playerDrawingRequest(playerDrawingRequest),
 					.playerRGB(playerRGB), 
 					.birdsDrawingRequest(birdsDrawingRequest),
