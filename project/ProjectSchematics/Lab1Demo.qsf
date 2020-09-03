@@ -223,6 +223,11 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tck
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdi
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdo
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tms
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/heartDraw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/heartBMP.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/heart_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/barDraw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/bar_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Shit/collision_player_shit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Shit/shitLogic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Shit/shitDraw.sv

@@ -58,7 +58,7 @@ begin
 		isActive <= isActive;
 		if (deploy) begin
 				//generate random
-				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
+				topLeftX_FixedPoint	<=  ((random * 2) + (random / 2)) * FIXED_POINT_MULTIPLIER;
 				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 				isActive <= 1'b1;
 			end
