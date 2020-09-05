@@ -1,11 +1,11 @@
 
 
-module	shitLogic	(	
+module	poopLogic	(	
  
 					input	logic	clk,
 					input	logic	resetN,
 					input	logic	startOfFrame,  // short pulse every start of frame 30Hz 
-					//input logic collision,  //collision if shit hits
+					//input logic collision,  //collision if poop hits
 					input logic deploy, 
 					//input logic remove,
 					input logic signed [10:0] initial_x,
@@ -13,7 +13,7 @@ module	shitLogic	(
 					input logic [2:0] speed,
 					
 					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
-					output logic isActive, //should shit be on screen
+					output logic isActive, //should poop be on screen
 					output logic splash
 );
 
@@ -23,7 +23,7 @@ module	shitLogic	(
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
 //parameter int IMAGE_HEIGHT = 64;
-const int INITIAL_Y = 0; // if shit is 32 bit
+const int INITIAL_Y = 0; // if poop is 32 bit
 
 
 
@@ -36,7 +36,7 @@ const int	y_FRAME_SIZE	=	479 * FIXED_POINT_MULTIPLIER;
 
 
 int topLeftY_FixedPoint, topLeftX_FixedPoint; // local parameters 
-int step; // moving speed of shit
+int step; // moving speed of poop
 int counter;
 
 
