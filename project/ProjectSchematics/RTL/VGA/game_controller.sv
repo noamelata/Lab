@@ -29,7 +29,8 @@ module	game_controller	(
 			output logic [1:0] [3:0] time_to_add,
 			output logic more_damage,
 			output logic shield,
-			output logic [1:0] num_of_hearts
+			output logic [1:0] num_of_hearts,
+			output logic [1:0] [3:0] level_num
 );
 
 

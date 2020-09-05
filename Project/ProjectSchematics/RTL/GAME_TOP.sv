@@ -237,7 +237,7 @@ TOP_BAR_TOP top_bar_top(
 					.drawCoordinates(drawCoordinates),
 					.num_of_hearts(num_of_hearts),
 					.level_num(level_num),
-					.gameover(!player_active),
+					.gameOver(!player_active),
 					
 					.timer(timer_digits),
 					.one_sec_out(one_sec),

@@ -48,6 +48,7 @@ logic duty50;
 assign duty50_out = duty50;
 
 localparam bit_32 = 32;
+localparam bit_64 = 64;
 
 
 timer_4_digits_counter timer_inst (
@@ -328,6 +329,8 @@ bar_mux	bar_mux	(
 			.heartsRGB(heartsRGB),
 			.levelsDrawingRequest(levelsDrawingRequest),
 			.levelsRGB(levelsRGB),
+			.gameoverRequest(gameoverRequest),
+			.gameoverRGB(gameoverRGB),
 					
 			.barDrawingRequest(barDrawingRequest),
 			.barRGB(barRGB)
