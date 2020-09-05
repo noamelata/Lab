@@ -9,7 +9,8 @@ module levelFSM (
                 output logic [1:0] trees_to_add,
                 output logic [2:0] tree_speed,
                 output logic [1:0] bird_speed,
-                output logic [1:0] number_of_birds
+                output logic [1:0] number_of_birds,
+					 output logic [1:0] [3:0] level_num
                 );
                 
 enum logic [3:0] {level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8} level, next_level;
@@ -17,13 +18,24 @@ enum logic [3:0] {level_1, level_2, level_3, level_4, level_5, level_6, level_7,
 always @(posedge clk or negedge resetN)
    begin
 	   
-   if ( !resetN )  // Asynchronic reset
+   if ( !resetN ) begin // Asynchronic reset
 		level <= level_1;
+		level_num[0] <= 4'h1;
+		level_num[1] <= 4'h0;
+	end
    else begin 	// Synchronic logic FSM
 		if (level == level_8)
 			level <= level;
 		else
 			level <= next_level;
+		if (level_up == 1'b1) begin
+			if (level_num[0] > 4'h9) begin
+				level_num[0] <= 4'h0;
+				level_num[1] <= level_num[1] + 4'h1;
+			end
+			else
+				level_num[0] <= level_num[0] + 4'h1;
+		end
 	end
 			
 

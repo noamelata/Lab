@@ -9,6 +9,8 @@ module	bar_mux	(
 					input logic [7:0] backgroundRGB,
 					input logic heartsDrawingRequest,
 					input logic [7:0] heartsRGB,
+					input logic levelsDrawingRequest,
+					input logic [7:0] levelsRGB,
 					
 					output	logic barDrawingRequest,
 					output	logic	[7:0] barRGB
@@ -33,9 +35,12 @@ begin
 	
 		else if (heartsDrawingRequest == 1'b1 )   
 			tmpRGB <= heartsRGB;  //second priority 
+			
+		else if (levelsDrawingRequest == 1'b1 )   
+			tmpRGB <= levelsRGB;  //third priority
 
 		else if (backgroundRequest == 1'b1 )   
-			tmpRGB <= backgroundRGB;  //third priority
+			tmpRGB <= backgroundRGB;  //forth priority
 			
 		else
 			tmpRGB <= 8'hFF ; // last priority 

@@ -101,6 +101,7 @@ logic duty50;
 logic out_of_time;
 
 logic [1:0] num_of_hearts;
+logic [1:0] [3:0] level_num;
 
 
 assign clk = CLOCK_50;
@@ -139,7 +140,8 @@ game_controller gamecontroller (.clk(clk),
 			.time_to_add(time_to_add),
 			.more_damage(more_damage),
 			.shield(shield),
-			.num_of_hearts(num_of_hearts)
+			.num_of_hearts(num_of_hearts),
+			.level_num(level_num)
 			);
 
 PLAYER_TOP player_top (
@@ -234,6 +236,7 @@ TOP_BAR_TOP top_bar_top(
 					.time_to_add(time_to_add),
 					.drawCoordinates(drawCoordinates),
 					.num_of_hearts(num_of_hearts),
+					.level_num(level_num),
 					
 					.timer(timer_digits),
 					.one_sec_out(one_sec),

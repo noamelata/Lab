@@ -7,6 +7,7 @@ module TOP_BAR_TOP	(
 					input logic [1:0] [3:0] time_to_add,
 					input logic [1:0] [10:0] drawCoordinates,
 					input logic [1:0] num_of_hearts,
+					input logic [1:0] [3:0] level_num,
 					
 					output logic [1:0] [3:0] timer,
 					output logic one_sec_out,
@@ -22,8 +23,8 @@ logic [1:0] timerBusRequest;
 
 logic [1:0] [7:0] timerBusRGB;	
 
-logic [1:0] digitInsideSquare;
-logic [1:0] [1:0] [10:0] digit_number_offset;
+logic [4:0] digitInsideSquare;
+logic [4:0] [1:0] [10:0] digit_number_offset;
 logic timerDrawingRequest;
 logic [7:0] timerRGB;
 
@@ -115,6 +116,8 @@ one_sec_counter one_sec_counter  (
 						.one_sec(one_sec), 
 						.duty50(duty50)
 						);
+						
+						
 	
 always_ff @(posedge clk or negedge resetN)
    begin
@@ -127,6 +130,60 @@ always_ff @(posedge clk or negedge resetN)
 		timer_on <= 1'b0;
 end
 
+
+/******************************************/
+logic [2:0] levelBusRequest;
+
+logic [2:0] [7:0] levelBusRGB;
+
+logic levelsDrawingRequest;
+logic [7:0] levelsRGB;	
+
+
+generate
+	for (i=0; i < 3; i++) begin : generate_levels_id
+		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(608 - (i*24)), 
+			.topLeftY(10'h8),
+
+			.offsetX(digit_number_offset[i + 2][0]), 
+			.offsetY(digit_number_offset[i + 2][1]),
+			.drawingRequest(digitInsideSquare[i + 2]),
+			.RGBout(levelBusRGB[i]) 
+		);
+
+			
+		NumbersBitMap	(	
+					.clk(clk),
+					.resetN(resetN),
+					.offsetX(digit_number_offset[i + 2][0]), 
+					.offsetY(digit_number_offset[i + 2][1]),
+					.InsideRectangle(digitInsideSquare[i + 2]), //input that the pixel is within a bracket 
+					.digit((i == 2) ? 4'hF : level_num[i]), // digit to display
+					
+					.drawingRequest(levelBusRequest[i]), //output that the pixel should be dispalyed 
+					.RGBout()
+		);
+
+  end
+endgenerate
+
+
+levels_mux levels_mux(
+					.clk(clk),
+					.resetN(resetN),
+					.levelsBusRequest(levelBusRequest),
+					.levelsBusRGB(levelBusRGB), 
+					.levelsDrawingRequest(levelsDrawingRequest),
+					.levelsRGB(levelsRGB)
+					
+);
+
+/******************************************/
 
 logic signed [1:0] [10:0] backgroudOffset;
 logic backgroundInsideSquare;
@@ -232,6 +289,8 @@ bar_mux	bar_mux	(
 			.backgroundRGB(backgroundRGB),
 			.heartsDrawingRequest(heartsDrawingRequest),
 			.heartsRGB(heartsRGB),
+			.levelsDrawingRequest(levelsDrawingRequest),
+			.levelsRGB(levelsRGB),
 					
 			.barDrawingRequest(barDrawingRequest),
 			.barRGB(barRGB)
