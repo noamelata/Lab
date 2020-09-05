@@ -8,6 +8,7 @@ module TOP_BAR_TOP	(
 					input logic [1:0] [10:0] drawCoordinates,
 					input logic [1:0] num_of_hearts,
 					input logic [1:0] [3:0] level_num,
+					input logic gameOver,
 					
 					output logic [1:0] [3:0] timer,
 					output logic one_sec_out,
@@ -279,6 +280,42 @@ heart_mux heart_mux(
 assign hearts_active[0] = (num_of_hearts >= 1) ? 1'b1 : 1'b0; 
 assign hearts_active[1] = (num_of_hearts >= 2) ? 1'b1 : 1'b0;
 assign hearts_active[2] = (num_of_hearts >= 3) ? 1'b1 : 1'b0;
+
+logic [0:bit_64 - 1] [0:bit_64 - 1] [7:0] gameover_bitmap;
+gameoverBMP gameoverBMP(.object_colors(gameover_bitmap));
+
+logic signed [1:0] [10:0] gameoverOffset;
+logic gameoverInsideSquare;
+logic gameoverRequest;
+logic [7:0] gameoverRGB;
+
+square_object gameoverSquare(	
+			.clk(clk),
+			.resetN(resetN),
+			.pixelX(drawCoordinates[0]),
+			.pixelY(drawCoordinates[1]),
+			.topLeftX(288 - 1), 
+			.topLeftY(184 - 1),
+
+			.offsetX(gameoverOffset[0]), 
+			.offsetY(gameoverOffset[1]),
+			.drawingRequest(gameoverInsideSquare),
+			.RGBout() 
+		);
+
+			
+		gameoverDraw gameoverdraw(
+			.clk(clk),
+			.resetN(resetN),
+			.coordinate(gameoverOffset),
+			.InsideRectangle(gameoverInsideSquare),
+			.duty50(duty50), 
+			.gameOver(gameOver),
+			.object_colors(gameover_bitmap),
+
+			.drawingRequest(gameoverRequest), 
+			.RGBout(gameoverRGB)
+);
 
 bar_mux	bar_mux	(	
 			.clk(clk),

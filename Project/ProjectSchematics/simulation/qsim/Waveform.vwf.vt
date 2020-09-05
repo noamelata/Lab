@@ -1,0 +1,300 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/03/2020 16:52:05"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          BIRD_TOP
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module BIRD_TOP_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [3:0] SingleHitPulse_birds;
+reg [3:0] bird_life;
+reg [1:0] bird_speed;
+reg clk;
+reg [1:0] damage;
+reg [3:0] deploy_bird;
+reg drawCoordinates_1_10;
+reg drawCoordinates_1_9;
+reg drawCoordinates_1_8;
+reg drawCoordinates_1_7;
+reg drawCoordinates_1_6;
+reg drawCoordinates_1_5;
+reg drawCoordinates_1_4;
+reg drawCoordinates_1_3;
+reg drawCoordinates_1_2;
+reg drawCoordinates_1_1;
+reg drawCoordinates_1_0;
+reg drawCoordinates_0_10;
+reg drawCoordinates_0_9;
+reg drawCoordinates_0_8;
+reg drawCoordinates_0_7;
+reg drawCoordinates_0_6;
+reg drawCoordinates_0_5;
+reg drawCoordinates_0_4;
+reg drawCoordinates_0_3;
+reg drawCoordinates_0_2;
+reg drawCoordinates_0_1;
+reg drawCoordinates_0_0;
+reg duty50;
+reg [7:0] random_number;
+reg resetN;
+reg startOfFrame;
+// wires                                               
+wire [3:0] bird_alive;
+wire [3:0] birdsBusRequest;
+wire birdsCoordinates[0][0][0];
+wire birdsCoordinates[0][0][1];
+wire birdsCoordinates[0][0][2];
+wire birdsCoordinates[0][0][3];
+wire birdsCoordinates[0][0][4];
+wire birdsCoordinates[0][0][5];
+wire birdsCoordinates[0][0][6];
+wire birdsCoordinates[0][0][7];
+wire birdsCoordinates[0][0][8];
+wire birdsCoordinates[0][0][9];
+wire birdsCoordinates[0][0][10];
+wire birdsCoordinates[0][1][0];
+wire birdsCoordinates[0][1][1];
+wire birdsCoordinates[0][1][2];
+wire birdsCoordinates[0][1][3];
+wire birdsCoordinates[0][1][4];
+wire birdsCoordinates[0][1][5];
+wire birdsCoordinates[0][1][6];
+wire birdsCoordinates[0][1][7];
+wire birdsCoordinates[0][1][8];
+wire birdsCoordinates[0][1][9];
+wire birdsCoordinates[0][1][10];
+wire birdsCoordinates[1][0][0];
+wire birdsCoordinates[1][0][1];
+wire birdsCoordinates[1][0][2];
+wire birdsCoordinates[1][0][3];
+wire birdsCoordinates[1][0][4];
+wire birdsCoordinates[1][0][5];
+wire birdsCoordinates[1][0][6];
+wire birdsCoordinates[1][0][7];
+wire birdsCoordinates[1][0][8];
+wire birdsCoordinates[1][0][9];
+wire birdsCoordinates[1][0][10];
+wire birdsCoordinates[1][1][0];
+wire birdsCoordinates[1][1][1];
+wire birdsCoordinates[1][1][2];
+wire birdsCoordinates[1][1][3];
+wire birdsCoordinates[1][1][4];
+wire birdsCoordinates[1][1][5];
+wire birdsCoordinates[1][1][6];
+wire birdsCoordinates[1][1][7];
+wire birdsCoordinates[1][1][8];
+wire birdsCoordinates[1][1][9];
+wire birdsCoordinates[1][1][10];
+wire birdsCoordinates[2][0][0];
+wire birdsCoordinates[2][0][1];
+wire birdsCoordinates[2][0][2];
+wire birdsCoordinates[2][0][3];
+wire birdsCoordinates[2][0][4];
+wire birdsCoordinates[2][0][5];
+wire birdsCoordinates[2][0][6];
+wire birdsCoordinates[2][0][7];
+wire birdsCoordinates[2][0][8];
+wire birdsCoordinates[2][0][9];
+wire birdsCoordinates[2][0][10];
+wire birdsCoordinates[2][1][0];
+wire birdsCoordinates[2][1][1];
+wire birdsCoordinates[2][1][2];
+wire birdsCoordinates[2][1][3];
+wire birdsCoordinates[2][1][4];
+wire birdsCoordinates[2][1][5];
+wire birdsCoordinates[2][1][6];
+wire birdsCoordinates[2][1][7];
+wire birdsCoordinates[2][1][8];
+wire birdsCoordinates[2][1][9];
+wire birdsCoordinates[2][1][10];
+wire birdsCoordinates[3][0][0];
+wire birdsCoordinates[3][0][1];
+wire birdsCoordinates[3][0][2];
+wire birdsCoordinates[3][0][3];
+wire birdsCoordinates[3][0][4];
+wire birdsCoordinates[3][0][5];
+wire birdsCoordinates[3][0][6];
+wire birdsCoordinates[3][0][7];
+wire birdsCoordinates[3][0][8];
+wire birdsCoordinates[3][0][9];
+wire birdsCoordinates[3][0][10];
+wire birdsCoordinates[3][1][0];
+wire birdsCoordinates[3][1][1];
+wire birdsCoordinates[3][1][2];
+wire birdsCoordinates[3][1][3];
+wire birdsCoordinates[3][1][4];
+wire birdsCoordinates[3][1][5];
+wire birdsCoordinates[3][1][6];
+wire birdsCoordinates[3][1][7];
+wire birdsCoordinates[3][1][8];
+wire birdsCoordinates[3][1][9];
+wire birdsCoordinates[3][1][10];
+wire birdsDrawingRequest;
+wire [7:0] birdsRGB;
+wire [3:0] deploy_shit;
+
+// assign statements (if any)                          
+BIRD_TOP i1 (
+// port map - connection between master ports and signals/registers   
+	.SingleHitPulse_birds(SingleHitPulse_birds),
+	.bird_alive(bird_alive),
+	.bird_life(bird_life),
+	.bird_speed(bird_speed),
+	.birdsBusRequest(birdsBusRequest),
+	.\birdsCoordinates[0][0][0] (birdsCoordinates[0][0][0]),
+	.\birdsCoordinates[0][0][1] (birdsCoordinates[0][0][1]),
+	.\birdsCoordinates[0][0][2] (birdsCoordinates[0][0][2]),
+	.\birdsCoordinates[0][0][3] (birdsCoordinates[0][0][3]),
+	.\birdsCoordinates[0][0][4] (birdsCoordinates[0][0][4]),
+	.\birdsCoordinates[0][0][5] (birdsCoordinates[0][0][5]),
+	.\birdsCoordinates[0][0][6] (birdsCoordinates[0][0][6]),
+	.\birdsCoordinates[0][0][7] (birdsCoordinates[0][0][7]),
+	.\birdsCoordinates[0][0][8] (birdsCoordinates[0][0][8]),
+	.\birdsCoordinates[0][0][9] (birdsCoordinates[0][0][9]),
+	.\birdsCoordinates[0][0][10] (birdsCoordinates[0][0][10]),
+	.\birdsCoordinates[0][1][0] (birdsCoordinates[0][1][0]),
+	.\birdsCoordinates[0][1][1] (birdsCoordinates[0][1][1]),
+	.\birdsCoordinates[0][1][2] (birdsCoordinates[0][1][2]),
+	.\birdsCoordinates[0][1][3] (birdsCoordinates[0][1][3]),
+	.\birdsCoordinates[0][1][4] (birdsCoordinates[0][1][4]),
+	.\birdsCoordinates[0][1][5] (birdsCoordinates[0][1][5]),
+	.\birdsCoordinates[0][1][6] (birdsCoordinates[0][1][6]),
+	.\birdsCoordinates[0][1][7] (birdsCoordinates[0][1][7]),
+	.\birdsCoordinates[0][1][8] (birdsCoordinates[0][1][8]),
+	.\birdsCoordinates[0][1][9] (birdsCoordinates[0][1][9]),
+	.\birdsCoordinates[0][1][10] (birdsCoordinates[0][1][10]),
+	.\birdsCoordinates[1][0][0] (birdsCoordinates[1][0][0]),
+	.\birdsCoordinates[1][0][1] (birdsCoordinates[1][0][1]),
+	.\birdsCoordinates[1][0][2] (birdsCoordinates[1][0][2]),
+	.\birdsCoordinates[1][0][3] (birdsCoordinates[1][0][3]),
+	.\birdsCoordinates[1][0][4] (birdsCoordinates[1][0][4]),
+	.\birdsCoordinates[1][0][5] (birdsCoordinates[1][0][5]),
+	.\birdsCoordinates[1][0][6] (birdsCoordinates[1][0][6]),
+	.\birdsCoordinates[1][0][7] (birdsCoordinates[1][0][7]),
+	.\birdsCoordinates[1][0][8] (birdsCoordinates[1][0][8]),
+	.\birdsCoordinates[1][0][9] (birdsCoordinates[1][0][9]),
+	.\birdsCoordinates[1][0][10] (birdsCoordinates[1][0][10]),
+	.\birdsCoordinates[1][1][0] (birdsCoordinates[1][1][0]),
+	.\birdsCoordinates[1][1][1] (birdsCoordinates[1][1][1]),
+	.\birdsCoordinates[1][1][2] (birdsCoordinates[1][1][2]),
+	.\birdsCoordinates[1][1][3] (birdsCoordinates[1][1][3]),
+	.\birdsCoordinates[1][1][4] (birdsCoordinates[1][1][4]),
+	.\birdsCoordinates[1][1][5] (birdsCoordinates[1][1][5]),
+	.\birdsCoordinates[1][1][6] (birdsCoordinates[1][1][6]),
+	.\birdsCoordinates[1][1][7] (birdsCoordinates[1][1][7]),
+	.\birdsCoordinates[1][1][8] (birdsCoordinates[1][1][8]),
+	.\birdsCoordinates[1][1][9] (birdsCoordinates[1][1][9]),
+	.\birdsCoordinates[1][1][10] (birdsCoordinates[1][1][10]),
+	.\birdsCoordinates[2][0][0] (birdsCoordinates[2][0][0]),
+	.\birdsCoordinates[2][0][1] (birdsCoordinates[2][0][1]),
+	.\birdsCoordinates[2][0][2] (birdsCoordinates[2][0][2]),
+	.\birdsCoordinates[2][0][3] (birdsCoordinates[2][0][3]),
+	.\birdsCoordinates[2][0][4] (birdsCoordinates[2][0][4]),
+	.\birdsCoordinates[2][0][5] (birdsCoordinates[2][0][5]),
+	.\birdsCoordinates[2][0][6] (birdsCoordinates[2][0][6]),
+	.\birdsCoordinates[2][0][7] (birdsCoordinates[2][0][7]),
+	.\birdsCoordinates[2][0][8] (birdsCoordinates[2][0][8]),
+	.\birdsCoordinates[2][0][9] (birdsCoordinates[2][0][9]),
+	.\birdsCoordinates[2][0][10] (birdsCoordinates[2][0][10]),
+	.\birdsCoordinates[2][1][0] (birdsCoordinates[2][1][0]),
+	.\birdsCoordinates[2][1][1] (birdsCoordinates[2][1][1]),
+	.\birdsCoordinates[2][1][2] (birdsCoordinates[2][1][2]),
+	.\birdsCoordinates[2][1][3] (birdsCoordinates[2][1][3]),
+	.\birdsCoordinates[2][1][4] (birdsCoordinates[2][1][4]),
+	.\birdsCoordinates[2][1][5] (birdsCoordinates[2][1][5]),
+	.\birdsCoordinates[2][1][6] (birdsCoordinates[2][1][6]),
+	.\birdsCoordinates[2][1][7] (birdsCoordinates[2][1][7]),
+	.\birdsCoordinates[2][1][8] (birdsCoordinates[2][1][8]),
+	.\birdsCoordinates[2][1][9] (birdsCoordinates[2][1][9]),
+	.\birdsCoordinates[2][1][10] (birdsCoordinates[2][1][10]),
+	.\birdsCoordinates[3][0][0] (birdsCoordinates[3][0][0]),
+	.\birdsCoordinates[3][0][1] (birdsCoordinates[3][0][1]),
+	.\birdsCoordinates[3][0][2] (birdsCoordinates[3][0][2]),
+	.\birdsCoordinates[3][0][3] (birdsCoordinates[3][0][3]),
+	.\birdsCoordinates[3][0][4] (birdsCoordinates[3][0][4]),
+	.\birdsCoordinates[3][0][5] (birdsCoordinates[3][0][5]),
+	.\birdsCoordinates[3][0][6] (birdsCoordinates[3][0][6]),
+	.\birdsCoordinates[3][0][7] (birdsCoordinates[3][0][7]),
+	.\birdsCoordinates[3][0][8] (birdsCoordinates[3][0][8]),
+	.\birdsCoordinates[3][0][9] (birdsCoordinates[3][0][9]),
+	.\birdsCoordinates[3][0][10] (birdsCoordinates[3][0][10]),
+	.\birdsCoordinates[3][1][0] (birdsCoordinates[3][1][0]),
+	.\birdsCoordinates[3][1][1] (birdsCoordinates[3][1][1]),
+	.\birdsCoordinates[3][1][2] (birdsCoordinates[3][1][2]),
+	.\birdsCoordinates[3][1][3] (birdsCoordinates[3][1][3]),
+	.\birdsCoordinates[3][1][4] (birdsCoordinates[3][1][4]),
+	.\birdsCoordinates[3][1][5] (birdsCoordinates[3][1][5]),
+	.\birdsCoordinates[3][1][6] (birdsCoordinates[3][1][6]),
+	.\birdsCoordinates[3][1][7] (birdsCoordinates[3][1][7]),
+	.\birdsCoordinates[3][1][8] (birdsCoordinates[3][1][8]),
+	.\birdsCoordinates[3][1][9] (birdsCoordinates[3][1][9]),
+	.\birdsCoordinates[3][1][10] (birdsCoordinates[3][1][10]),
+	.birdsDrawingRequest(birdsDrawingRequest),
+	.birdsRGB(birdsRGB),
+	.clk(clk),
+	.damage(damage),
+	.deploy_bird(deploy_bird),
+	.deploy_shit(deploy_shit),
+	.drawCoordinates_1_10(drawCoordinates_1_10),
+	.drawCoordinates_1_9(drawCoordinates_1_9),
+	.drawCoordinates_1_8(drawCoordinates_1_8),
+	.drawCoordinates_1_7(drawCoordinates_1_7),
+	.drawCoordinates_1_6(drawCoordinates_1_6),
+	.drawCoordinates_1_5(drawCoordinates_1_5),
+	.drawCoordinates_1_4(drawCoordinates_1_4),
+	.drawCoordinates_1_3(drawCoordinates_1_3),
+	.drawCoordinates_1_2(drawCoordinates_1_2),
+	.drawCoordinates_1_1(drawCoordinates_1_1),
+	.drawCoordinates_1_0(drawCoordinates_1_0),
+	.drawCoordinates_0_10(drawCoordinates_0_10),
+	.drawCoordinates_0_9(drawCoordinates_0_9),
+	.drawCoordinates_0_8(drawCoordinates_0_8),
+	.drawCoordinates_0_7(drawCoordinates_0_7),
+	.drawCoordinates_0_6(drawCoordinates_0_6),
+	.drawCoordinates_0_5(drawCoordinates_0_5),
+	.drawCoordinates_0_4(drawCoordinates_0_4),
+	.drawCoordinates_0_3(drawCoordinates_0_3),
+	.drawCoordinates_0_2(drawCoordinates_0_2),
+	.drawCoordinates_0_1(drawCoordinates_0_1),
+	.drawCoordinates_0_0(drawCoordinates_0_0),
+	.duty50(duty50),
+	.random_number(random_number),
+	.resetN(resetN),
+	.startOfFrame(startOfFrame)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// startOfFrame
+initial
+begin
+	startOfFrame = 1'b0;
+end 
+endmodule
+

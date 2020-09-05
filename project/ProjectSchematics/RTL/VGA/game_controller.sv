@@ -14,7 +14,7 @@ module	game_controller	(
 			input logic collision, // active in case of collision between player and tree
 			input logic SingleHitPulse, // critical code, generating A single pulse in a frame 
 			input logic pickup_hit,
-			input logic out_of_time,		
+			input logic out_of_time,	
 			
 			output logic [2:0] tree_speed,
 			output logic [1:0] bird_speed,
@@ -35,6 +35,7 @@ module	game_controller	(
 
 
 int number_of_trees = 0;
+int bit_64 = 64;
 logic [1:0] num_of_birds;
 
 logic [1:0] trees_to_add;
@@ -52,6 +53,8 @@ levelFSM level_fsm(
 	.bird_speed(bird_speed),
 	.number_of_birds(num_of_birds)
                 );
+					 
+
 
 
 int cooldown_time;
@@ -111,6 +114,8 @@ begin
 	end 
 	else begin 
 		player_active <= player_active;
+		powerups <= powerups;
+		power_up_counter <= power_up_counter;
 		time_to_add <= {4'h0, 4'h0};
 		add_time <= 1'b0;
 		level_up <= 1'b0;

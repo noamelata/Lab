@@ -1,0 +1,96 @@
+Quartus Prime Archive log --	C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/projqarforintegration.qarlog
+
+Archive:	C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/projqarforintegration.qar
+Date:		Fri Sep 04 12:42:40 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/BIRD_TOP_SIM.vwf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/DE10_Standard_Audio.sdc
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/Lab1Demo.bdf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/Lab1Demo.qpf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/Lab1Demo.qsf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/BIRD_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Bird/birdBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Bird/birdDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Bird/birdLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/GAME_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/GROUND_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/KEYBOARD/TOP_KBD_DEMOALL.bdf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/KEYBOARD/keyPad_decoder.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/KEYBOARD/keyToggle_decoder.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/KEYBOARD/random.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/SinTable.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/TOP_MSS_DEMO.bdf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/ToneDecoder.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/addr_counter.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/data_conversion.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/MSS/prescaler.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/PLAYER_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Pickup/PICKUP_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Pickup/pickupBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Pickup/pickupDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Pickup/pickupLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Player/playerDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Player/playerLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/SHOT_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Seg7/SEG7.SV
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/SHIT_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/collision_player_shit.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/shitBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/shitDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/shitLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shit/shit_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shot/shotBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shot/shotDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Shot/shotLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/TOP_BAR_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/TREE_TOP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/NumbersBitMap.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/barDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/bar_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/decimal_down_counter.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/heartBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/heartDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/heart_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Text/timer_4_digits_counter.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Tree/treeBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Tree/treeDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Tree/treeLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/VGA_Controller.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/birds_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/collision_bird_shot.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/collision_player_pickup.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/collision_player_tree.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/digits_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/dynamic_groundBMP.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/dynamic_groundDraw.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/dynamic_groundLogic.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/game_controller.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/objects_mux_all.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/one_sec_counter.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/shots_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/square_object.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/trees_mux.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/valX.bsf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/valX.qip
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/valX.v
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/valX_bb.v
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/valX_inst.v
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/audio_codec_controller/audio_codec_controller.qxp
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/game_architecture_TOP.bdf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/levelFsm.sv
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/numberPosition.bsf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/numberPosition.qip
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/numberPosition.v
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/numberPosition_bb.v
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/Waveform.vwf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/assignment_defaults.qdf
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/constraints/pin.tcl
+C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/output_files/Chain1.cdf
+	======= Total: 85 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

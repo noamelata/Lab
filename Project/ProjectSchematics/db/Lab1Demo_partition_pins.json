@@ -4,119 +4,203 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "VGA_CLK",
+					"name" : "tree_speed[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[6]",
+					"name" : "tree_speed[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[7]",
+					"name" : "tree_speed[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[6]",
+					"name" : "bird_speed[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[7]",
+					"name" : "bird_speed[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[7]",
+					"name" : "deploy_shot[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_HS",
+					"name" : "deploy_shot[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_VS",
+					"name" : "deploy_shot[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_BLANK_N",
+					"name" : "deploy_shot[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[0]",
+					"name" : "deploy_shot[4]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[1]",
+					"name" : "deploy_shot[5]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[2]",
+					"name" : "deploy_shot[6]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[3]",
+					"name" : "deploy_shot[7]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[4]",
+					"name" : "deploy_tree[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[5]",
+					"name" : "deploy_tree[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[0]",
+					"name" : "deploy_tree[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[1]",
+					"name" : "deploy_tree[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[2]",
+					"name" : "deploy_tree[4]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[3]",
+					"name" : "deploy_tree[5]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[4]",
+					"name" : "deploy_tree[6]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[5]",
+					"name" : "deploy_tree[7]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[0]",
+					"name" : "deploy_tree[8]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[1]",
+					"name" : "deploy_tree[9]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[2]",
+					"name" : "deploy_tree[10]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[3]",
+					"name" : "deploy_tree[11]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[4]",
+					"name" : "deploy_tree[12]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[5]",
+					"name" : "deploy_tree[13]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[6]",
+					"name" : "deploy_tree[14]",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "deploy_tree[15]",
+					"strict" : false
+				},
+				{
+					"name" : "deploy_bird[0]",
+					"strict" : false
+				},
+				{
+					"name" : "deploy_bird[1]",
+					"strict" : false
+				},
+				{
+					"name" : "deploy_bird[2]",
+					"strict" : false
+				},
+				{
+					"name" : "deploy_bird[3]",
+					"strict" : false
+				},
+				{
+					"name" : "deploy_pickup",
+					"strict" : false
+				},
+				{
+					"name" : "bird_life[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bird_life[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bird_life[2]",
+					"strict" : false
+				},
+				{
+					"name" : "player_red",
+					"strict" : false
+				},
+				{
+					"name" : "player_active",
+					"strict" : false
+				},
+				{
+					"name" : "add_time",
+					"strict" : false
+				},
+				{
+					"name" : "time_to_add[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "time_to_add[0][3]",
+					"strict" : false
+				},
+				{
+					"name" : "time_to_add[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "time_to_add[1][3]",
+					"strict" : false
+				},
+				{
+					"name" : "more_damage",
+					"strict" : false
+				},
+				{
+					"name" : "shield",
+					"strict" : false
+				},
+				{
+					"name" : "num_of_hearts[0]",
+					"strict" : false
+				},
+				{
+					"name" : "num_of_hearts[1]",
+					"strict" : false
+				},
+				{
+					"name" : "god_mode",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -124,31 +208,51 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
+					"name" : "shoot",
 					"strict" : false
 				},
 				{
-					"name" : "SW[7]",
+					"name" : "startOfFrame",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[2]",
+					"name" : "SingleHitPulse",
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "out_of_time",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "bird_alive[3]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[3]",
+					"name" : "bird_alive[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[8]",
+					"name" : "bird_alive[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bird_alive[0]",
+					"strict" : false
+				},
+				{
+					"name" : "random[5]",
+					"strict" : false
+				},
+				{
+					"name" : "random[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pickup_hit",
+					"strict" : false
+				},
+				{
+					"name" : "rapid_fire",
 					"strict" : false
 				}
 			]

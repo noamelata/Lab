@@ -1,0 +1,172 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/TECHNION/gitLab/Lab/Project/ProjectSchematics/simulation/qsim
+Ebird_top
+Z1 w1599140638
+Z2 DPx4 work 18 bird_top_data_type 0 22 YBGho;d0SMAZo]eJ9eSfb0
+Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 cD3@N^MdoDolN5@R6?T[V1
+Z4 DPx8 cyclonev 19 cyclonev_components 0 22 3BCIeZzdIHLCX<;R;K38G3
+Z5 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 PQDYM9fR]Wek<A7X8bA8S1
+Z6 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z7 DPx6 altera 11 dffeas_pack 0 22 >EJOc2K4@P4f?njWHdOcd0
+Z8 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z11 DPx6 altera 28 altera_primitives_components 0 22 14j`ZKHCzSI;]V?hmAE6_1
+R0
+Z12 8Lab1Demo.vho
+Z13 FLab1Demo.vho
+l0
+L52
+VQ0UEG;JhoPjS6AIQ:RRAg1
+!s100 Z>ThSQHBP4U[jl6eT@a@=2
+Z14 OV;C;10.5b;63
+32
+Z15 !s110 1599140640
+!i10b 1
+Z16 !s108 1599140640.000000
+Z17 !s90 -work|work|Lab1Demo.vho|
+Z18 !s107 Lab1Demo.vho|
+!i113 1
+Z19 o-work work
+Z20 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+DEx4 work 8 bird_top 0 22 Q0UEG;JhoPjS6AIQ:RRAg1
+l4075
+L161
+VIRJ:OB@^bH:21dbfWZ5E23
+!s100 @mP6N@ecJ>G8G<nc[L=CX2
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R19
+R20
+vBIRD_TOP
+!s110 1599141129
+!i10b 1
+!s100 18ZfLi;:=XIZ;No>[a=6a1
+I:3]]kUkknhA1NLiTXO>1H0
+Z21 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1599141127
+Z22 8Lab1Demo.vo
+Z23 FLab1Demo.vo
+Z24 L0 32
+Z25 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1599141128.000000
+Z26 !s107 Lab1Demo.vo|
+Z27 !s90 -work|work|Lab1Demo.vo|
+!i113 1
+R19
+Z28 tCvgOpt 0
+n@b@i@r@d_@t@o@p
+Pbird_top_data_type
+R9
+R10
+Z29 w1599140636
+R0
+Z30 8BIRD_TOP_SIM.vwf.vht
+Z31 FBIRD_TOP_SIM.vwf.vht
+l0
+L32
+V0@LNgLZ^z[3@8A5WIPTPJ3
+!s100 <8zZ352:?azAEUB0JX;a60
+R14
+32
+Z32 !s110 1599140641
+!i10b 1
+Z33 !s108 1599140641.000000
+Z34 !s90 -work|work|BIRD_TOP_SIM.vwf.vht|
+Z35 !s107 BIRD_TOP_SIM.vwf.vht|
+!i113 1
+R19
+R20
+Ebird_top_vhd_vec_tst
+R29
+DPx4 work 18 bird_top_data_type 0 22 0@LNgLZ^z[3@8A5WIPTPJ3
+R9
+R10
+R0
+R30
+R31
+l0
+L44
+VQPkiCSQJ[ZhGn_NU33DlF1
+!s100 I0S24<d[K4EKPE_dfE]6;2
+R14
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R19
+R20
+vgame_controller
+Z36 !s110 1599329150
+!i10b 1
+!s100 nX<X8N7zDgWWjVI@om`8c2
+I:8e]G;?CoN0goGGN5>ABj1
+R21
+R0
+w1599329149
+R22
+R23
+R24
+R25
+r1
+!s85 0
+31
+Z37 !s108 1599329150.000000
+R26
+R27
+!i113 1
+R19
+R28
+vgame_controller_vlg_vec_tst
+R36
+!i10b 1
+!s100 lcXXz9D0TQ7k[i=lUM]bc3
+IWAVAHGR<PF9^iFOHnM`0c3
+R21
+R0
+w1599329148
+8gameControllerSim.vwf.vt
+FgameControllerSim.vwf.vt
+L0 30
+R25
+r1
+!s85 0
+31
+R37
+!s107 gameControllerSim.vwf.vt|
+!s90 -work|work|gameControllerSim.vwf.vt|
+!i113 1
+R19
+R28

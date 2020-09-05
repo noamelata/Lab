@@ -1,0 +1,9060 @@
+$comment
+	File created using the following command:
+		vcd file Lab1Demo.msim.vcd -direction
+$end
+$date
+	Sat Sep 05 21:05:50 2020
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module game_controller_vlg_vec_tst $end
+$var reg 1 ! SingleHitPulse $end
+$var reg 4 " bird_alive [3:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ collision $end
+$var reg 1 % god_mode $end
+$var reg 1 & out_of_time $end
+$var reg 1 ' pickup_hit $end
+$var reg 11 ( playerCoordinates [10:0] $end
+$var reg 8 ) random [7:0] $end
+$var reg 1 * rapid_fire $end
+$var reg 1 + resetN $end
+$var reg 1 , shoot $end
+$var reg 1 - startOfFrame $end
+$var wire 1 . add_time $end
+$var wire 1 / bird_life [3] $end
+$var wire 1 0 bird_life [2] $end
+$var wire 1 1 bird_life [1] $end
+$var wire 1 2 bird_life [0] $end
+$var wire 1 3 bird_speed [1] $end
+$var wire 1 4 bird_speed [0] $end
+$var wire 1 5 deploy_bird [3] $end
+$var wire 1 6 deploy_bird [2] $end
+$var wire 1 7 deploy_bird [1] $end
+$var wire 1 8 deploy_bird [0] $end
+$var wire 1 9 deploy_pickup $end
+$var wire 1 : deploy_shot [7] $end
+$var wire 1 ; deploy_shot [6] $end
+$var wire 1 < deploy_shot [5] $end
+$var wire 1 = deploy_shot [4] $end
+$var wire 1 > deploy_shot [3] $end
+$var wire 1 ? deploy_shot [2] $end
+$var wire 1 @ deploy_shot [1] $end
+$var wire 1 A deploy_shot [0] $end
+$var wire 1 B deploy_tree [15] $end
+$var wire 1 C deploy_tree [14] $end
+$var wire 1 D deploy_tree [13] $end
+$var wire 1 E deploy_tree [12] $end
+$var wire 1 F deploy_tree [11] $end
+$var wire 1 G deploy_tree [10] $end
+$var wire 1 H deploy_tree [9] $end
+$var wire 1 I deploy_tree [8] $end
+$var wire 1 J deploy_tree [7] $end
+$var wire 1 K deploy_tree [6] $end
+$var wire 1 L deploy_tree [5] $end
+$var wire 1 M deploy_tree [4] $end
+$var wire 1 N deploy_tree [3] $end
+$var wire 1 O deploy_tree [2] $end
+$var wire 1 P deploy_tree [1] $end
+$var wire 1 Q deploy_tree [0] $end
+$var wire 1 R more_damage $end
+$var wire 1 S num_of_hearts [1] $end
+$var wire 1 T num_of_hearts [0] $end
+$var wire 1 U player_active $end
+$var wire 1 V player_red $end
+$var wire 1 W shield $end
+$var wire 1 X time_to_add_1_3 $end
+$var wire 1 Y time_to_add_1_2 $end
+$var wire 1 Z time_to_add_1_1 $end
+$var wire 1 [ time_to_add_1_0 $end
+$var wire 1 \ time_to_add_0_3 $end
+$var wire 1 ] time_to_add_0_2 $end
+$var wire 1 ^ time_to_add_0_1 $end
+$var wire 1 _ time_to_add_0_0 $end
+$var wire 1 ` tree_speed [2] $end
+$var wire 1 a tree_speed [1] $end
+$var wire 1 b tree_speed [0] $end
+
+$scope module i1 $end
+$var wire 1 c gnd $end
+$var wire 1 d vcc $end
+$var wire 1 e unknown $end
+$var tri1 1 f devclrn $end
+$var tri1 1 g devpor $end
+$var tri1 1 h devoe $end
+$var wire 1 i playerCoordinates[0]~input_o $end
+$var wire 1 j playerCoordinates[1]~input_o $end
+$var wire 1 k playerCoordinates[2]~input_o $end
+$var wire 1 l playerCoordinates[3]~input_o $end
+$var wire 1 m playerCoordinates[4]~input_o $end
+$var wire 1 n playerCoordinates[5]~input_o $end
+$var wire 1 o playerCoordinates[6]~input_o $end
+$var wire 1 p playerCoordinates[7]~input_o $end
+$var wire 1 q playerCoordinates[8]~input_o $end
+$var wire 1 r playerCoordinates[9]~input_o $end
+$var wire 1 s playerCoordinates[10]~input_o $end
+$var wire 1 t random[0]~input_o $end
+$var wire 1 u random[1]~input_o $end
+$var wire 1 v random[2]~input_o $end
+$var wire 1 w random[3]~input_o $end
+$var wire 1 x random[6]~input_o $end
+$var wire 1 y random[7]~input_o $end
+$var wire 1 z collision~input_o $end
+$var wire 1 { tree_speed[0]~output_o $end
+$var wire 1 | tree_speed[1]~output_o $end
+$var wire 1 } tree_speed[2]~output_o $end
+$var wire 1 ~ bird_speed[0]~output_o $end
+$var wire 1 !! bird_speed[1]~output_o $end
+$var wire 1 "! deploy_shot[0]~output_o $end
+$var wire 1 #! deploy_shot[1]~output_o $end
+$var wire 1 $! deploy_shot[2]~output_o $end
+$var wire 1 %! deploy_shot[3]~output_o $end
+$var wire 1 &! deploy_shot[4]~output_o $end
+$var wire 1 '! deploy_shot[5]~output_o $end
+$var wire 1 (! deploy_shot[6]~output_o $end
+$var wire 1 )! deploy_shot[7]~output_o $end
+$var wire 1 *! deploy_tree[0]~output_o $end
+$var wire 1 +! deploy_tree[1]~output_o $end
+$var wire 1 ,! deploy_tree[2]~output_o $end
+$var wire 1 -! deploy_tree[3]~output_o $end
+$var wire 1 .! deploy_tree[4]~output_o $end
+$var wire 1 /! deploy_tree[5]~output_o $end
+$var wire 1 0! deploy_tree[6]~output_o $end
+$var wire 1 1! deploy_tree[7]~output_o $end
+$var wire 1 2! deploy_tree[8]~output_o $end
+$var wire 1 3! deploy_tree[9]~output_o $end
+$var wire 1 4! deploy_tree[10]~output_o $end
+$var wire 1 5! deploy_tree[11]~output_o $end
+$var wire 1 6! deploy_tree[12]~output_o $end
+$var wire 1 7! deploy_tree[13]~output_o $end
+$var wire 1 8! deploy_tree[14]~output_o $end
+$var wire 1 9! deploy_tree[15]~output_o $end
+$var wire 1 :! deploy_bird[0]~output_o $end
+$var wire 1 ;! deploy_bird[1]~output_o $end
+$var wire 1 <! deploy_bird[2]~output_o $end
+$var wire 1 =! deploy_bird[3]~output_o $end
+$var wire 1 >! deploy_pickup~output_o $end
+$var wire 1 ?! bird_life[0]~output_o $end
+$var wire 1 @! bird_life[1]~output_o $end
+$var wire 1 A! bird_life[2]~output_o $end
+$var wire 1 B! bird_life[3]~output_o $end
+$var wire 1 C! player_red~output_o $end
+$var wire 1 D! player_active~output_o $end
+$var wire 1 E! add_time~output_o $end
+$var wire 1 F! time_to_add[0][0]~output_o $end
+$var wire 1 G! time_to_add[0][1]~output_o $end
+$var wire 1 H! time_to_add[0][2]~output_o $end
+$var wire 1 I! time_to_add[0][3]~output_o $end
+$var wire 1 J! time_to_add[1][0]~output_o $end
+$var wire 1 K! time_to_add[1][1]~output_o $end
+$var wire 1 L! time_to_add[1][2]~output_o $end
+$var wire 1 M! time_to_add[1][3]~output_o $end
+$var wire 1 N! more_damage~output_o $end
+$var wire 1 O! shield~output_o $end
+$var wire 1 P! num_of_hearts[0]~output_o $end
+$var wire 1 Q! num_of_hearts[1]~output_o $end
+$var wire 1 R! clk~input_o $end
+$var wire 1 S! startOfFrame~input_o $end
+$var wire 1 T! bird_alive[3]~input_o $end
+$var wire 1 U! bird_alive[2]~input_o $end
+$var wire 1 V! bird_alive[1]~input_o $end
+$var wire 1 W! bird_alive[0]~input_o $end
+$var wire 1 X! Equal6~0_combout $end
+$var wire 1 Y! resetN~input_o $end
+$var wire 1 Z! bird_hit_flag~q $end
+$var wire 1 [! level_up~0_combout $end
+$var wire 1 \! level_up~q $end
+$var wire 1 ]! level_fsm|level[2]~2_combout $end
+$var wire 1 ^! level_fsm|level[1]~1_combout $end
+$var wire 1 _! level_fsm|level[0]~0_combout $end
+$var wire 1 `! level_fsm|WideOr7~0_combout $end
+$var wire 1 a! level_fsm|WideOr6~0_combout $end
+$var wire 1 b! Add5~1_sumout $end
+$var wire 1 c! Add5~2 $end
+$var wire 1 d! Add5~5_sumout $end
+$var wire 1 e! shoot~input_o $end
+$var wire 1 f! random[5]~input_o $end
+$var wire 1 g! random[4]~input_o $end
+$var wire 1 h! pickup_hit~input_o $end
+$var wire 1 i! Equal7~0_combout $end
+$var wire 1 j! Equal7~1_combout $end
+$var wire 1 k! Add4~125_sumout $end
+$var wire 1 l! power_up_counter[3]~0_combout $end
+$var wire 1 m! Add4~126 $end
+$var wire 1 n! Add4~57_sumout $end
+$var wire 1 o! Add4~58 $end
+$var wire 1 p! Add4~61_sumout $end
+$var wire 1 q! Equal7~2_combout $end
+$var wire 1 r! Add4~62 $end
+$var wire 1 s! Add4~101_sumout $end
+$var wire 1 t! power_up_counter~6_combout $end
+$var wire 1 u! Add4~102 $end
+$var wire 1 v! Add4~121_sumout $end
+$var wire 1 w! Add4~122 $end
+$var wire 1 x! Add4~97_sumout $end
+$var wire 1 y! power_up_counter~5_combout $end
+$var wire 1 z! Add4~98 $end
+$var wire 1 {! Add4~93_sumout $end
+$var wire 1 |! power_up_counter~4_combout $end
+$var wire 1 }! Add4~94 $end
+$var wire 1 ~! Add4~89_sumout $end
+$var wire 1 !" power_up_counter~3_combout $end
+$var wire 1 "" Add4~90 $end
+$var wire 1 #" Add4~85_sumout $end
+$var wire 1 $" power_up_counter~2_combout $end
+$var wire 1 %" Equal7~3_combout $end
+$var wire 1 &" Equal7~4_combout $end
+$var wire 1 '" Equal7~5_combout $end
+$var wire 1 (" Add4~86 $end
+$var wire 1 )" Add4~81_sumout $end
+$var wire 1 *" power_up_counter~1_combout $end
+$var wire 1 +" Add4~82 $end
+$var wire 1 ," Add4~109_sumout $end
+$var wire 1 -" Add4~110 $end
+$var wire 1 ." Add4~117_sumout $end
+$var wire 1 /" Add4~118 $end
+$var wire 1 0" Add4~113_sumout $end
+$var wire 1 1" Add4~114 $end
+$var wire 1 2" Add4~5_sumout $end
+$var wire 1 3" Add4~6 $end
+$var wire 1 4" Add4~29_sumout $end
+$var wire 1 5" Add4~30 $end
+$var wire 1 6" Add4~25_sumout $end
+$var wire 1 7" Add4~26 $end
+$var wire 1 8" Add4~21_sumout $end
+$var wire 1 9" Add4~22 $end
+$var wire 1 :" Add4~17_sumout $end
+$var wire 1 ;" Add4~18 $end
+$var wire 1 <" Add4~13_sumout $end
+$var wire 1 =" Add4~14 $end
+$var wire 1 >" Add4~9_sumout $end
+$var wire 1 ?" Add4~10 $end
+$var wire 1 @" Add4~53_sumout $end
+$var wire 1 A" Add4~54 $end
+$var wire 1 B" Add4~49_sumout $end
+$var wire 1 C" Add4~50 $end
+$var wire 1 D" Add4~45_sumout $end
+$var wire 1 E" Add4~46 $end
+$var wire 1 F" Add4~41_sumout $end
+$var wire 1 G" Add4~42 $end
+$var wire 1 H" Add4~37_sumout $end
+$var wire 1 I" Add4~38 $end
+$var wire 1 J" Add4~33_sumout $end
+$var wire 1 K" Add4~34 $end
+$var wire 1 L" Add4~105_sumout $end
+$var wire 1 M" Add4~106 $end
+$var wire 1 N" Add4~77_sumout $end
+$var wire 1 O" Add4~78 $end
+$var wire 1 P" Add4~73_sumout $end
+$var wire 1 Q" Add4~74 $end
+$var wire 1 R" Add4~69_sumout $end
+$var wire 1 S" Add4~70 $end
+$var wire 1 T" Add4~65_sumout $end
+$var wire 1 U" Add4~66 $end
+$var wire 1 V" Add4~1_sumout $end
+$var wire 1 W" powerups~3_combout $end
+$var wire 1 X" rapid_fire~input_o $end
+$var wire 1 Y" Add2~33_sumout $end
+$var wire 1 Z" Add2~34 $end
+$var wire 1 [" Add2~93_sumout $end
+$var wire 1 \" cooldown~3_combout $end
+$var wire 1 ]" Add2~94 $end
+$var wire 1 ^" Add2~89_sumout $end
+$var wire 1 _" cooldown~2_combout $end
+$var wire 1 `" Add2~90 $end
+$var wire 1 a" Add2~69_sumout $end
+$var wire 1 b" Add2~70 $end
+$var wire 1 c" Add2~85_sumout $end
+$var wire 1 d" cooldown~1_combout $end
+$var wire 1 e" Add2~86 $end
+$var wire 1 f" Add2~81_sumout $end
+$var wire 1 g" cooldown~0_combout $end
+$var wire 1 h" Add2~82 $end
+$var wire 1 i" Add2~49_sumout $end
+$var wire 1 j" Add2~50 $end
+$var wire 1 k" Add2~53_sumout $end
+$var wire 1 l" Add2~54 $end
+$var wire 1 m" Add2~13_sumout $end
+$var wire 1 n" Add2~14 $end
+$var wire 1 o" Add2~9_sumout $end
+$var wire 1 p" Add2~10 $end
+$var wire 1 q" Add2~17_sumout $end
+$var wire 1 r" Add2~18 $end
+$var wire 1 s" Add2~21_sumout $end
+$var wire 1 t" Add2~22 $end
+$var wire 1 u" Add2~25_sumout $end
+$var wire 1 v" Add2~26 $end
+$var wire 1 w" Add2~29_sumout $end
+$var wire 1 x" Add2~30 $end
+$var wire 1 y" Add2~1_sumout $end
+$var wire 1 z" Add2~2 $end
+$var wire 1 {" Add2~5_sumout $end
+$var wire 1 |" Equal1~0_combout $end
+$var wire 1 }" Equal1~1_combout $end
+$var wire 1 ~" Add2~6 $end
+$var wire 1 !# Add2~97_sumout $end
+$var wire 1 "# Add2~98 $end
+$var wire 1 ## Add2~101_sumout $end
+$var wire 1 $# Add2~102 $end
+$var wire 1 %# Add2~105_sumout $end
+$var wire 1 &# Add2~106 $end
+$var wire 1 '# Add2~109_sumout $end
+$var wire 1 (# Add2~110 $end
+$var wire 1 )# Add2~113_sumout $end
+$var wire 1 *# Add2~114 $end
+$var wire 1 +# Add2~117_sumout $end
+$var wire 1 ,# Add2~118 $end
+$var wire 1 -# Add2~121_sumout $end
+$var wire 1 .# Add2~122 $end
+$var wire 1 /# Add2~125_sumout $end
+$var wire 1 0# Add2~126 $end
+$var wire 1 1# Add2~57_sumout $end
+$var wire 1 2# Add2~58 $end
+$var wire 1 3# Add2~61_sumout $end
+$var wire 1 4# Add2~62 $end
+$var wire 1 5# Add2~65_sumout $end
+$var wire 1 6# Add2~66 $end
+$var wire 1 7# Add2~73_sumout $end
+$var wire 1 8# Add2~74 $end
+$var wire 1 9# Add2~77_sumout $end
+$var wire 1 :# Add2~78 $end
+$var wire 1 ;# Add2~37_sumout $end
+$var wire 1 <# Add2~38 $end
+$var wire 1 =# Add2~41_sumout $end
+$var wire 1 ># Add2~42 $end
+$var wire 1 ?# Add2~45_sumout $end
+$var wire 1 @# Equal1~2_combout $end
+$var wire 1 A# Equal1~3_combout $end
+$var wire 1 B# Equal1~4_combout $end
+$var wire 1 C# Equal1~5_combout $end
+$var wire 1 D# Equal1~6_combout $end
+$var wire 1 E# current_shot[3]~0_combout $end
+$var wire 1 F# Add5~6 $end
+$var wire 1 G# Add5~9_sumout $end
+$var wire 1 H# Add5~10 $end
+$var wire 1 I# Add5~65_sumout $end
+$var wire 1 J# Add5~66 $end
+$var wire 1 K# Add5~13_sumout $end
+$var wire 1 L# Add5~14 $end
+$var wire 1 M# Add5~125_sumout $end
+$var wire 1 N# Add5~126 $end
+$var wire 1 O# Add5~121_sumout $end
+$var wire 1 P# Add5~122 $end
+$var wire 1 Q# Add5~117_sumout $end
+$var wire 1 R# Add5~118 $end
+$var wire 1 S# Add5~113_sumout $end
+$var wire 1 T# Add5~114 $end
+$var wire 1 U# Add5~109_sumout $end
+$var wire 1 V# Add5~110 $end
+$var wire 1 W# Add5~105_sumout $end
+$var wire 1 X# Add5~106 $end
+$var wire 1 Y# Add5~101_sumout $end
+$var wire 1 Z# Add5~102 $end
+$var wire 1 [# Add5~97_sumout $end
+$var wire 1 \# Add5~98 $end
+$var wire 1 ]# Add5~69_sumout $end
+$var wire 1 ^# Add5~70 $end
+$var wire 1 _# Add5~93_sumout $end
+$var wire 1 `# Add5~94 $end
+$var wire 1 a# Add5~89_sumout $end
+$var wire 1 b# Add5~90 $end
+$var wire 1 c# Add5~33_sumout $end
+$var wire 1 d# Add5~34 $end
+$var wire 1 e# Add5~29_sumout $end
+$var wire 1 f# Add5~30 $end
+$var wire 1 g# Add5~25_sumout $end
+$var wire 1 h# Add5~26 $end
+$var wire 1 i# Add5~21_sumout $end
+$var wire 1 j# Add5~22 $end
+$var wire 1 k# Add5~17_sumout $end
+$var wire 1 l# Equal2~0_combout $end
+$var wire 1 m# Add5~18 $end
+$var wire 1 n# Add5~57_sumout $end
+$var wire 1 o# Add5~58 $end
+$var wire 1 p# Add5~53_sumout $end
+$var wire 1 q# Add5~54 $end
+$var wire 1 r# Add5~49_sumout $end
+$var wire 1 s# Add5~50 $end
+$var wire 1 t# Add5~85_sumout $end
+$var wire 1 u# Add5~86 $end
+$var wire 1 v# Add5~45_sumout $end
+$var wire 1 w# Add5~46 $end
+$var wire 1 x# Add5~41_sumout $end
+$var wire 1 y# Add5~42 $end
+$var wire 1 z# Add5~37_sumout $end
+$var wire 1 {# Equal2~1_combout $end
+$var wire 1 |# Add5~38 $end
+$var wire 1 }# Add5~81_sumout $end
+$var wire 1 ~# Add5~82 $end
+$var wire 1 !$ Add5~77_sumout $end
+$var wire 1 "$ Add5~78 $end
+$var wire 1 #$ Add5~73_sumout $end
+$var wire 1 $$ Add5~74 $end
+$var wire 1 %$ Add5~61_sumout $end
+$var wire 1 &$ Equal2~2_combout $end
+$var wire 1 '$ Equal2~3_combout $end
+$var wire 1 ($ Equal2~4_combout $end
+$var wire 1 )$ Equal2~7_combout $end
+$var wire 1 *$ Equal2~6_combout $end
+$var wire 1 +$ Equal2~5_combout $end
+$var wire 1 ,$ Decoder0~0_combout $end
+$var wire 1 -$ always0~1_combout $end
+$var wire 1 .$ deploy_shot[0]~reg0_q $end
+$var wire 1 /$ Decoder0~1_combout $end
+$var wire 1 0$ deploy_shot[1]~reg0_q $end
+$var wire 1 1$ Decoder0~2_combout $end
+$var wire 1 2$ deploy_shot[2]~reg0_q $end
+$var wire 1 3$ Decoder0~3_combout $end
+$var wire 1 4$ deploy_shot[3]~reg0_q $end
+$var wire 1 5$ Decoder0~4_combout $end
+$var wire 1 6$ deploy_shot[4]~reg0_q $end
+$var wire 1 7$ Decoder0~5_combout $end
+$var wire 1 8$ deploy_shot[5]~reg0_q $end
+$var wire 1 9$ Decoder0~6_combout $end
+$var wire 1 :$ deploy_shot[6]~reg0_q $end
+$var wire 1 ;$ deploy_shot[7]~reg0_q $end
+$var wire 1 <$ Add7~9_sumout $end
+$var wire 1 =$ Add7~2 $end
+$var wire 1 >$ Add7~13_sumout $end
+$var wire 1 ?$ Add1~121_sumout $end
+$var wire 1 @$ Add1~2 $end
+$var wire 1 A$ Add1~109_sumout $end
+$var wire 1 B$ Add1~110 $end
+$var wire 1 C$ Add1~45_sumout $end
+$var wire 1 D$ Add1~46 $end
+$var wire 1 E$ Add1~41_sumout $end
+$var wire 1 F$ Add1~42 $end
+$var wire 1 G$ Add1~37_sumout $end
+$var wire 1 H$ Add1~38 $end
+$var wire 1 I$ Add1~33_sumout $end
+$var wire 1 J$ Add1~34 $end
+$var wire 1 K$ Add1~29_sumout $end
+$var wire 1 L$ Add1~30 $end
+$var wire 1 M$ Add1~25_sumout $end
+$var wire 1 N$ Add1~26 $end
+$var wire 1 O$ Add1~69_sumout $end
+$var wire 1 P$ Add1~70 $end
+$var wire 1 Q$ Add1~65_sumout $end
+$var wire 1 R$ Add1~66 $end
+$var wire 1 S$ Add1~61_sumout $end
+$var wire 1 T$ Add1~62 $end
+$var wire 1 U$ Add1~57_sumout $end
+$var wire 1 V$ Add1~58 $end
+$var wire 1 W$ Add1~53_sumout $end
+$var wire 1 X$ Add1~54 $end
+$var wire 1 Y$ Add1~49_sumout $end
+$var wire 1 Z$ Add1~50 $end
+$var wire 1 [$ Add1~117_sumout $end
+$var wire 1 \$ Add1~118 $end
+$var wire 1 ]$ Add1~113_sumout $end
+$var wire 1 ^$ Add1~114 $end
+$var wire 1 _$ Add1~125_sumout $end
+$var wire 1 `$ always0~6_combout $end
+$var wire 1 a$ always0~7_combout $end
+$var wire 1 b$ Add1~122 $end
+$var wire 1 c$ Add1~101_sumout $end
+$var wire 1 d$ Add1~102 $end
+$var wire 1 e$ Add1~81_sumout $end
+$var wire 1 f$ level_counter~3_combout $end
+$var wire 1 g$ Add1~82 $end
+$var wire 1 h$ Add1~97_sumout $end
+$var wire 1 i$ Add1~98 $end
+$var wire 1 j$ Add1~93_sumout $end
+$var wire 1 k$ Add1~94 $end
+$var wire 1 l$ Add1~77_sumout $end
+$var wire 1 m$ level_counter~2_combout $end
+$var wire 1 n$ always0~8_combout $end
+$var wire 1 o$ always0~9_combout $end
+$var wire 1 p$ always0~12_combout $end
+$var wire 1 q$ level_counter[2]~0_combout $end
+$var wire 1 r$ Add1~78 $end
+$var wire 1 s$ Add1~73_sumout $end
+$var wire 1 t$ level_counter~1_combout $end
+$var wire 1 u$ Add1~74 $end
+$var wire 1 v$ Add1~89_sumout $end
+$var wire 1 w$ Add1~90 $end
+$var wire 1 x$ Add1~105_sumout $end
+$var wire 1 y$ Add1~106 $end
+$var wire 1 z$ Add1~85_sumout $end
+$var wire 1 {$ Add1~86 $end
+$var wire 1 |$ Add1~21_sumout $end
+$var wire 1 }$ Add1~22 $end
+$var wire 1 ~$ Add1~17_sumout $end
+$var wire 1 !% Add1~18 $end
+$var wire 1 "% Add1~13_sumout $end
+$var wire 1 #% Add1~14 $end
+$var wire 1 $% Add1~9_sumout $end
+$var wire 1 %% Add1~10 $end
+$var wire 1 &% Add1~5_sumout $end
+$var wire 1 '% Add1~6 $end
+$var wire 1 (% Add1~1_sumout $end
+$var wire 1 )% always0~5_combout $end
+$var wire 1 *% always0~10_combout $end
+$var wire 1 +% always0~11_combout $end
+$var wire 1 ,% start_level~q $end
+$var wire 1 -% Add9~77_sumout $end
+$var wire 1 .% Add3~117_sumout $end
+$var wire 1 /% Equal0~1_combout $end
+$var wire 1 0% Equal0~2_combout $end
+$var wire 1 1% Equal0~3_combout $end
+$var wire 1 2% Equal0~4_combout $end
+$var wire 1 3% Equal0~6_combout $end
+$var wire 1 4% Equal0~7_combout $end
+$var wire 1 5% Add3~118 $end
+$var wire 1 6% Add3~121_sumout $end
+$var wire 1 7% Add3~122 $end
+$var wire 1 8% Add3~113_sumout $end
+$var wire 1 9% tree_counter[2]~4_combout $end
+$var wire 1 :% Add3~114 $end
+$var wire 1 ;% Add3~109_sumout $end
+$var wire 1 <% tree_counter[3]~3_combout $end
+$var wire 1 =% Add3~110 $end
+$var wire 1 >% Add3~125_sumout $end
+$var wire 1 ?% Add3~126 $end
+$var wire 1 @% Add3~65_sumout $end
+$var wire 1 A% tree_counter[5]~2_combout $end
+$var wire 1 B% Add3~66 $end
+$var wire 1 C% Add3~69_sumout $end
+$var wire 1 D% Add3~70 $end
+$var wire 1 E% Add3~73_sumout $end
+$var wire 1 F% Add3~74 $end
+$var wire 1 G% Add3~61_sumout $end
+$var wire 1 H% tree_counter~0_combout $end
+$var wire 1 I% Add3~62 $end
+$var wire 1 J% Add3~77_sumout $end
+$var wire 1 K% Add3~78 $end
+$var wire 1 L% Add3~81_sumout $end
+$var wire 1 M% Add3~82 $end
+$var wire 1 N% Add3~85_sumout $end
+$var wire 1 O% Add3~86 $end
+$var wire 1 P% Add3~29_sumout $end
+$var wire 1 Q% Add3~30 $end
+$var wire 1 R% Add3~89_sumout $end
+$var wire 1 S% Add3~90 $end
+$var wire 1 T% Add3~93_sumout $end
+$var wire 1 U% Add3~94 $end
+$var wire 1 V% Add3~97_sumout $end
+$var wire 1 W% Add3~98 $end
+$var wire 1 X% Add3~101_sumout $end
+$var wire 1 Y% Add3~102 $end
+$var wire 1 Z% Add3~105_sumout $end
+$var wire 1 [% Add3~106 $end
+$var wire 1 \% Add3~17_sumout $end
+$var wire 1 ]% Add3~18 $end
+$var wire 1 ^% Add3~45_sumout $end
+$var wire 1 _% Add3~46 $end
+$var wire 1 `% Add3~5_sumout $end
+$var wire 1 a% Add3~6 $end
+$var wire 1 b% Add3~37_sumout $end
+$var wire 1 c% Add3~38 $end
+$var wire 1 d% Add3~41_sumout $end
+$var wire 1 e% Add3~42 $end
+$var wire 1 f% Add3~49_sumout $end
+$var wire 1 g% Add3~50 $end
+$var wire 1 h% Add3~53_sumout $end
+$var wire 1 i% Add3~54 $end
+$var wire 1 j% Add3~57_sumout $end
+$var wire 1 k% Add3~58 $end
+$var wire 1 l% Add3~13_sumout $end
+$var wire 1 m% Add3~14 $end
+$var wire 1 n% Add3~21_sumout $end
+$var wire 1 o% Add3~22 $end
+$var wire 1 p% Add3~25_sumout $end
+$var wire 1 q% Add3~26 $end
+$var wire 1 r% Add3~9_sumout $end
+$var wire 1 s% Add3~10 $end
+$var wire 1 t% Add3~33_sumout $end
+$var wire 1 u% Add3~34 $end
+$var wire 1 v% Add3~1_sumout $end
+$var wire 1 w% Equal0~0_combout $end
+$var wire 1 x% Equal0~5_combout $end
+$var wire 1 y% Add9~2 $end
+$var wire 1 z% Add9~25_sumout $end
+$var wire 1 {% Add9~26 $end
+$var wire 1 |% Add9~21_sumout $end
+$var wire 1 }% Add9~22 $end
+$var wire 1 ~% Add9~17_sumout $end
+$var wire 1 !& Add9~18 $end
+$var wire 1 "& Add9~13_sumout $end
+$var wire 1 #& Add9~14 $end
+$var wire 1 $& Add9~9_sumout $end
+$var wire 1 %& Add9~10 $end
+$var wire 1 && Add9~5_sumout $end
+$var wire 1 '& Add9~6 $end
+$var wire 1 (& Add9~49_sumout $end
+$var wire 1 )& Add9~50 $end
+$var wire 1 *& Add9~45_sumout $end
+$var wire 1 +& Add9~46 $end
+$var wire 1 ,& Add9~41_sumout $end
+$var wire 1 -& Add9~42 $end
+$var wire 1 .& Add9~37_sumout $end
+$var wire 1 /& Add9~38 $end
+$var wire 1 0& Add9~33_sumout $end
+$var wire 1 1& Add9~34 $end
+$var wire 1 2& Add9~29_sumout $end
+$var wire 1 3& Add9~30 $end
+$var wire 1 4& Add9~73_sumout $end
+$var wire 1 5& Add9~74 $end
+$var wire 1 6& Add9~69_sumout $end
+$var wire 1 7& Add9~70 $end
+$var wire 1 8& Add9~65_sumout $end
+$var wire 1 9& Add9~66 $end
+$var wire 1 :& Add9~61_sumout $end
+$var wire 1 ;& Add9~62 $end
+$var wire 1 <& Add9~57_sumout $end
+$var wire 1 =& Add9~58 $end
+$var wire 1 >& Add9~53_sumout $end
+$var wire 1 ?& Add9~54 $end
+$var wire 1 @& Add9~121_sumout $end
+$var wire 1 A& Add9~122 $end
+$var wire 1 B& Add9~117_sumout $end
+$var wire 1 C& Add9~118 $end
+$var wire 1 D& Add9~113_sumout $end
+$var wire 1 E& Add9~114 $end
+$var wire 1 F& Add9~109_sumout $end
+$var wire 1 G& Add9~110 $end
+$var wire 1 H& Add9~105_sumout $end
+$var wire 1 I& Add9~106 $end
+$var wire 1 J& Add9~101_sumout $end
+$var wire 1 K& Add9~102 $end
+$var wire 1 L& Add9~97_sumout $end
+$var wire 1 M& Add9~98 $end
+$var wire 1 N& Add9~93_sumout $end
+$var wire 1 O& Add9~94 $end
+$var wire 1 P& Add9~89_sumout $end
+$var wire 1 Q& Add9~90 $end
+$var wire 1 R& Add9~85_sumout $end
+$var wire 1 S& Add9~86 $end
+$var wire 1 T& Add9~81_sumout $end
+$var wire 1 U& Add9~82 $end
+$var wire 1 V& Add9~125_sumout $end
+$var wire 1 W& always0~2_combout $end
+$var wire 1 X& number_of_trees[31]~0_combout $end
+$var wire 1 Y& Add9~78 $end
+$var wire 1 Z& Add9~1_sumout $end
+$var wire 1 [& LessThan4~0_combout $end
+$var wire 1 \& LessThan4~1_combout $end
+$var wire 1 ]& LessThan4~2_combout $end
+$var wire 1 ^& LessThan4~3_combout $end
+$var wire 1 _& LessThan4~4_combout $end
+$var wire 1 `& LessThan4~5_combout $end
+$var wire 1 a& current_tree[4]~0_combout $end
+$var wire 1 b& Add7~14 $end
+$var wire 1 c& Add7~109_sumout $end
+$var wire 1 d& Add7~110 $end
+$var wire 1 e& Add7~101_sumout $end
+$var wire 1 f& Add7~102 $end
+$var wire 1 g& Add7~113_sumout $end
+$var wire 1 h& Add7~114 $end
+$var wire 1 i& Add7~117_sumout $end
+$var wire 1 j& Add7~118 $end
+$var wire 1 k& Add7~121_sumout $end
+$var wire 1 l& Add7~122 $end
+$var wire 1 m& Add7~125_sumout $end
+$var wire 1 n& Add7~126 $end
+$var wire 1 o& Add7~41_sumout $end
+$var wire 1 p& Add7~42 $end
+$var wire 1 q& Add7~29_sumout $end
+$var wire 1 r& Add7~30 $end
+$var wire 1 s& Add7~57_sumout $end
+$var wire 1 t& Add7~58 $end
+$var wire 1 u& Add7~61_sumout $end
+$var wire 1 v& Add7~62 $end
+$var wire 1 w& Add7~65_sumout $end
+$var wire 1 x& Add7~66 $end
+$var wire 1 y& Add7~69_sumout $end
+$var wire 1 z& Add7~70 $end
+$var wire 1 {& Add7~73_sumout $end
+$var wire 1 |& Add7~74 $end
+$var wire 1 }& Add7~77_sumout $end
+$var wire 1 ~& Add7~78 $end
+$var wire 1 !' Add7~33_sumout $end
+$var wire 1 "' Add7~34 $end
+$var wire 1 #' Add7~25_sumout $end
+$var wire 1 $' Add7~26 $end
+$var wire 1 %' Add7~37_sumout $end
+$var wire 1 &' Add7~38 $end
+$var wire 1 '' Add7~45_sumout $end
+$var wire 1 (' Add7~46 $end
+$var wire 1 )' Add7~49_sumout $end
+$var wire 1 *' Add7~50 $end
+$var wire 1 +' Add7~53_sumout $end
+$var wire 1 ,' Add7~54 $end
+$var wire 1 -' Add7~17_sumout $end
+$var wire 1 .' Add7~18 $end
+$var wire 1 /' Add7~21_sumout $end
+$var wire 1 0' Equal4~0_combout $end
+$var wire 1 1' Equal4~1_combout $end
+$var wire 1 2' Equal4~2_combout $end
+$var wire 1 3' Add7~22 $end
+$var wire 1 4' Add7~105_sumout $end
+$var wire 1 5' Add7~106 $end
+$var wire 1 6' Add7~97_sumout $end
+$var wire 1 7' Add7~98 $end
+$var wire 1 8' Add7~93_sumout $end
+$var wire 1 9' Add7~94 $end
+$var wire 1 :' Add7~89_sumout $end
+$var wire 1 ;' Add7~90 $end
+$var wire 1 <' Add7~85_sumout $end
+$var wire 1 =' Add7~86 $end
+$var wire 1 >' Add7~81_sumout $end
+$var wire 1 ?' Equal4~3_combout $end
+$var wire 1 @' Equal4~4_combout $end
+$var wire 1 A' Equal4~7_combout $end
+$var wire 1 B' Equal4~6_combout $end
+$var wire 1 C' Add7~10 $end
+$var wire 1 D' Add7~5_sumout $end
+$var wire 1 E' Add7~6 $end
+$var wire 1 F' Add7~1_sumout $end
+$var wire 1 G' Equal4~5_combout $end
+$var wire 1 H' Decoder1~0_combout $end
+$var wire 1 I' always0~3_combout $end
+$var wire 1 J' deploy_tree[0]~reg0_q $end
+$var wire 1 K' Decoder1~1_combout $end
+$var wire 1 L' deploy_tree[1]~reg0_q $end
+$var wire 1 M' Decoder1~2_combout $end
+$var wire 1 N' deploy_tree[2]~reg0_q $end
+$var wire 1 O' Decoder1~3_combout $end
+$var wire 1 P' deploy_tree[3]~reg0_q $end
+$var wire 1 Q' Decoder1~4_combout $end
+$var wire 1 R' deploy_tree[4]~reg0_q $end
+$var wire 1 S' Decoder1~5_combout $end
+$var wire 1 T' deploy_tree[5]~reg0_q $end
+$var wire 1 U' Decoder1~6_combout $end
+$var wire 1 V' deploy_tree[6]~reg0_q $end
+$var wire 1 W' Decoder1~7_combout $end
+$var wire 1 X' deploy_tree[7]~reg0_q $end
+$var wire 1 Y' Decoder1~8_combout $end
+$var wire 1 Z' Decoder1~9_combout $end
+$var wire 1 [' deploy_tree[8]~reg0_q $end
+$var wire 1 \' Decoder1~10_combout $end
+$var wire 1 ]' deploy_tree[9]~reg0_q $end
+$var wire 1 ^' Decoder1~11_combout $end
+$var wire 1 _' deploy_tree[10]~reg0_q $end
+$var wire 1 `' Decoder1~12_combout $end
+$var wire 1 a' deploy_tree[11]~reg0_q $end
+$var wire 1 b' Decoder1~13_combout $end
+$var wire 1 c' Decoder1~14_combout $end
+$var wire 1 d' deploy_tree[12]~reg0_q $end
+$var wire 1 e' Decoder1~15_combout $end
+$var wire 1 f' deploy_tree[13]~reg0_q $end
+$var wire 1 g' Decoder1~16_combout $end
+$var wire 1 h' deploy_tree[14]~reg0_q $end
+$var wire 1 i' deploy_tree[15]~reg0_q $end
+$var wire 1 j' deploy_bird[0]~1_combout $end
+$var wire 1 k' deploy_bird[0]~reg0_q $end
+$var wire 1 l' level_fsm|bird_life~0_combout $end
+$var wire 1 m' deploy_bird[1]~reg0_q $end
+$var wire 1 n' deploy_bird[2]~reg0_q $end
+$var wire 1 o' deploy_bird~0_combout $end
+$var wire 1 p' deploy_bird[3]~reg0_q $end
+$var wire 1 q' deploy_pickup~0_combout $end
+$var wire 1 r' deploy_pickup~reg0_q $end
+$var wire 1 s' level_fsm|WideOr12~0_combout $end
+$var wire 1 t' level_fsm|WideOr11~0_combout $end
+$var wire 1 u' LessThan14~0_combout $end
+$var wire 1 v' LessThan14~1_combout $end
+$var wire 1 w' Add0~69_sumout $end
+$var wire 1 x' Add0~70 $end
+$var wire 1 y' Add0~65_sumout $end
+$var wire 1 z' Add0~66 $end
+$var wire 1 {' Add0~61_sumout $end
+$var wire 1 |' Add0~62 $end
+$var wire 1 }' Add0~57_sumout $end
+$var wire 1 ~' LessThan14~2_combout $end
+$var wire 1 !( LessThan14~3_combout $end
+$var wire 1 "( Add0~58 $end
+$var wire 1 #( Add0~125_sumout $end
+$var wire 1 $( Add0~126 $end
+$var wire 1 %( Add0~121_sumout $end
+$var wire 1 &( LessThan14~4_combout $end
+$var wire 1 '( LessThan14~5_combout $end
+$var wire 1 (( Add0~122 $end
+$var wire 1 )( Add0~81_sumout $end
+$var wire 1 *( powerups~2_combout $end
+$var wire 1 +( Add11~1_sumout $end
+$var wire 1 ,( player_life[0]~8_combout $end
+$var wire 1 -( powerups~1_combout $end
+$var wire 1 .( god_mode~input_o $end
+$var wire 1 /( SingleHitPulse~input_o $end
+$var wire 1 0( always0~4_combout $end
+$var wire 1 1( player_life[0]~4_combout $end
+$var wire 1 2( player_life[0]~6_combout $end
+$var wire 1 3( player_life[0]~0_combout $end
+$var wire 1 4( player_life[0]~1_combout $end
+$var wire 1 5( player_life[0]~2_combout $end
+$var wire 1 6( player_life[0]~3_combout $end
+$var wire 1 7( player_life[0]~7_combout $end
+$var wire 1 8( player_life[0]~5_combout $end
+$var wire 1 9( Add11~2 $end
+$var wire 1 :( Add11~5_sumout $end
+$var wire 1 ;( player_life[1]~9_combout $end
+$var wire 1 <( Add11~6 $end
+$var wire 1 =( Add11~29_sumout $end
+$var wire 1 >( Add11~30 $end
+$var wire 1 ?( Add11~25_sumout $end
+$var wire 1 @( Add11~26 $end
+$var wire 1 A( Add11~21_sumout $end
+$var wire 1 B( Add11~22 $end
+$var wire 1 C( Add11~17_sumout $end
+$var wire 1 D( Add11~18 $end
+$var wire 1 E( Add11~13_sumout $end
+$var wire 1 F( Add11~14 $end
+$var wire 1 G( Add11~53_sumout $end
+$var wire 1 H( Add11~54 $end
+$var wire 1 I( Add11~49_sumout $end
+$var wire 1 J( Add11~50 $end
+$var wire 1 K( Add11~45_sumout $end
+$var wire 1 L( Add11~46 $end
+$var wire 1 M( Add11~41_sumout $end
+$var wire 1 N( Add11~42 $end
+$var wire 1 O( Add11~37_sumout $end
+$var wire 1 P( Add11~38 $end
+$var wire 1 Q( Add11~33_sumout $end
+$var wire 1 R( Add11~34 $end
+$var wire 1 S( Add11~77_sumout $end
+$var wire 1 T( Add11~78 $end
+$var wire 1 U( Add11~73_sumout $end
+$var wire 1 V( Add11~74 $end
+$var wire 1 W( Add11~69_sumout $end
+$var wire 1 X( Add11~70 $end
+$var wire 1 Y( Add11~65_sumout $end
+$var wire 1 Z( Add11~66 $end
+$var wire 1 [( Add11~61_sumout $end
+$var wire 1 \( Add11~62 $end
+$var wire 1 ]( Add11~57_sumout $end
+$var wire 1 ^( Add11~58 $end
+$var wire 1 _( Add11~125_sumout $end
+$var wire 1 `( Add11~126 $end
+$var wire 1 a( Add11~121_sumout $end
+$var wire 1 b( Add11~122 $end
+$var wire 1 c( Add11~117_sumout $end
+$var wire 1 d( Add11~118 $end
+$var wire 1 e( Add11~113_sumout $end
+$var wire 1 f( Add11~114 $end
+$var wire 1 g( Add11~109_sumout $end
+$var wire 1 h( Add11~110 $end
+$var wire 1 i( Add11~105_sumout $end
+$var wire 1 j( Add11~106 $end
+$var wire 1 k( Add11~101_sumout $end
+$var wire 1 l( Add11~102 $end
+$var wire 1 m( Add11~97_sumout $end
+$var wire 1 n( Add11~98 $end
+$var wire 1 o( Add11~93_sumout $end
+$var wire 1 p( Add11~94 $end
+$var wire 1 q( Add11~89_sumout $end
+$var wire 1 r( Add11~90 $end
+$var wire 1 s( Add11~85_sumout $end
+$var wire 1 t( Add11~86 $end
+$var wire 1 u( Add11~81_sumout $end
+$var wire 1 v( Add11~82 $end
+$var wire 1 w( Add11~9_sumout $end
+$var wire 1 x( LessThan11~0_combout $end
+$var wire 1 y( red_counter~0_combout $end
+$var wire 1 z( Add0~82 $end
+$var wire 1 {( Add0~117_sumout $end
+$var wire 1 |( Add0~118 $end
+$var wire 1 }( Add0~113_sumout $end
+$var wire 1 ~( Add0~114 $end
+$var wire 1 !) Add0~109_sumout $end
+$var wire 1 ") Add0~110 $end
+$var wire 1 #) Add0~105_sumout $end
+$var wire 1 $) Add0~106 $end
+$var wire 1 %) Add0~101_sumout $end
+$var wire 1 &) Add0~102 $end
+$var wire 1 ') Add0~97_sumout $end
+$var wire 1 () Add0~98 $end
+$var wire 1 )) Add0~93_sumout $end
+$var wire 1 *) Add0~94 $end
+$var wire 1 +) Add0~89_sumout $end
+$var wire 1 ,) Add0~90 $end
+$var wire 1 -) Add0~85_sumout $end
+$var wire 1 .) Add0~86 $end
+$var wire 1 /) Add0~5_sumout $end
+$var wire 1 0) Add0~6 $end
+$var wire 1 1) Add0~29_sumout $end
+$var wire 1 2) Add0~30 $end
+$var wire 1 3) Add0~25_sumout $end
+$var wire 1 4) Add0~26 $end
+$var wire 1 5) Add0~21_sumout $end
+$var wire 1 6) Add0~22 $end
+$var wire 1 7) Add0~17_sumout $end
+$var wire 1 8) Add0~18 $end
+$var wire 1 9) Add0~13_sumout $end
+$var wire 1 :) Add0~14 $end
+$var wire 1 ;) Add0~73_sumout $end
+$var wire 1 <) Add0~74 $end
+$var wire 1 =) Add0~9_sumout $end
+$var wire 1 >) Add0~10 $end
+$var wire 1 ?) Add0~53_sumout $end
+$var wire 1 @) Add0~54 $end
+$var wire 1 A) Add0~49_sumout $end
+$var wire 1 B) Add0~50 $end
+$var wire 1 C) Add0~45_sumout $end
+$var wire 1 D) Add0~46 $end
+$var wire 1 E) Add0~41_sumout $end
+$var wire 1 F) Add0~42 $end
+$var wire 1 G) Add0~37_sumout $end
+$var wire 1 H) Add0~38 $end
+$var wire 1 I) Add0~33_sumout $end
+$var wire 1 J) Add0~34 $end
+$var wire 1 K) Add0~77_sumout $end
+$var wire 1 L) Add0~78 $end
+$var wire 1 M) Add0~1_sumout $end
+$var wire 1 N) LessThan14~6_combout $end
+$var wire 1 O) out_of_time~input_o $end
+$var wire 1 P) player_active~0_combout $end
+$var wire 1 Q) player_active~1_combout $end
+$var wire 1 R) player_active~reg0_q $end
+$var wire 1 S) add_time~0_combout $end
+$var wire 1 T) add_time~1_combout $end
+$var wire 1 U) add_time~reg0_q $end
+$var wire 1 V) time_to_add[0][0]~reg0_q $end
+$var wire 1 W) time_to_add[0][3]~reg0_q $end
+$var wire 1 X) time_to_add[1][0]~reg0_q $end
+$var wire 1 Y) time_to_add[1][3]~reg0_q $end
+$var wire 1 Z) powerups~0_combout $end
+$var wire 1 [) always0~0_combout $end
+$var wire 1 \) current_shot [31] $end
+$var wire 1 ]) current_shot [30] $end
+$var wire 1 ^) current_shot [29] $end
+$var wire 1 _) current_shot [28] $end
+$var wire 1 `) current_shot [27] $end
+$var wire 1 a) current_shot [26] $end
+$var wire 1 b) current_shot [25] $end
+$var wire 1 c) current_shot [24] $end
+$var wire 1 d) current_shot [23] $end
+$var wire 1 e) current_shot [22] $end
+$var wire 1 f) current_shot [21] $end
+$var wire 1 g) current_shot [20] $end
+$var wire 1 h) current_shot [19] $end
+$var wire 1 i) current_shot [18] $end
+$var wire 1 j) current_shot [17] $end
+$var wire 1 k) current_shot [16] $end
+$var wire 1 l) current_shot [15] $end
+$var wire 1 m) current_shot [14] $end
+$var wire 1 n) current_shot [13] $end
+$var wire 1 o) current_shot [12] $end
+$var wire 1 p) current_shot [11] $end
+$var wire 1 q) current_shot [10] $end
+$var wire 1 r) current_shot [9] $end
+$var wire 1 s) current_shot [8] $end
+$var wire 1 t) current_shot [7] $end
+$var wire 1 u) current_shot [6] $end
+$var wire 1 v) current_shot [5] $end
+$var wire 1 w) current_shot [4] $end
+$var wire 1 x) current_shot [3] $end
+$var wire 1 y) current_shot [2] $end
+$var wire 1 z) current_shot [1] $end
+$var wire 1 {) current_shot [0] $end
+$var wire 1 |) red_counter [31] $end
+$var wire 1 }) red_counter [30] $end
+$var wire 1 ~) red_counter [29] $end
+$var wire 1 !* red_counter [28] $end
+$var wire 1 "* red_counter [27] $end
+$var wire 1 #* red_counter [26] $end
+$var wire 1 $* red_counter [25] $end
+$var wire 1 %* red_counter [24] $end
+$var wire 1 &* red_counter [23] $end
+$var wire 1 '* red_counter [22] $end
+$var wire 1 (* red_counter [21] $end
+$var wire 1 )* red_counter [20] $end
+$var wire 1 ** red_counter [19] $end
+$var wire 1 +* red_counter [18] $end
+$var wire 1 ,* red_counter [17] $end
+$var wire 1 -* red_counter [16] $end
+$var wire 1 .* red_counter [15] $end
+$var wire 1 /* red_counter [14] $end
+$var wire 1 0* red_counter [13] $end
+$var wire 1 1* red_counter [12] $end
+$var wire 1 2* red_counter [11] $end
+$var wire 1 3* red_counter [10] $end
+$var wire 1 4* red_counter [9] $end
+$var wire 1 5* red_counter [8] $end
+$var wire 1 6* red_counter [7] $end
+$var wire 1 7* red_counter [6] $end
+$var wire 1 8* red_counter [5] $end
+$var wire 1 9* red_counter [4] $end
+$var wire 1 :* red_counter [3] $end
+$var wire 1 ;* red_counter [2] $end
+$var wire 1 <* red_counter [1] $end
+$var wire 1 =* red_counter [0] $end
+$var wire 1 >* level_fsm|level [3] $end
+$var wire 1 ?* level_fsm|level [2] $end
+$var wire 1 @* level_fsm|level [1] $end
+$var wire 1 A* level_fsm|level [0] $end
+$var wire 1 B* powerups [3] $end
+$var wire 1 C* powerups [2] $end
+$var wire 1 D* powerups [1] $end
+$var wire 1 E* powerups [0] $end
+$var wire 1 F* cooldown [31] $end
+$var wire 1 G* cooldown [30] $end
+$var wire 1 H* cooldown [29] $end
+$var wire 1 I* cooldown [28] $end
+$var wire 1 J* cooldown [27] $end
+$var wire 1 K* cooldown [26] $end
+$var wire 1 L* cooldown [25] $end
+$var wire 1 M* cooldown [24] $end
+$var wire 1 N* cooldown [23] $end
+$var wire 1 O* cooldown [22] $end
+$var wire 1 P* cooldown [21] $end
+$var wire 1 Q* cooldown [20] $end
+$var wire 1 R* cooldown [19] $end
+$var wire 1 S* cooldown [18] $end
+$var wire 1 T* cooldown [17] $end
+$var wire 1 U* cooldown [16] $end
+$var wire 1 V* cooldown [15] $end
+$var wire 1 W* cooldown [14] $end
+$var wire 1 X* cooldown [13] $end
+$var wire 1 Y* cooldown [12] $end
+$var wire 1 Z* cooldown [11] $end
+$var wire 1 [* cooldown [10] $end
+$var wire 1 \* cooldown [9] $end
+$var wire 1 ]* cooldown [8] $end
+$var wire 1 ^* cooldown [7] $end
+$var wire 1 _* cooldown [6] $end
+$var wire 1 `* cooldown [5] $end
+$var wire 1 a* cooldown [4] $end
+$var wire 1 b* cooldown [3] $end
+$var wire 1 c* cooldown [2] $end
+$var wire 1 d* cooldown [1] $end
+$var wire 1 e* cooldown [0] $end
+$var wire 1 f* tree_counter [31] $end
+$var wire 1 g* tree_counter [30] $end
+$var wire 1 h* tree_counter [29] $end
+$var wire 1 i* tree_counter [28] $end
+$var wire 1 j* tree_counter [27] $end
+$var wire 1 k* tree_counter [26] $end
+$var wire 1 l* tree_counter [25] $end
+$var wire 1 m* tree_counter [24] $end
+$var wire 1 n* tree_counter [23] $end
+$var wire 1 o* tree_counter [22] $end
+$var wire 1 p* tree_counter [21] $end
+$var wire 1 q* tree_counter [20] $end
+$var wire 1 r* tree_counter [19] $end
+$var wire 1 s* tree_counter [18] $end
+$var wire 1 t* tree_counter [17] $end
+$var wire 1 u* tree_counter [16] $end
+$var wire 1 v* tree_counter [15] $end
+$var wire 1 w* tree_counter [14] $end
+$var wire 1 x* tree_counter [13] $end
+$var wire 1 y* tree_counter [12] $end
+$var wire 1 z* tree_counter [11] $end
+$var wire 1 {* tree_counter [10] $end
+$var wire 1 |* tree_counter [9] $end
+$var wire 1 }* tree_counter [8] $end
+$var wire 1 ~* tree_counter [7] $end
+$var wire 1 !+ tree_counter [6] $end
+$var wire 1 "+ tree_counter [5] $end
+$var wire 1 #+ tree_counter [4] $end
+$var wire 1 $+ tree_counter [3] $end
+$var wire 1 %+ tree_counter [2] $end
+$var wire 1 &+ tree_counter [1] $end
+$var wire 1 '+ tree_counter [0] $end
+$var wire 1 (+ current_tree [31] $end
+$var wire 1 )+ current_tree [30] $end
+$var wire 1 *+ current_tree [29] $end
+$var wire 1 ++ current_tree [28] $end
+$var wire 1 ,+ current_tree [27] $end
+$var wire 1 -+ current_tree [26] $end
+$var wire 1 .+ current_tree [25] $end
+$var wire 1 /+ current_tree [24] $end
+$var wire 1 0+ current_tree [23] $end
+$var wire 1 1+ current_tree [22] $end
+$var wire 1 2+ current_tree [21] $end
+$var wire 1 3+ current_tree [20] $end
+$var wire 1 4+ current_tree [19] $end
+$var wire 1 5+ current_tree [18] $end
+$var wire 1 6+ current_tree [17] $end
+$var wire 1 7+ current_tree [16] $end
+$var wire 1 8+ current_tree [15] $end
+$var wire 1 9+ current_tree [14] $end
+$var wire 1 :+ current_tree [13] $end
+$var wire 1 ;+ current_tree [12] $end
+$var wire 1 <+ current_tree [11] $end
+$var wire 1 =+ current_tree [10] $end
+$var wire 1 >+ current_tree [9] $end
+$var wire 1 ?+ current_tree [8] $end
+$var wire 1 @+ current_tree [7] $end
+$var wire 1 A+ current_tree [6] $end
+$var wire 1 B+ current_tree [5] $end
+$var wire 1 C+ current_tree [4] $end
+$var wire 1 D+ current_tree [3] $end
+$var wire 1 E+ current_tree [2] $end
+$var wire 1 F+ current_tree [1] $end
+$var wire 1 G+ current_tree [0] $end
+$var wire 1 H+ power_up_counter [31] $end
+$var wire 1 I+ power_up_counter [30] $end
+$var wire 1 J+ power_up_counter [29] $end
+$var wire 1 K+ power_up_counter [28] $end
+$var wire 1 L+ power_up_counter [27] $end
+$var wire 1 M+ power_up_counter [26] $end
+$var wire 1 N+ power_up_counter [25] $end
+$var wire 1 O+ power_up_counter [24] $end
+$var wire 1 P+ power_up_counter [23] $end
+$var wire 1 Q+ power_up_counter [22] $end
+$var wire 1 R+ power_up_counter [21] $end
+$var wire 1 S+ power_up_counter [20] $end
+$var wire 1 T+ power_up_counter [19] $end
+$var wire 1 U+ power_up_counter [18] $end
+$var wire 1 V+ power_up_counter [17] $end
+$var wire 1 W+ power_up_counter [16] $end
+$var wire 1 X+ power_up_counter [15] $end
+$var wire 1 Y+ power_up_counter [14] $end
+$var wire 1 Z+ power_up_counter [13] $end
+$var wire 1 [+ power_up_counter [12] $end
+$var wire 1 \+ power_up_counter [11] $end
+$var wire 1 ]+ power_up_counter [10] $end
+$var wire 1 ^+ power_up_counter [9] $end
+$var wire 1 _+ power_up_counter [8] $end
+$var wire 1 `+ power_up_counter [7] $end
+$var wire 1 a+ power_up_counter [6] $end
+$var wire 1 b+ power_up_counter [5] $end
+$var wire 1 c+ power_up_counter [4] $end
+$var wire 1 d+ power_up_counter [3] $end
+$var wire 1 e+ power_up_counter [2] $end
+$var wire 1 f+ power_up_counter [1] $end
+$var wire 1 g+ power_up_counter [0] $end
+$var wire 1 h+ level_counter [31] $end
+$var wire 1 i+ level_counter [30] $end
+$var wire 1 j+ level_counter [29] $end
+$var wire 1 k+ level_counter [28] $end
+$var wire 1 l+ level_counter [27] $end
+$var wire 1 m+ level_counter [26] $end
+$var wire 1 n+ level_counter [25] $end
+$var wire 1 o+ level_counter [24] $end
+$var wire 1 p+ level_counter [23] $end
+$var wire 1 q+ level_counter [22] $end
+$var wire 1 r+ level_counter [21] $end
+$var wire 1 s+ level_counter [20] $end
+$var wire 1 t+ level_counter [19] $end
+$var wire 1 u+ level_counter [18] $end
+$var wire 1 v+ level_counter [17] $end
+$var wire 1 w+ level_counter [16] $end
+$var wire 1 x+ level_counter [15] $end
+$var wire 1 y+ level_counter [14] $end
+$var wire 1 z+ level_counter [13] $end
+$var wire 1 {+ level_counter [12] $end
+$var wire 1 |+ level_counter [11] $end
+$var wire 1 }+ level_counter [10] $end
+$var wire 1 ~+ level_counter [9] $end
+$var wire 1 !, level_counter [8] $end
+$var wire 1 ", level_counter [7] $end
+$var wire 1 #, level_counter [6] $end
+$var wire 1 $, level_counter [5] $end
+$var wire 1 %, level_counter [4] $end
+$var wire 1 &, level_counter [3] $end
+$var wire 1 ', level_counter [2] $end
+$var wire 1 (, level_counter [1] $end
+$var wire 1 ), level_counter [0] $end
+$var wire 1 *, player_life [31] $end
+$var wire 1 +, player_life [30] $end
+$var wire 1 ,, player_life [29] $end
+$var wire 1 -, player_life [28] $end
+$var wire 1 ., player_life [27] $end
+$var wire 1 /, player_life [26] $end
+$var wire 1 0, player_life [25] $end
+$var wire 1 1, player_life [24] $end
+$var wire 1 2, player_life [23] $end
+$var wire 1 3, player_life [22] $end
+$var wire 1 4, player_life [21] $end
+$var wire 1 5, player_life [20] $end
+$var wire 1 6, player_life [19] $end
+$var wire 1 7, player_life [18] $end
+$var wire 1 8, player_life [17] $end
+$var wire 1 9, player_life [16] $end
+$var wire 1 :, player_life [15] $end
+$var wire 1 ;, player_life [14] $end
+$var wire 1 <, player_life [13] $end
+$var wire 1 =, player_life [12] $end
+$var wire 1 >, player_life [11] $end
+$var wire 1 ?, player_life [10] $end
+$var wire 1 @, player_life [9] $end
+$var wire 1 A, player_life [8] $end
+$var wire 1 B, player_life [7] $end
+$var wire 1 C, player_life [6] $end
+$var wire 1 D, player_life [5] $end
+$var wire 1 E, player_life [4] $end
+$var wire 1 F, player_life [3] $end
+$var wire 1 G, player_life [2] $end
+$var wire 1 H, player_life [1] $end
+$var wire 1 I, player_life [0] $end
+$var wire 1 J, number_of_trees [31] $end
+$var wire 1 K, number_of_trees [30] $end
+$var wire 1 L, number_of_trees [29] $end
+$var wire 1 M, number_of_trees [28] $end
+$var wire 1 N, number_of_trees [27] $end
+$var wire 1 O, number_of_trees [26] $end
+$var wire 1 P, number_of_trees [25] $end
+$var wire 1 Q, number_of_trees [24] $end
+$var wire 1 R, number_of_trees [23] $end
+$var wire 1 S, number_of_trees [22] $end
+$var wire 1 T, number_of_trees [21] $end
+$var wire 1 U, number_of_trees [20] $end
+$var wire 1 V, number_of_trees [19] $end
+$var wire 1 W, number_of_trees [18] $end
+$var wire 1 X, number_of_trees [17] $end
+$var wire 1 Y, number_of_trees [16] $end
+$var wire 1 Z, number_of_trees [15] $end
+$var wire 1 [, number_of_trees [14] $end
+$var wire 1 \, number_of_trees [13] $end
+$var wire 1 ], number_of_trees [12] $end
+$var wire 1 ^, number_of_trees [11] $end
+$var wire 1 _, number_of_trees [10] $end
+$var wire 1 `, number_of_trees [9] $end
+$var wire 1 a, number_of_trees [8] $end
+$var wire 1 b, number_of_trees [7] $end
+$var wire 1 c, number_of_trees [6] $end
+$var wire 1 d, number_of_trees [5] $end
+$var wire 1 e, number_of_trees [4] $end
+$var wire 1 f, number_of_trees [3] $end
+$var wire 1 g, number_of_trees [2] $end
+$var wire 1 h, number_of_trees [1] $end
+$var wire 1 i, number_of_trees [0] $end
+$var wire 1 j, last_birds [31] $end
+$var wire 1 k, last_birds [30] $end
+$var wire 1 l, last_birds [29] $end
+$var wire 1 m, last_birds [28] $end
+$var wire 1 n, last_birds [27] $end
+$var wire 1 o, last_birds [26] $end
+$var wire 1 p, last_birds [25] $end
+$var wire 1 q, last_birds [24] $end
+$var wire 1 r, last_birds [23] $end
+$var wire 1 s, last_birds [22] $end
+$var wire 1 t, last_birds [21] $end
+$var wire 1 u, last_birds [20] $end
+$var wire 1 v, last_birds [19] $end
+$var wire 1 w, last_birds [18] $end
+$var wire 1 x, last_birds [17] $end
+$var wire 1 y, last_birds [16] $end
+$var wire 1 z, last_birds [15] $end
+$var wire 1 {, last_birds [14] $end
+$var wire 1 |, last_birds [13] $end
+$var wire 1 }, last_birds [12] $end
+$var wire 1 ~, last_birds [11] $end
+$var wire 1 !- last_birds [10] $end
+$var wire 1 "- last_birds [9] $end
+$var wire 1 #- last_birds [8] $end
+$var wire 1 $- last_birds [7] $end
+$var wire 1 %- last_birds [6] $end
+$var wire 1 &- last_birds [5] $end
+$var wire 1 '- last_birds [4] $end
+$var wire 1 (- last_birds [3] $end
+$var wire 1 )- last_birds [2] $end
+$var wire 1 *- last_birds [1] $end
+$var wire 1 +- last_birds [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+b1 "
+0#
+x$
+x%
+0&
+0'
+bx (
+b0 )
+x*
+0+
+x,
+0-
+0`!
+0a!
+1b!
+0c!
+0d!
+xe!
+0f!
+0g!
+0h!
+1i!
+1j!
+1k!
+1l!
+0m!
+1n!
+0o!
+1p!
+1q!
+0r!
+1s!
+0t!
+0u!
+1v!
+0w!
+1x!
+0y!
+0z!
+1{!
+0|!
+0}!
+1~!
+0!"
+0""
+1#"
+0$"
+1%"
+1&"
+1'"
+0("
+1)"
+0*"
+0+"
+1,"
+0-"
+1."
+0/"
+10"
+01"
+12"
+03"
+14"
+05"
+16"
+07"
+18"
+09"
+1:"
+0;"
+1<"
+0="
+1>"
+0?"
+1@"
+0A"
+1B"
+0C"
+1D"
+0E"
+1F"
+0G"
+1H"
+0I"
+1J"
+0K"
+1L"
+0M"
+1N"
+0O"
+1P"
+0Q"
+1R"
+0S"
+1T"
+0U"
+1V"
+0W"
+xX"
+1Y"
+0Z"
+1["
+x\"
+0]"
+1^"
+x_"
+0`"
+1a"
+0b"
+1c"
+xd"
+0e"
+1f"
+xg"
+0h"
+1i"
+0j"
+1k"
+0l"
+1m"
+0n"
+1o"
+0p"
+1q"
+0r"
+1s"
+0t"
+1u"
+0v"
+1w"
+0x"
+1y"
+0z"
+1{"
+1|"
+1}"
+0~"
+1!#
+0"#
+1##
+0$#
+1%#
+0&#
+1'#
+0(#
+1)#
+0*#
+1+#
+0,#
+1-#
+0.#
+1/#
+00#
+11#
+02#
+13#
+04#
+15#
+06#
+17#
+08#
+19#
+0:#
+1;#
+0<#
+1=#
+0>#
+1?#
+1@#
+1A#
+1B#
+1C#
+1D#
+0E#
+0F#
+0G#
+0H#
+0I#
+0J#
+0K#
+0L#
+0M#
+0N#
+0O#
+0P#
+0Q#
+0R#
+0S#
+0T#
+0U#
+0V#
+0W#
+0X#
+0Y#
+0Z#
+0[#
+0\#
+0]#
+0^#
+0_#
+0`#
+0a#
+0b#
+0c#
+0d#
+0e#
+0f#
+0g#
+0h#
+0i#
+0j#
+0k#
+1l#
+0m#
+0n#
+0o#
+0p#
+0q#
+0r#
+0s#
+0t#
+0u#
+0v#
+0w#
+0x#
+0y#
+0z#
+1{#
+0|#
+0}#
+0~#
+0!$
+0"$
+0#$
+0$$
+0%$
+1&$
+1'$
+1($
+0)$
+0*$
+1+$
+1,$
+x-$
+0.$
+0/$
+00$
+01$
+02$
+03$
+04$
+05$
+06$
+07$
+08$
+09$
+0:$
+0;$
+1<$
+0=$
+0>$
+1?$
+0@$
+1A$
+0B$
+1C$
+0D$
+1E$
+0F$
+1G$
+0H$
+1I$
+0J$
+1K$
+0L$
+1M$
+0N$
+1O$
+0P$
+1Q$
+0R$
+1S$
+0T$
+1U$
+0V$
+1W$
+0X$
+1Y$
+0Z$
+1[$
+0\$
+1]$
+0^$
+1_$
+1`$
+1a$
+0b$
+1c$
+0d$
+1e$
+0f$
+0g$
+1h$
+0i$
+1j$
+0k$
+1l$
+0m$
+1n$
+1o$
+1p$
+1q$
+0r$
+1s$
+0t$
+0u$
+1v$
+0w$
+1x$
+0y$
+1z$
+0{$
+1|$
+0}$
+1~$
+0!%
+1"%
+0#%
+1$%
+0%%
+1&%
+0'%
+1(%
+1)%
+0*%
+1+%
+0,%
+0-%
+1.%
+1/%
+10%
+01%
+12%
+03%
+04%
+05%
+06%
+07%
+18%
+09%
+0:%
+1;%
+0<%
+0=%
+0>%
+0?%
+1@%
+0A%
+0B%
+0C%
+0D%
+0E%
+0F%
+1G%
+0H%
+0I%
+0J%
+0K%
+0L%
+0M%
+0N%
+0O%
+0P%
+0Q%
+0R%
+0S%
+0T%
+0U%
+0V%
+0W%
+0X%
+0Y%
+0Z%
+0[%
+0\%
+0]%
+0^%
+0_%
+0`%
+0a%
+0b%
+0c%
+0d%
+0e%
+0f%
+0g%
+0h%
+0i%
+0j%
+0k%
+0l%
+0m%
+0n%
+0o%
+0p%
+0q%
+0r%
+0s%
+0t%
+0u%
+0v%
+1w%
+0x%
+0y%
+0z%
+0{%
+0|%
+0}%
+0~%
+0!&
+0"&
+0#&
+0$&
+0%&
+0&&
+0'&
+0(&
+0)&
+0*&
+0+&
+0,&
+0-&
+0.&
+0/&
+00&
+01&
+02&
+03&
+04&
+05&
+06&
+07&
+08&
+09&
+0:&
+0;&
+0<&
+0=&
+0>&
+0?&
+0@&
+0A&
+0B&
+0C&
+0D&
+0E&
+0F&
+0G&
+0H&
+0I&
+0J&
+0K&
+0L&
+0M&
+0N&
+0O&
+0P&
+0Q&
+0R&
+0S&
+0T&
+0U&
+0V&
+0W&
+0X&
+0Y&
+1Z&
+1[&
+1\&
+1]&
+1^&
+1_&
+1`&
+0a&
+0b&
+0c&
+0d&
+0e&
+0f&
+0g&
+0h&
+0i&
+0j&
+0k&
+0l&
+0m&
+0n&
+0o&
+0p&
+0q&
+0r&
+0s&
+0t&
+0u&
+0v&
+0w&
+0x&
+0y&
+0z&
+0{&
+0|&
+0}&
+0~&
+0!'
+0"'
+0#'
+0$'
+0%'
+0&'
+0''
+0('
+0)'
+0*'
+0+'
+0,'
+0-'
+0.'
+0/'
+10'
+11'
+12'
+03'
+04'
+05'
+06'
+07'
+08'
+09'
+0:'
+0;'
+0<'
+0='
+0>'
+1?'
+1@'
+0A'
+0B'
+0C'
+0D'
+0E'
+0F'
+1G'
+1H'
+1I'
+0J'
+0K'
+0L'
+0M'
+0N'
+0O'
+0P'
+0Q'
+0R'
+0S'
+0T'
+0U'
+0V'
+0W'
+0X'
+0Y'
+0Z'
+0['
+0\'
+0]'
+0^'
+0_'
+0`'
+0a'
+0b'
+0c'
+0d'
+0e'
+0f'
+0g'
+0h'
+0i'
+1j'
+0k'
+0l'
+0m'
+0n'
+0o'
+0p'
+1q'
+0r'
+1s'
+0t'
+1u'
+1v'
+1w'
+0x'
+1y'
+0z'
+1{'
+0|'
+1}'
+1~'
+1!(
+0"(
+1#(
+0$(
+1%(
+1&(
+1'(
+0((
+1)(
+0*(
+0+(
+1,(
+0-(
+x.(
+x/(
+x0(
+11(
+02(
+13(
+14(
+15(
+16(
+07(
+08(
+19(
+1:(
+0;(
+1<(
+0=(
+1>(
+0?(
+1@(
+0A(
+1B(
+0C(
+1D(
+0E(
+1F(
+0G(
+1H(
+0I(
+1J(
+0K(
+1L(
+0M(
+1N(
+0O(
+1P(
+0Q(
+1R(
+0S(
+1T(
+0U(
+1V(
+0W(
+1X(
+0Y(
+1Z(
+0[(
+1\(
+0](
+1^(
+0_(
+1`(
+0a(
+1b(
+0c(
+1d(
+0e(
+1f(
+0g(
+1h(
+0i(
+1j(
+0k(
+1l(
+0m(
+1n(
+0o(
+1p(
+0q(
+1r(
+0s(
+1t(
+0u(
+1v(
+0w(
+0x(
+xy(
+0z(
+1{(
+0|(
+1}(
+0~(
+1!)
+0")
+1#)
+0$)
+1%)
+0&)
+1')
+0()
+1))
+0*)
+1+)
+0,)
+1-)
+0.)
+1/)
+00)
+11)
+02)
+13)
+04)
+15)
+06)
+17)
+08)
+19)
+0:)
+1;)
+0<)
+1=)
+0>)
+1?)
+0@)
+1A)
+0B)
+1C)
+0D)
+1E)
+0F)
+1G)
+0H)
+1I)
+0J)
+1K)
+0L)
+1M)
+0N)
+0O)
+1P)
+0Q)
+0R)
+0S)
+1T)
+0U)
+0V)
+0W)
+0X)
+0Y)
+0Z)
+x[)
+0{)
+0z)
+0y)
+0x)
+0w)
+0v)
+0u)
+0t)
+0s)
+0r)
+0q)
+0p)
+0o)
+0n)
+0m)
+0l)
+0k)
+0j)
+0i)
+0h)
+0g)
+0f)
+0e)
+0d)
+0c)
+0b)
+0a)
+0`)
+0_)
+0^)
+0])
+0\)
+0=*
+0<*
+0;*
+0:*
+09*
+08*
+07*
+06*
+05*
+04*
+03*
+02*
+01*
+00*
+0/*
+0.*
+0-*
+0,*
+0+*
+0**
+0)*
+0(*
+0'*
+0&*
+0%*
+0$*
+0#*
+0"*
+0!*
+0~)
+0})
+0|)
+0A*
+0@*
+0?*
+z>*
+0E*
+0D*
+0C*
+0B*
+0e*
+0d*
+0c*
+0b*
+0a*
+0`*
+0_*
+0^*
+0]*
+0\*
+0[*
+0Z*
+0Y*
+0X*
+0W*
+0V*
+0U*
+0T*
+0S*
+0R*
+0Q*
+0P*
+0O*
+0N*
+0M*
+0L*
+0K*
+0J*
+0I*
+0H*
+0G*
+0F*
+0'+
+0&+
+0%+
+0$+
+0#+
+0"+
+0!+
+0~*
+0}*
+0|*
+0{*
+0z*
+0y*
+0x*
+0w*
+0v*
+0u*
+0t*
+0s*
+0r*
+0q*
+0p*
+0o*
+0n*
+0m*
+0l*
+0k*
+0j*
+0i*
+0h*
+0g*
+0f*
+0G+
+0F+
+0E+
+0D+
+0C+
+0B+
+0A+
+0@+
+0?+
+0>+
+0=+
+0<+
+0;+
+0:+
+09+
+08+
+07+
+06+
+05+
+04+
+03+
+02+
+01+
+00+
+0/+
+0.+
+0-+
+0,+
+0++
+0*+
+0)+
+0(+
+0g+
+0f+
+0e+
+0d+
+0c+
+0b+
+0a+
+0`+
+0_+
+0^+
+0]+
+0\+
+0[+
+0Z+
+0Y+
+0X+
+0W+
+0V+
+0U+
+0T+
+0S+
+0R+
+0Q+
+0P+
+0O+
+0N+
+0M+
+0L+
+0K+
+0J+
+0I+
+0H+
+0),
+0(,
+0',
+0&,
+0%,
+0$,
+0#,
+0",
+0!,
+0~+
+0}+
+0|+
+0{+
+0z+
+0y+
+0x+
+0w+
+0v+
+0u+
+0t+
+0s+
+0r+
+0q+
+0p+
+0o+
+0n+
+0m+
+0l+
+0k+
+0j+
+0i+
+0h+
+0I,
+0H,
+0G,
+0F,
+0E,
+0D,
+0C,
+0B,
+0A,
+0@,
+0?,
+0>,
+0=,
+0<,
+0;,
+0:,
+09,
+08,
+07,
+06,
+05,
+04,
+03,
+02,
+01,
+00,
+0/,
+0.,
+0-,
+0,,
+0+,
+0*,
+0i,
+0h,
+0g,
+0f,
+0e,
+0d,
+0c,
+0b,
+0a,
+0`,
+0_,
+0^,
+0],
+0\,
+0[,
+0Z,
+0Y,
+0X,
+0W,
+0V,
+0U,
+0T,
+0S,
+0R,
+0Q,
+0P,
+0O,
+0N,
+0M,
+0L,
+0K,
+0J,
+0+-
+0*-
+0)-
+0(-
+z'-
+z&-
+z%-
+z$-
+z#-
+z"-
+z!-
+z~,
+z},
+z|,
+z{,
+zz,
+zy,
+zx,
+zw,
+zv,
+zu,
+zt,
+zs,
+zr,
+zq,
+zp,
+zo,
+zn,
+zm,
+zl,
+zk,
+zj,
+0>!
+1?!
+1@!
+0A!
+0B!
+0C!
+1D!
+1E!
+1F!
+0G!
+0H!
+1I!
+1J!
+0K!
+0L!
+1M!
+0N!
+xO!
+1P!
+1Q!
+0R!
+0S!
+0T!
+0U!
+0V!
+1W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+0^!
+0_!
+0x
+0y
+xz
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+04!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+1.
+12
+11
+00
+0/
+04
+03
+08
+07
+06
+05
+09
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0R
+1T
+1S
+1U
+0V
+xW
+1X
+0Y
+0Z
+1[
+1\
+0]
+0^
+1_
+0b
+0a
+0`
+0c
+1d
+xe
+1f
+1g
+1h
+xi
+xj
+xk
+xl
+xm
+xn
+xo
+xp
+xq
+xr
+xs
+0t
+0u
+0v
+0w
+$end
+#2500
+1#
+1R!
+#5000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#7500
+1#
+1R!
+#10000
+1+
+0-
+0#
+1Y!
+0S!
+0R!
+02(
+0E#
+08(
+#12500
+1#
+1R!
+1Y)
+1X)
+1W)
+1V)
+1U)
+0E!
+0F!
+0I!
+0J!
+0M!
+0X
+0[
+0\
+0_
+0.
+#15000
+1-
+0#
+1S!
+0R!
+12(
+1X&
+xE#
+x8(
+#17500
+1#
+1R!
+1+-
+x7*
+1h,
+1'+
+1,%
+x`*
+xa*
+xc*
+xd*
+1r'
+1k'
+1:!
+1>!
+xB#
+x]"
+x["
+x`"
+x^"
+xe"
+xc"
+xh"
+xf"
+0X&
+1y%
+15%
+0`&
+xz(
+x)(
+x!(
+19
+18
+0q'
+0j'
+1V&
+1T&
+1R&
+1P&
+1N&
+1L&
+1J&
+1H&
+1F&
+1D&
+1B&
+1@&
+1>&
+1<&
+1:&
+18&
+16&
+14&
+12&
+10&
+1.&
+1,&
+1*&
+1(&
+1&&
+1$&
+1"&
+1~%
+1|%
+1z%
+0Z&
+1-%
+0.%
+xb"
+xj"
+1{%
+x|(
+x'(
+xD#
+xa"
+xi"
+0z%
+16%
+x{(
+xl"
+1}%
+x~(
+xk"
+0|%
+x}(
+xN)
+xC!
+xn"
+1!&
+x")
+xV
+xm"
+0~%
+x!)
+xp"
+1#&
+x$)
+xo"
+0"&
+x#)
+xr"
+1%&
+x&)
+xq"
+0$&
+x%)
+xt"
+1'&
+x()
+xs"
+0&&
+x')
+xv"
+1)&
+x*)
+xu"
+0(&
+x))
+xx"
+1+&
+x,)
+xw"
+0*&
+x+)
+xz"
+1-&
+x.)
+xy"
+0,&
+x-)
+x~"
+1/&
+x0)
+x{"
+0.&
+x/)
+x"#
+11&
+x2)
+x!#
+00&
+x1)
+x$#
+13&
+x4)
+x##
+02&
+x3)
+x&#
+15&
+x6)
+x%#
+04&
+x5)
+x(#
+17&
+x8)
+x'#
+06&
+x7)
+x*#
+19&
+x:)
+x)#
+08&
+x9)
+x,#
+1;&
+x<)
+x+#
+0:&
+x;)
+x.#
+1=&
+x>)
+x-#
+0<&
+x=)
+x0#
+1?&
+x@)
+x/#
+0>&
+x?)
+x2#
+1A&
+xB)
+x1#
+0@&
+xA)
+x4#
+1C&
+xD)
+x3#
+0B&
+xC)
+x6#
+1E&
+xF)
+x5#
+0D&
+xE)
+x8#
+1G&
+xH)
+x7#
+0F&
+xG)
+x:#
+1I&
+xJ)
+x9#
+0H&
+xI)
+x<#
+1K&
+xL)
+x;#
+0J&
+xK)
+x>#
+1M&
+x=#
+0L&
+xM)
+1O&
+x?#
+0N&
+1Q&
+0P&
+1S&
+0R&
+1U&
+0T&
+0V&
+#20000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#22500
+1#
+1R!
+#25000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#27500
+1#
+1R!
+1&+
+0'+
+0r'
+0k'
+0:!
+0>!
+05%
+17%
+09
+08
+1.%
+06%
+07%
+1:%
+08%
+16%
+0:%
+18%
+1=%
+0;%
+19%
+0=%
+1;%
+1>%
+1<%
+09%
+0>%
+0<%
+#30000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#32500
+1#
+1R!
+#35000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#37500
+1#
+1R!
+1'+
+1W&
+15%
+0.%
+17%
+06%
+1:%
+08%
+1=%
+0;%
+19%
+1>%
+1<%
+#40000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#42500
+1#
+1R!
+#45000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#47500
+1#
+1R!
+1#+
+1$+
+1%+
+0&+
+0'+
+0W&
+13%
+05%
+07%
+0:%
+18%
+0=%
+1;%
+1?%
+1.%
+16%
+0>%
+08%
+0;%
+0?%
+1B%
+0@%
+06%
+1>%
+0<%
+09%
+0B%
+1@%
+1C%
+1A%
+1<%
+19%
+0C%
+0A%
+#50000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#52500
+1#
+1R!
+#55000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#57500
+1#
+1R!
+1'+
+03%
+15%
+0.%
+16%
+#60000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#62500
+1#
+1R!
+#65000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#67500
+1#
+1R!
+1&+
+0'+
+05%
+17%
+1.%
+06%
+07%
+18%
+16%
+08%
+09%
+19%
+#70000
+b0 "
+0-
+0#
+0S!
+0W!
+0R!
+02(
+0E#
+1S)
+1X!
+08(
+1t$
+1m$
+1f$
+#72500
+1#
+1R!
+#75000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+0T)
+1[!
+x8(
+#77500
+1#
+1R!
+0X)
+0U)
+0+-
+1'+
+1#,
+1$,
+1',
+1\!
+1Z!
+1E!
+1J!
+0n$
+1g$
+0e$
+1r$
+0l$
+1u$
+0s$
+15%
+0S)
+1[
+1.
+0t$
+0m$
+0f$
+0[!
+1_!
+0.%
+1i$
+1s$
+1w$
+17%
+0p$
+0h$
+0v$
+06%
+1T)
+1k$
+1y$
+18%
+0q$
+0j$
+0x$
+1t$
+1l$
+1{$
+0z$
+09%
+1}$
+0|$
+1m$
+1!%
+0~$
+1#%
+0"%
+1%%
+0$%
+1'%
+0&%
+1@$
+0(%
+1B$
+0A$
+1D$
+0C$
+1F$
+0E$
+1H$
+0G$
+1J$
+0I$
+1L$
+0K$
+1N$
+0M$
+1P$
+0O$
+1R$
+0Q$
+1T$
+0S$
+1V$
+0U$
+1X$
+0W$
+1Z$
+0Y$
+1\$
+0[$
+1^$
+0]$
+0_$
+#80000
+b1 "
+0-
+0#
+0S!
+1W!
+0R!
+02(
+0E#
+0X!
+08(
+#82500
+1#
+1R!
+1X)
+1U)
+0\!
+1A*
+1{
+0E!
+0J!
+0[
+0.
+1b
+1`!
+1~
+14
+#85000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#87500
+1#
+1R!
+1+-
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0Z!
+0o$
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0i$
+0:%
+18%
+1;%
+1h$
+1c$
+06%
+19%
+1f$
+1i$
+0k$
+0;%
+0h$
+1j$
+0<%
+09%
+0f$
+1k$
+0l$
+0j$
+1<%
+1l$
+0m$
+1m$
+#90000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#92500
+1#
+1R!
+#95000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#97500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0c$
+16%
+#100000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#102500
+1#
+1R!
+#105000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#107500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+1o$
+0d$
+1b$
+05%
+17%
+1c$
+0?$
+1.%
+06%
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+0c$
+16%
+0i$
+1g$
+0e$
+0:%
+18%
+1;%
+1h$
+19%
+1f$
+0k$
+1i$
+0;%
+1j$
+0h$
+0<%
+09%
+0f$
+0l$
+1k$
+0j$
+1<%
+1l$
+0m$
+1m$
+#110000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#112500
+1#
+1R!
+#115000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#117500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0d$
+17%
+1c$
+06%
+0g$
+1e$
+1:%
+08%
+0i$
+1;%
+1h$
+19%
+1f$
+0k$
+1j$
+0<%
+0l$
+0m$
+#120000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#122500
+1#
+1R!
+#125000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#127500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+1),
+0$,
+1%,
+1&,
+1',
+1(,
+0o$
+1d$
+1g$
+0e$
+1i$
+1k$
+0r$
+1l$
+1b$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+0c$
+0h$
+0j$
+0?$
+1.%
+16%
+1e$
+1r$
+0l$
+0s$
+08%
+0=%
+1;%
+1?%
+1h$
+1j$
+1c$
+06%
+0>%
+1<%
+09%
+1m$
+0f$
+1s$
+0?%
+1B%
+0@%
+1>%
+0<%
+19%
+0t$
+0m$
+1f$
+0B%
+1@%
+1C%
+1A%
+1t$
+0C%
+0A%
+#130000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#132500
+1#
+1R!
+#135000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#137500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0c$
+16%
+#140000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#142500
+1#
+1R!
+#145000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#147500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0d$
+1b$
+05%
+17%
+1c$
+0?$
+1.%
+06%
+0e$
+1d$
+07%
+18%
+0c$
+16%
+1e$
+08%
+09%
+0f$
+19%
+1f$
+#150000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#152500
+1#
+1R!
+#155000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#157500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0d$
+17%
+1c$
+06%
+0e$
+18%
+09%
+0f$
+#160000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#162500
+1#
+1R!
+#165000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#167500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+0h$
+1c$
+06%
+19%
+1f$
+0=%
+1;%
+1?%
+1h$
+0>%
+1<%
+09%
+0f$
+0?%
+1B%
+0@%
+1>%
+0<%
+0B%
+1@%
+1C%
+1A%
+0C%
+0A%
+#170000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#172500
+1#
+1R!
+#175000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#177500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0c$
+16%
+#180000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#182500
+1#
+1R!
+#185000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#187500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0d$
+1b$
+05%
+17%
+1c$
+0?$
+1.%
+06%
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+0c$
+16%
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+0h$
+19%
+1f$
+0=%
+1;%
+1?%
+1h$
+0>%
+1<%
+09%
+0f$
+0?%
+1B%
+0@%
+1>%
+0<%
+0B%
+1@%
+1C%
+1A%
+0C%
+0A%
+#190000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#192500
+1#
+1R!
+#195000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#197500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0d$
+17%
+1c$
+06%
+0g$
+1e$
+1:%
+08%
+1=%
+0;%
+0h$
+19%
+1f$
+1?%
+0>%
+1<%
+1B%
+0@%
+1C%
+1A%
+#200000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#202500
+1#
+1R!
+#205000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#207500
+1#
+1R!
+1!+
+1"+
+0#+
+1$+
+1%+
+0&+
+0'+
+1),
+0&,
+1',
+1(,
+1d$
+1g$
+0e$
+0i$
+1b$
+05%
+07%
+0:%
+18%
+0=%
+1;%
+0?%
+0B%
+1@%
+1D%
+0c$
+1h$
+0?$
+1.%
+16%
+1>%
+0C%
+1e$
+1i$
+08%
+0;%
+0@%
+0D%
+0h$
+0j$
+1c$
+06%
+0>%
+1C%
+1E%
+0A%
+0<%
+09%
+0f$
+1j$
+0E%
+1A%
+1<%
+19%
+1f$
+#210000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#212500
+1#
+1R!
+#215000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#217500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0c$
+16%
+#220000
+b10000000 )
+b10100000 )
+b10101000 )
+b10101010 )
+0-
+0#
+1u
+1w
+1f!
+1y
+0S!
+0R!
+02(
+0E#
+08(
+#222500
+1#
+1R!
+#225000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#227500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+1o$
+0d$
+1b$
+05%
+17%
+1c$
+0?$
+1.%
+06%
+0e$
+1d$
+07%
+18%
+0c$
+16%
+1e$
+08%
+09%
+0f$
+19%
+1f$
+#230000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#232500
+1#
+1R!
+#235000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#237500
+1#
+1R!
+1'+
+0),
+0b$
+15%
+1?$
+0.%
+0d$
+17%
+1c$
+06%
+0e$
+18%
+09%
+0f$
+#240000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#242500
+1#
+1R!
+#245000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#247500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0o$
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0i$
+0:%
+18%
+1;%
+1h$
+1c$
+06%
+19%
+1f$
+1i$
+0;%
+0h$
+0j$
+0<%
+09%
+0f$
+1j$
+1<%
+#250000
+1'
+0-
+0#
+1h!
+0S!
+0R!
+02(
+0E#
+1Z)
+1*"
+1$"
+1!"
+1|!
+1y!
+1t!
+08(
+#252500
+1#
+1R!
+#255000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#257500
+1#
+1R!
+1'+
+0),
+1^+
+1_+
+1`+
+1a+
+1b+
+1d+
+1C*
+1N!
+0%"
+1u!
+0s!
+1z!
+0x!
+1}!
+0{!
+1""
+0~!
+1("
+0#"
+1+"
+0)"
+0b$
+15%
+1R
+1?$
+0.%
+1w!
+1{!
+1~!
+1#"
+1)"
+1-"
+0'"
+0v!
+0,"
+0c$
+16%
+1x!
+1/"
+0."
+11"
+00"
+13"
+02"
+15"
+04"
+17"
+06"
+19"
+08"
+1;"
+0:"
+1="
+0<"
+1?"
+0>"
+1A"
+0@"
+1C"
+0B"
+1E"
+0D"
+1G"
+0F"
+1I"
+0H"
+1K"
+0J"
+1M"
+0L"
+1O"
+0N"
+1Q"
+0P"
+1S"
+0R"
+1U"
+0T"
+0V"
+#260000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#262500
+1#
+1R!
+#265000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#267500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+1o$
+0d$
+1b$
+05%
+17%
+1c$
+0?$
+1.%
+06%
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+0c$
+16%
+0i$
+1g$
+0e$
+0:%
+18%
+1;%
+1h$
+19%
+1f$
+1i$
+0;%
+0j$
+0h$
+0<%
+09%
+0f$
+1j$
+1<%
+#270000
+0'
+0-
+0#
+0h!
+0S!
+0R!
+02(
+0E#
+0l!
+0t!
+08(
+#272500
+1#
+1R!
+#275000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#277500
+1#
+1R!
+1'+
+0),
+0d+
+1e+
+1f+
+1g+
+0&"
+1m!
+0q!
+1o!
+1r!
+0u!
+1s!
+0b$
+15%
+0k!
+0n!
+0p!
+1?$
+0.%
+1u!
+0s!
+0w!
+0d$
+17%
+1n!
+1p!
+1v!
+1c$
+06%
+1t!
+1w!
+0x!
+0g$
+1e$
+1:%
+08%
+0v!
+0t!
+1x!
+0i$
+1;%
+1h$
+19%
+1f$
+0y!
+0j$
+0<%
+1y!
+#280000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#282500
+1#
+1R!
+#285000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#287500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+1),
+0%,
+1&,
+1',
+1(,
+0g+
+1&"
+0m!
+0o$
+1d$
+1g$
+0e$
+1i$
+0k$
+1b$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+1k!
+0c$
+0h$
+1j$
+0?$
+1.%
+16%
+1e$
+1k$
+0r$
+1l$
+08%
+0=%
+1;%
+0n!
+1h$
+0j$
+1c$
+06%
+1>%
+1<%
+09%
+0f$
+1r$
+0l$
+0s$
+0>%
+0<%
+19%
+1m$
+1f$
+1s$
+0t$
+0m$
+1t$
+#290000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#292500
+1#
+1R!
+#295000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#297500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#300000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#302500
+1#
+1R!
+#305000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#307500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1e$
+08%
+0p!
+09%
+0f$
+19%
+1f$
+#310000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#312500
+1#
+1R!
+#315000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#317500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+0&"
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0u!
+1s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1u!
+0s!
+0w!
+0e$
+18%
+1v!
+1t!
+1w!
+0x!
+0v!
+09%
+0f$
+0t!
+1x!
+0y!
+1y!
+#320000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#322500
+1#
+1R!
+#325000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#327500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+1&"
+0m!
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+0n!
+0h$
+1c$
+06%
+19%
+1f$
+0=%
+1;%
+1h$
+1>%
+1<%
+09%
+0f$
+0>%
+0<%
+#330000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#332500
+1#
+1R!
+#335000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#337500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0u!
+1s!
+0p!
+1u!
+0s!
+0w!
+1v!
+1t!
+1w!
+0x!
+0v!
+0t!
+1x!
+0y!
+1y!
+#340000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#342500
+1#
+1R!
+#345000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#347500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+1p!
+0h$
+19%
+1f$
+0u!
+1s!
+0=%
+1;%
+1h$
+1>%
+1<%
+09%
+0f$
+0w!
+1v!
+0>%
+0<%
+1t!
+0x!
+0y!
+#350000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#352500
+1#
+1R!
+#355000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#357500
+1#
+1R!
+1'+
+0),
+0b+
+1c+
+1d+
+1e+
+1f+
+1g+
+0&"
+1m!
+0q!
+1o!
+1r!
+1u!
+0s!
+1w!
+0z!
+1x!
+0b$
+1W&
+15%
+0k!
+0n!
+0p!
+0v!
+1?$
+0.%
+1s!
+1z!
+0x!
+0{!
+0d$
+17%
+1n!
+1p!
+1v!
+1c$
+06%
+1y!
+0t!
+1{!
+0g$
+1e$
+1:%
+08%
+0|!
+0y!
+1t!
+1=%
+0;%
+0h$
+19%
+1f$
+1|!
+1>%
+1<%
+#360000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#362500
+1#
+1R!
+#365000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#367500
+1#
+1R!
+1#+
+1$+
+1%+
+0&+
+0'+
+1),
+0&,
+1',
+1(,
+0g+
+0m!
+1d$
+1g$
+0e$
+0i$
+1b$
+0W&
+13%
+05%
+07%
+0:%
+18%
+0=%
+1;%
+1?%
+1k!
+0c$
+1h$
+0?$
+1.%
+16%
+0>%
+1e$
+1i$
+0k$
+08%
+0;%
+0?%
+1@%
+0n!
+0h$
+1j$
+1c$
+06%
+1>%
+0<%
+09%
+0f$
+1k$
+0r$
+1l$
+0@%
+0j$
+0A%
+1<%
+19%
+1f$
+1r$
+0l$
+0s$
+1A%
+1m$
+1s$
+0t$
+0m$
+1t$
+#370000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#372500
+1#
+1R!
+#375000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#377500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+0o!
+0b$
+03%
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#380000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#382500
+1#
+1R!
+#385000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#387500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1e$
+08%
+0p!
+09%
+0f$
+19%
+1f$
+#390000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#392500
+1#
+1R!
+#395000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#397500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1s!
+0e$
+18%
+0t!
+09%
+0f$
+1t!
+#400000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#402500
+1#
+1R!
+#405000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#407500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+0m!
+0o$
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0i$
+0:%
+18%
+1;%
+0n!
+1h$
+1c$
+06%
+19%
+1f$
+1i$
+0k$
+0;%
+0h$
+1j$
+0<%
+09%
+0f$
+1k$
+0r$
+1l$
+0j$
+1<%
+1r$
+0l$
+0s$
+1m$
+1s$
+0t$
+0m$
+1t$
+#410000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#412500
+1#
+1R!
+#415000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#417500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0s!
+0p!
+1s!
+0t!
+1t!
+#420000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#422500
+1#
+1R!
+#425000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#427500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+0i$
+1g$
+0e$
+0:%
+18%
+1;%
+1p!
+1h$
+19%
+1f$
+0s!
+0k$
+1i$
+0;%
+1j$
+0h$
+0<%
+09%
+0f$
+0r$
+1l$
+1k$
+0j$
+1<%
+0t!
+0s$
+1r$
+0l$
+1m$
+1s$
+0m$
+0t$
+1t$
+#430000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#432500
+1#
+1R!
+#435000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#437500
+1#
+1R!
+1'+
+0),
+0d+
+1e+
+1f+
+1g+
+1m!
+0q!
+1o!
+1r!
+0u!
+1s!
+0b$
+15%
+0k!
+0n!
+0p!
+1?$
+0.%
+1u!
+0s!
+0d$
+17%
+1n!
+1p!
+0v!
+1c$
+06%
+1t!
+0g$
+1e$
+1:%
+08%
+1v!
+0t!
+0i$
+1;%
+1h$
+19%
+1f$
+0k$
+1j$
+0<%
+0r$
+1l$
+0s$
+1m$
+0t$
+#440000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#442500
+1#
+1R!
+#445000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#447500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+0#,
+1),
+1$,
+1%,
+1&,
+1',
+1(,
+0g+
+0m!
+0o$
+1d$
+1g$
+0e$
+1i$
+1k$
+1r$
+0l$
+1b$
+0u$
+1s$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+1k!
+0c$
+0h$
+0j$
+0?$
+1.%
+16%
+1e$
+1l$
+1u$
+0s$
+0w$
+08%
+0=%
+1;%
+1?%
+0n!
+1h$
+1j$
+1c$
+1v$
+06%
+0>%
+1<%
+09%
+1t$
+0m$
+0f$
+1w$
+0y$
+0?%
+1@%
+0v$
+1x$
+1>%
+0<%
+19%
+0t$
+1m$
+1f$
+1y$
+0{$
+0@%
+0x$
+1z$
+0A%
+1{$
+0}$
+0z$
+1|$
+1A%
+1}$
+0!%
+0|$
+1~$
+1!%
+0#%
+0~$
+1"%
+1#%
+0%%
+0"%
+1$%
+1%%
+0'%
+0$%
+1&%
+1'%
+0@$
+0&%
+1(%
+1@$
+0B$
+0(%
+1A$
+1B$
+0D$
+0A$
+1C$
+1D$
+0F$
+0C$
+1E$
+1F$
+0H$
+0E$
+1G$
+1H$
+0J$
+0G$
+1I$
+1J$
+0L$
+0I$
+1K$
+1L$
+0N$
+0K$
+1M$
+1N$
+0P$
+0M$
+1O$
+1P$
+0R$
+0O$
+1Q$
+1R$
+0T$
+0Q$
+1S$
+1T$
+0V$
+0S$
+1U$
+1V$
+0X$
+0U$
+1W$
+1X$
+0Z$
+0W$
+1Y$
+1Z$
+0\$
+0Y$
+1[$
+1\$
+0^$
+0[$
+1]$
+1^$
+0]$
+1_$
+0_$
+#450000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#452500
+1#
+1R!
+#455000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#457500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#460000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#462500
+1#
+1R!
+#465000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#467500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1e$
+08%
+0p!
+09%
+0f$
+19%
+1f$
+#470000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#472500
+1#
+1R!
+#475000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#477500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0u!
+1s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1u!
+0s!
+0e$
+18%
+0v!
+1t!
+1v!
+09%
+0f$
+0t!
+#480000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#482500
+1#
+1R!
+#485000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#487500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+0m!
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+0n!
+0h$
+1c$
+06%
+19%
+1f$
+0=%
+1;%
+1?%
+1h$
+0>%
+1<%
+09%
+0f$
+0?%
+1@%
+1>%
+0<%
+0@%
+0A%
+1A%
+#490000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#492500
+1#
+1R!
+#495000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#497500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0u!
+1s!
+0p!
+1u!
+0s!
+0v!
+1t!
+1v!
+0t!
+#500000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#502500
+1#
+1R!
+#505000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#507500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+1p!
+0h$
+19%
+1f$
+0u!
+1s!
+0=%
+1;%
+1?%
+1h$
+0>%
+1<%
+09%
+0f$
+0?%
+1@%
+0v!
+1>%
+0<%
+1t!
+0@%
+0A%
+1A%
+#510000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#512500
+1#
+1R!
+#515000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#517500
+1#
+1R!
+1'+
+0),
+0c+
+1d+
+1e+
+1f+
+1g+
+1m!
+0q!
+1o!
+1r!
+1u!
+0s!
+0w!
+0b$
+15%
+0k!
+0n!
+0p!
+1v!
+1?$
+0.%
+1s!
+1w!
+0z!
+1x!
+0d$
+17%
+1n!
+1p!
+0v!
+1c$
+06%
+0t!
+1z!
+0x!
+0{!
+0g$
+1e$
+1:%
+08%
+1y!
+1t!
+1{!
+1=%
+0;%
+0h$
+19%
+1f$
+0|!
+0y!
+1?%
+0>%
+1<%
+1|!
+1@%
+0A%
+#520000
+b101010 )
+b1010 )
+b10 )
+b0 )
+0-
+0#
+0u
+0w
+0f!
+0y
+0S!
+0R!
+02(
+0E#
+08(
+#522500
+1#
+1R!
+#525000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#527500
+1#
+1R!
+0"+
+0#+
+1$+
+1%+
+0&+
+0'+
+1),
+0&,
+1',
+1(,
+0g+
+1&"
+0m!
+1d$
+1g$
+0e$
+0i$
+1b$
+05%
+07%
+0:%
+18%
+0=%
+1;%
+0?%
+1B%
+0@%
+1k!
+0c$
+1h$
+0?$
+1.%
+16%
+1>%
+1e$
+1i$
+08%
+0;%
+0B%
+1@%
+1D%
+0n!
+0h$
+0j$
+1c$
+06%
+0>%
+0C%
+1A%
+0<%
+09%
+0f$
+0D%
+1j$
+1C%
+1E%
+0A%
+1<%
+19%
+1f$
+0E%
+#530000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#532500
+1#
+1R!
+#535000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#537500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#540000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#542500
+1#
+1R!
+#545000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#547500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1e$
+08%
+0p!
+09%
+0f$
+19%
+1f$
+#550000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#552500
+1#
+1R!
+#555000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#557500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+0&"
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1s!
+0e$
+18%
+0t!
+09%
+0f$
+1t!
+#560000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#562500
+1#
+1R!
+#565000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#567500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+1&"
+0m!
+0o$
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0i$
+0:%
+18%
+1;%
+0n!
+1h$
+1c$
+06%
+19%
+1f$
+1i$
+0;%
+0h$
+0j$
+0<%
+09%
+0f$
+1j$
+1<%
+#570000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#572500
+1#
+1R!
+#575000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#577500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0s!
+0p!
+1s!
+0t!
+1t!
+#580000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#582500
+1#
+1R!
+#585000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#587500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+0i$
+1g$
+0e$
+0:%
+18%
+1;%
+1p!
+1h$
+19%
+1f$
+0s!
+1i$
+0;%
+0j$
+0h$
+0<%
+09%
+0f$
+1j$
+1<%
+0t!
+#590000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#592500
+1#
+1R!
+#595000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#597500
+1#
+1R!
+1'+
+0),
+0d+
+1e+
+1f+
+1g+
+0&"
+1m!
+0q!
+1o!
+1r!
+0u!
+1s!
+0b$
+15%
+0k!
+0n!
+0p!
+1?$
+0.%
+1u!
+0s!
+0w!
+0d$
+17%
+1n!
+1p!
+1v!
+1c$
+06%
+1t!
+1w!
+0z!
+1x!
+0g$
+1e$
+1:%
+08%
+0v!
+0t!
+1z!
+0x!
+0{!
+0i$
+1;%
+1h$
+19%
+1f$
+1y!
+1{!
+0j$
+0<%
+0|!
+0y!
+1|!
+#600000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#602500
+1#
+1R!
+#605000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#607500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+1),
+0%,
+1&,
+1',
+1(,
+0g+
+1&"
+0m!
+0o$
+1d$
+1g$
+0e$
+1i$
+0k$
+1b$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+1k!
+0c$
+0h$
+1j$
+0?$
+1.%
+16%
+1e$
+1k$
+0l$
+08%
+0=%
+1;%
+0n!
+1h$
+0j$
+1c$
+06%
+1>%
+1<%
+09%
+0f$
+1l$
+0>%
+0<%
+19%
+0m$
+1f$
+1m$
+#610000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#612500
+1#
+1R!
+#615000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#617500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#620000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#622500
+1#
+1R!
+#625000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#627500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1e$
+08%
+0p!
+09%
+0f$
+19%
+1f$
+#630000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#632500
+1#
+1R!
+#635000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#637500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+0&"
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0u!
+1s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1u!
+0s!
+0w!
+0e$
+18%
+1v!
+1t!
+1w!
+0z!
+1x!
+0v!
+09%
+0f$
+0t!
+1z!
+0x!
+0{!
+1y!
+1{!
+0|!
+0y!
+1|!
+#640000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#642500
+1#
+1R!
+#645000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#647500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+1&"
+0m!
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+0n!
+0h$
+1c$
+06%
+19%
+1f$
+0=%
+1;%
+1h$
+1>%
+1<%
+09%
+0f$
+0>%
+0<%
+#650000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#652500
+1#
+1R!
+#655000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#657500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0u!
+1s!
+0p!
+1u!
+0s!
+0w!
+1v!
+1t!
+1w!
+0z!
+1x!
+0v!
+0t!
+1z!
+0x!
+0{!
+1y!
+1{!
+0|!
+0y!
+1|!
+#660000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#662500
+1#
+1R!
+#665000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#667500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1g$
+0e$
+0:%
+18%
+1=%
+0;%
+1p!
+0h$
+19%
+1f$
+0u!
+1s!
+0=%
+1;%
+1h$
+1>%
+1<%
+09%
+0f$
+0w!
+1v!
+0>%
+0<%
+1t!
+0z!
+1x!
+0{!
+1y!
+0|!
+#670000
+b0 "
+0-
+0#
+0S!
+0W!
+0R!
+02(
+0E#
+1S)
+1*%
+1X!
+08(
+1q$
+1t$
+1f$
+#672500
+1#
+1R!
+#675000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+0T)
+1[!
+x8(
+#677500
+1#
+1R!
+0X)
+0U)
+0+-
+1'+
+1#,
+0),
+0&,
+1',
+0a+
+1b+
+1c+
+1d+
+1e+
+1f+
+1g+
+1\!
+1Z!
+1E!
+1J!
+0q$
+0&"
+1m!
+0q!
+1o!
+1r!
+1u!
+0s!
+1w!
+1z!
+0x!
+0}!
+1{!
+1e$
+1o$
+0*%
+0b$
+1s$
+1W&
+15%
+0S)
+1[
+1.
+0t$
+0f$
+0[!
+0_!
+1^!
+0k!
+0n!
+0p!
+0v!
+0h$
+1?$
+0.%
+1s!
+1x!
+1}!
+0{!
+0~!
+0d$
+17%
+1n!
+1p!
+1v!
+1c$
+06%
+1T)
+1t$
+1f$
+1|!
+0y!
+0t!
+1~!
+0e$
+1:%
+08%
+0!"
+0|!
+1y!
+1t!
+1=%
+0;%
+19%
+0f$
+1!"
+1>%
+1<%
+#680000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#682500
+1#
+1R!
+1X)
+1U)
+0\!
+0A*
+1@*
+1|
+0{
+0E!
+0J!
+1t'
+0[
+0.
+0b
+1a
+0s'
+1l'
+1A!
+0?!
+0@!
+01
+02
+10
+#685000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#687500
+1#
+1R!
+1#+
+1$+
+1%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+0m!
+0o$
+1d$
+0g$
+1e$
+1*%
+1b$
+0W&
+13%
+05%
+07%
+0:%
+18%
+0=%
+1;%
+1?%
+1k!
+0c$
+0?$
+1.%
+16%
+0>%
+1g$
+0e$
+0i$
+08%
+0;%
+0?%
+1B%
+0@%
+0n!
+1h$
+1c$
+06%
+1>%
+0<%
+09%
+1f$
+1i$
+0k$
+0B%
+1@%
+1D%
+0h$
+1j$
+0C%
+1A%
+1<%
+19%
+0f$
+1k$
+0l$
+0D%
+0j$
+1C%
+1E%
+0A%
+1l$
+0E%
+0m$
+1m$
+#690000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#692500
+1#
+1R!
+#695000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#697500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+0o!
+0*%
+0b$
+03%
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#700000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#702500
+1#
+1R!
+#705000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#707500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+1o$
+0d$
+1*%
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+0i$
+1g$
+0e$
+08%
+0p!
+1h$
+09%
+1f$
+0k$
+1i$
+1j$
+0h$
+19%
+0f$
+0l$
+1k$
+0j$
+1l$
+0m$
+1m$
+#710000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#712500
+1#
+1R!
+#715000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#717500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+1m!
+1o!
+0r!
+0*%
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1s!
+0g$
+1e$
+18%
+0t!
+0i$
+1h$
+09%
+1f$
+1t!
+0k$
+1j$
+0l$
+0m$
+#720000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#722500
+1#
+1R!
+#725000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#727500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0$,
+1%,
+1&,
+1',
+1(,
+0g+
+0m!
+0o$
+1d$
+1g$
+0e$
+1i$
+1k$
+0r$
+1l$
+1*%
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+0h$
+0j$
+0?$
+1.%
+16%
+1e$
+1r$
+0l$
+0s$
+0:%
+18%
+1;%
+0n!
+1h$
+1j$
+1c$
+06%
+19%
+1m$
+0f$
+1s$
+0;%
+0<%
+09%
+0t$
+0m$
+1f$
+1<%
+1t$
+#730000
+b1 "
+0-
+0#
+0S!
+1W!
+0R!
+02(
+0E#
+0*%
+0X!
+08(
+#732500
+1#
+1R!
+#735000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#737500
+1#
+1R!
+1+-
+1'+
+0),
+0f+
+1g+
+0Z!
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0s!
+0p!
+1s!
+0t!
+1t!
+#740000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#742500
+1#
+1R!
+#745000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#747500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1e$
+0:%
+18%
+1;%
+1p!
+19%
+0f$
+0s!
+0;%
+0<%
+09%
+1f$
+1<%
+0t!
+#750000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#752500
+1#
+1R!
+#755000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#757500
+1#
+1R!
+1'+
+0),
+0d+
+1e+
+1f+
+1g+
+1m!
+0q!
+1o!
+1r!
+0u!
+1s!
+0b$
+15%
+0k!
+0n!
+0p!
+1?$
+0.%
+1u!
+0s!
+0d$
+17%
+1n!
+1p!
+0v!
+1c$
+06%
+1t!
+0e$
+1:%
+08%
+1v!
+0t!
+1;%
+19%
+0f$
+0<%
+#760000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#762500
+1#
+1R!
+#765000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#767500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+0m!
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+08%
+0=%
+1;%
+1?%
+0n!
+0h$
+1c$
+06%
+0>%
+1<%
+09%
+1f$
+0?%
+1B%
+0@%
+1h$
+1>%
+0<%
+19%
+0f$
+0B%
+1@%
+1D%
+0C%
+1A%
+0D%
+1C%
+1E%
+0A%
+0E%
+#770000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#772500
+1#
+1R!
+#775000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#777500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#780000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#782500
+1#
+1R!
+#785000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#787500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1g$
+0e$
+08%
+0p!
+0h$
+09%
+1f$
+1h$
+19%
+0f$
+#790000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#792500
+1#
+1R!
+#795000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#797500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0u!
+1s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1u!
+0s!
+0g$
+1e$
+18%
+0v!
+1t!
+1v!
+0h$
+09%
+1f$
+0t!
+#800000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#802500
+1#
+1R!
+#805000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#807500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0&,
+1',
+1(,
+0g+
+0m!
+1d$
+1g$
+0e$
+0i$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+1h$
+0?$
+1.%
+16%
+1e$
+1i$
+0:%
+18%
+1=%
+0;%
+0n!
+0h$
+0j$
+1c$
+06%
+19%
+0f$
+0=%
+1;%
+1?%
+1j$
+0>%
+1<%
+09%
+1f$
+0?%
+1B%
+0@%
+1>%
+0<%
+0B%
+1@%
+1D%
+0C%
+1A%
+0D%
+1C%
+1E%
+0A%
+0E%
+#810000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#812500
+1#
+1R!
+#815000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#817500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0u!
+1s!
+0p!
+1u!
+0s!
+0v!
+1t!
+1v!
+0t!
+#820000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#822500
+1#
+1R!
+#825000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#827500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1e$
+0:%
+18%
+1=%
+0;%
+1p!
+19%
+0f$
+0u!
+1s!
+0=%
+1;%
+1?%
+0>%
+1<%
+09%
+1f$
+0?%
+1B%
+0@%
+0v!
+1>%
+0<%
+1t!
+0B%
+1@%
+1D%
+0C%
+1A%
+0D%
+1C%
+1E%
+0A%
+0E%
+#830000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#832500
+1#
+1R!
+#835000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#837500
+1#
+1R!
+1'+
+0),
+0c+
+1d+
+1e+
+1f+
+1g+
+1m!
+0q!
+1o!
+1r!
+1u!
+0s!
+0w!
+0b$
+15%
+0k!
+0n!
+0p!
+1v!
+1?$
+0.%
+1s!
+1w!
+0x!
+0d$
+17%
+1n!
+1p!
+0v!
+1c$
+06%
+0t!
+1x!
+0e$
+1:%
+08%
+0y!
+1t!
+1=%
+0;%
+19%
+0f$
+1y!
+1?%
+0>%
+1<%
+1B%
+0@%
+1D%
+0C%
+1A%
+1E%
+#840000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#842500
+1#
+1R!
+#845000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#847500
+1#
+1R!
+1~*
+0!+
+1"+
+0#+
+1$+
+1%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+1&"
+0m!
+0o$
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+0:%
+18%
+0=%
+1;%
+0?%
+0B%
+1@%
+11%
+0D%
+1F%
+1k!
+0c$
+0?$
+1.%
+16%
+1>%
+1C%
+0E%
+1g$
+0e$
+0i$
+08%
+0;%
+0@%
+0F%
+1I%
+0G%
+1x%
+0n!
+1h$
+1c$
+06%
+0>%
+0C%
+1E%
+0A%
+0<%
+09%
+1f$
+1i$
+0I%
+1G%
+0h$
+0j$
+1J%
+1H%
+1A%
+1<%
+19%
+0f$
+1j$
+0J%
+0H%
+#850000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#852500
+1#
+1R!
+#855000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#857500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#860000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#862500
+1#
+1R!
+#865000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#867500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+0i$
+1g$
+0e$
+08%
+0p!
+1h$
+09%
+1f$
+1i$
+0j$
+0h$
+19%
+0f$
+1j$
+#870000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#872500
+1#
+1R!
+#875000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#877500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+0&"
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1s!
+0g$
+1e$
+18%
+0t!
+0i$
+1h$
+09%
+1f$
+1t!
+0j$
+#880000
+1&
+0-
+0#
+1O)
+0S!
+0R!
+02(
+0E#
+0P)
+08(
+1Q)
+#882500
+1#
+1R!
+#885000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#887500
+1#
+1R!
+1R)
+0%+
+0&+
+0'+
+1),
+0%,
+1&,
+1',
+1(,
+0g+
+0D!
+1&"
+0m!
+0o$
+1d$
+1g$
+0e$
+1i$
+0k$
+1b$
+05%
+07%
+1:%
+08%
+0U
+1k!
+0c$
+0h$
+1j$
+0?$
+1.%
+16%
+1e$
+1k$
+0r$
+1l$
+0:%
+18%
+1;%
+0n!
+1h$
+0j$
+1c$
+06%
+19%
+0f$
+1r$
+0l$
+0s$
+0;%
+0<%
+09%
+1m$
+1f$
+1s$
+1<%
+0t$
+0m$
+1t$
+#890000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#892500
+1#
+1R!
+#895000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#897500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0s!
+0p!
+1s!
+0t!
+1t!
+#900000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#902500
+1#
+1R!
+#905000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#907500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1e$
+0:%
+18%
+1;%
+1p!
+19%
+0f$
+0s!
+0;%
+0<%
+09%
+1f$
+1<%
+0t!
+#910000
+0&
+0-
+0#
+0O)
+0S!
+0R!
+02(
+0E#
+08(
+#912500
+1#
+1R!
+#915000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#917500
+1#
+1R!
+1'+
+0),
+0d+
+1e+
+1f+
+1g+
+0&"
+1m!
+0q!
+1o!
+1r!
+0u!
+1s!
+0b$
+15%
+0k!
+0n!
+0p!
+1?$
+0.%
+1u!
+0s!
+0w!
+0d$
+17%
+1n!
+1p!
+1v!
+1c$
+06%
+1t!
+1w!
+0x!
+0e$
+1:%
+08%
+0v!
+0t!
+1x!
+1;%
+19%
+0f$
+0y!
+0<%
+1y!
+#920000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#922500
+1#
+1R!
+#925000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#927500
+1#
+1R!
+0$+
+1%+
+0&+
+0'+
+1),
+0',
+1(,
+0g+
+1&"
+0m!
+1d$
+0g$
+1e$
+1b$
+05%
+07%
+0:%
+18%
+1=%
+0;%
+1k!
+0c$
+0?$
+1.%
+16%
+1g$
+0e$
+08%
+0=%
+1;%
+0n!
+0h$
+1c$
+06%
+1>%
+1<%
+09%
+1f$
+1h$
+0>%
+0<%
+19%
+0f$
+#930000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#932500
+1#
+1R!
+#935000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#937500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0n!
+0p!
+0c$
+16%
+1p!
+#940000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#942500
+1#
+1R!
+#945000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#947500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0g$
+1e$
+1d$
+07%
+18%
+1n!
+0c$
+16%
+1g$
+0e$
+08%
+0p!
+0h$
+09%
+1f$
+1h$
+19%
+0f$
+#950000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#952500
+1#
+1R!
+#955000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#957500
+1#
+1R!
+1'+
+0),
+0e+
+1f+
+1g+
+0&"
+1m!
+1o!
+0r!
+0b$
+15%
+0k!
+0n!
+1p!
+1?$
+0.%
+1r!
+0u!
+1s!
+0d$
+17%
+1n!
+0p!
+1c$
+06%
+1u!
+0s!
+0w!
+0g$
+1e$
+18%
+1v!
+1t!
+1w!
+0x!
+0v!
+0h$
+09%
+1f$
+0t!
+1x!
+0y!
+1y!
+#960000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#962500
+1#
+1R!
+#965000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#967500
+1#
+1R!
+0%+
+0&+
+0'+
+1),
+0&,
+1',
+1(,
+0g+
+1&"
+0m!
+1d$
+1g$
+0e$
+0i$
+1b$
+05%
+07%
+1:%
+08%
+1k!
+0c$
+1h$
+0?$
+1.%
+16%
+1e$
+1i$
+0k$
+0:%
+18%
+1=%
+0;%
+0n!
+0h$
+1j$
+1c$
+06%
+19%
+0f$
+1k$
+0r$
+1l$
+0=%
+1;%
+0j$
+1>%
+1<%
+09%
+1f$
+1r$
+0l$
+0s$
+0>%
+0<%
+1m$
+1s$
+0t$
+0m$
+1t$
+#970000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#972500
+1#
+1R!
+#975000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#977500
+1#
+1R!
+1'+
+0),
+0f+
+1g+
+0&"
+1m!
+1q!
+0o!
+0b$
+15%
+0k!
+1n!
+1?$
+0.%
+1o!
+0r!
+0n!
+1p!
+0c$
+16%
+1r!
+0u!
+1s!
+0p!
+1u!
+0s!
+0w!
+1v!
+1t!
+1w!
+0x!
+0v!
+0t!
+1x!
+0y!
+1y!
+#980000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#982500
+1#
+1R!
+#985000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#987500
+1#
+1R!
+1&+
+0'+
+1),
+0(,
+0g+
+1&"
+0m!
+1o$
+0d$
+1b$
+05%
+17%
+1k!
+1c$
+0?$
+1.%
+06%
+0o!
+0e$
+1d$
+07%
+1:%
+08%
+1n!
+0c$
+16%
+0r!
+1e$
+0:%
+18%
+1=%
+0;%
+1p!
+19%
+0f$
+0u!
+1s!
+0=%
+1;%
+1>%
+1<%
+09%
+1f$
+0w!
+1v!
+0>%
+0<%
+1t!
+0x!
+0y!
+#990000
+0-
+0#
+0S!
+0R!
+02(
+0E#
+08(
+#992500
+1#
+1R!
+#995000
+1-
+0#
+1S!
+0R!
+12(
+xE#
+x8(
+#997500
+1#
+1R!
+1'+
+0),
+0b+
+1c+
+1d+
+1e+
+1f+
+1g+
+0&"
+1m!
+0q!
+1o!
+1r!
+1u!
+0s!
+1w!
+0z!
+1x!
+0b$
+1W&
+15%
+0k!
+0n!
+0p!
+0v!
+1?$
+0.%
+1s!
+1z!
+0x!
+0}!
+1{!
+0d$
+17%
+0I'
+1a&
+1X&
+1n!
+1p!
+1v!
+1c$
+06%
+1y!
+0t!
+1}!
+0{!
+0~!
+0e$
+1:%
+08%
+1|!
+0y!
+1t!
+1~!
+1=%
+0;%
+19%
+0f$
+0!"
+0|!
+1>%
+1<%
+1!"
+#1000000
