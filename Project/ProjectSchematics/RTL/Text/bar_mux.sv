@@ -21,7 +21,8 @@ logic [7:0] tmpRGB;
 
 
 assign barRGB = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign barDrawingRequest = (timerDrawingRequest || backgroundRequest || heartsDrawingRequest);
+assign barDrawingRequest = (timerDrawingRequest || backgroundRequest 
+									|| heartsDrawingRequest || levelsDrawingRequest);
 
 
 always_ff@(posedge clk or negedge resetN)

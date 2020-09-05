@@ -142,7 +142,7 @@ logic [7:0] levelsRGB;
 
 generate
 	for (i=0; i < 3; i++) begin : generate_levels_id
-		square_object #(.OBJECT_WIDTH_X(16)) digitssquare(	
+		square_object #(.OBJECT_WIDTH_X(16)) levelssquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
