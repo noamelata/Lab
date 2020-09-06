@@ -128,7 +128,7 @@ always_ff @(posedge clk or negedge resetN)
 		timer_on <= 1'b1;
 	else if (timer_load)
 		timer_on <= 1'b1;
-   else if (tc)	// Synchronic logic FSM
+   else if (tc || gameOver)	// Synchronic logic FSM
 		timer_on <= 1'b0;
 end
 

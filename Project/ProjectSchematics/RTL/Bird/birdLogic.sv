@@ -108,7 +108,10 @@ begin
 	else begin
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
 			counter <= (counter > 0) ? counter - 1 : 0;
-			poop_counter <= (poop_counter > 0) ? poop_counter - 1 : 0;
+			if (life > 0)
+				poop_counter <= (poop_counter > 0) ? poop_counter - 1 : 0;
+			else
+				poop_counter <= poop_counter;
 			deploy_poop <= 1'b0;
 
 			

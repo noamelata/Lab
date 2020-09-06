@@ -1,11 +1,11 @@
 
-State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[3].birdlogic|state
+State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[2].birdlogic|state
 Name state.idle_state state.left_state state.right_state 
 state.idle_state 0 0 0 
 state.right_state 1 0 1 
 state.left_state 1 1 0 
 
-State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[2].birdlogic|state
+State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[3].birdlogic|state
 Name state.idle_state state.left_state state.right_state 
 state.idle_state 0 0 0 
 state.right_state 1 0 1 

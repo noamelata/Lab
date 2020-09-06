@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at poopLogic.sv(12): object "initial_y" differs only in case from object "INITIAL_Y" in the same scope File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/Poop/poopLogic.sv Line: 12
-Warning (10268): Verilog HDL information at square_object.sv(38): always construct contains both blocking and non-blocking assignments File: C:/TECHNION/gitLab/Lab/Project/ProjectSchematics/RTL/VGA/square_object.sv Line: 38
+Info (10281): Verilog HDL Declaration information at poopLogic.sv(12): object "initial_y" differs only in case from object "INITIAL_Y" in the same scope File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/poopLogic.sv Line: 12
+Warning (10268): Verilog HDL information at square_object.sv(38): always construct contains both blocking and non-blocking assignments File: C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/square_object.sv Line: 38

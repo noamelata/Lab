@@ -29,7 +29,7 @@ always @(posedge clk or negedge resetN)
 		else
 			level <= next_level;
 		if (level_up == 1'b1) begin
-			if (level_num[0] > 4'h9) begin
+			if (level_num[0] == 4'h9) begin
 				level_num[0] <= 4'h0;
 				level_num[1] <= level_num[1] + 4'h1;
 			end
