@@ -266,7 +266,7 @@ POOP_TOP poop_top(
 					.clk(clk),
 					.resetN(resetN),
 					.startOfFrame(startOfFrame),
-					.initial_Coordinates(birdsCoordinates),
+					.initial_coordinates(birdsCoordinates),
 					.poop_speed(tree_speed),
 					.deploy_poop(deploy_poop),
 					.drawCoordinates(drawCoordinates),

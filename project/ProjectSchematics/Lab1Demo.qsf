@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY game_controller
+set_global_assignment -name TOP_LEVEL_ENTITY GAME_TOP
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:51:54  JULY 08, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -223,7 +223,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tck
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdi
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdo
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tms
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/poopLogic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/poopDraw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/poopBMP.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/POOP_TOP.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/poop_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Poop/collision_player_poop.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/levels_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/gameoverDraw.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Text/gameoverBMP.sv
 set_global_assignment -name VECTOR_WAVEFORM_FILE gameControllerSim.vwf
@@ -300,3 +306,4 @@ set_global_assignment -name BDF_FILE RTL/game_architecture_TOP.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/Shot/shotBMP.sv
 set_global_assignment -name VECTOR_WAVEFORM_FILE BIRD_TOP_SIM.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

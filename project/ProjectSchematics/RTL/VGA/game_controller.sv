@@ -52,7 +52,8 @@ levelFSM level_fsm(
 	.trees_to_add(trees_to_add),
 	.tree_speed(tree_speed),
 	.bird_speed(bird_speed),
-	.number_of_birds(num_of_birds)
+	.number_of_birds(num_of_birds),
+	.level_num(level_num)
                 );
 					 
 
@@ -107,7 +108,7 @@ begin
 		player_life <= 3;
 		red_counter <= 0;
 		level_counter <= 0;
-		bird_hit_flag <= 1'b0;
+		bird_hit_flag <= 1'b1;
 		last_birds <= 0;
 		power_up_counter <= 0;
 		powerups <= 4'b0;

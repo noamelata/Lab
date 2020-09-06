@@ -232,7 +232,7 @@ logic heartsDrawingRequest;
 logic [7:0] heartsRGB;
 
 logic [0:bit_32 - 1] [0:bit_32 - 1] [7:0] heart_bitmap;
-heartBMP heartBMP(.object_colors(heart_bitmap));
+heartBMP heartBMP(.object_color(heart_bitmap));
 logic [2:0] hearts_active;
 		
 generate
@@ -258,7 +258,7 @@ generate
 			.coordinate(heartoffset[i]),
 			.InsideRectangle(heartInsideSquare[i]),
 			.isActive(hearts_active[i]), 
-			.object_colors(heart_bitmap),
+			.object_color(heart_bitmap),
 
 			.drawingRequest(heartsBusRequest[i]), 
 			.RGBout(heartBusRGB[i])
@@ -290,13 +290,13 @@ logic gameoverInsideSquare;
 logic gameoverRequest;
 logic [7:0] gameoverRGB;
 
-square_object gameoverSquare(	
+square_object #(.OBJECT_WIDTH_X(bit_64), .OBJECT_HEIGHT_Y(bit_64)) gameoverSquare(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),
 			.pixelY(drawCoordinates[1]),
 			.topLeftX(288 - 1), 
-			.topLeftY(184 - 1),
+			.topLeftY(232 - 1),
 
 			.offsetX(gameoverOffset[0]), 
 			.offsetY(gameoverOffset[1]),

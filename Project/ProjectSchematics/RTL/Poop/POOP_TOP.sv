@@ -3,14 +3,14 @@ module POOP_TOP	(
 					input logic	clk,
 					input logic	resetN,
 					input logic startOfFrame,
-					input logic signed [NUM_OF_POOPS - 1:0] [1:0] [10:0] initial_Coordinates,
+					input logic signed [NUM_OF_POOPS - 1:0] [1:0] [10:0] initial_coordinates,
 					input logic [2:0] poop_speed,
 					input logic [NUM_OF_POOPS - 1:0] deploy_poop,
 					input logic [1:0] [10:0] drawCoordinates,
 					
 					output logic [NUM_OF_POOPS - 1:0] poopsBusRequest,
 					output logic [NUM_OF_POOPS - 1:0] [1:0] [10:0] poopsCoordinates,
-		output logic poopsDrawingRequest,
+					output logic poopsDrawingRequest,
 					output logic [7:0] poopsRGB
 				
 );
@@ -50,8 +50,8 @@ generate
 			.resetN(resetN),
 			.startOfFrame(startOfFrame),
 			.deploy(deploy_poop[i]),
-			.initial_x(initial_Coordinates[i][0] + bit_8),
-			.initial_y(initial_Coordinates[i][1] + bit_16),
+			.initial_x(initial_coordinates[i][0] + bit_8),
+			.initial_y(initial_coordinates[i][1] + bit_16),
 			.speed(poop_speed),
 			.coordinate(Coordinates[i]),		
 			.isActive(poops_active[i]),
