@@ -30,7 +30,8 @@ module	game_controller	(
 			output logic more_damage,
 			output logic shield,
 			output logic [1:0] num_of_hearts,
-			output logic [1:0] [3:0] level_num
+			output logic [1:0] [3:0] level_num,
+			output logic lvl_up
 );
 
 
@@ -212,5 +213,6 @@ end
 
 assign player_red = red_counter > 0;
 assign num_of_hearts = player_life;
+assign lvl_up = level_up;
 
 endmodule

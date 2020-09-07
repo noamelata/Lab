@@ -5,10 +5,13 @@ module	trees_mux	(
 					input logic	clk,
 					input	logic	resetN,
 					
-					input	logic	signed [15:0] [1:0] [10:0] treesCoordinates,
+					input	logic	signed [NUMBER_OF_TREES - 1:0] [1:0] [10:0] treesCoordinates,
 					
-					input	logic	[15:0] treesBusRequest,
-					input	logic	[15:0] [7:0] treesBusRGB, 
+					input	logic	[NUMBER_OF_TREES - 1:0] treesBusRequest,
+					input	logic	[NUMBER_OF_TREES - 1:0] [7:0] treesBusRGB, 
+					input	logic	[NUMBER_OF_TREES - 1:0] jump,
+					input	logic	[NUMBER_OF_TREES - 1:0] isActive, 	
+					
 					
 					output	logic treesDrawingRequest,
 					output	logic	[7:0] treesRGB
@@ -16,7 +19,7 @@ module	trees_mux	(
 );
 
 logic [7:0] tmpRGB;
-
+parameter NUMBER_OF_TREES = 16;
 
 assign treesRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
 assign treesDrawingRequest  = (treesBusRequest[0] || treesBusRequest [1]
@@ -28,23 +31,88 @@ assign treesDrawingRequest  = (treesBusRequest[0] || treesBusRequest [1]
 						|| treesBusRequest[12] || treesBusRequest[13]
 						|| treesBusRequest[14] || treesBusRequest[15]);
 
-logic [15:0] [4:0] order_to_tree_num ;
-logic [4:0] temp;
+logic [NUMBER_OF_TREES - 1:0] [3:0] order_to_tree_num ;
+logic [3:0] temp;
+int number_of_active_trees;
 
 always_comb
 begin
-	
-	temp = 5'h00;
-	for (int i=0; i<16; i++) begin
-		order_to_tree_num[i] = i;
+	number_of_active_trees = 0;
+	number_of_active_trees += isActive[0];
+	number_of_active_trees += isActive[1];
+	number_of_active_trees += isActive[2];
+	number_of_active_trees += isActive[3];
+	number_of_active_trees += isActive[4];
+	number_of_active_trees += isActive[5];
+	number_of_active_trees += isActive[6];
+	number_of_active_trees += isActive[7];
+	number_of_active_trees += isActive[8];
+	number_of_active_trees += isActive[9];
+	number_of_active_trees += isActive[10];
+	number_of_active_trees += isActive[11];
+	number_of_active_trees += isActive[12];
+	number_of_active_trees += isActive[13];
+	number_of_active_trees += isActive[14];
+	number_of_active_trees += isActive[15];
+end
+
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN) begin
+		order_to_tree_num = {4'hF, 4'hE, 4'hD, 4'hC,
+									4'hB, 4'hA, 4'h9, 4'h8,
+									4'h7, 4'h6, 4'h5, 4'h4,
+									4'h3, 4'h2, 4'h1, 4'h0};
 	end
-	
-	for (int i = 16; i > 0; i--) begin
-		for (int j = 1; j < i; j++) begin
-			if (treesCoordinates[j-1][1] < treesCoordinates[j][1]) begin
-				temp = order_to_tree_num[j-1];
-				order_to_tree_num[j-1] = order_to_tree_num[j];
-				order_to_tree_num[j] = temp;
+	else begin
+		for (int i = 0 ; i < NUMBER_OF_TREES ; i++) begin
+			if ((jump[i] == 1'b1) && (number_of_active_trees > 1)) begin
+				if (number_of_active_trees == 2)
+					order_to_tree_num[2 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[2 - 1:1]};
+				if (number_of_active_trees == 3)
+					order_to_tree_num[3 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[3 - 1:1]};
+				if (number_of_active_trees == 4)
+					order_to_tree_num[4 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[4 - 1:1]};
+				if (number_of_active_trees == 5)
+					order_to_tree_num[5 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[5 - 1:1]};
+				if (number_of_active_trees == 6)
+					order_to_tree_num[6 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[6 - 1:1]};
+				if (number_of_active_trees == 7)
+					order_to_tree_num[7 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[7 - 1:1]};
+				if (number_of_active_trees == 8)
+					order_to_tree_num[8 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[8 - 1:1]};
+				if (number_of_active_trees == 9)
+					order_to_tree_num[9 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[9 - 1:1]};
+				if (number_of_active_trees == 10)
+					order_to_tree_num[10 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[10 - 1:1]};
+				if (number_of_active_trees == 11)
+					order_to_tree_num[11 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[11 - 1:1]};
+				if (number_of_active_trees == 12)
+					order_to_tree_num[12 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[12 - 1:1]};
+				if (number_of_active_trees == 13)
+					order_to_tree_num[13 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[13 - 1:1]};
+				if (number_of_active_trees == 14)
+					order_to_tree_num[14 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[14 - 1:1]};
+				if (number_of_active_trees == 15)
+					order_to_tree_num[15 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[15 - 1:1]};
+				if (number_of_active_trees == 16)
+					order_to_tree_num[16 - 1:0] = {order_to_tree_num[0],
+									order_to_tree_num[16 - 1:1]};
+
 			end
 		end
 	end

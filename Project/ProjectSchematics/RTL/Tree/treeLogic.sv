@@ -12,7 +12,8 @@ module	treeLogic	(
 					input logic [2:0] speed,
 					
 					output logic signed [1:0] [10:0]	coordinate,// output the top left corner 	
-					output logic isActive //should tree be on screen
+					output logic isActive, //should tree be on screen
+					output logic jump
 );
 
 
@@ -53,9 +54,11 @@ begin
 		topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
 		topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
 		isActive <= 1'b0;
+		jump <= 1'b0;
 	end
 	else begin
 		isActive <= isActive;
+		jump <= 1'b0;
 		if (deploy) begin
 				//generate random
 				topLeftX_FixedPoint	<=  ((random * 2) + (random / 2)) * FIXED_POINT_MULTIPLIER;
@@ -68,6 +71,7 @@ begin
 				topLeftY_FixedPoint <= INITIAL_Y;
 				//generate random
 				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
+				jump <= 1'b1;
 			end 
 			else begin
 				topLeftY_FixedPoint <= topLeftY_FixedPoint + step;

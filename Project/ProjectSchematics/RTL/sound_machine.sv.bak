@@ -1,0 +1,40 @@
+
+module sound_machine	(	
+					input logic	clk,
+					input logic	resetN,
+					input logic startOfFrame,
+					input logic shot_deploy,
+					input logic player_hit,
+					
+					output logic [9:0] freq,
+					output logic sound_en				
+);
+
+int count;
+int duration = 32;
+parameter HIT_FREQ;
+parameter SHOT_FREQ;
+ 
+always_ff@(posedge clk or negedge resetN)
+begin
+	if(!resetN) begin
+		sound_en <=	1'b0;
+		freq <= 10'h0;
+		count <= 0;
+	end
+	else begin  
+		if (startOfFrame) begin
+			count <= (count > 0) ? count - 1 : 0:
+			if (player_hit)
+				freq <= HIT_FREQ;
+			else if (shot_deploy)
+				freq <= SHOT_FREQ;
+			if (player_hit || shot_deploy) 
+				count <= duration;
+		end
+	end
+end
+
+assign sound_en = (count > 0);
+
+endmodule

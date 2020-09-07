@@ -1,11 +1,30 @@
 
-State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[2].birdlogic|state
+State Machine - |GAME_TOP|sound_machine:sound_machine|state
+Name state.pickup_st_3 state.pickup_st_2 state.pickup_st_1 state.lvl_st_3 state.lvl_st_2 state.lvl_st_1 state.shot_st_3 state.shot_st_2 state.shot_st_1 state.bird_hit_st_3 state.bird_hit_st_2 state.bird_hit_st_1 state.hit_st_3 state.hit_st_2 state.hit_st_1 state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.hit_st_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.hit_st_2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.hit_st_3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.bird_hit_st_1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.bird_hit_st_2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.bird_hit_st_3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.shot_st_1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.shot_st_2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.shot_st_3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.lvl_st_1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.lvl_st_2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.lvl_st_3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pickup_st_1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pickup_st_2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pickup_st_3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[3].birdlogic|state
 Name state.idle_state state.left_state state.right_state 
 state.idle_state 0 0 0 
 state.right_state 1 0 1 
 state.left_state 1 1 0 
 
-State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[3].birdlogic|state
+State Machine - |GAME_TOP|BIRD_TOP:bird_top|birdLogic:generate_birds_id[2].birdlogic|state
 Name state.idle_state state.left_state state.right_state 
 state.idle_state 0 0 0 
 state.right_state 1 0 1 

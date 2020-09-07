@@ -34,6 +34,8 @@ logic [NUM_OF_TREES - 1:0] [7:0] treesBusRGB;
 
 logic [NUM_OF_TREES - 1:0] trees_active;
 
+logic [NUM_OF_TREES - 1:0] trees_jump;
+
 			
 logic [0:bit_64 - 1] [0:bit_32 - 1] [7:0] tree_bitmap;
 treeBMP treeBMP(.object_colors(tree_bitmap));
@@ -49,7 +51,8 @@ generate
 			.random(random_number),
 			.speed(tree_speed),
 			.coordinate(Coordinates[i]),		
-			.isActive(trees_active[i])
+			.isActive(trees_active[i]),
+			.jump(trees_jump[i])
 		);
 
 		square_object #(.OBJECT_WIDTH_X(bit_32), .OBJECT_HEIGHT_Y(bit_64)) treessquare(	
@@ -91,6 +94,8 @@ trees_mux trees_mux(
 					.treesCoordinates(Coordinates),
 					.treesBusRequest(BusRequest),
 					.treesBusRGB(treesBusRGB), 
+					.jump(trees_jump),
+					.isActive(trees_active),
 					.treesDrawingRequest(treesDrawingRequest),
 					.treesRGB(treesRGB)
 					

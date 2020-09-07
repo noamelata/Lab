@@ -12,9 +12,19 @@ module GAME_TOP	(
 					output logic VGA_VS,
 					output logic VGA_SYNC_N,
 					output logic VGA_BLANK_N,
-					output logic VGA_CLK
+					output logic VGA_CLK,
+					
+					output logic MICROPHON_LED,
+					output logic AUD_ADCLRCK,
+					output logic AUD_BCLK,
+					output logic AUD_DACDAT,
+					output logic AUD_DACLRCK,
+					output logic AUD_XCK,
+					output logic AUD_I2C_SCLK,
+					output logic AUD_I2C_SDAT
 				
 );
+ 
  
  
 logic startOfFrame;
@@ -102,6 +112,7 @@ logic out_of_time;
 
 logic [1:0] num_of_hearts;
 logic [1:0] [3:0] level_num;
+logic level_up;
 
 
 assign clk = CLOCK_50;
@@ -141,7 +152,8 @@ game_controller gamecontroller (.clk(clk),
 			.more_damage(more_damage),
 			.shield(shield),
 			.num_of_hearts(num_of_hearts),
-			.level_num(level_num)
+			.level_num(level_num),
+			.lvl_up(level_up)
 			);
 
 PLAYER_TOP player_top (
@@ -247,6 +259,7 @@ TOP_BAR_TOP top_bar_top(
 					.barRGB(barRGB)
 					);
 					
+					
 PICKUP_TOP pickup_top (
 					.clk(clk),
 					.resetN(resetN),
@@ -261,6 +274,7 @@ PICKUP_TOP pickup_top (
 					.pickupDrawingRequest(pickupDrawingRequest),
 					.pickupRGB(pickupRGB)
 					);
+					
 					
 POOP_TOP poop_top(
 					.clk(clk),
@@ -366,7 +380,51 @@ VGA_Controller	vga (
 					.clk(clk),
 					.resetN(resetN)
 					);
+
+logic any_shot;
+assign any_shot = (deploy_shot[0] || deploy_shot[1]
+						|| deploy_shot[2] || deploy_shot[3]
+						|| deploy_shot[4] || deploy_shot[5]
+						|| deploy_shot[6] || deploy_shot[7]);
+logic any_hit_bird;
+assign any_hit_bird = (SingleHitPulse_birds[0] || SingleHitPulse_birds[1]
+						|| SingleHitPulse_birds[2] || SingleHitPulse_birds[3]);
+						
+logic [9:0] freq;
+logic sound_en;
+						
+sound_machine sound_machine(
+					.clk(clk),
+					.resetN(resetN),
+					.startOfFrame(startOfFrame),
+					.shot_deploy(any_shot),
+					.player_hit(player_SingleHitPulse || poop_SingleHitPulse),
+					.bird_hit(any_hit_bird),
+					.level_up(level_up),
+					.pickup(pickup_SingleHitPulse),
 					
+					.freq(freq),
+					.sound_en(sound_en)
+					);
+
+				
+				
+TOP_MSS_DEMO top_mss_demo (
+					.CLOCK_50(clk),
+					.resetN(resetN),
+					.EnableSound(sound_en),
+					.freq(freq),
+					
+					.MICROPHON_LED(MICROPHON_LED),
+					.AUD_ADCLRCK(AUD_ADCLRCK),
+					.AUD_BCLK(AUD_BCLK),
+					.AUD_DACDAT(AUD_DACDAT),
+					.AUD_DACLRCK(AUD_DACLRCK),
+					.AUD_XCK(AUD_XCK),
+					.AUD_I2C_SCLK(AUD_I2C_SCLK),
+					.AUD_I2C_SDAT(AUD_I2C_SDAT)
+					);				
+
 random randomizer (
 						.clk(clk),
 						.resetN(resetN),

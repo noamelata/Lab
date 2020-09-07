@@ -128,8 +128,52 @@ R35
 !i113 1
 R19
 R20
+vbirdLogic
+Z36 !s110 1599402589
+!i10b 1
+!s100 XNo3kMn;R==IdPcAZUlI;1
+I`P5VCZ5aP9g?QDT2I;dkX3
+R21
+Z37 dC:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/simulation/qsim
+w1599402588
+R22
+R23
+R24
+R25
+r1
+!s85 0
+31
+Z38 !s108 1599402589.000000
+R26
+R27
+!i113 1
+R19
+R28
+nbird@logic
+vbirdLogic_vlg_vec_tst
+R36
+!i10b 1
+!s100 kbF:NCcD9Glc;98ja;LQ;0
+I<aaml<F54JLgjn@T>gmAU3
+R21
+R37
+w1599402586
+8birdLogicSim.vwf.vt
+FbirdLogicSim.vwf.vt
+Z39 L0 30
+R25
+r1
+!s85 0
+31
+R38
+!s107 birdLogicSim.vwf.vt|
+!s90 -work|work|birdLogicSim.vwf.vt|
+!i113 1
+R19
+R28
+nbird@logic_vlg_vec_tst
 vgame_controller
-Z36 !s110 1599329150
+Z40 !s110 1599329150
 !i10b 1
 !s100 nX<X8N7zDgWWjVI@om`8c2
 I:8e]G;?CoN0goGGN5>ABj1
@@ -143,14 +187,14 @@ R25
 r1
 !s85 0
 31
-Z37 !s108 1599329150.000000
+Z41 !s108 1599329150.000000
 R26
 R27
 !i113 1
 R19
 R28
 vgame_controller_vlg_vec_tst
-R36
+R40
 !i10b 1
 !s100 lcXXz9D0TQ7k[i=lUM]bc3
 IWAVAHGR<PF9^iFOHnM`0c3
@@ -159,12 +203,12 @@ R0
 w1599329148
 8gameControllerSim.vwf.vt
 FgameControllerSim.vwf.vt
-L0 30
+R39
 R25
 r1
 !s85 0
 31
-R37
+R41
 !s107 gameControllerSim.vwf.vt|
 !s90 -work|work|gameControllerSim.vwf.vt|
 !i113 1

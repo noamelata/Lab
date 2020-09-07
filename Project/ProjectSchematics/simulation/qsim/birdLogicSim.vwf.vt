@@ -1,0 +1,427 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/06/2020 17:29:46"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          birdLogic
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module birdLogic_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg collision;
+reg [1:0] damage;
+reg deploy;
+reg [7:0] random;
+reg resetN;
+reg [1:0] speed;
+reg startOfFrame;
+reg [3:0] starting_life;
+// wires                                               
+wire alive;
+wire coordinate_1_10;
+wire coordinate_1_9;
+wire coordinate_1_8;
+wire coordinate_1_7;
+wire coordinate_1_6;
+wire coordinate_1_5;
+wire coordinate_1_4;
+wire coordinate_1_3;
+wire coordinate_1_2;
+wire coordinate_1_1;
+wire coordinate_1_0;
+wire coordinate_0_10;
+wire coordinate_0_9;
+wire coordinate_0_8;
+wire coordinate_0_7;
+wire coordinate_0_6;
+wire coordinate_0_5;
+wire coordinate_0_4;
+wire coordinate_0_3;
+wire coordinate_0_2;
+wire coordinate_0_1;
+wire coordinate_0_0;
+wire deploy_poop;
+wire red;
+
+// assign statements (if any)                          
+birdLogic i1 (
+// port map - connection between master ports and signals/registers   
+	.alive(alive),
+	.clk(clk),
+	.collision(collision),
+	.coordinate_1_10(coordinate_1_10),
+	.coordinate_1_9(coordinate_1_9),
+	.coordinate_1_8(coordinate_1_8),
+	.coordinate_1_7(coordinate_1_7),
+	.coordinate_1_6(coordinate_1_6),
+	.coordinate_1_5(coordinate_1_5),
+	.coordinate_1_4(coordinate_1_4),
+	.coordinate_1_3(coordinate_1_3),
+	.coordinate_1_2(coordinate_1_2),
+	.coordinate_1_1(coordinate_1_1),
+	.coordinate_1_0(coordinate_1_0),
+	.coordinate_0_10(coordinate_0_10),
+	.coordinate_0_9(coordinate_0_9),
+	.coordinate_0_8(coordinate_0_8),
+	.coordinate_0_7(coordinate_0_7),
+	.coordinate_0_6(coordinate_0_6),
+	.coordinate_0_5(coordinate_0_5),
+	.coordinate_0_4(coordinate_0_4),
+	.coordinate_0_3(coordinate_0_3),
+	.coordinate_0_2(coordinate_0_2),
+	.coordinate_0_1(coordinate_0_1),
+	.coordinate_0_0(coordinate_0_0),
+	.damage(damage),
+	.deploy(deploy),
+	.deploy_poop(deploy_poop),
+	.random(random),
+	.red(red),
+	.resetN(resetN),
+	.speed(speed),
+	.startOfFrame(startOfFrame),
+	.starting_life(starting_life)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #2500 1'b1;
+	#2500;
+end 
+
+// resetN
+initial
+begin
+	resetN = 1'b0;
+	resetN = #10000 1'b1;
+end 
+
+// startOfFrame
+always
+begin
+	startOfFrame = 1'b0;
+	startOfFrame = #15000 1'b1;
+	#5000;
+end 
+
+// collision
+initial
+begin
+	collision = 1'b0;
+	collision = #340000 1'b1;
+	collision = #20000 1'b0;
+end 
+// random[ 7 ]
+initial
+begin
+	random[7] = 1'b0;
+	random[7] = #40000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #140000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #100000 1'b1;
+	random[7] = #60000 1'b0;
+	random[7] = #20000 1'b1;
+	random[7] = #60000 1'b0;
+	random[7] = #20000 1'b1;
+	random[7] = #60000 1'b0;
+	random[7] = #20000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #20000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #60000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #60000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #80000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #20000 1'b1;
+	random[7] = #20000 1'b0;
+	random[7] = #20000 1'b1;
+end 
+// random[ 6 ]
+initial
+begin
+	random[6] = 1'b1;
+	random[6] = #40000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #40000 1'b0;
+	random[6] = #60000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #40000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #60000 1'b1;
+	random[6] = #60000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #40000 1'b1;
+	random[6] = #60000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #40000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #40000 1'b1;
+	random[6] = #40000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #40000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #80000 1'b0;
+	random[6] = #40000 1'b1;
+	random[6] = #20000 1'b0;
+	random[6] = #20000 1'b1;
+	random[6] = #20000 1'b0;
+end 
+// random[ 5 ]
+initial
+begin
+	random[5] = 1'b1;
+	random[5] = #20000 1'b0;
+	random[5] = #20000 1'b1;
+	random[5] = #40000 1'b0;
+	random[5] = #60000 1'b1;
+	random[5] = #40000 1'b0;
+	random[5] = #40000 1'b1;
+	random[5] = #60000 1'b0;
+	random[5] = #20000 1'b1;
+	random[5] = #40000 1'b0;
+	random[5] = #40000 1'b1;
+	random[5] = #20000 1'b0;
+	random[5] = #20000 1'b1;
+	random[5] = #20000 1'b0;
+	random[5] = #40000 1'b1;
+	random[5] = #60000 1'b0;
+	random[5] = #40000 1'b1;
+	random[5] = #20000 1'b0;
+	random[5] = #60000 1'b1;
+	random[5] = #60000 1'b0;
+	random[5] = #20000 1'b1;
+	random[5] = #40000 1'b0;
+	random[5] = #80000 1'b1;
+	random[5] = #60000 1'b0;
+	random[5] = #20000 1'b1;
+	random[5] = #40000 1'b0;
+end 
+// random[ 4 ]
+initial
+begin
+	random[4] = 1'b0;
+	random[4] = #20000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #20000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #40000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #20000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #20000 1'b1;
+	random[4] = #60000 1'b0;
+	random[4] = #140000 1'b1;
+	random[4] = #40000 1'b0;
+	random[4] = #40000 1'b1;
+	random[4] = #80000 1'b0;
+	random[4] = #60000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #60000 1'b1;
+	random[4] = #60000 1'b0;
+	random[4] = #40000 1'b1;
+	random[4] = #20000 1'b0;
+	random[4] = #40000 1'b1;
+	random[4] = #100000 1'b0;
+end 
+// random[ 3 ]
+initial
+begin
+	random[3] = 1'b1;
+	random[3] = #100000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #20000 1'b0;
+	random[3] = #60000 1'b1;
+	random[3] = #80000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #40000 1'b0;
+	random[3] = #60000 1'b1;
+	random[3] = #40000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #60000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #40000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #20000 1'b0;
+	random[3] = #60000 1'b1;
+	random[3] = #120000 1'b0;
+	random[3] = #20000 1'b1;
+	random[3] = #60000 1'b0;
+	random[3] = #40000 1'b1;
+	random[3] = #60000 1'b0;
+end 
+// random[ 2 ]
+initial
+begin
+	random[2] = 1'b1;
+	random[2] = #20000 1'b0;
+	random[2] = #20000 1'b1;
+	random[2] = #40000 1'b0;
+	random[2] = #100000 1'b1;
+	random[2] = #40000 1'b0;
+	random[2] = #60000 1'b1;
+	random[2] = #60000 1'b0;
+	random[2] = #60000 1'b1;
+	random[2] = #180000 1'b0;
+	random[2] = #20000 1'b1;
+	random[2] = #20000 1'b0;
+	random[2] = #100000 1'b1;
+	random[2] = #40000 1'b0;
+	random[2] = #60000 1'b1;
+	random[2] = #20000 1'b0;
+	random[2] = #40000 1'b1;
+	random[2] = #20000 1'b0;
+	random[2] = #20000 1'b1;
+	random[2] = #20000 1'b0;
+	random[2] = #20000 1'b1;
+	random[2] = #20000 1'b0;
+end 
+// random[ 1 ]
+initial
+begin
+	random[1] = 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #60000 1'b0;
+	random[1] = #40000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #60000 1'b1;
+	random[1] = #40000 1'b0;
+	random[1] = #60000 1'b1;
+	random[1] = #40000 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #60000 1'b0;
+	random[1] = #60000 1'b1;
+	random[1] = #40000 1'b0;
+	random[1] = #60000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #60000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #40000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #40000 1'b0;
+	random[1] = #40000 1'b1;
+	random[1] = #20000 1'b0;
+	random[1] = #20000 1'b1;
+	random[1] = #20000 1'b0;
+end 
+// random[ 0 ]
+initial
+begin
+	random[0] = 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #60000 1'b1;
+	random[0] = #40000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #80000 1'b0;
+	random[0] = #40000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #160000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #80000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #20000 1'b0;
+	random[0] = #20000 1'b1;
+	random[0] = #40000 1'b0;
+end 
+// starting_life[ 3 ]
+initial
+begin
+	starting_life[3] = 1'b0;
+end 
+// starting_life[ 2 ]
+initial
+begin
+	starting_life[2] = 1'b0;
+end 
+// starting_life[ 1 ]
+initial
+begin
+	starting_life[1] = 1'b0;
+end 
+// starting_life[ 0 ]
+initial
+begin
+	starting_life[0] = 1'b1;
+end 
+
+// deploy
+initial
+begin
+	deploy = 1'b0;
+	deploy = #30000 1'b1;
+	deploy = #20000 1'b0;
+end 
+// speed[ 1 ]
+initial
+begin
+	speed[1] = 1'b0;
+end 
+// speed[ 0 ]
+initial
+begin
+	speed[0] = 1'b1;
+end 
+// damage[ 1 ]
+initial
+begin
+	damage[1] = 1'b0;
+end 
+// damage[ 0 ]
+initial
+begin
+	damage[0] = 1'b1;
+end 
+endmodule
+
