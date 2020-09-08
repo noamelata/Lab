@@ -51,7 +51,7 @@ localparam bit_32 = 32;
 localparam bit_64 = 64;
 
 
-timer_4_digits_counter timer_inst (
+timer_2_digits_counter timer_inst (
 			.clk(clk),
 			.resetN(resetN),
 			.ena(timer_on), 

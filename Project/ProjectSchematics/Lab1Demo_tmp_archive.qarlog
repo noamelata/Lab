@@ -1,0 +1,104 @@
+Quartus Prime Archive log --	C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Lab1Demo_tmp_archive.qarlog
+
+Archive:	C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Lab1Demo_tmp_archive.qar
+Date:		Tue Sep 08 19:30:55 2020
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/BIRD_TOP_SIM.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/DE10_Standard_Audio.sdc
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Lab1Demo.qpf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Lab1Demo.qsf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/BIRD_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birdLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Bird/birds_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GAME_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/GROUND_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/SinTable.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/TOP_MSS_DEMO.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/ToneDecoder.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/addr_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/data_conversion.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/MSS/prescaler.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/PLAYER_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Pickup/PICKUP_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Pickup/pickupBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Pickup/pickupDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Pickup/pickupLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Player/playerLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/POOP_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/collision_player_poop.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/poopBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/poopDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/poopLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Poop/poop_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/SHOT_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Seg7/SEG7.SV
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shotLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Shot/shots_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/TOP_BAR_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/TREE_TOP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/NumbersBitMap.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/barDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/bar_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/decimal_down_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/digits_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/gameoverBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/gameoverDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/heartBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/heartDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/heart_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/levels_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Text/timer_2_digits_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/treeLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/Tree/trees_mux.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/VGA_Controller.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/back_ground_drawSquare.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_bird_shot.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_player_pickup.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/collision_player_tree.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/dynamic_groundBMP.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/dynamic_groundDraw.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/dynamic_groundLogic.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/game_controller.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/objects_mux_all.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/square_object.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX.bsf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX.qip
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX.v
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX_bb.v
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/VGA/valX_inst.v
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/audio_codec_controller/audio_codec_controller.qxp
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/game_architecture_TOP.bdf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/levelFsm.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/numberPosition.bsf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/numberPosition.qip
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/numberPosition.v
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/numberPosition_bb.v
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/one_sec_counter.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/random.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/RTL/sound_machine.sv
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Waveform.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/assignment_defaults.qdf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/birdLogicSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/DE10_Standard_Audio.sdc
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/constraints/pin.tcl
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/gameControllerSim.vwf
+C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/output_files/Chain1.cdf
+	======= Total: 87 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Tue Sep 08 19:30:57 2020
+Source archive file:	C:/Users/elata/Desktop/studies/hw/Lab/project/ProjectSchematics/Lab1Demo_tmp_archive.qar
+Archive was extracted into	C:/Users/elata/Desktop/studies/hw/Lab/project/LabProjectSchematics/
+		 - successfully.
