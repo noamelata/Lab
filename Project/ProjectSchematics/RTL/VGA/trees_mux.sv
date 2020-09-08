@@ -10,6 +10,7 @@ module	trees_mux	(
 					input	logic	[NUMBER_OF_TREES - 1:0] treesBusRequest,
 					input	logic	[NUMBER_OF_TREES - 1:0] [7:0] treesBusRGB, 
 					input	logic	[NUMBER_OF_TREES - 1:0] jump,
+					input logic [NUMBER_OF_TREES - 1:0] deploy_tree,
 					input	logic	[NUMBER_OF_TREES - 1:0] isActive, 	
 					
 					
@@ -35,7 +36,7 @@ logic [NUMBER_OF_TREES - 1:0] [3:0] order_to_tree_num ;
 logic [3:0] temp;
 int number_of_active_trees;
 
-always_comb
+/*always_comb
 begin
 	number_of_active_trees = 0;
 	number_of_active_trees += isActive[0];
@@ -54,17 +55,22 @@ begin
 	number_of_active_trees += isActive[13];
 	number_of_active_trees += isActive[14];
 	number_of_active_trees += isActive[15];
-end
+end*/
 
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
-		order_to_tree_num = {4'hF, 4'hE, 4'hD, 4'hC,
+		/*order_to_tree_num = {4'hF, 4'hE, 4'hD, 4'hC,
 									4'hB, 4'hA, 4'h9, 4'h8,
 									4'h7, 4'h6, 4'h5, 4'h4,
-									4'h3, 4'h2, 4'h1, 4'h0};
+									4'h3, 4'h2, 4'h1, 4'h0};*/
+									
+		order_to_tree_num = {4'h0, 4'h1, 4'h2, 4'h3,
+									4'h4, 4'h5, 4'h6, 4'h7,
+									4'h8, 4'h9, 4'hA, 4'hB,
+									4'hC, 4'hD, 4'hE, 4'hF};
 	end
-	else begin
+	else begin /*
 		for (int i = 0 ; i < NUMBER_OF_TREES ; i++) begin
 			if ((jump[i] == 1'b1) && (number_of_active_trees > 1)) begin
 				if (number_of_active_trees == 2)
@@ -114,7 +120,9 @@ begin
 									order_to_tree_num[16 - 1:1]};
 
 			end
-		end
+		end 
+			
+		end*/
 	end
 end
 
@@ -175,7 +183,7 @@ begin
 		
 			
 		else
-			tmpRGB <= 8'hff ; // last priority 
+			tmpRGB <= 8'hFF ; // last priority 
 		end ; 
 	end
 

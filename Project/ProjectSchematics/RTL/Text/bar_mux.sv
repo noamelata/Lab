@@ -23,7 +23,7 @@ logic [7:0] tmpRGB;
 
 
 assign barRGB = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign barDrawingRequest = (timerDrawingRequest || backgroundRequest 
+assign barDrawingRequest = (timerDrawingRequest 
 									|| heartsDrawingRequest || levelsDrawingRequest
 									|| gameoverRequest);
 
@@ -43,9 +43,9 @@ begin
 		else if (levelsDrawingRequest == 1'b1 )   
 			tmpRGB <= levelsRGB;  //third priority
 
-		else if (backgroundRequest == 1'b1 )   
+		/*else if (backgroundRequest == 1'b1 )   
 			tmpRGB <= backgroundRGB;  //forth priority
-			
+			 */
 		else if (gameoverRequest == 1'b1 )   
 			tmpRGB <= gameoverRGB;  //fifth priority
 			

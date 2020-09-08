@@ -43,7 +43,7 @@ treeBMP treeBMP(.object_colors(tree_bitmap));
 genvar i;
 generate
 	for (i=0; i < NUM_OF_TREES; i++) begin : generate_trees_id
-		treeLogic treelogic(	
+		treeLogic #(.INITIAL_Y(i * 30)) treelogic(	
 			.clk(clk),
 			.resetN(resetN),
 			.startOfFrame(startOfFrame),
@@ -95,6 +95,7 @@ trees_mux trees_mux(
 					.treesBusRequest(BusRequest),
 					.treesBusRGB(treesBusRGB), 
 					.jump(trees_jump),
+					.deploy_tree(deploy_tree),
 					.isActive(trees_active),
 					.treesDrawingRequest(treesDrawingRequest),
 					.treesRGB(treesRGB)

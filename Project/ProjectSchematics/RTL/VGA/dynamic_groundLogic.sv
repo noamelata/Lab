@@ -15,7 +15,7 @@ module	dynamic_groundLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-parameter int INITIAL_Y = 0; // if tree is 32 bit
+parameter int INITIAL_Y = -64; // if grass is 32 bit
 const int INITIAL_X = 0;
 
 
@@ -50,8 +50,8 @@ begin
 	end
 	else begin	
 		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
-			if (topLeftY_FixedPoint >= (63 * FIXED_POINT_MULTIPLIER)) begin
-				topLeftY_FixedPoint <= INITIAL_Y + step;
+			if (topLeftY_FixedPoint / FIXED_POINT_MULTIPLIER >= 0) begin
+				topLeftY_FixedPoint <= (topLeftY_FixedPoint - 64  *  FIXED_POINT_MULTIPLIER) + step;
 				topLeftX_FixedPoint	<= INITIAL_X;
 			end 
 			else begin

@@ -8,13 +8,13 @@
 module	square_object	(	
 					input		logic	clk,
 					input		logic	resetN,
-					input 	logic	[10:0] pixelX,// current VGA pixel 
-					input 	logic	[10:0] pixelY,
+					input 	logic	signed [10:0] pixelX,// current VGA pixel 
+					input 	logic	signed [10:0] pixelY,
 					input 	logic signed [10:0] topLeftX, //position on the screen 
 					input 	logic	signed [10:0] topLeftY,
 					
-					output 	logic	[10:0] offsetX,// offset inside bracket from top left position 
-					output 	logic	[10:0] offsetY,
+					output 	logic	signed [10:0] offsetX,// offset inside bracket from top left position 
+					output 	logic	signed [10:0] offsetY,
 					output	logic	drawingRequest, // indicates pixel inside the bracket
 					output	logic	[7:0]	 RGBout //optional color output for mux 
 );

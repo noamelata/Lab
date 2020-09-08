@@ -21,9 +21,10 @@ module	treeLogic	(
 
 parameter int SCREEN_WIDTH = 640;
 parameter int SCREEN_HEIGHT = 480;
-//parameter int IMAGE_HEIGHT = 64;
-const int INITIAL_Y = 0; // if tree is 32 bit
+parameter int INITIAL_Y = -64;
 
+const int JUMP_Y = -64;
+logic wait_for_jump;
 
 
 const int	FIXED_POINT_MULTIPLIER	=	64;
@@ -51,38 +52,29 @@ always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN)
 	begin
-		topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
-		topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
+		topLeftX_FixedPoint	<=  ((random * 2) + (random / 4) + (random / 8)) * FIXED_POINT_MULTIPLIER;
+		topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
 		isActive <= 1'b0;
 		jump <= 1'b0;
+		wait_for_jump <= 1'b0;
 	end
 	else begin
 		isActive <= isActive;
 		jump <= 1'b0;
-		if (deploy) begin
-				//generate random
-				topLeftX_FixedPoint	<=  ((random * 2) + (random / 2)) * FIXED_POINT_MULTIPLIER;
-				topLeftY_FixedPoint	<=  INITIAL_Y * FIXED_POINT_MULTIPLIER;
-				isActive <= 1'b1;
-			end
-		
-		if ((startOfFrame == 1'b1) && isActive) begin // perform  position integral only 30 times per second 
+		if (deploy) 
+			wait_for_jump <= 1'b1;
+		if (wait_for_jump && jump)
+			isActive <= 1'b1;
+		if (startOfFrame == 1'b1) begin // perform  position integral only 30 times per second 
 			if (topLeftY_FixedPoint > (y_FRAME_SIZE)) begin
-				topLeftY_FixedPoint <= INITIAL_Y;
-				//generate random
-				topLeftX_FixedPoint	<=  random * 2 * FIXED_POINT_MULTIPLIER;
+				topLeftY_FixedPoint <= JUMP_Y * FIXED_POINT_MULTIPLIER;
+				topLeftX_FixedPoint	<=  ((random * 2) + (random / 4) + (random / 8)) * FIXED_POINT_MULTIPLIER;
 				jump <= 1'b1;
 			end 
 			else begin
 				topLeftY_FixedPoint <= topLeftY_FixedPoint + step;
 			end
 		end
-		
-		/*if (remove) begin
-			topLeftX_FixedPoint	<=  SCREEN_WIDTH * FIXED_POINT_MULTIPLIER;
-			topLeftY_FixedPoint	<=  SCREEN_HEIGHT * FIXED_POINT_MULTIPLIER;
-			isActive <= 1'b0;
-		end*/
 	end
 end
 

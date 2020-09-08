@@ -34,7 +34,7 @@ dynamic_groundLogic dynamic_groundlogic(
 		);
 		
 		
-		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(480)) dynamic_ground_square(	
+		square_object #(.OBJECT_WIDTH_X(640), .OBJECT_HEIGHT_Y(550)) dynamic_ground_square(	
 			.clk(clk),
 			.resetN(resetN),
 			.pixelX(drawCoordinates[0]),

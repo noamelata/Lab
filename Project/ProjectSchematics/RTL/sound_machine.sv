@@ -53,49 +53,49 @@ begin
 	end
 	
 	hit_st_1:
-		freq = 10'h0;
+		freq = 10'h250;
 		
 	hit_st_2:
-		freq = 10'h0;
+		freq = 10'h2EA;
 		
 	hit_st_3:
-		freq = 10'h0;
+		freq = 10'hF;
 	
 	pickup_st_1:
-		freq = 10'h0;
+		freq = 10'h1F2;
 		
 	pickup_st_2:
-		freq = 10'h0;
+		freq = 10'h250;
 		
 	pickup_st_3:
-		freq = 10'h0;
+		freq = 10'h1BB;
 		
 	bird_hit_st_1:
-		freq = 10'h0;
+		freq = 10'h20F;
 		
 	bird_hit_st_2:
-		freq = 10'h0;
+		freq = 10'h1D6;
 		
 	bird_hit_st_3:
-		freq = 10'h0;
+		freq = 10'h18b;
 		
 	lvl_st_1:
-		freq = 10'h0;
+		freq = 10'hF;
 		
 	lvl_st_2:
-		freq = 10'h0;
+		freq = 10'hF;
 		
 	lvl_st_3:
-		freq = 10'h0;
+		freq = 10'hF;
 		
 	shot_st_1:
-		freq = 10'h0;
+		freq = 10'h2EA;
 		
 	shot_st_2:
-		freq = 10'h0;
+		freq = 10'h1F2;
 		
 	shot_st_3:
-		freq = 10'h0;
+		freq = 10'hF;
 	
 	
 	endcase

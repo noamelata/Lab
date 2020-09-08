@@ -228,7 +228,8 @@ TREE_TOP tree_top(
 					.treesRGB(treesRGB)
 );
 
-GROUND_TOP ground_top(.clk(clk),
+GROUND_TOP ground_top(
+					.clk(clk),
 					.resetN(resetN),
 					.startOfFrame(startOfFrame),
 					.tree_speed(tree_speed),
@@ -412,7 +413,7 @@ sound_machine sound_machine(
 TOP_MSS_DEMO top_mss_demo (
 					.CLOCK_50(clk),
 					.resetN(resetN),
-					.EnableSound(sound_en),
+					.EnableSound(1'b1),
 					.freq(freq),
 					
 					.MICROPHON_LED(MICROPHON_LED),

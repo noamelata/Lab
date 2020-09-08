@@ -40,7 +40,7 @@ int number_of_trees = 0;
 int bit_64 = 64;
 logic [1:0] num_of_birds;
 
-logic [1:0] trees_to_add;
+logic [15:0] trees_to_add;
 logic start_level;
 logic level_up;
 
@@ -50,7 +50,7 @@ levelFSM level_fsm(
 	.level_up(level_up),
 	.startOfFrame(startOfFrame),
 	.bird_life(bird_life),
-	.trees_to_add(trees_to_add),
+	.trees_to_add(deploy_tree),
 	.tree_speed(tree_speed),
 	.bird_speed(bird_speed),
 	.number_of_birds(num_of_birds),
@@ -103,7 +103,7 @@ begin
 		level_up <= 1'b0;
 		deploy_shot <= 8'h00;
 		deploy_bird <= 4'h0;
-		deploy_tree <= 16'h0000;
+		//deploy_tree <= 16'h0000;
 		deploy_pickup <= 1'b0;
 		player_active <= 1'b1;
 		player_life <= 3;
@@ -133,7 +133,7 @@ begin
 			current_tree <= current_tree;
 			tree_counter <= (tree_counter == tree_wait) ? 0 : tree_counter + 1;
 			deploy_bird <= 4'h0;
-			deploy_tree <= 16'h0000;
+			//deploy_tree <= 16'h0000;
 			deploy_pickup <= 1'b0;
 			last_birds <= bird_alive;
 			power_up_counter <= (power_up_counter > 0) ? power_up_counter - 1 : 0;
@@ -144,11 +144,11 @@ begin
 				cooldown <= cooldown_time;
 			end
 			
-			if ((number_of_trees > 0) && (tree_counter == (tree_wait - 1))) begin // when to deploy tree
+			/*if ((number_of_trees > 0) && (tree_counter == (tree_wait - 1))) begin // when to deploy tree
 				deploy_tree[current_tree] <= 1'b1;
 				current_tree <= current_tree == MAX_TREES - 1 ? 0 : current_tree + 1;
 				number_of_trees <= number_of_trees - 1;
-			end
+			end*/
 			
 			if (start_level == 1'b1) begin // at beginning of level
 				for (int i = 0; i <= num_of_birds; i++) begin
