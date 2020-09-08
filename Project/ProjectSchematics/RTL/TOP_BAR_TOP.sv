@@ -296,7 +296,7 @@ square_object #(.OBJECT_WIDTH_X(bit_64), .OBJECT_HEIGHT_Y(bit_64)) gameoverSquar
 			.pixelX(drawCoordinates[0]),
 			.pixelY(drawCoordinates[1]),
 			.topLeftX(288 - 1), 
-			.topLeftY(232 - 1),
+			.topLeftY(208 - 1),
 
 			.offsetX(gameoverOffset[0]), 
 			.offsetY(gameoverOffset[1]),

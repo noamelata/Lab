@@ -89,13 +89,13 @@ begin
 		freq = 10'h0;
 		
 	shot_st_1:
-		freq = 10'h2EA;
-		
-	shot_st_2:
 		freq = 10'h1F2;
 		
+	shot_st_2:
+		freq = 10'h250;
+		
 	shot_st_3:
-		freq = 10'h0;
+		freq = 10'h2EA;
 	
 	
 	endcase
@@ -105,11 +105,14 @@ end
 always_comb 
 begin
 	next_state = idle;
+	duration = 4;
 	
 	if (player_hit)
 		next_state = hit_st_1;
-	else if (pickup)
+	else if (pickup) begin
 		next_state = pickup_st_1;
+		duration = 8;
+	end
 	else if (bird_hit)
 		next_state = bird_hit_st_1;
 	else if (level_up)
@@ -122,14 +125,16 @@ begin
 		hit_st_1:
 			next_state = hit_st_2;
 			
-		hit_st_2:
-			next_state = hit_st_3;
 			
-		pickup_st_1:
+		pickup_st_1: begin
 			next_state = pickup_st_2;
+			duration = 8;
+		end
 			
-		pickup_st_2:
+		pickup_st_2: begin
 			next_state = pickup_st_3;
+			duration = 8;
+		end	
 			
 		bird_hit_st_1:
 			next_state = bird_hit_st_2;
@@ -143,11 +148,15 @@ begin
 		lvl_st_2:
 			next_state = lvl_st_3;
 			
-		shot_st_1:
+		shot_st_1: begin
 			next_state = shot_st_2;
+			duration = 2;
+		end
 			
-		shot_st_2:
+		shot_st_2: begin
 			next_state = shot_st_3;
+			duration = 1;
+		end
 		
 		endcase
 	end

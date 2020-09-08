@@ -22,6 +22,7 @@ logic signed [1:0] [10:0] Coordinates;
 assign playerCoordinates = Coordinates;
 
 logic signed [1:0] [10:0] playerOffset;
+
 logic playerInsideSquare;
 
 
@@ -64,5 +65,6 @@ playerDraw playerdraw	(
 					.drawingRequest(playerDrawingRequest),
 					.RGBout(playerRGB)
  ) ;
+ 
 
 endmodule
