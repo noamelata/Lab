@@ -14,7 +14,7 @@ module sound_machine	(
 );
 
 int count;
-int duration = 32;
+int duration = 4;
 
 enum logic [4:0] {idle, hit_st_1, hit_st_2, hit_st_3, 
 						bird_hit_st_1, bird_hit_st_2, bird_hit_st_3, 
@@ -59,7 +59,7 @@ begin
 		freq = 10'h2EA;
 		
 	hit_st_3:
-		freq = 10'hF;
+		freq = 10'h0;
 	
 	pickup_st_1:
 		freq = 10'h1F2;
@@ -80,13 +80,13 @@ begin
 		freq = 10'h18b;
 		
 	lvl_st_1:
-		freq = 10'hF;
+		freq = 10'h0;
 		
 	lvl_st_2:
-		freq = 10'hF;
+		freq = 10'h0;
 		
 	lvl_st_3:
-		freq = 10'hF;
+		freq = 10'h0;
 		
 	shot_st_1:
 		freq = 10'h2EA;
@@ -95,7 +95,7 @@ begin
 		freq = 10'h1F2;
 		
 	shot_st_3:
-		freq = 10'hF;
+		freq = 10'h0;
 	
 	
 	endcase

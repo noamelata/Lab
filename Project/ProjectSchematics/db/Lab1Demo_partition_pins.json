@@ -20,6 +20,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_I2C_SDAT",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_CLK",
 					"strict" : false
 				},
@@ -100,10 +124,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[6]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_R[7]",
 					"strict" : false
 				},
@@ -120,10 +140,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_HS",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_VS",
 					"strict" : false
 				},
@@ -132,7 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_I2C_SDAT",
+					"name" : "VGA_R[6]",
 					"strict" : false
 				},
 				{

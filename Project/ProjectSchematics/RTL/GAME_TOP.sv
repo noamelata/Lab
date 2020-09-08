@@ -4,6 +4,7 @@ module GAME_TOP	(
 					input logic	resetN,
 					input logic [3:0] KEY,
 					input logic [9:0] SW,
+					input logic AUD_ADCDAT,
 					
 					output logic [7:0] VGA_R,
 					output logic [7:0] VGA_G,
@@ -15,13 +16,13 @@ module GAME_TOP	(
 					output logic VGA_CLK,
 					
 					output logic MICROPHON_LED,
-					output logic AUD_ADCLRCK,
-					output logic AUD_BCLK,
+					inout logic AUD_ADCLRCK,
+					inout logic AUD_BCLK,
 					output logic AUD_DACDAT,
-					output logic AUD_DACLRCK,
+					inout logic AUD_DACLRCK,
 					output logic AUD_XCK,
 					output logic AUD_I2C_SCLK,
-					output logic AUD_I2C_SDAT
+					inout logic AUD_I2C_SDAT
 				
 );
  
@@ -407,14 +408,14 @@ sound_machine sound_machine(
 					.freq(freq),
 					.sound_en(sound_en)
 					);
-
-				
+	
 				
 TOP_MSS_DEMO top_mss_demo (
 					.CLOCK_50(clk),
 					.resetN(resetN),
-					.EnableSound(1'b1),
+					.EnableSound(sound_en),
 					.freq(freq),
+					.AUD_ADCDAT(AUD_ADCDAT),
 					
 					.MICROPHON_LED(MICROPHON_LED),
 					.AUD_ADCLRCK(AUD_ADCLRCK),

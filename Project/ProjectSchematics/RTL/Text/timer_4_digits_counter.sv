@@ -19,7 +19,7 @@ module timer_4_digits_counter
 		ones = add_time[0] + Count_out[0];
 		carry_ones = ones < 10 ? 0 : 1;
 		tens = add_time[1] + Count_out[1] + carry_ones;
-		if (tens >= 9) begin
+		if (tens > 9) begin
 			ones = 9;
 			tens = 9;
 		end
