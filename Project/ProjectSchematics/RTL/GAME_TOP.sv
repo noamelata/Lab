@@ -26,25 +26,29 @@ module GAME_TOP	(
 				
 );
  
- 
+localparam NUM_OF_BIRDS = 4;
+localparam NUM_OF_TREES = 16;
+localparam NUM_OF_SHOTS = 8;
+localparam NUM_OF_POOPS = 8;
+
  
 logic startOfFrame;
 logic signed [1:0] [10:0] drawCoordinates;
 logic signed [1:0] [10:0] playerCoordinates;
 logic signed [1:0] [10:0] dynamic_ground_Coordinates; 
-logic signed [3:0] [1:0] [10:0] birdsCoordinates;
-logic signed [7:0] [1:0] [10:0] shotsCoordinates;
-logic signed [15:0] [1:0] [10:0] treesCoordinates;
+logic signed [NUM_OF_BIRDS - 1:0] [1:0] [10:0] birdsCoordinates;
+logic signed [NUM_OF_SHOTS - 1:0] [1:0] [10:0] shotsCoordinates;
+logic signed [NUM_OF_TREES - 1:0] [1:0] [10:0] treesCoordinates;
 logic signed [1:0] [10:0] pickupCoordinates;
-logic signed [7:0] [1:0] [10:0] poopsCoordinates;
+logic signed [NUM_OF_POOPS - 1:0] [1:0] [10:0] poopsCoordinates;
 
 
 logic playerDrawingRequest;
-logic [3:0] birdsBusRequest;
-logic [7:0] shotsBusRequest;
-logic [15:0] treesBusRequest;
+logic [NUM_OF_BIRDS - 1:0] birdsBusRequest;
+logic [NUM_OF_SHOTS - 1:0] shotsBusRequest;
+logic [NUM_OF_TREES - 1:0] treesBusRequest;
 logic [1:0] timerBusRequest;
-logic [7:0] poopsBusRequest;
+logic [NUM_OF_POOPS - 1:0] poopsBusRequest;
 logic birdsDrawingRequest;
 logic shotsDrawingRequest;
 logic treesDrawingRequest;
@@ -65,9 +69,9 @@ logic [7:0] poopsRGB;
 logic barDrawingRequest;
 logic [7:0] barRGB;
 
-logic [3:0] SingleHitPulse_birds;
-logic [7:0] SingleHitPulse_shots;
-logic [3:0] bird_alive;
+logic [NUM_OF_BIRDS - 1:0] SingleHitPulse_birds;
+logic [NUM_OF_SHOTS - 1:0] SingleHitPulse_shots;
+logic [NUM_OF_BIRDS - 1:0] bird_alive;
 logic player_SingleHitPulse;
 logic pickup_SingleHitPulse;
 logic poop_SingleHitPulse;
@@ -75,11 +79,11 @@ logic player_collision;
 
 logic [2:0] tree_speed;
 logic [1:0] bird_speed;
-logic [7:0] deploy_shot;
-logic [15:0] deploy_tree;
-logic [3:0] deploy_bird;
+logic [NUM_OF_SHOTS - 1:0] deploy_shot;
+logic [NUM_OF_TREES - 1:0] deploy_tree;
+logic [NUM_OF_BIRDS - 1:0] deploy_bird;
 logic deploy_pickup;
-logic [7:0] deploy_poop;
+logic [NUM_OF_POOPS - 1:0] deploy_poop;
 logic [3:0] bird_life;
 
 logic player_active;
@@ -114,6 +118,18 @@ logic out_of_time;
 logic [1:0] num_of_hearts;
 logic [1:0] [3:0] level_num;
 logic level_up;
+
+logic any_shot;
+assign any_shot = (deploy_shot[0] || deploy_shot[1]
+						|| deploy_shot[2] || deploy_shot[3]
+						|| deploy_shot[4] || deploy_shot[5]
+						|| deploy_shot[6] || deploy_shot[7]);
+logic any_hit_bird;
+assign any_hit_bird = (SingleHitPulse_birds[0] || SingleHitPulse_birds[1]
+						|| SingleHitPulse_birds[2] || SingleHitPulse_birds[3]);
+						
+logic [9:0] freq;
+logic sound_en;
 
 
 assign clk = CLOCK_50;
@@ -383,17 +399,7 @@ VGA_Controller	vga (
 					.resetN(resetN)
 					);
 
-logic any_shot;
-assign any_shot = (deploy_shot[0] || deploy_shot[1]
-						|| deploy_shot[2] || deploy_shot[3]
-						|| deploy_shot[4] || deploy_shot[5]
-						|| deploy_shot[6] || deploy_shot[7]);
-logic any_hit_bird;
-assign any_hit_bird = (SingleHitPulse_birds[0] || SingleHitPulse_birds[1]
-						|| SingleHitPulse_birds[2] || SingleHitPulse_birds[3]);
-						
-logic [9:0] freq;
-logic sound_en;
+
 						
 sound_machine sound_machine(
 					.clk(clk),
