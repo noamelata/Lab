@@ -7,7 +7,7 @@ module	poopDraw (
 					input logic isActive, //input that poop should be desplayed 
 					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] poop_fall_object_colors,
 					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] poop_splash_object_colors,
-					input logic splash,
+					input logic splash, //is bomb "on the ground"
 
 					output	logic	drawingRequest, //output that the pixel should be dispalyed 
 					output	logic	[7:0] RGBout  //rgb value from the bitmap 
@@ -15,18 +15,12 @@ module	poopDraw (
 
  
 // this is the devider used to acess the right pixel 
-localparam  int OBJECT_NUMBER_OF_Y_BITS = 4;  // 2^6 = 64 
-localparam  int OBJECT_NUMBER_OF_X_BITS = 4;  // 2^5 = 32 
-
-
+localparam  int OBJECT_NUMBER_OF_Y_BITS = 4;  // 2^4 = 16 
+localparam  int OBJECT_NUMBER_OF_X_BITS = 4;  // 2^4 = 16 
 localparam  int OBJECT_HEIGHT_Y = 1 <<  OBJECT_NUMBER_OF_Y_BITS ;
 localparam  int OBJECT_WIDTH_X = 1 <<  OBJECT_NUMBER_OF_X_BITS;
 
-parameter COLOR = 8'hFF;//PLACEHOLDER PLEASE CHANGE
-
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
-
-
 
 
 // pipeline (ff) to get the pixel color from the array 	 
@@ -39,7 +33,6 @@ begin
 	end
 	else begin  
 
-	
 		if ((InsideRectangle == 1'b1)) begin  // inside an external bracket 
 			if (splash)
 				RGBout <= poop_splash_object_colors[coordinate[1]][coordinate[0]]; 

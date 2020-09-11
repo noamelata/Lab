@@ -2,26 +2,22 @@
 
 module	levels_mux	(	
 //		--------	Clock Input	 	
-					input		logic	clk,
-					input		logic	resetN,
+	input		logic	clk,
+	input		logic	resetN,
 
-					input		logic	[2:0] levelsBusRequest,
-					input		logic	[2:0] [7:0] levelsBusRGB, 
-					
-					output	logic levelsDrawingRequest,
-					output	logic	[7:0] levelsRGB 
+	input		logic	[2:0] levelsBusRequest,
+	input		logic	[2:0] [7:0] levelsBusRGB, 
+	
+	output	logic levelsDrawingRequest,
+	output	logic	[7:0] levelsRGB 
 					
 );
 
 logic [7:0] tmpRGB;
 
-
-
 assign levelsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign levelsDrawingRequest  = (levelsBusRequest[0] || levelsBusRequest [1]
+assign levelsDrawingRequest  = (levelsBusRequest[0] || levelsBusRequest [1] //should anyone be displayed
 											|| levelsBusRequest[2]);
-
-
 
 always_ff@(posedge clk or negedge resetN)
 begin

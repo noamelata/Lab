@@ -5,8 +5,8 @@ module	poopBMP (
 					output	logic	[0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] poop_splash_object_colors
  ) ;
  
-localparam  int OBJECT_NUMBER_OF_Y_BITS = 4;  // 2^6 = 64 
-localparam  int OBJECT_NUMBER_OF_X_BITS = 4;  // 2^5 = 32 
+localparam  int OBJECT_NUMBER_OF_Y_BITS = 4;  // 2^4 = 16 
+localparam  int OBJECT_NUMBER_OF_X_BITS = 4;  // 2^4 = 16 
 
 
 localparam  int OBJECT_HEIGHT_Y = 1 <<  OBJECT_NUMBER_OF_Y_BITS ;

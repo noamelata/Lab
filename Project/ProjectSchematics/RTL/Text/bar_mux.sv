@@ -1,21 +1,19 @@
 
 
 module	bar_mux	(	
-					input logic	clk,
-					input	logic	resetN,
-					input logic timerDrawingRequest,
-					input logic [7:0] timerRGB,	
-					input logic backgroundRequest,
-					input logic [7:0] backgroundRGB,
-					input logic heartsDrawingRequest,
-					input logic [7:0] heartsRGB,
-					input logic levelsDrawingRequest,
-					input logic [7:0] levelsRGB,
-					input logic gameoverRequest,
-					input logic [7:0] gameoverRGB,
-					
-					output	logic barDrawingRequest,
-					output	logic	[7:0] barRGB
+	input logic	clk,
+	input	logic	resetN,
+	input logic timerDrawingRequest, //game timer
+	input logic [7:0] timerRGB, 	
+	input logic heartsDrawingRequest, //hearts icons
+	input logic [7:0] heartsRGB,
+	input logic levelsDrawingRequest, //level counter
+	input logic [7:0] levelsRGB,
+	input logic gameoverRequest, //game over screen
+	input logic [7:0] gameoverRGB,
+	
+	output	logic barDrawingRequest,
+	output	logic	[7:0] barRGB
 					
 );
 
@@ -23,7 +21,7 @@ logic [7:0] tmpRGB;
 
 
 assign barRGB = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign barDrawingRequest = (timerDrawingRequest 
+assign barDrawingRequest = (timerDrawingRequest //should anyone be displayed
 									|| heartsDrawingRequest || levelsDrawingRequest
 									|| gameoverRequest);
 
@@ -43,11 +41,8 @@ begin
 		else if (levelsDrawingRequest == 1'b1 )   
 			tmpRGB <= levelsRGB;  //third priority
 
-		/*else if (backgroundRequest == 1'b1 )   
-			tmpRGB <= backgroundRGB;  //forth priority
-			 */
 		else if (gameoverRequest == 1'b1 )   
-			tmpRGB <= gameoverRGB;  //fifth priority
+			tmpRGB <= gameoverRGB;  //forth priority
 			
 		else
 			tmpRGB <= 8'hFF ; // last priority 

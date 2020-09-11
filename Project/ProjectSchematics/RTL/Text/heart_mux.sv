@@ -1,21 +1,21 @@
 
 
 module	heart_mux	(	
-					input logic	clk,
-					input	logic	resetN,
-					input	logic	[2:0] heartsBusRequest,
-					input	logic	[2:0] [7:0] heartsBusRGB, 
-					
-					output logic heartsDrawingRequest,
-					output logic [7:0] heartsRGB
-					
+	input logic	clk,
+	input	logic	resetN,
+	input	logic	[2:0] heartsBusRequest,
+	input	logic	[2:0] [7:0] heartsBusRGB, 
+	
+	output logic heartsDrawingRequest,
+	output logic [7:0] heartsRGB
+	
 );
 
 logic [7:0] tmpRGB;
 
 
 assign heartsRGB = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign heartsDrawingRequest  = (heartsBusRequest[0] || heartsBusRequest[1]
+assign heartsDrawingRequest  = (heartsBusRequest[0] || heartsBusRequest[1] //should anyone be displayed
 						|| heartsBusRequest[2]);
 
 

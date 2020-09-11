@@ -1,15 +1,13 @@
 
 
-module	digits_mux	(	
-//		--------	Clock Input	 	
-					input		logic	clk,
-					input		logic	resetN,
-
-					input		logic	[1:0] digitsBusRequest,
-					input		logic	[1:0] [7:0] digitsBusRGB, 
-					
-					output	logic digitsDrawingRequest,
-					output	logic	[7:0] digitsRGB 
+module	digits_mux	(	 	
+	input		logic	clk,
+	input		logic	resetN,
+	input		logic	[1:0] digitsBusRequest,
+	input		logic	[1:0] [7:0] digitsBusRGB, 
+	
+	output	logic digitsDrawingRequest,
+	output	logic	[7:0] digitsRGB 
 					
 );
 
@@ -18,7 +16,7 @@ logic [7:0] tmpRGB;
 
 
 assign digitsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign digitsDrawingRequest  = (digitsBusRequest[0] || digitsBusRequest [1]);
+assign digitsDrawingRequest  = (digitsBusRequest[0] || digitsBusRequest [1]); //should anyone be displayed
 
 
 

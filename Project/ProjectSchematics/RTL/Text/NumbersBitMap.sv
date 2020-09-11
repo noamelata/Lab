@@ -6,20 +6,18 @@
 
 
 module NumbersBitMap	(	
-					input		logic	clk,
-					input		logic	resetN,
-					input 	logic	[10:0] offsetX,// offset from top left  position 
-					input 	logic	[10:0] offsetY,
-					input		logic	InsideRectangle, //input that the pixel is within a bracket 
-					input 	logic	[3:0] digit, // digit to display
-					
-					output	logic				drawingRequest, //output that the pixel should be dispalyed 
-					output	logic	[7:0]		RGBout
+	input		logic	clk,
+	input		logic	resetN,
+	input 	logic	[10:0] offsetX,// offset from top left  position 
+	input 	logic	[10:0] offsetY,
+	input		logic	InsideRectangle, //input that the pixel is within a bracket 
+	input 	logic	[3:0] digit, // digit to display
+	
+	output	logic	drawingRequest, //output that the pixel should be dispalyed 
+	output	logic	[7:0]		RGBout
 );
-// generating a smily bitmap 
 
 parameter  logic	[7:0] digit_color = 8'h00 ; //set the color of the digit 
-
 
 bit [0:15] [0:31] [0:15] number_bitmap  = {
 
@@ -558,7 +556,6 @@ bit [0:15] [0:31] [0:15] number_bitmap  = {
 
 } ; 
 																	
-	
 
 
 // pipeline (ff) to get the pixel color from the array 	 

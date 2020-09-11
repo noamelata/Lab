@@ -1,16 +1,14 @@
 
 
 module	poop_mux	(	
-					input logic	clk,
-					input	logic	resetN,
-					
-					input	logic signed [7:0] [1:0] [10:0] poopCoordinates,
-					
-					input	logic	[7:0] poopsBusRequest,
-					input	logic	[7:0] [7:0] poopsBusRGB, 
-					
-					output	logic poopsDrawingRequest,
-					output	logic	[7:0] poopsRGB
+	input logic	clk,
+	input	logic	resetN,
+	input	logic signed [7:0] [1:0] [10:0] poopCoordinates,
+	input	logic	[7:0] poopsBusRequest,
+	input	logic	[7:0] [7:0] poopsBusRGB, 
+	
+	output	logic poopsDrawingRequest,
+	output	logic	[7:0] poopsRGB
 					
 );
 
@@ -18,7 +16,7 @@ logic [7:0] tmpRGB;
 
 
 assign poopsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign poopsDrawingRequest  = (poopsBusRequest[0] || poopsBusRequest [1]
+assign poopsDrawingRequest  = (poopsBusRequest[0] || poopsBusRequest [1] //should anyone be displayed
 						|| poopsBusRequest[2] || poopsBusRequest[3]
 						|| poopsBusRequest[4] || poopsBusRequest[5]
 						|| poopsBusRequest[6] || poopsBusRequest[7]);

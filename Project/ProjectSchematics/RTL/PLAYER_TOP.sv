@@ -18,53 +18,53 @@ module PLAYER_TOP	(
  
  
 logic signed [1:0] [10:0] Coordinates;
-
-assign playerCoordinates = Coordinates;
-
 logic signed [1:0] [10:0] playerOffset;
+
 
 logic playerInsideSquare;
 
 
 
-playerLogic playerlogic(.clk(clk),
-					.resetN(resetN),
-					.startOfFrame(startOfFrame), 
-					.left(left),  
-					.right(right),  
-					.collision(player_SingleHitPulse),  
-					.invincible(),
-					.coordinate(Coordinates)
-					);
+playerLogic playerlogic(.clk(clk), //player movement and life 
+	.resetN(resetN),
+	.startOfFrame(startOfFrame), 
+	.left(left),  
+	.right(right),  
+	.collision(player_SingleHitPulse),  
+	.invincible(),
+	.coordinate(Coordinates)
+);
 					
-square_object	playersquare(	
-					.clk(clk),
-					.resetN(resetN),
-					.pixelX(drawCoordinates[0]),
-					.pixelY(drawCoordinates[1]),
-					.topLeftX(Coordinates[0]), 
-					.topLeftY(Coordinates[1]),
-					.offsetX(playerOffset[0]), 
-					.offsetY(playerOffset[1]),
-					.drawingRequest(playerInsideSquare),
-					.RGBout() 
+square_object	playersquare(	//is player within bounds
+	.clk(clk),
+	.resetN(resetN),
+	.pixelX(drawCoordinates[0]),
+	.pixelY(drawCoordinates[1]),
+	.topLeftX(Coordinates[0]), 
+	.topLeftY(Coordinates[1]),
+	.offsetX(playerOffset[0]), 
+	.offsetY(playerOffset[1]),
+	.drawingRequest(playerInsideSquare),
+	.RGBout() 
 );
 
 					
-playerDraw playerdraw	(	
-					.clk(clk),
-					.resetN(resetN),
-					.offsetCoordinate(playerOffset),
-					.InsideRectangle(playerInsideSquare),
-					.flash(player_red),
-					.left(left),
-					.right(right),
-					.isActive(player_active),
-					.invincible(invincible),
+playerDraw playerdraw	(	//which pixel to send out from bitmap
+	.clk(clk),
+	.resetN(resetN),
+	.offsetCoordinate(playerOffset),
+	.InsideRectangle(playerInsideSquare),
+	.flash(player_red),
+	.left(left),
+	.right(right),
+	.isActive(player_active),
+	.invincible(invincible),
 
-					.drawingRequest(playerDrawingRequest),
-					.RGBout(playerRGB)
- ) ;
+	.drawingRequest(playerDrawingRequest),
+	.RGBout(playerRGB)
+) ;
+ 
+assign playerCoordinates = Coordinates;
  
 
 endmodule

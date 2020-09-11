@@ -1,24 +1,19 @@
 
 
-module	shots_mux	(	
-//		--------	Clock Input	 	
-					input		logic	clk,
-					input		logic	resetN,
-
-					input		logic	[7:0] shotsBusRequest,
-					input		logic	[7:0] [7:0] shotsBusRGB, 
-					
-					output	logic shotsDrawingRequest,
-					output	logic	[7:0] shotsRGB 
-					
+module	shots_mux	(		
+	input		logic	clk,
+	input		logic	resetN,
+	input		logic	[7:0] shotsBusRequest,
+	input		logic	[7:0] [7:0] shotsBusRGB, 
+	
+	output	logic shotsDrawingRequest,
+	output	logic	[7:0] shotsRGB 					
 );
 
 logic [7:0] tmpRGB;
 
-
-
 assign shotsRGB	  = tmpRGB; //--  extend LSB to create 10 bits per color  
-assign shotsDrawingRequest  = (shotsBusRequest[0] || shotsBusRequest [1]
+assign shotsDrawingRequest  = (shotsBusRequest[0] || shotsBusRequest [1] //should anyone be displayed
 						|| shotsBusRequest[2] || shotsBusRequest[3]
 						|| shotsBusRequest[4] || shotsBusRequest[5]
 						|| shotsBusRequest[6] || shotsBusRequest[7]);

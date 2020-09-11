@@ -1,18 +1,16 @@
 
 module	collision_player_pickup	(	
-					input	logic	clk,
-					input	logic	resetN,
-					input 	logic 	startOfFrame,
-					input	logic	playerDrawingRequest,	
-					input	logic	pickupDrawingRequest,			
-					output 	logic 	SingleHitPulse			
+	input	logic	clk,
+	input	logic	resetN,
+	input logic startOfFrame,
+	input	logic	playerDrawingRequest, //is player in pixel	
+	input	logic	pickupDrawingRequest, //is pickup in pixel
+	
+	output logic SingleHitPulse	//is there a collision		
 );
 
 logic flag; // a semaphore to set the output only once per frame / regardless of the number of collisions 
 logic collision;
-			
-assign collision = (playerDrawingRequest && pickupDrawingRequest);
-
 						
 always_ff@(posedge clk or negedge resetN)
 begin
@@ -34,5 +32,7 @@ begin
 		end
 	end 
 end
+
+assign collision = (playerDrawingRequest && pickupDrawingRequest);
 			
 endmodule

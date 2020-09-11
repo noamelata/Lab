@@ -1,20 +1,37 @@
 
 module sound_machine	(	
-					input logic	clk,
-					input logic	resetN,
-					input logic startOfFrame,
-					input logic shot_deploy,
-					input logic player_hit,
-					input logic bird_hit,
-					input logic level_up,
-					input logic pickup,
-					
-					output logic [9:0] freq,
-					output logic sound_en				
+	input logic	clk,
+	input logic	resetN,
+	input logic startOfFrame,
+	input logic shot_deploy,
+	input logic player_hit,
+	input logic bird_hit,
+	input logic level_up,
+	input logic pickup,
+	
+	output logic [9:0] freq,
+	output logic sound_en				
 );
 
+//local parameters
 int count;
-int duration = 4;
+int duration; 
+
+//duration lengths
+localparam LONG = 8;
+localparam NORMAL = 4;
+localparam SHORT = 2;
+localparam TINY = 1;
+
+//sound tones
+localparam logic [9:0] DO = 10'h2EA;
+localparam logic [9:0] MI = 10'h250;
+localparam logic [9:0] FA_D = 10'h20F;
+localparam logic [9:0] SOL = 10'h1F2;
+localparam logic [9:0] SOL_D = 10'h1D6;
+localparam logic [9:0] LA = 10'h1BB;
+localparam logic [9:0] SI = 10'h18b;
+localparam logic [9:0] SILENCE = 10'h0;
 
 enum logic [4:0] {idle, hit_st_1, hit_st_2, hit_st_3, 
 						bird_hit_st_1, bird_hit_st_2, bird_hit_st_3, 
@@ -49,53 +66,53 @@ begin
 	case(state)
 	idle: begin
 		sound_en = 1'b0;
-		freq = 10'h0;
+		freq = SILENCE;
 	end
 	
 	hit_st_1:
-		freq = 10'h250;
+		freq = MI;
 		
 	hit_st_2:
-		freq = 10'h2EA;
+		freq = DO;
 		
 	hit_st_3:
-		freq = 10'h0;
+		freq = SILENCE;
 	
 	pickup_st_1:
-		freq = 10'h1F2;
+		freq = SOL;
 		
 	pickup_st_2:
-		freq = 10'h250;
+		freq = MI;
 		
 	pickup_st_3:
-		freq = 10'h1BB;
+		freq = LA;
 		
 	bird_hit_st_1:
-		freq = 10'h20F;
+		freq = FA_D;
 		
 	bird_hit_st_2:
-		freq = 10'h1D6;
+		freq = SOL_D;
 		
 	bird_hit_st_3:
-		freq = 10'h18b;
+		freq = SI;
 		
 	lvl_st_1:
-		freq = 10'h0;
+		freq = SILENCE;
 		
 	lvl_st_2:
-		freq = 10'h0;
+		freq = SILENCE;
 		
 	lvl_st_3:
-		freq = 10'h0;
+		freq = SILENCE;
 		
 	shot_st_1:
-		freq = 10'h1F2;
+		freq = SOL;
 		
 	shot_st_2:
-		freq = 10'h250;
+		freq = MI;
 		
 	shot_st_3:
-		freq = 10'h2EA;
+		freq = DO;
 	
 	
 	endcase
@@ -105,13 +122,13 @@ end
 always_comb 
 begin
 	next_state = idle;
-	duration = 4;
+	duration = NORMAL;
 	
 	if (player_hit)
 		next_state = hit_st_1;
 	else if (pickup) begin
 		next_state = pickup_st_1;
-		duration = 8;
+		duration = LONG;
 	end
 	else if (bird_hit)
 		next_state = bird_hit_st_1;
@@ -128,12 +145,12 @@ begin
 			
 		pickup_st_1: begin
 			next_state = pickup_st_2;
-			duration = 8;
+			duration = LONG;
 		end
 			
 		pickup_st_2: begin
 			next_state = pickup_st_3;
-			duration = 8;
+			duration = LONG;
 		end	
 			
 		bird_hit_st_1:
@@ -150,13 +167,16 @@ begin
 			
 		shot_st_1: begin
 			next_state = shot_st_2;
-			duration = 2;
+			duration = SHORT;
 		end
 			
 		shot_st_2: begin
 			next_state = shot_st_3;
-			duration = 1;
+			duration = TINY;
 		end
+		
+		default:
+			next_state = state;
 		
 		endcase
 	end

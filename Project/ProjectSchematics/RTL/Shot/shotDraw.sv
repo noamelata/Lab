@@ -1,30 +1,25 @@
 
 module	shotDraw	(	
-					input	logic	clk,
-					input	logic	resetN,
-					input logic signed [1:0] [10:0]	coordinate,
-					input	logic	InsideRectangle, //input that the pixel is within a bracket 
-					input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors,
-					input logic high_damage,
+	input	logic	clk,
+	input	logic	resetN,
+	input logic signed [1:0] [10:0]	coordinate,
+	input	logic	InsideRectangle, //input that the pixel is within a bracket 
+	input logic [0:OBJECT_HEIGHT_Y-1] [0:OBJECT_WIDTH_X-1] [8-1:0] object_colors,
+	input logic high_damage,
 
-					output	logic	drawingRequest, //output that the pixel should be dispalyed 
-					output	logic	[7:0] RGBout  //rgb value from the bitmap 
+	output	logic	drawingRequest, //output that the pixel should be dispalyed 
+	output	logic	[7:0] RGBout  //rgb value from the bitmap 
  ) ;
 
+parameter HIGH_DAMAGE_COLOR = 8'h1B;
+ 
 // this is the devider used to acess the right pixel 
 localparam  int OBJECT_NUMBER_OF_Y_BITS = 4;  // 2^4 = 16 
 localparam  int OBJECT_NUMBER_OF_X_BITS = 4;  // 2^4 = 16 
-
-
 localparam  int OBJECT_HEIGHT_Y = 1 <<  OBJECT_NUMBER_OF_Y_BITS ;
 localparam  int OBJECT_WIDTH_X = 1 <<  OBJECT_NUMBER_OF_X_BITS;
 
-// this is the devider used to acess the right pixel 
-localparam  int OBJECT_HEIGHT_Y_DIVIDER = OBJECT_NUMBER_OF_Y_BITS - 2; //how many pixel bits are in every collision pixel
-localparam  int OBJECT_WIDTH_X_DIVIDER =  OBJECT_NUMBER_OF_X_BITS - 2;
 
-parameter COLOR = 8'hE9; //placeholder color 8'FF
-parameter HIGH_DAMAGE_COLOR = 8'h1B;
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ;// RGB value in the bitmap representing a transparent pixel 
 
 

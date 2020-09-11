@@ -1,17 +1,18 @@
 
 module	collision_player_poop	(	
-					input	logic	clk,
-					input	logic	resetN,
-					input logic startOfFrame,
-					input	logic	playerDrawingRequest,	
-					input	logic	[7:0] poopsDrawingRequest,			
-					output logic SingleHitPulse			
+	input	logic	clk,
+	input	logic	resetN,
+	input logic startOfFrame,
+	input	logic	playerDrawingRequest,	
+	input	logic	[7:0] poopsDrawingRequest,
+	
+	output logic SingleHitPulse			
 );
 
 logic flag; // a semaphore to set the output only once per frame / regardless of the number of collisions 
 logic collision;
 			
-assign collision = (playerDrawingRequest && 
+assign collision = (playerDrawingRequest && //should anyone be displayed
 						(poopsDrawingRequest[0] || poopsDrawingRequest[1] 
 						|| poopsDrawingRequest[2] || poopsDrawingRequest[3]
 						|| poopsDrawingRequest[4] || poopsDrawingRequest[5]

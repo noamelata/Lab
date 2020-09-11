@@ -1,35 +1,28 @@
 
 module PICKUP_TOP	(	
-					input logic	clk,
-					input logic	resetN,
-					input logic startOfFrame,
-					input logic [7:0] random_number,
-					input logic [2:0] pickup_speed,
-					input logic deploy_pickup,
-					input logic [1:0] [10:0] drawCoordinates,
-					input logic pickup_hit,
-					
-					output logic [1:0] [10:0] pickupCoordinates,
-					output logic pickupDrawingRequest,
-					output logic [7:0] pickupRGB
+	input logic	clk,
+	input logic	resetN,
+	input logic startOfFrame,
+	input logic [7:0] random_number,
+	input logic [2:0] pickup_speed, //how fast going sown
+	input logic deploy_pickup, //should pickup apear
+	input logic [1:0] [10:0] drawCoordinates,
+	input logic pickup_hit, //did player take pickup
+	
+	output logic [1:0] [10:0] pickupCoordinates,
+	output logic pickupDrawingRequest,
+	output logic [7:0] pickupRGB
 				
 );
  
 localparam int bit_16 = 16;
 
 logic signed [1:0] [10:0] Coordinates;
-
-assign pickupCoordinates = Coordinates;
-
-
 logic signed [1:0] [10:0] pickupOffset;
-
 logic pickupInsideSquare;
-
-logic pickup_active;
-
-			
+logic pickup_active;			
 logic [0:bit_16 - 1] [0:bit_16 - 1] [7:0] pickup_bitmap;
+
 pickupBMP pickupBMP(.object_colors(pickup_bitmap));
 
 
@@ -72,6 +65,7 @@ pickupDraw pickupdraw(
 	.RGBout(pickupRGB)
 ) ;
 
+assign pickupCoordinates = Coordinates;
 
 endmodule
 
