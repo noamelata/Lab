@@ -15,7 +15,7 @@ module sound_machine	(
 
 //local parameters
 int count;
-int duration; 
+int duration = NORMAL; 
 
 //duration lengths
 localparam LONG = 8;
@@ -176,7 +176,7 @@ begin
 		end
 		
 		default:
-			next_state = state;
+			next_state = next_state;
 		
 		endcase
 	end
